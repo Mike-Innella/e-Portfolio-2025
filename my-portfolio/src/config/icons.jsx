@@ -13,7 +13,7 @@ import { FaTwitter, FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa";
 import { BsBuildingFillGear } from "react-icons/bs";
 import { TiWeatherPartlySunny } from "react-icons/ti";
 
-const ICON_SIZE = 32;
+const ICON_SIZE = 37;
 
 const Icons = {
   // Social/Section icons (react-icons)

@@ -67,3 +67,14 @@
     transform: translate(-50%, -50%) scale(1.03);
   }
 }
+
+.menu-burger-bar {
+  background-color: var(--text-color);
+  transition: all 0.4s ease-in-out;
+}
+
+.group:hover .menu-burger-bar,
+.menu-toggle:hover .menu-burger-bar {
+  background-color: var(--hover-text);
+  transition: all 0.4s ease-in-out;
+}
