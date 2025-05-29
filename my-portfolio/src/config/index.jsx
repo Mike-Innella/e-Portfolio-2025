@@ -10,12 +10,26 @@ import {
   MdDescription,
 } from "react-icons/md";
 import CircleButton from "../components/CircleButton";
+import GlassSwipe from "../ux/GlassSwipe";
+
+const techStack = [
+  "html",
+  "css",
+  "tailwind",
+  "nodejs",
+  "git",
+  "javascript",
+  "react",
+  "vite",
+  "firebase",
+  "figma",
+];
 
 // --- CONFIGURABLE TEXT BEGINS HERE ---
 
 const CommonConfig = {
   name: "Michael Innella",
-  tagline: "frontend developer | UI designer",
+  tagline: "frontend developer | ui designer",
   signature: {
     viewBox: "0 0 100 100",
     signaturePathD: `...`, // Keep your SVG path
@@ -185,31 +199,46 @@ const CustomSectionsConfig = [
     extraClass: "about-section section-reverse",
     content: (
       <>
-        {" "}
-        <h4>{Icons["helpoutline"]} who is this?</h4>{" "}
-        <p>
+        <GlassSwipe />
+        <div className="flex">
+          <h4 className="text-[2rem] font-[600] text-right ml-auto pb-4">
+            who am i ?
+          </h4>
+        </div>
+        <p className="flex justify-start align-start w-full">
           I build web applications using modern JavaScript technologies and
           enjoy creating clean, responsive designs. With a passion for
           problem-solving and attention to detail, I develop solutions that are
           both functional and user-friendly. My approach combines technical
           expertise with creative thinking to deliver high-quality projects that
           meet client needs and exceed expectations.
-        </p>{" "}
-        <h4>{Icons["code"]} programming</h4>{" "}
-        <p className="programming-icons">
-          {" "}
-          {Icons["java"]} {Icons["cpp"]} {Icons["typescript"]}{" "}
-          {Icons["javascript"]}{" "}
-        </p>{" "}
-        <h4>{Icons["web"]} web</h4>{" "}
-        <p className="programming-icons">
-          {" "}
-          {Icons["graphql"]} {Icons["mysql"]} {Icons["php"]} {Icons["mongodb"]}{" "}
-          {Icons["nodejs"]} {Icons["react"]} {Icons["angular"]}{" "}
-        </p>{" "}
+        </p>
+        <div className="flex mx-0 justify-end">
+          <h4 className="text-[2rem] font-[600] text-right ml-auto py-4">
+            tech stack
+          </h4>
+        </div>
+        <div
+          style={{
+            fontSize: "2rem",
+            display: "flex",
+            gap: "2rem",
+            alignItems: "right",
+            flexWrap: "wrap",
+            width: "100%",
+            justifyContent: "flex-end",
+          }}
+        >
+          {techStack.map((key) => (
+            <span className="tech-icon-glass" key={key} title={key}>
+              {Icons[key]}
+            </span>
+          ))}
+        </div>
       </>
     ),
   },
+
   {
     name: "reviews",
     headerIcon: <MdRateReview />,

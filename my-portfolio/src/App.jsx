@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import SplashOverlay from "./components/SplashOverlay";
 import Menu from "./components/Menu/Menu";
 import TopSection from "./sections/TopSection";
@@ -7,27 +7,33 @@ import Footer from "./sections/Footer";
 import { CustomSectionsConfig } from "./config";
 
 export default function App() {
+  // Track if splash overlay is active
+  const [splashActive, setSplashActive] = useState(true);
+
   // Create individual refs for each section directly
   const topRef = useRef(null);
   const aboutRef = useRef(null);
   const projectsRef = useRef(null);
   const contactRef = useRef(null);
-  
+
   // Map the refs to section names
   const sectionRefs = {
     top: topRef,
     about: aboutRef,
     projects: projectsRef,
-    contact: contactRef
+    contact: contactRef,
   };
 
   return (
-    <div className="relative min-h-screen font-sans" style={{ 
-      backgroundColor: 'var(--background-color)', 
-      color: 'var(--text-color)' 
-    }}>
+    <div
+      className="relative min-h-screen font-sans"
+      style={{
+        backgroundColor: "var(--background-color)",
+        color: "var(--text-color)",
+      }}
+    >
       {/* Splash / Loading Overlay */}
-      <SplashOverlay />
+      <SplashOverlay onHide={() => setSplashActive(false)} />
 
       {/* Floating/arc menu */}
       <Menu sectionRefs={sectionRefs} />

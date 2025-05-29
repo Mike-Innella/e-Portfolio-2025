@@ -25,7 +25,7 @@ export default function MenuItem({
   
   return (
     <CircleButton
-      className={`menu-item fixed z-[450] bg-background left-8 top-1/2 transition-all duration-300 ${
+      className={`menu-item fixed z-[450] left-8 top-1/2 transition-all duration-300 ${
         menuActive ? "visible opacity-100" : "invisible opacity-0"
       } max-md:left-4 max-md:top-4`}
       tooltip={tooltip}

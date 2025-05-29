@@ -32,14 +32,24 @@ module.exports = {
         },
       },
       colors: {
+        // Duotone colors
         "loader-border": "#EFEFFA",
         "bg-loader": "#1C262B",
         "dark-bg": "#111315",
-        "light-bg": "#F8FAFC",
-        "primary-blue": "#3AA0EA",
-        "primary-blue-dark": "#2366A8",
+        "light-bg": "#F0F2E2",
         "text-light": "#F8FAFC",
         "text-dark": "#181A1B",
+        
+        // Blue colors (only to be used for hover effects)
+        "primary-blue": "#3AA0EA",
+        "primary-blue-dark": "#2366A8",
+        
+        // Primary colors (non-hover states)
+        "primary": {
+          white: "#F8FAFC",
+          black: "#181A1B",
+          gray: "#EFEFFA"
+        },
       },
       width: {
         loader: "64px",

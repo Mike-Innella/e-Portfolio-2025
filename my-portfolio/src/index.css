@@ -3,16 +3,20 @@
 
 :root {
   /* Light mode variables (default for :root) */
-  --background-color: #F8FAFC;
-  --accent-color: #2366A8;
-  --text-color: #181A1B;
+  --background-color: #f8fafc;
+  --accent-color: #2366a8;
+  --text-color: #181a1b;
+  --hover-color: #3aa0ea;
+  --hover-text: #f8fafc;
 }
 
 .dark {
   /* Dark mode variables (overrides when .dark class is applied) */
   --background-color: #111315;
-  --accent-color: #3AA0EA;
-  --text-color: #F8FAFC;
+  --accent-color: #3aa0ea;
+  --text-color: #f8fafc;
+  --hover-color: #3aa0ea;
+  --hover-text: #111315;
 }
 
 @layer base {
@@ -51,13 +55,14 @@
 }
 
 @keyframes pulse {
-  0%, 100% { 
-    box-shadow: 0 0 30px 10px var(--accent-color), 0 0 10px 5px #fff; 
+  0%,
+  100% {
+    box-shadow: 0 0 30px 10px var(--accent-color), 0 0 10px 5px #fff;
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
   }
-  50% { 
-    box-shadow: 0 0 40px 15px var(--accent-color), 0 0 15px 7px #fff; 
+  50% {
+    box-shadow: 0 0 40px 15px var(--accent-color), 0 0 15px 7px #fff;
     opacity: 0.95;
     transform: translate(-50%, -50%) scale(1.03);
   }

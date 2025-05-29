@@ -1,7 +1,6 @@
 import React, { useMemo, useState, useCallback } from "react";
 import { MdComputer, MdArrowUpward } from "react-icons/md";
-import { toggleTheme } from "../../utils/theme";
-import ThemeToggle from "../ThemeToggle";
+import ThemeToggle from "../../ux/ThemeToggle";
 import MenuToggle from "./MenuToggle";
 import MenuItem from "./MenuItem";
 import { CustomSectionsConfig } from "../../config";
@@ -53,7 +52,6 @@ export default function Menu({ sectionRefs }) {
       {
         icon: <ThemeToggle />,
         tooltip: "Toggle dark/light theme",
-        action: toggleTheme,
       },
       {
         icon: <MdComputer size={28} />,

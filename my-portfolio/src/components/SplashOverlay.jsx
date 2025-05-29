@@ -3,7 +3,7 @@ import CircleButton from "../components/CircleButton";
 import { MdArrowForward } from "react-icons/md";
 import Loader from "../ux/LoadingAnimation";
 
-export default function SplashOverlay() {
+export default function SplashOverlay({ onHide }) {
   const [isHiding, setIsHiding] = useState(false);
   const [hidden, setHidden] = useState(false);
   const [showHello, setShowHello] = useState(false);
@@ -23,33 +23,33 @@ export default function SplashOverlay() {
     // Initial loader fade-in
     const loaderTimer = setTimeout(() => {
       setShowLoader(true);
-    }, 300);
-    
+    }, 1500);
+
     // Show first message after a short delay
     const helloTimer = setTimeout(() => {
       setShowHello(true);
-    }, 800);
-    
+    }, 500);
+
     // Hide first message after 2 seconds
     const hideHelloTimer = setTimeout(() => {
       setShowHello(false);
     }, 3000);
-    
+
     // Show second message 0.7s after first message disappears
     const instructionsTimer = setTimeout(() => {
       setShowInstructions(true);
-    }, 3700);
-    
+    }, 3000);
+
     // Hide second message after 2 more seconds
     const hideInstructionsTimer = setTimeout(() => {
       setShowInstructions(false);
-    }, 5700);
-    
+    }, 4500);
+
     // Show button after all messages have completed
     const buttonTimer = setTimeout(() => {
       setShowButton(true);
-    }, 6000);
-    
+    }, 5000);
+
     // Cleanup timers
     return () => {
       clearTimeout(loaderTimer);
@@ -65,13 +65,13 @@ export default function SplashOverlay() {
 
   return (
     <div
-      className={`fixed inset-0 z-[999] flex items-center justify-center transition-opacity duration-1000 ${
+      className={`fixed inset-0 z-[999] flex items-center justify-center transition-opacity duration-1200 ease ${
         isHiding ? "opacity-0 pointer-events-none" : "opacity-100"
       }`}
-      style={{ backgroundColor: 'var(--background-color)' }}
+      style={{ backgroundColor: "var(--background-color)" }}
     >
       <div
-        className={`flex flex-col items-center justify-between w-screen min-h-screen py-10 transition-transform duration-1000 ${
+        className={`flex flex-col items-center justify-between w-screen min-h-screen py-10 transition-transform duration-1200 ease${
           isHiding ? "-translate-y-40" : ""
         }`}
       >
@@ -79,7 +79,7 @@ export default function SplashOverlay() {
           <div className="flex flex-row items-center justify-center w-full">
             <div className="w-96 text-left">
               <span
-                className={`text-5xl font-bold mr-[96px] transition-opacity duration-700 ${
+                className={`text-5xl font-bold mr-[96px] transition-opacity duration-1200 ease ${
                   showHello ? "opacity-100" : "opacity-0"
                 }`}
               >
@@ -87,13 +87,17 @@ export default function SplashOverlay() {
               </span>
             </div>
 
-            <div className={`transition-opacity duration-1000 ${showLoader ? 'opacity-100' : 'opacity-0'}`}>
+            <div
+              className={`transition-opacity duration-1000 ${
+                showLoader ? "opacity-100" : "opacity-0"
+              }`}
+            >
               <Loader />
             </div>
 
             <div className="w-96 text-right">
               <span
-                className={`text-3xl ml-[96px] transition-opacity duration-700 ${
+                className={`text-3xl ml-[96px] transition-opacity duration-1200 ease ${
                   showInstructions ? "opacity-100" : "opacity-0"
                 }`}
               >
@@ -103,14 +107,21 @@ export default function SplashOverlay() {
           </div>
         </div>
 
-        <div className={`transition-opacity duration-1000 ${showButton ? 'opacity-100' : 'opacity-0'}`}>
+        <div
+          className={`transition-all duration-300 ease-in-out ${
+            showButton ? "opacity-100" : "opacity-0"
+          }`}
+        >
           <CircleButton
-            className={`to-website transition-transform duration-1000 ${
+            className={`to-website transition-all duration-300 ease-in-out ${
               isHiding ? "translate-x-20" : ""
             }`}
             onClick={() => {
               setIsHiding(true);
-              setTimeout(() => setHidden(true), 1000);
+              setTimeout(() => {
+                setHidden(true);
+                if (onHide) onHide();
+              }, 1000);
             }}
             size={4}
             tooltip="Enter site"

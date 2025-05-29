@@ -3,6 +3,7 @@ import React from "react";
 function CircleButton({
   link,
   tooltip,
+  // eslint-disable-next-line no-unused-vars
   tooltipPlacement, // Not used with native title, but kept for compatibility
   target,
   onClick,
@@ -17,18 +18,20 @@ function CircleButton({
     style: {
       width: `${size}rem`,
       height: `${size}rem`,
-      borderColor: "var(--accent-color)",
-      color: "var(--accent-color)",
-      backgroundColor: "var(--background-color)",
+      borderColor: "var(--text-color)",
+      color: "var(--text-color)",
+      backgroundColor: "transparent",
       ...style,
     },
     onMouseOver: (e) => {
-      e.currentTarget.style.backgroundColor = "var(--accent-color)";
-      e.currentTarget.style.color = "var(--background-color)";
+      e.currentTarget.style.backgroundColor = "var(--hover-color)";
+      e.currentTarget.style.borderColor = "var(--hover-color)";
+      e.currentTarget.style.color = "var(--hover-text)";
     },
     onMouseOut: (e) => {
-      e.currentTarget.style.backgroundColor = "var(--background-color)";
-      e.currentTarget.style.color = "var(--accent-color)";
+      e.currentTarget.style.backgroundColor = "transparent";
+      e.currentTarget.style.borderColor = "var(--text-color)";
+      e.currentTarget.style.color = "var(--text-color)";
     },
     title: tooltip ?? "",
     onClick,

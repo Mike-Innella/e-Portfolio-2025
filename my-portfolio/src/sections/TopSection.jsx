@@ -1,10 +1,20 @@
+import React from "react";
+import { useEffect } from "react";
 import { CommonConfig, Icons } from "../config/index";
 import HeadShot from "../assets/headshot-enhanced.png"; // your profile picture
 import CircleButton from "../components/CircleButton";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function TopSection() {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
-    <div className="relative flex flex-row justify-center items-center min-h-screen w-full max-md:flex-col max-md:text-center text-white">
+    <div
+      data-aos="fade-left"
+      className="relative flex flex-row justify-center items-center min-h-screen w-full max-md:flex-col max-md:text-center"
+    >
       {/* Intro */}
       <div className="intro w-1/2 pr-16 border-r border-primary text-right max-md:w-full max-md:pr-0 max-md:pb-8 max-md:border-b max-md:border-r-0 max-md:text-center">
         <h1 className="text-[7vw] font-bold leading-[0.9] m-0">
