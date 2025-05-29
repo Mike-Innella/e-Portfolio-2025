@@ -76,10 +76,10 @@ export default function SplashOverlay({ onHide }) {
         }`}
       >
         <div className="flex-1 flex items-center justify-center w-full">
-          <div className="flex flex-row items-center justify-center w-full">
-            <div className="w-96 text-left">
+          <div className="flex flex-col md:flex-row items-center justify-center w-full gap-4 md:gap-0">
+            <div className="w-full max-w-xs md:max-w-md text-center md:text-left">
               <span
-                className={`text-5xl font-bold mr-[96px] transition-opacity duration-1200 ease ${
+                className={`text-2xl sm:text-3xl md:text-5xl font-bold transition-opacity duration-1200 ease ${
                   showHello ? "opacity-100" : "opacity-0"
                 }`}
               >
@@ -88,16 +88,16 @@ export default function SplashOverlay({ onHide }) {
             </div>
 
             <div
-              className={`transition-opacity duration-1000 ${
+              className={`transition-opacity duration-1000 my-4 md:my-0 ${
                 showLoader ? "opacity-100" : "opacity-0"
               }`}
             >
               <Loader />
             </div>
 
-            <div className="w-96 text-right">
+            <div className="w-full max-w-xs md:max-w-md text-center md:text-right">
               <span
-                className={`text-3xl ml-[96px] transition-opacity duration-1200 ease ${
+                className={`text-lg sm:text-xl md:text-3xl transition-opacity duration-1200 ease ${
                   showInstructions ? "opacity-100" : "opacity-0"
                 }`}
               >

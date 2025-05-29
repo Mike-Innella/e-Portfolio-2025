@@ -1,9 +1,8 @@
 export default function Loader() {
   return (
     <div
+      className="w-[280px] h-[280px] sm:w-[380px] sm:h-[380px] md:w-[480px] md:h-[480px]"
       style={{
-        width: "480px",
-        height: "480px",
         position: "relative",
         borderRadius: "50%",
         perspective: "800px",
@@ -12,13 +11,11 @@ export default function Loader() {
     >
       {/* Glowing Orb in the center */}
       <div
-        className="glow-orb"
+        className="glow-orb w-[25px] h-[25px] sm:w-[30px] sm:h-[30px] md:w-[40px] md:h-[40px]"
         style={{
           position: "absolute",
           left: "50%",
           top: "50%",
-          width: "40px",
-          height: "40px",
           backgroundColor: "transparent",
           borderRadius: "50%",
           transform: "translate(-50%, -50%)",
@@ -38,7 +35,8 @@ export default function Loader() {
           borderRadius: "50%",
           left: 0,
           top: 0,
-          borderBottom: "6px solid var(--text-color)",
+          borderBottom: "4px solid var(--text-color)",
+          borderBottomWidth: "clamp(2px, 0.8vw, 6px)",
           animation: "rotateOne 3s linear infinite",
           zIndex: 2,
         }}
@@ -52,7 +50,8 @@ export default function Loader() {
           borderRadius: "50%",
           right: 0,
           top: 0,
-          borderRight: "6px solid var(--text-color)",
+          borderRight: "4px solid var(--text-color)",
+          borderRightWidth: "clamp(2px, 0.8vw, 6px)",
           animation: "rotateTwo 3s linear infinite",
           zIndex: 2,
         }}
@@ -66,7 +65,8 @@ export default function Loader() {
           borderRadius: "50%",
           right: 0,
           bottom: 0,
-          borderTop: "6px solid var(--text-color)",
+          borderTop: "4px solid var(--text-color)",
+          borderTopWidth: "clamp(2px, 0.8vw, 6px)",
           animation: "rotateThree 2s linear infinite",
           zIndex: 2,
         }}

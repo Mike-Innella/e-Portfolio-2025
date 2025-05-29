@@ -18,8 +18,11 @@ const GlassSwipe = () => {
     // Handler for mouseout event
     const handleMouseOut = (event) => {
       const icon = event.currentTarget;
+      // Add a class that disables the animation
       icon.classList.add("no-anim");
+      // Force reflow
       void icon.offsetWidth;
+      // Remove the class to re-enable animation capability
       icon.classList.remove("no-anim");
     };
 
@@ -29,8 +32,11 @@ const GlassSwipe = () => {
         addResetListeners();
       }
     });
+
+    // Start observing the document body
     observer.observe(document.body, { childList: true, subtree: true });
 
+    // Initial setup for existing elements
     setTimeout(addResetListeners, 500);
 
     const style = document.createElement("style");
@@ -40,61 +46,48 @@ const GlassSwipe = () => {
         position: relative;
         display: inline-block;
         overflow: hidden;
-        transition: transform 0.3s cubic-bezier(.22,1,.36,1);
+        transition: transform 0.3s ease;
         border-radius: 4px;
-        padding: 6px 12px;
-        /* Optional: slightly soften */
-        box-shadow: 0 2px 10px 0 rgba(60,70,120,0.10);
+        padding: 4px 12px;
       }
       .tech-icon-glass:hover {
-        transform: scale(1.18);
+        transform: scale(1.2);
         background-color: rgba(255,255,255,0.0);
       }
       .tech-icon-glass::before {
         content: "";
         position: absolute;
-        bottom: -80%;
-        left: -40%;
-        width: 200%; /* Thinner swipe */
-        height: 120%;
-        background: linear-gradient(
-          120deg,
-          rgba(255,255,255,0.0) 0%,
-          rgba(255,255,255,0.4) 45%,
-          rgba(255,255,255,0.85) 50%,
-          rgba(255,255,255,0.3) 55%,
+        bottom: -200%;
+        left: -80%;
+        width: 200%;
+        height: 200%;
+        background: linear-gradient(135deg, 
+          rgba(255,255,255,0.0) 0%, 
+          rgba(255,255,255,0.4) 50%, 
           rgba(255,255,255,0.0) 100%
         );
-        box-shadow:
-          0 0 16px 6px rgba(120,160,255,0.13), /* subtle glow */
-          0 0 4px 2px #fff8; /* edge light */
-        filter: blur(0.5px);
-        border-radius: 10px;
-        transform: rotate(28deg);
+        transform: rotate(45deg);
         pointer-events: none;
         opacity: 0;
-        transition: opacity 0.2s;
+        filter: blur(10px);
       }
       .tech-icon-glass:hover::before {
-        animation: glassSwipe 600ms cubic-bezier(0.77, 0, 0.175, 1) 1 forwards;
+        animation: glassSwipe 800ms cubic-bezier(0.77, 0, 0.175, 1) 1 forwards;
       }
       .tech-icon-glass.no-anim::before {
         animation: none !important;
       }
       @keyframes glassSwipe {
         0% {
-          bottom: -80%;
-          left: -40%;
+          bottom: -60%;
+          left: -60%;
           opacity: 0;
         }
-        30% {
-          opacity: 1;
-        }
-        60% {
+        64% {
           opacity: 1;
         }
         100% {
-          bottom: 110%;
+          bottom: 120%;
           left: 120%;
           opacity: 0;
         }
