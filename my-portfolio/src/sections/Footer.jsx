@@ -21,16 +21,6 @@ export default function Footer() {
           </CircleButton>
         ))}
       </div>
-      <p>
-        <anp
-          href="https://github.com/9inpachi/krit"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hover:underline transition"
-        >
-          get the code {"</>"}
-        </anp>
-      </p>
     </footer>
   );
 }

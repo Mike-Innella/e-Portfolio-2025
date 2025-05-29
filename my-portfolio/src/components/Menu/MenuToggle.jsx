@@ -6,15 +6,21 @@ export default function MenuToggle({
   menuActive,
   children
 }) {
+  // Directly handle click to make sure it works
+  const handleClick = (e) => {
+    e.stopPropagation();
+    if (toggleMenu) toggleMenu();
+  };
+
   return (
     <CircleButton
-      onClick={toggleMenu}
+      onClick={handleClick}
       size={4}
-      className={`
-        menu-toggle fixed z-[200] left-8 top-1/2 -translate-y-1/2 bg-background
-        flex items-center
-        max-md:left-4 max-md:top-4 max-md:-translate-y-0
-      `}
+      className="menu-toggle bg-background flex items-center"
+      style={{
+        zIndex: 600,
+        cursor: 'pointer'
+      }}
     >
       <span className="font-bold leading-3 mr-2 menu-text">{children}</span>
       <div className="pl-1 menu-burger flex flex-col justify-center">

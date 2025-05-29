@@ -20,6 +20,7 @@ import {
   FaNodeJs,
   FaAngular,
   FaDatabase,
+  FaStoreAlt
 } from "react-icons/fa";
 import {
   SiMongodb,
@@ -27,7 +28,10 @@ import {
   SiCplusplus,
   SiGraphql,
   SiMysql,
+  SiMarketo
 } from "react-icons/si";
+import { BsBuildingFillGear } from "react-icons/bs";
+import { TiWeatherPartlySunny } from "react-icons/ti";
 
 // All icons are now from react-icons and sized uniformly
 const ICON_SIZE = 32;
@@ -56,6 +60,10 @@ const Icons = {
   code: <MdCode size={ICON_SIZE} />,
   link: <MdLink size={ICON_SIZE} />,
   web: <MdWeb size={ICON_SIZE} />,
+  market: <SiMarketo title="Marketo" size={ICON_SIZE} />,
+  gearblock: <BsBuildingFillGear size={ICON_SIZE} />,
+  store: <FaStoreAlt size={ICON_SIZE} />,
+  weather: <TiWeatherPartlySunny size={ICON_SIZE} />,
 };
 
 export { Icons };

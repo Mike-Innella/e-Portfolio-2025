@@ -1,4 +1,4 @@
-import React, { useRef, useMemo } from "react";
+import React, { useRef } from "react";
 import SplashOverlay from "./components/SplashOverlay";
 import Menu from "./components/Menu/Menu";
 import TopSection from "./sections/TopSection";
@@ -6,22 +6,26 @@ import CustomSections from "./sections/CustomSections";
 import Footer from "./sections/Footer";
 import { CustomSectionsConfig } from "./config";
 
-// For scroll-to-section: create refs for each section
-function buildSectionRefs() {
-  const refs = {};
-  // Always include "projects" for main scroll
-  CustomSectionsConfig.forEach((section) => {
-    refs[section.name] = useRef(null);
-  });
-  return refs;
-}
-
 export default function App() {
-  // Refs for section navigation (memoize so they're stable)
-  const sectionRefs = useMemo(buildSectionRefs, []);
+  // Create individual refs for each section directly
+  const topRef = useRef(null);
+  const aboutRef = useRef(null);
+  const projectsRef = useRef(null);
+  const contactRef = useRef(null);
+  
+  // Map the refs to section names
+  const sectionRefs = {
+    top: topRef,
+    about: aboutRef,
+    projects: projectsRef,
+    contact: contactRef
+  };
 
   return (
-    <div className="relative bg-background min-h-screen font-sans">
+    <div className="relative min-h-screen font-sans" style={{ 
+      backgroundColor: 'var(--background-color)', 
+      color: 'var(--text-color)' 
+    }}>
       {/* Splash / Loading Overlay */}
       <SplashOverlay />
 

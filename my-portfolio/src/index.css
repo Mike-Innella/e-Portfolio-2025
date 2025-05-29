@@ -1,1 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap");
 @import "tailwindcss";
+
+:root {
+  /* Light mode variables (default for :root) */
+  --background-color: #F8FAFC;
+  --accent-color: #2366A8;
+  --text-color: #181A1B;
+}
+
+.dark {
+  /* Dark mode variables (overrides when .dark class is applied) */
+  --background-color: #111315;
+  --accent-color: #3AA0EA;
+  --text-color: #F8FAFC;
+}
+
+@layer base {
+  body {
+    @apply font-sans;
+    background-color: var(--background-color);
+    color: var(--text-color);
+  }
+}
+
+@keyframes rotateOne {
+  0% {
+    transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg);
+  }
+}
+
+@keyframes rotateTwo {
+  0% {
+    transform: rotateX(50deg) rotateY(10deg) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateX(50deg) rotateY(10deg) rotateZ(360deg);
+  }
+}
+
+@keyframes rotateThree {
+  0% {
+    transform: rotateX(35deg) rotateY(55deg) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { 
+    box-shadow: 0 0 30px 10px var(--accent-color), 0 0 10px 5px #fff; 
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% { 
+    box-shadow: 0 0 40px 15px var(--accent-color), 0 0 15px 7px #fff; 
+    opacity: 0.95;
+    transform: translate(-50%, -50%) scale(1.03);
+  }
+}

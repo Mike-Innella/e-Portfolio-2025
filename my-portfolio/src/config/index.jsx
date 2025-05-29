@@ -14,9 +14,8 @@ import CircleButton from "../components/CircleButton";
 // --- CONFIGURABLE TEXT BEGINS HERE ---
 
 const CommonConfig = {
-  addFreePalestine: false,
-  name: "Your Name",
-  tagline: "your tagline here",
+  name: "Michael Innella",
+  tagline: "frontend developer | UI designer",
   signature: {
     viewBox: "0 0 100 100",
     signaturePathD: `...`, // Keep your SVG path
@@ -25,28 +24,18 @@ const CommonConfig = {
   social: [
     {
       name: "GitHub",
-      link: "https://github.com/yourusername",
+      link: "https://github.com/Mike-Innella",
       icon: Icons["github"],
     },
     {
       name: "LinkedIn",
-      link: "https://linkedin.com/in/yourusername",
+      link: "https://linkedin.com/in/yourusername", // <-- Update this as needed
       icon: Icons["linkedin"],
     },
     {
-      name: "Twitter",
-      link: "https://twitter.com/yourusername",
-      icon: Icons["twitter"],
-    },
-    {
       name: "Email",
-      link: "mailto:your.email@example.com",
+      link: "mailto:mainnella@gmail.com",
       icon: Icons["email"],
-    },
-    {
-      name: "CV",
-      link: "https://your-cv-link.com/",
-      icon: <MdDescription />,
     },
   ],
 };
@@ -57,31 +46,95 @@ const ProjectsConfig = {
   extraClass: "",
   projects: [
     {
-      name: "Project 1",
-      icon: Icons["map"],
-      description: "Description of project 1.",
+      name: "Skinstric.AI",
+      icon: Icons["web"],
+      description:
+        "Developed a core segment of the Skinstric.AI project, focusing on implementing seamless camera functionality, integrating multiple external APIs, and building a custom React component to enhance the user interface and overall user experience.",
       links: [
         {
           tooltip: "See source",
-          link: "https://github.com/example/project1",
+          link: "https://github.com/Mike-Innella/Skinstric.AI-Mike_Innella_Internship",
           icon: Icons["code"],
         },
         {
           tooltip: "See app",
-          link: "https://project1.com/",
+          link: "https://skinstric-ai-mike-innella-internship.vercel.app/",
+          icon: Icons["link"],
+        },
+      ],
+    },
+
+    {
+      name: "Howard Motor Webapp",
+      icon: Icons["gearblock"],
+      description:
+        "A modern, mobile-friendly website for Howard Motor Corp, designed to streamline appointment bookings, display business info, and showcase customer reviews. Built with React and Firebase, the app features a dynamic admin dashboard, secure EmailJS-powered contact system, and a user-focused UI for both customers and staff.",
+      links: [
+        {
+          tooltip: "See source",
+          link: "https://github.com/Mike-Innella/howard-motor-webapp",
+          icon: Icons["code"],
+        },
+        {
+          tooltip: "See app",
+          link: "https://howard-motor-webapp.vercel.app/",
           icon: Icons["link"],
         },
       ],
     },
     {
-      name: "Project 2",
-      icon: <MdSettingsInputAntenna />,
-      description: "Description of project 2.",
+      name: "NFT Marketplace",
+      icon: Icons["market"], // <-- Added missing comma
+      description:
+        "Redesigned the NFT Marketplace website as a single-page application (SPA), implementing a fully responsive layout, enhancing the user interface, and optimizing site performance to deliver a seamless and engaging user experience.",
       links: [
         {
           tooltip: "See source",
-          link: "https://github.com/example/project2",
+          link: "https://github.com/Mike-Innella/nft-marketplace--MIke_Innella-Internship",
           icon: Icons["code"],
+        },
+        {
+          tooltip: "See app",
+          link: "https://nft-marketplace-m-ike-innell-git-40ec1a-mikes-projects-4896b1c6.vercel.app/",
+          icon: Icons["link"],
+        },
+      ],
+    },
+
+    {
+      name: "OMDB Movie Store",
+      icon: Icons["store"],
+      description:
+        "A feature-rich React web app for movie lovers, integrating the OMDB API to enable instant movie searches, browse top-rated picks, and discover recent releases. The platform offers a visually appealing, fully responsive UI built with styled components, intuitive navigation, and dynamic movie details to create a seamless browsing experience across devices.",
+      links: [
+        {
+          tooltip: "See source",
+          link: "https://github.com/Mike-Innella/OMDBProject",
+          icon: Icons["code"],
+        },
+        {
+          tooltip: "See app",
+          link: "https://mike-innella.github.io/OMDBProject/",
+          icon: Icons["link"],
+        },
+      ],
+    },
+
+    {
+      name: "Fweather",
+      icon: Icons["weather"],
+      description:
+        "A playful React web app that fetches real-time weather and a fun fact for any location. Search by city or use auto-locate for instant info, powered by dual APIs and a clean, responsive UI.",
+      links: [
+        {
+          tooltip: "See source",
+          link: "https://github.com/Mike-Innella/Fweather",
+          icon: Icons["code"],
+        },
+        {
+          tooltip: "See app",
+          link: "https://mike-innella.github.io/Fweather/",
+          icon: Icons["link"],
         },
       ],
     },
@@ -97,27 +150,32 @@ const CustomSectionsConfig = [
     notInMenu: false,
     content: (
       <>
+        {" "}
         {ProjectsConfig.projects.map((project, index) => (
           <div key={`project-${index}`}>
+            {" "}
             <h3 style={{ fontSize: "1.4rem" }}>
-              {project.icon} {project.name}
-            </h3>
-            <p>{project.description}</p>
+              {" "}
+              {project.icon} {project.name}{" "}
+            </h3>{" "}
+            <p>{project.description}</p>{" "}
             <div style={{ textAlign: "right" }}>
+              {" "}
               {project.links.map((link, linkIndex) => (
                 <CircleButton
                   key={`project-link-${index}${linkIndex}`}
                   link={link.link}
                   target="_blank"
                   tooltip={link.tooltip}
-                  size={1.4}
+                  size={2.5}
                 >
-                  {link.icon}
+                  {" "}
+                  {link.icon}{" "}
                 </CircleButton>
-              ))}
-            </div>
+              ))}{" "}
+            </div>{" "}
           </div>
-        ))}
+        ))}{" "}
       </>
     ),
   },
@@ -127,25 +185,28 @@ const CustomSectionsConfig = [
     extraClass: "about-section section-reverse",
     content: (
       <>
-        <h4>{Icons["helpoutline"]} who is this?</h4>
-        <p>Your about section goes here.</p>
-        <h4>{Icons["code"]} programming</h4>
+        {" "}
+        <h4>{Icons["helpoutline"]} who is this?</h4>{" "}
+        <p>
+          I build web applications using modern JavaScript technologies and
+          enjoy creating clean, responsive designs. With a passion for
+          problem-solving and attention to detail, I develop solutions that are
+          both functional and user-friendly. My approach combines technical
+          expertise with creative thinking to deliver high-quality projects that
+          meet client needs and exceed expectations.
+        </p>{" "}
+        <h4>{Icons["code"]} programming</h4>{" "}
         <p className="programming-icons">
-          {Icons["java"]}
-          {Icons["cpp"]}
-          {Icons["typescript"]}
-          {Icons["javascript"]}
-        </p>
-        <h4>{Icons["web"]} web</h4>
+          {" "}
+          {Icons["java"]} {Icons["cpp"]} {Icons["typescript"]}{" "}
+          {Icons["javascript"]}{" "}
+        </p>{" "}
+        <h4>{Icons["web"]} web</h4>{" "}
         <p className="programming-icons">
-          {Icons["graphql"]}
-          {Icons["mysql"]}
-          {Icons["php"]}
-          {Icons["mongodb"]}
-          {Icons["nodejs"]}
-          {Icons["react"]}
-          {Icons["angular"]}
-        </p>
+          {" "}
+          {Icons["graphql"]} {Icons["mysql"]} {Icons["php"]} {Icons["mongodb"]}{" "}
+          {Icons["nodejs"]} {Icons["react"]} {Icons["angular"]}{" "}
+        </p>{" "}
       </>
     ),
   },
@@ -154,10 +215,12 @@ const CustomSectionsConfig = [
     headerIcon: <MdRateReview />,
     content: (
       <>
+        {" "}
         <h4 style={{ fontSize: "2em" }}>
-          {Icons["helpoutline"]} what do others say?
-        </h4>
-        {/* Insert review content here */}
+          {" "}
+          {Icons["helpoutline"]} what do others say?{" "}
+        </h4>{" "}
+        {/* Insert review content here */}{" "}
       </>
     ),
   },
