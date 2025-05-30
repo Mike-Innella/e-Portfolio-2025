@@ -1,5 +1,5 @@
 import React from "react";
-import { useEffect } from "react"; 
+import { useEffect } from "react";
 import Section from "../sections/Section";
 import { CustomSectionsConfig } from "../config/index";
 import AOS from "aos";
@@ -13,10 +13,13 @@ export default function CustomSections({ sectionRefs }) {
   return (
     <>
       {CustomSectionsConfig.map((section, index) => (
-        <div data-aos="fade-up">
+        <div
+          key={`section-${index}`}
+          data-aos="fade-up"
+          ref={sectionRefs ? sectionRefs[section.name] : null}
+          id={section.name}
+        >
           <Section
-            key={`section-${index}`}
-            ref={sectionRefs ? sectionRefs[section.name] : null}
             sectionHeader={section.name}
             headerIcon={section.headerIcon}
             extraClass={section.extraClass || ""}

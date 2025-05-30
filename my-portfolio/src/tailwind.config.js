@@ -32,24 +32,37 @@ module.exports = {
         },
       },
       colors: {
-        // Duotone colors
+        // Brand/system colors
+        "background": {
+          DEFAULT: "#f8fafc", // light mode
+          dark: "#111315",    // dark mode
+        },
+        "accent": {
+          DEFAULT: "#2366a8", // light mode
+          dark: "#3aa0ea",    // dark mode
+        },
+        "text": {
+          DEFAULT: "#181a1b", // light mode
+          dark: "#f8fafc",    // dark mode
+        },
+        "hover": {
+          DEFAULT: "#3aa0ea", // both modes
+        },
+        "hover-text": {
+          DEFAULT: "#6a6b6d", // both modes
+        },
+
+        // Duotone (legacy)
         "loader-border": "#EFEFFA",
         "bg-loader": "#1C262B",
         "dark-bg": "#111315",
         "light-bg": "#F0F2E2",
         "text-light": "#F8FAFC",
         "text-dark": "#181A1B",
-        
-        // Blue colors (only to be used for hover effects)
+
+        // Blues
         "primary-blue": "#3AA0EA",
         "primary-blue-dark": "#2366A8",
-        
-        // Primary colors (non-hover states)
-        "primary": {
-          white: "#F8FAFC",
-          black: "#181A1B",
-          gray: "#EFEFFA"
-        },
       },
       width: {
         loader: "64px",

@@ -1,6 +1,7 @@
 import React, { useMemo, useState, useCallback } from "react";
 import { MdComputer, MdArrowUpward } from "react-icons/md";
 import ThemeToggle from "../../ux/ThemeToggle";
+import { toggleTheme } from "../../utils/theme";
 import MenuToggle from "./MenuToggle";
 import MenuItem from "./MenuItem";
 import { CustomSectionsConfig } from "../../config";
@@ -50,13 +51,9 @@ export default function Menu({ sectionRefs }) {
         },
       },
       {
-        icon: <ThemeToggle />,
+        icon: <ThemeToggle />, // Stateless icon, not a button, not clickable
         tooltip: "Toggle dark/light theme",
-      },
-      {
-        icon: <MdComputer size={28} />,
-        tooltip: "Projects",
-        action: () => scrollToSection("projects"),
+        action: () => { toggleTheme(); }, // MenuItem handles the click!
       },
     ],
     [scrollToSection]
@@ -93,10 +90,7 @@ export default function Menu({ sectionRefs }) {
     <>
       {/* The menu toggle button */}
       <div className="fixed left-8 top-1/2 -translate-y-1/2 z-[500] max-md:left-4 max-md:top-4 max-md:-translate-y-0">
-        <MenuToggle
-          menuActive={menuActive}
-          toggleMenu={handleToggle}
-        >
+        <MenuToggle menuActive={menuActive} toggleMenu={handleToggle}>
           ME
           <br />
           NU
@@ -104,7 +98,11 @@ export default function Menu({ sectionRefs }) {
       </div>
 
       {/* The menu overlay and items */}
-      <div className={`fixed inset-0 z-[400] ${menuActive ? "visible" : "invisible"}`}>
+      <div
+        className={`fixed inset-0 z-[400] ${
+          menuActive ? "visible" : "invisible"
+        }`}
+      >
         {/* Backdrop overlay */}
         <div
           className={`fixed inset-0 bg-black/40 transition-opacity duration-300 ${
@@ -115,7 +113,10 @@ export default function Menu({ sectionRefs }) {
         />
 
         {/* Menu items container */}
-        <div className="fixed inset-0 z-[450]" style={{ pointerEvents: "none" }}>
+        <div
+          className="fixed inset-0 z-[450]"
+          style={{ pointerEvents: "none" }}
+        >
           {menuItems.map((menuItem, index) => {
             let angle = startAngle;
             let increment = 0;

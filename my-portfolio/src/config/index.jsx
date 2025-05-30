@@ -12,6 +12,10 @@ import {
 import CircleButton from "../components/CircleButton";
 import ContactForm from "../components/ContactForm";
 import GlassSwipe from "../ux/GlassSwipe";
+import { BsLinkedin } from "react-icons/bs";
+import { FaGithub } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
+import { FaFacebook } from "react-icons/fa";
 
 const techStack = [
   "html",
@@ -33,9 +37,8 @@ const CommonConfig = {
   tagline: "frontend developer | ui designer",
   signature: {
     viewBox: "0 0 100 100",
-    signaturePathD: `...`, // Keep your SVG path
   },
-  email: "your.email@example.com",
+  email: "mainnella@gmail.com",
   social: [
     {
       name: "GitHub",
@@ -44,7 +47,7 @@ const CommonConfig = {
     },
     {
       name: "LinkedIn",
-      link: "https://linkedin.com/in/yourusername", // <-- Update this as needed
+      link: "https://www.linkedin.com/in/michael-innella-b5567021b/",
       icon: Icons["linkedin"],
     },
     {
@@ -264,23 +267,7 @@ const CustomSectionsConfig = [
       <>
         {" "}
         <div className="flex flex-row gap-[2rem]">
-          <ContactForm /> <span>or</span>
-          <div
-            className="
-          bg-dark-bg/30
-          backdrop-blur-md
-          max-w-lg w-[36rem] mx-auto mb-12 pb-8
-          flex flex-col gap-4
-          border border-[#EFEFFA]/20 rounded-lg p-6
-          shadow-lg
-          shadow-[#3AA0EA]/5
-          "
-          >
-            <div className="flex-col gap-2">
-              <button>LinkedIn</button>
-              <button>GitHub</button>
-            </div>
-          </div>
+          <ContactForm />{" "}
         </div>
         {""}
       </>
