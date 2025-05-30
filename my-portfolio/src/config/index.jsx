@@ -10,6 +10,7 @@ import {
   MdDescription,
 } from "react-icons/md";
 import CircleButton from "../components/CircleButton";
+import ContactForm from "../components/ContactForm";
 import GlassSwipe from "../ux/GlassSwipe";
 
 const techStack = [
@@ -239,17 +240,49 @@ const CustomSectionsConfig = [
     ),
   },
 
+  // TODO: Add a reviews section when we have testimonials.
+  // {
+  //   name: "reviews",
+  //   headerIcon: <MdRateReview />,
+  //   content: (
+  //     <>
+  //       {" "}
+  //       <h4 style={{ fontSize: "2rem" }}>
+  //         {" "}
+  //         {Icons["helpoutline"]} what do others say?{" "}
+  //       </h4>{" "}
+  //       {/* Insert review content here */}{" "}
+  //     </>
+  //   ),
+  // },
+
   {
-    name: "reviews",
-    headerIcon: <MdRateReview />,
+    name: "contact",
+    headerIcon: <MdDescription />,
+    extraClass: "contact-section",
     content: (
       <>
         {" "}
-        <h4 style={{ fontSize: "2em" }}>
-          {" "}
-          {Icons["helpoutline"]} what do others say?{" "}
-        </h4>{" "}
-        {/* Insert review content here */}{" "}
+        <div className="flex flex-row gap-[2rem]">
+          <ContactForm /> <span>or</span>
+          <div
+            className="
+          bg-dark-bg/30
+          backdrop-blur-md
+          max-w-lg w-[36rem] mx-auto mb-12 pb-8
+          flex flex-col gap-4
+          border border-[#EFEFFA]/20 rounded-lg p-6
+          shadow-lg
+          shadow-[#3AA0EA]/5
+          "
+          >
+            <div className="flex-col gap-2">
+              <button>LinkedIn</button>
+              <button>GitHub</button>
+            </div>
+          </div>
+        </div>
+        {""}
       </>
     ),
   },

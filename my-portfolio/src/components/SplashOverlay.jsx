@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import CircleButton from "../components/CircleButton";
 import { MdArrowForward } from "react-icons/md";
 import Loader from "../ux/LoadingAnimation";
@@ -10,6 +10,7 @@ export default function SplashOverlay({ onHide }) {
   const [showInstructions, setShowInstructions] = useState(false);
   const [showLoader, setShowLoader] = useState(false);
   const [showButton, setShowButton] = useState(false);
+  const timersRef = useRef([]);
 
   useEffect(() => {
     document.body.style.overflow = hidden ? "" : "hidden";
@@ -21,56 +22,67 @@ export default function SplashOverlay({ onHide }) {
   // Message sequence and element fade-in animation effect
   useEffect(() => {
     // Initial loader fade-in
-    const loaderTimer = setTimeout(() => {
-      setShowLoader(true);
-    }, 1500);
-
-    // Show first message after a short delay
-    const helloTimer = setTimeout(() => {
-      setShowHello(true);
-    }, 500);
-
-    // Hide first message after 2 seconds
-    const hideHelloTimer = setTimeout(() => {
-      setShowHello(false);
-    }, 3000);
-
-    // Show second message 0.7s after first message disappears
-    const instructionsTimer = setTimeout(() => {
-      setShowInstructions(true);
-    }, 3000);
-
-    // Hide second message after 2 more seconds
-    const hideInstructionsTimer = setTimeout(() => {
-      setShowInstructions(false);
-    }, 4500);
-
-    // Show button after all messages have completed
-    const buttonTimer = setTimeout(() => {
-      setShowButton(true);
-    }, 5000);
+    timersRef.current.push(
+      setTimeout(() => {
+        setShowLoader(true);
+      }, 1500)
+    );
+    timersRef.current.push(
+      setTimeout(() => {
+        setShowHello(true);
+      }, 500)
+    );
+    timersRef.current.push(
+      setTimeout(() => {
+        setShowHello(false);
+      }, 3000)
+    );
+    timersRef.current.push(
+      setTimeout(() => {
+        setShowInstructions(true);
+      }, 3000)
+    );
+    timersRef.current.push(
+      setTimeout(() => {
+        setShowInstructions(false);
+      }, 4500)
+    );
+    timersRef.current.push(
+      setTimeout(() => {
+        setShowButton(true);
+      }, 5000)
+    );
 
     // Cleanup timers
     return () => {
-      clearTimeout(loaderTimer);
-      clearTimeout(helloTimer);
-      clearTimeout(hideHelloTimer);
-      clearTimeout(instructionsTimer);
-      clearTimeout(hideInstructionsTimer);
-      clearTimeout(buttonTimer);
+      timersRef.current.forEach(clearTimeout);
     };
   }, []);
+  const handleDoubleClick = () => {
+    timersRef.current.forEach(clearTimeout);
+    setShowHello(false);
+    setShowInstructions(false);
+    setShowLoader(true);
+    setShowButton(true);
+  };
+  /*************  ✨ Windsurf Command 🌟  *************/
+  // Check if the `hidden` state is true, if so, return null to not render the component
 
   if (hidden) return null;
 
+  // Return the overlay component
   return (
-    <div
+    <div onDoubleClick={handleDoubleClick}
+      // Set the overlay to cover the entire screen with fixed positioning and high z-index
       className={`fixed inset-0 z-[999] flex items-center justify-center transition-opacity duration-1200 ease ${
+        // Apply opacity and pointer-events styles based on `isHiding` state
         isHiding ? "opacity-0 pointer-events-none" : "opacity-100"
       }`}
+      // Use the background color defined in CSS variables
       style={{ backgroundColor: "var(--background-color)" }}
     >
       <div
+        /*******  b39f041f-cae0-4b31-bb76-a5a00b79acd6  *******/
         className={`flex flex-col items-center justify-between w-screen min-h-screen py-10 transition-transform duration-1200 ease${
           isHiding ? "-translate-y-40" : ""
         }`}
