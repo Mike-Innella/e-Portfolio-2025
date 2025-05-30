@@ -16,7 +16,16 @@
   --accent-color: #3aa0ea;
   --text-color: #f8fafc;
   --hover-color: #3aa0ea;
-  --hover-text: #111315;
+  --hover-text: #6a6b6d;
+}
+
+.light {
+  /* Light mode variables (overrides when .light class is applied) */
+  --background-color: #f8fafc;
+  --accent-color: #2366a8;
+  --text-color: #181a1b;
+  --hover-color: #3aa0ea;
+  --hover-text: #6a6b6d;
 }
 
 @layer base {

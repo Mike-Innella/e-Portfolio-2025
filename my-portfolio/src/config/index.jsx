@@ -12,6 +12,10 @@ import {
 import CircleButton from "../components/CircleButton";
 import ContactForm from "../components/ContactForm";
 import GlassSwipe from "../ux/GlassSwipe";
+import { BsLinkedin } from "react-icons/bs";
+import { FaGithub } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
+import { FaFacebook } from "react-icons/fa";
 
 const techStack = [
   "html",
@@ -33,9 +37,8 @@ const CommonConfig = {
   tagline: "frontend developer | ui designer",
   signature: {
     viewBox: "0 0 100 100",
-    signaturePathD: `...`, // Keep your SVG path
   },
-  email: "your.email@example.com",
+  email: "mainnella@gmail.com",
   social: [
     {
       name: "GitHub",
@@ -44,7 +47,7 @@ const CommonConfig = {
     },
     {
       name: "LinkedIn",
-      link: "https://linkedin.com/in/yourusername", // <-- Update this as needed
+      link: "https://www.linkedin.com/in/michael-innella-b5567021b/",
       icon: Icons["linkedin"],
     },
     {
@@ -264,21 +267,87 @@ const CustomSectionsConfig = [
       <>
         {" "}
         <div className="flex flex-row gap-[2rem]">
-          <ContactForm /> <span>or</span>
+          <ContactForm />{" "}
+          <span className="text-2xl flex-col mx-2 justify-center align-center h-full w-[1rem] mt-[10rem]">
+            or
+          </span>
           <div
             className="
-          bg-dark-bg/30
+    bg-dark-bg/30
           backdrop-blur-md
-          max-w-lg w-[36rem] mx-auto mb-12 pb-8
+          max-w-lg w-[36rem] mb-4
           flex flex-col gap-4
           border border-[#EFEFFA]/20 rounded-lg p-6
+          
           shadow-lg
           shadow-[#3AA0EA]/5
+          h-[24rem]
           "
           >
-            <div className="flex-col gap-2">
-              <button>LinkedIn</button>
-              <button>GitHub</button>
+            <div className="flex flex-col gap-[1rem]">
+              <h2 className="text-3xl font-bold mb-6 tracking-wide flex items-center gap-2">
+                <span className="material-icons text-4xl w-full">
+                  reach me here
+                </span>
+              </h2>
+              <div className="grid grid-cols-3 gap-[5rem]">
+                <button
+                  className="   flex items-center justify-center
+                w-16 h-16 rounded-[0.5rem]
+                bg-[#f8fafc] hover:bg-[#2366A8]
+                text-[#F8FAFC] text-3xl
+                shadow-lg transition
+                disabled:opacity-70 disabled:cursor-not-allowed dark:text-[#181a1b]
+                md:ml-4 mt-4 md:mt-0
+                mx-auto
+                dark:hover:text-[#f8fafc]"
+                >
+                  {" "}
+                  <BsLinkedin />
+                </button>
+                <button
+                  className="   flex items-center justify-center
+                w-16 h-16 rounded-[0.5rem]
+                bg-[#f8fafc] hover:bg-[#2366A8]
+                text-[#F8FAFC] text-3xl
+                shadow-lg transition
+                disabled:opacity-70 disabled:cursor-not-allowed dark:text-[#181a1b]
+                md:ml-4 mt-4 md:mt-0
+                mx-auto
+                dark:hover:text-[#f8fafc]"
+                >
+                  {" "}
+                  <FaGithub />
+                </button>
+                <button
+                  className="   flex items-center justify-center
+                w-16 h-16 rounded-[0.5rem]
+                bg-[#f8fafc] hover:bg-[#2366A8]
+                text-[#F8FAFC] text-3xl
+                shadow-lg transition
+                disabled:opacity-70 disabled:cursor-not-allowed dark:text-[#181a1b]
+                md:ml-4 mt-4 md:mt-0
+                mx-auto
+                dark:hover:text-[#f8fafc]"
+                >
+                  {" "}
+                  <FaInstagram />
+                </button>
+                <button
+                  className="   flex items-center justify-center
+                w-16 h-16 rounded-[0.5rem]
+                bg-[#f8fafc] hover:bg-[#2366A8]
+                text-[#F8FAFC] text-3xl
+                shadow-lg transition
+                disabled:opacity-70 disabled:cursor-not-allowed dark:text-[#181a1b]
+                md:ml-4 mt-4 md:mt-0
+                mx-auto
+                dark:hover:text-[#f8fafc]"
+                >
+                  {" "}
+                  <FaFacebook />
+                </button>
+              </div>
             </div>
           </div>
         </div>
