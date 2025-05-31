@@ -52,7 +52,7 @@ const GlassSwipe = () => {
       }
       .tech-icon-glass:hover {
         transform: scale(1.2);
-        background-color: rgba(255,255,255,0.0);
+        background-color: hsla(0, 0%, 100%, 0.0);
       }
       .tech-icon-glass::before {
         content: "";
@@ -62,10 +62,11 @@ const GlassSwipe = () => {
         width: 200%;
         height: 200%;
         background: linear-gradient(135deg, 
-          rgba(255,255,255,0.0) 0%, 
-          rgba(255,255,255,0.4) 50%, 
-          rgba(255,255,255,0.0) 100%
+          hsla(0, 0%, 100%, 0.0) 0%, 
+          hsla(0, 0%, 100%, 0.4) 50%, 
+          hsla(0, 0%, 100%, 0.0) 100%
         );
+        /* HSL format allows easier manipulation for animations and themes */
         transform: rotate(45deg);
         pointer-events: none;
         opacity: 0;

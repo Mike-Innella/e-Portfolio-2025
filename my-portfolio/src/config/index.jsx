@@ -12,10 +12,7 @@ import {
 import CircleButton from "../components/CircleButton";
 import ContactForm from "../components/ContactForm";
 import GlassSwipe from "../ux/GlassSwipe";
-import { BsLinkedin } from "react-icons/bs";
-import { FaGithub } from "react-icons/fa";
-import { FaInstagram } from "react-icons/fa";
-import { FaFacebook } from "react-icons/fa";
+import GlowingLogo from "../ux/GlowingLogo";
 
 const techStack = [
   "html",
@@ -265,93 +262,14 @@ const CustomSectionsConfig = [
     extraClass: "contact-section",
     content: (
       <>
-        {" "}
-        <div className="flex flex-row gap-[2rem]">
-          <ContactForm />{" "}
-          <span className="text-2xl flex-col mx-2 justify-center align-center h-full w-[1rem] mt-[10rem]">
-            or
-          </span>
-          <div
-            className="
-    bg-dark-bg/30
-          backdrop-blur-md
-          max-w-lg w-[36rem] mb-4
-          flex flex-col gap-4
-          border border-[#EFEFFA]/20 rounded-lg p-6
-          
-          shadow-lg
-          shadow-[#3AA0EA]/5
-          h-[24rem]
-          "
-          >
-            <div className="flex flex-col gap-[1rem]">
-              <h2 className="text-3xl font-bold mb-6 tracking-wide flex items-center gap-2">
-                <span className="material-icons text-4xl w-full">
-                  reach me here
-                </span>
-              </h2>
-              <div className="grid grid-cols-3 gap-[5rem]">
-                <button
-                  className="   flex items-center justify-center
-                w-16 h-16 rounded-[0.5rem]
-                bg-[#f8fafc] hover:bg-[#2366A8]
-                text-[#F8FAFC] text-3xl
-                shadow-lg transition
-                disabled:opacity-70 disabled:cursor-not-allowed dark:text-[#181a1b]
-                md:ml-4 mt-4 md:mt-0
-                mx-auto
-                dark:hover:text-[#f8fafc]"
-                >
-                  {" "}
-                  <BsLinkedin />
-                </button>
-                <button
-                  className="   flex items-center justify-center
-                w-16 h-16 rounded-[0.5rem]
-                bg-[#f8fafc] hover:bg-[#2366A8]
-                text-[#F8FAFC] text-3xl
-                shadow-lg transition
-                disabled:opacity-70 disabled:cursor-not-allowed dark:text-[#181a1b]
-                md:ml-4 mt-4 md:mt-0
-                mx-auto
-                dark:hover:text-[#f8fafc]"
-                >
-                  {" "}
-                  <FaGithub />
-                </button>
-                <button
-                  className="   flex items-center justify-center
-                w-16 h-16 rounded-[0.5rem]
-                bg-[#f8fafc] hover:bg-[#2366A8]
-                text-[#F8FAFC] text-3xl
-                shadow-lg transition
-                disabled:opacity-70 disabled:cursor-not-allowed dark:text-[#181a1b]
-                md:ml-4 mt-4 md:mt-0
-                mx-auto
-                dark:hover:text-[#f8fafc]"
-                >
-                  {" "}
-                  <FaInstagram />
-                </button>
-                <button
-                  className="   flex items-center justify-center
-                w-16 h-16 rounded-[0.5rem]
-                bg-[#f8fafc] hover:bg-[#2366A8]
-                text-[#F8FAFC] text-3xl
-                shadow-lg transition
-                disabled:opacity-70 disabled:cursor-not-allowed dark:text-[#181a1b]
-                md:ml-4 mt-4 md:mt-0
-                mx-auto
-                dark:hover:text-[#f8fafc]"
-                >
-                  {" "}
-                  <FaFacebook />
-                </button>
-              </div>
-            </div>
+        <div className="w-full h-auto flex flex-row justify-between items-center">
+          <div className="flex flex-row">
+            <ContactForm />
+          </div>
+          <div className="mx-auto flex flex-row gap-[2rem] ml-[12rem]">
+            <GlowingLogo />
           </div>
         </div>
-        {""}
       </>
     ),
   },

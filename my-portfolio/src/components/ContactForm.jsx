@@ -38,13 +38,13 @@ export default function ContactForm() {
       <form
         onSubmit={handleSubmit}
         className="
-    bg-dark-bg/30
+    bg-dark-bg-hex/30
           backdrop-blur-md
           max-w-lg w-[36rem] mb-4
           flex flex-col gap-4
-          border border-[#EFEFFA]/20 rounded-lg p-6
+          border border-[var(--loader-border-hex)]/20 rounded-lg p-6
           shadow-lg
-          shadow-[#3AA0EA]/5
+          shadow-[var(--primary-blue-hex)]/5
           h-[24rem]
           "
       >
@@ -61,12 +61,12 @@ export default function ContactForm() {
               value={form.name}
               onChange={handleChange}
               className="
-            bg-white dark:bg-[#181a1b]
-            text-[#181a1b] dark:text-[#F8FAFC]
-            placeholder:text-[#181a1b]/70 dark:placeholder:text-[#F8FAFC]/70
-            border border-[#E2E8F0] dark:border-[transparent] hover:border-[#3AA0EA]/30
+            bg-white dark:bg-[var(--text-dark-hex)]
+            text-[var(--text-dark-hex)] dark:text-[var(--text-light-hex)]
+            placeholder:text-[var(--text-dark-hex)]/70 dark:placeholder:text-[var(--text-light-hex)]/70
+            border border-[#E2E8F0] dark:border-[transparent] hover:border-[var(--primary-blue-hex)]/30
             rounded py-3 px-4
-            focus:outline-none focus:ring-2 focus:ring-[#3AA0EA]
+            focus:outline-none focus:ring-2 focus:ring-[var(--primary-blue-hex)]
             transition
           "
               autoComplete="off"
@@ -79,12 +79,12 @@ export default function ContactForm() {
               value={form.email}
               onChange={handleChange}
               className="
-            bg-white dark:bg-[#181a1b]
-            text-[#181a1b] dark:text-[#F8FAFC]
-            placeholder:text-[#181a1b]/70 dark:placeholder:text-[#F8FAFC]/70
-            border border-[#E2E8F0] dark:border-[transparent] hover:border-[#3AA0EA]/30
+            bg-white dark:bg-[var(--text-dark-hex)]
+            text-[var(--text-dark-hex)] dark:text-[var(--text-light-hex)]
+            placeholder:text-[var(--text-dark-hex)]/70 dark:placeholder:text-[var(--text-light-hex)]/70
+            border border-[#E2E8F0] dark:border-[transparent] hover:border-[var(--primary-blue-hex)]/30
             rounded py-3 px-4
-            focus:outline-none focus:ring-2 focus:ring-[#3AA0EA]
+            focus:outline-none focus:ring-2 focus:ring-[var(--primary-blue-hex)]
             transition
           "
               autoComplete="off"
@@ -96,12 +96,12 @@ export default function ContactForm() {
               value={form.message}
               onChange={handleChange}
               className="
-            bg-white dark:bg-[#181a1b]
-            text-[#181a1b] dark:text-[#F8FAFC]
-            placeholder:text-[#181a1b]/70 dark:placeholder:text-[#F8FAFC]/70
-            border border-[#E2E8F0] dark:border-[transparent] hover:border-[#3AA0EA]/30
+            bg-white dark:bg-[var(--text-dark-hex)]
+            text-[var(--text-dark-hex)] dark:text-[var(--text-light-hex)]
+            placeholder:text-[var(--text-dark-hex)]/70 dark:placeholder:text-[var(--text-light-hex)]/70
+            border border-[#E2E8F0] dark:border-[transparent] hover:border-[var(--primary-blue-hex)]/30
             rounded py-3 px-4 min-h-[120px]
-            focus:outline-none focus:ring-2 focus:ring-[#3AA0EA]
+            focus:outline-none focus:ring-2 focus:ring-[var(--primary-blue-hex)]
             transition resize-none
           "
               required
@@ -114,14 +114,14 @@ export default function ContactForm() {
               className="
                 flex items-center justify-center
                 w-16 h-16 rounded-full
-                bg-[#f8fafc] hover:bg-[#2366A8]
-                dark:bg-[#181A1B] dark:hover:bg-[#3AA0EA]
-                text-[#181a1b] dark:text-[#F8FAFC] dark:hover:text-[#181a1b] text-3xl
+                bg-[var(--background-hex)] hover:bg-[var(--accent-hex)]
+                dark:bg-[var(--text-dark-hex)] dark:hover:bg-[var(--primary-blue-hex)]
+                text-[var(--text-dark-hex)] dark:text-[var(--text-light-hex)] dark:hover:text-[var(--text-dark-hex)] text-3xl
                 shadow-lg transition
                 disabled:opacity-70 disabled:cursor-not-allowed
                 md:ml-4 mt-4 md:mt-0
-                mx-auto hover:text-[#f8fafc]
-                border border-[#181A1B] dark:border-[#F8FAFC]/30
+                mx-auto hover:text-[var(--text-light-hex)]
+                border border-[var(--text-dark-hex)] dark:border-[var(--text-light-hex)]/30
               "
               disabled={status === "sending"}
               aria-label="Send Message"
@@ -157,14 +157,16 @@ export default function ContactForm() {
       {/* Feedback messages - displayed below the form */}
       {status === "success" && (
         <div className="w-[36rem] max-w-lg mb-8">
-          <div className="text-green-500 text-center py-2 px-4 rounded-md bg-primary-blue/10 backdrop-blur-sm">
+          <div className="text-green-500 text-center py-2 px-4 rounded-md bg-[var(--primary-blue-hex)]/10 backdrop-blur-sm" 
+              style={{ background: `hsla(var(--primary-blue-hsl), 0.1)` }}>
             Message sent successfully!
           </div>
         </div>
       )}
       {status === "error" && (
         <div className="w-[36rem] max-w-lg mb-8">
-          <div className="text-red-400 text-center py-2 px-4 rounded-md bg-red-400/10 backdrop-blur-sm">
+          <div className="text-red-400 text-center py-2 px-4 rounded-md backdrop-blur-sm"
+               style={{ background: `hsla(0, 84%, 60%, 0.1)` }}>
             Please fill out all fields or try again.
           </div>
         </div>

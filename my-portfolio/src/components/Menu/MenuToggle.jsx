@@ -11,10 +11,12 @@ export default function MenuToggle({ toggleMenu, menuActive, children }) {
     <CircleButton
       onClick={handleClick}
       size={4}
-      className="menu-toggle bg-background flex items-center group"
+      className="menu-toggle bg-background-hex flex items-center group"
       style={{
         zIndex: 600,
         cursor: "pointer",
+        backgroundColor: "var(--background-hex)",
+        color: "var(--text-hex)"
       }}
     >
       <span className="font-bold leading-3 mr-2 menu-text">{children}</span>

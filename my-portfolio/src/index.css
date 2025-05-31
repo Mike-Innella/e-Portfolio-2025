@@ -3,29 +3,74 @@
 
 :root {
   /* Light mode variables (default for :root) */
-  --background-color: #f8fafc;
-  --accent-color: #2366a8;
-  --text-color: #181a1b;
-  --hover-color: #3aa0ea;
-  --hover-text: #f8fafc;
+  /* HEX values */
+  --background-hex: #f8fafc;
+  --accent-hex: #2366a8;
+  --text-hex: #181a1b;
+  --hover-hex: #3aa0ea;
+  --hover-text-hex: #f8fafc;
+  
+  /* HSL values - for dynamic manipulation */
+  --background-hsl: 210, 20%, 98%;
+  --accent-hsl: 210, 66%, 40%;
+  --text-hsl: 210, 7%, 10%;
+  --hover-hsl: 207, 82%, 57%;
+  --hover-text-hsl: 210, 20%, 98%;
+  
+  /* Legacy variables - mapping to new structure */
+  --background-color: var(--background-hex);
+  --accent-color: var(--accent-hex);
+  --text-color: var(--text-hex);
+  --hover-color: var(--hover-hex);
+  --hover-text: var(--hover-text-hex);
 }
 
 .dark {
   /* Dark mode variables (overrides when .dark class is applied) */
-  --background-color: #111315;
-  --accent-color: #3aa0ea;
-  --text-color: #f8fafc;
-  --hover-color: #3aa0ea;
-  --hover-text: #6a6b6d;
+  /* HEX values */
+  --background-hex: #111315;
+  --accent-hex: #3aa0ea;
+  --text-hex: #f8fafc;
+  --hover-hex: #3aa0ea;
+  --hover-text-hex: #6a6b6d;
+  
+  /* HSL values - for dynamic manipulation */
+  --background-hsl: 220, 7%, 8%;
+  --accent-hsl: 207, 82%, 57%;
+  --text-hsl: 210, 20%, 98%;
+  --hover-hsl: 207, 82%, 57%;
+  --hover-text-hsl: 220, 2%, 42%;
+  
+  /* Legacy variables update */
+  --background-color: var(--background-hex);
+  --accent-color: var(--accent-hex);
+  --text-color: var(--text-hex);
+  --hover-color: var(--hover-hex);
+  --hover-text: var(--hover-text-hex);
 }
 
 .light {
   /* Light mode variables (overrides when .light class is applied) */
-  --background-color: #f8fafc;
-  --accent-color: #2366a8;
-  --text-color: #181a1b;
-  --hover-color: #3aa0ea;
-  --hover-text: #6a6b6d;
+  /* HEX values */
+  --background-hex: #f8fafc;
+  --accent-hex: #2366a8;
+  --text-hex: #181a1b;
+  --hover-hex: #3aa0ea;
+  --hover-text-hex: #6a6b6d;
+  
+  /* HSL values - for dynamic manipulation */
+  --background-hsl: 210, 20%, 98%;
+  --accent-hsl: 210, 66%, 40%;
+  --text-hsl: 210, 7%, 10%;
+  --hover-hsl: 207, 82%, 57%;
+  --hover-text-hsl: 220, 2%, 42%;
+  
+  /* Legacy variables update */
+  --background-color: var(--background-hex);
+  --accent-color: var(--accent-hex);
+  --text-color: var(--text-hex);
+  --hover-color: var(--hover-hex);
+  --hover-text: var(--hover-text-hex);
 }
 
 @layer base {
@@ -66,24 +111,32 @@
 @keyframes pulse {
   0%,
   100% {
-    box-shadow: 0 0 30px 10px var(--accent-color), 0 0 10px 5px #fff;
+    box-shadow: 0 0 30px 10px var(--accent-hex), 0 0 10px 5px var(--text-light-hex, #fff);
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
   }
   50% {
-    box-shadow: 0 0 40px 15px var(--accent-color), 0 0 15px 7px #fff;
+    box-shadow: 0 0 40px 15px hsl(var(--accent-hsl)), 0 0 15px 7px var(--text-light-hex, #fff);
     opacity: 0.95;
     transform: translate(-50%, -50%) scale(1.03);
   }
 }
 
 .menu-burger-bar {
-  background-color: var(--text-color);
+  background-color: var(--text-hex);
   transition: all 0.4s ease-in-out;
 }
 
 .group:hover .menu-burger-bar,
 .menu-toggle:hover .menu-burger-bar {
-  background-color: var(--hover-text);
+  background-color: var(--hover-text-hex);
   transition: all 0.4s ease-in-out;
+}
+
+/* Add text-light-hex and text-dark-hex variables */
+:root {
+  --text-light-hex: #F8FAFC;
+  --text-dark-hex: #181A1B;
+  --text-light-hsl: 210, 20%, 98%;
+  --text-dark-hsl: 210, 7%, 10%;
 }
