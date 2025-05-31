@@ -40,73 +40,35 @@ module.exports = {
       colors: {
         // Brand/system colors
         "background": {
-          hex: "#f8fafc", // light mode
-          hsl: "hsl(210, 20%, 98%)",
-          dark: {
-            hex: "#111315", // dark mode
-            hsl: "hsl(220, 7%, 8%)"
-          }
+          DEFAULT: "#f8fafc", // light mode
+          dark: "#111315",    // dark mode
         },
         "accent": {
-          hex: "#2366a8", // light mode
-          hsl: "hsl(210, 66%, 40%)",
-          dark: {
-            hex: "#3aa0ea", // dark mode
-            hsl: "hsl(207, 82%, 57%)"
-          }
+          DEFAULT: "#2366a8", // light mode
+          dark: "#3aa0ea",    // dark mode
         },
         "text": {
-          hex: "#181a1b", // light mode
-          hsl: "hsl(210, 7%, 10%)",
-          dark: {
-            hex: "#f8fafc", // dark mode
-            hsl: "hsl(210, 20%, 98%)"
-          }
+          DEFAULT: "#181a1b", // light mode
+          dark: "#f8fafc",    // dark mode
         },
         "hover": {
-          hex: "#3aa0ea", // both modes
-          hsl: "hsl(207, 82%, 57%)"
+          DEFAULT: "#3aa0ea", // both modes
         },
         "hover-text": {
-          hex: "#6a6b6d", // both modes
-          hsl: "hsl(220, 2%, 42%)"
+          DEFAULT: "#6a6b6d", // both modes
         },
 
         // Duotone (legacy)
-        "loader-border": {
-          hex: "#EFEFFA",
-          hsl: "hsl(240, 56%, 96%)"
-        },
-        "bg-loader": {
-          hex: "#1C262B",
-          hsl: "hsl(205, 20%, 14%)"
-        },
-        "dark-bg": {
-          hex: "#111315",
-          hsl: "hsl(220, 7%, 8%)"
-        },
-        "light-bg": {
-          hex: "#F0F2E2",
-          hsl: "hsl(75, 38%, 92%)"
-        },
-        "text-light": {
-          hex: "#F8FAFC",
-          hsl: "hsl(210, 20%, 98%)"
-        },
-        "text-dark": {
-          hex: "#181A1B",
-          hsl: "hsl(210, 7%, 10%)"
-        },
+        "loader-border": "#EFEFFA",
+        "bg-loader": "#1C262B",
+        "dark-bg": "#111315",
+        "light-bg": "#F0F2E2",
+        "text-light": "#F8FAFC",
+        "text-dark": "#181A1B",
 
         // Blues
-        "primary-blue": {
-          hex: "#3AA0EA",
-          hsl: "hsl(207, 82%, 57%)"
-        },
-        "primary-blue-dark": {
-          hex: "#2366A8",
-          hsl: "hsl(210, 66%, 40%)"
-        },
+        "primary-blue": "#3AA0EA",
+        "primary-blue-dark": "#2366A8",
       },
       width: {
         loader: "64px",

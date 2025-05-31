@@ -12,7 +12,10 @@ import {
 import CircleButton from "../components/CircleButton";
 import ContactForm from "../components/ContactForm";
 import GlassSwipe from "../ux/GlassSwipe";
-import GlowingLogo from "../ux/GlowingLogo";
+import { BsLinkedin } from "react-icons/bs";
+import { FaGithub } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
+import { FaFacebook } from "react-icons/fa";
 
 const techStack = [
   "html",
@@ -262,13 +265,9 @@ const CustomSectionsConfig = [
     extraClass: "contact-section",
     content: (
       <>
-        <div className="w-full h-auto flex flex-row justify-between items-center">
-          <div className="flex flex-row">
-            <ContactForm />
-          </div>
-          <div className="mx-auto flex flex-row gap-[2rem] ml-[12rem]">
-            <GlowingLogo />
-          </div>
+        {" "}
+        <div className="flex flex-row gap-[2rem]">
+          <ContactForm />{" "}
         </div>
       </>
     ),

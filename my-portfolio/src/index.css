@@ -27,50 +27,20 @@
 
 .dark {
   /* Dark mode variables (overrides when .dark class is applied) */
-  /* HEX values */
-  --background-hex: #111315;
-  --accent-hex: #3aa0ea;
-  --text-hex: #f8fafc;
-  --hover-hex: #3aa0ea;
-  --hover-text-hex: #6a6b6d;
-  
-  /* HSL values - for dynamic manipulation */
-  --background-hsl: 220, 7%, 8%;
-  --accent-hsl: 207, 82%, 57%;
-  --text-hsl: 210, 20%, 98%;
-  --hover-hsl: 207, 82%, 57%;
-  --hover-text-hsl: 220, 2%, 42%;
-  
-  /* Legacy variables update */
-  --background-color: var(--background-hex);
-  --accent-color: var(--accent-hex);
-  --text-color: var(--text-hex);
-  --hover-color: var(--hover-hex);
-  --hover-text: var(--hover-text-hex);
+  --background-color: #111315;
+  --accent-color: #3aa0ea;
+  --text-color: #f8fafc;
+  --hover-color: #3aa0ea;
+  --hover-text: #6a6b6d;
 }
 
 .light {
   /* Light mode variables (overrides when .light class is applied) */
-  /* HEX values */
-  --background-hex: #f8fafc;
-  --accent-hex: #2366a8;
-  --text-hex: #181a1b;
-  --hover-hex: #3aa0ea;
-  --hover-text-hex: #6a6b6d;
-  
-  /* HSL values - for dynamic manipulation */
-  --background-hsl: 210, 20%, 98%;
-  --accent-hsl: 210, 66%, 40%;
-  --text-hsl: 210, 7%, 10%;
-  --hover-hsl: 207, 82%, 57%;
-  --hover-text-hsl: 220, 2%, 42%;
-  
-  /* Legacy variables update */
-  --background-color: var(--background-hex);
-  --accent-color: var(--accent-hex);
-  --text-color: var(--text-hex);
-  --hover-color: var(--hover-hex);
-  --hover-text: var(--hover-text-hex);
+  --background-color: #f8fafc;
+  --accent-color: #2366a8;
+  --text-color: #181a1b;
+  --hover-color: #3aa0ea;
+  --hover-text: #6a6b6d;
 }
 
 @layer base {
