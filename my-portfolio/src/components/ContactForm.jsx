@@ -42,9 +42,10 @@ export default function ContactForm() {
           backdrop-blur-md
           max-w-lg w-[36rem] mb-4
           flex flex-col gap-4
-          border border-[#EFEFFA]/20 rounded-lg p-6
+          border border-[#505050]/20 rounded-lg p-6
           shadow-lg
-          shadow-[#3AA0EA]/5
+          shadow-[#111315]/50
+          dark:shadow-lg dark:shadow-[#3AA0EA]/50
           h-[24rem]
           "
       >
@@ -61,7 +62,7 @@ export default function ContactForm() {
               value={form.name}
               onChange={handleChange}
               className="
-            bg-white dark:bg-[#181a1b]
+            bg-[#f8fafc] dark:bg-[#181a1b]
             text-[#181a1b] dark:text-[#F8FAFC]
             placeholder:text-[#181a1b]/70 dark:placeholder:text-[#F8FAFC]/70
             border border-[#E2E8F0] dark:border-[transparent] hover:border-[#3AA0EA]/30
@@ -116,12 +117,15 @@ export default function ContactForm() {
                 w-16 h-16 rounded-full
                 bg-[#f8fafc] hover:bg-[#2366A8]
                 dark:bg-[#181A1B] dark:hover:bg-[#3AA0EA]
-                text-[#181a1b] dark:text-[#F8FAFC] dark:hover:text-[#181a1b] text-3xl
+                text-[#181a1b] dark:text-[#F8FAFC] dark:hover:text-[#505050] text-3xl
                 shadow-lg transition
                 disabled:opacity-70 disabled:cursor-not-allowed
                 md:ml-4 mt-4 md:mt-0
                 mx-auto hover:text-[#f8fafc]
                 border border-[#181A1B] dark:border-[#F8FAFC]/30
+                cursor-pointer
+              shadow-[#111315]/50
+          dark:shadow-md dark:shadow-[#3AA0EA]/50
               "
               disabled={status === "sending"}
               aria-label="Send Message"

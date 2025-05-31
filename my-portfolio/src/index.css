@@ -31,7 +31,7 @@
   --accent-color: #3aa0ea;
   --text-color: #f8fafc;
   --hover-color: #3aa0ea;
-  --hover-text: #6a6b6d;
+  --hover-text: #505050;
 }
 
 .light {
@@ -40,7 +40,7 @@
   --accent-color: #2366a8;
   --text-color: #181a1b;
   --hover-color: #3aa0ea;
-  --hover-text: #6a6b6d;
+  --hover-text: #505050;
 }
 
 @layer base {
@@ -104,19 +104,18 @@
 }
 
 .dark .menu-burger-bar {
-  span {
-    background-color: #f8fafc;
-  }
-}
-
-.dark .menu-burger-bar:hover {
-  background-color: #6a6b6d;
+  background-color: #f8fafc;
 }
 
 .group:hover .menu-burger-bar,
 .menu-toggle:hover .menu-burger-bar {
-  background-color: #6a6b6d;
+  background-color: #f8fafc;
   transition: all 0.4s ease-in-out;
+}
+
+.dark .menu-toggle:hover .menu-burger-bar,
+.dark .group:hover .menu-burger-bar {
+  background-color: #505050;
 }
 
 /* Add text-light-hex and text-dark-hex variables */

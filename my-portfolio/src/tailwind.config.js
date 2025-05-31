@@ -40,28 +40,31 @@ module.exports = {
         },
       },
       // ... (colors, width, height, perspective, fontFamily as you already have)
-      colors: {
-        // Brand/system colors
-        background: {
-          DEFAULT: "#f8fafc", // light mode
-          dark: "#111315", // dark mode
-          "burger-dark": "#111315", // bar color for light mode
-          "burger-hover": "#f0f2e2",
-        },
-        accent: {
-          DEFAULT: "#2366a8", // light mode
-          dark: "#3aa0ea", // dark mode
-        },
-        text: {
-          DEFAULT: "#181a1b", // light mode
-          dark: "#f8fafc", // dark mode
-        },
-        hover: {
-          DEFAULT: "#3aa0ea", // both modes
-        },
-        "hover-text": {
-          DEFAULT: "#6a6b6d", // both modes
-        },
+      colors: { 
+        
+        // TODO: The commented out section may be unnecessary
+
+        // // Brand/system colors
+        // background: {
+        //   DEFAULT: "#f8fafc", // light mode
+        //   dark: "#111315", // dark mode
+        //   "burger-dark": "#111315", // bar color for light mode
+        //   "burger-hover": "#f0f2e2",
+        // },
+        // accent: {
+        //   DEFAULT: "#2366a8", // light mode
+        //   dark: "#3aa0ea", // dark mode
+        // },
+        // text: {
+        //   DEFAULT: "#181a1b", // light mode
+        //   dark: "#f8fafc", // dark mode
+        // },
+        // hover: {
+        //   DEFAULT: "#3aa0ea", // both modes
+        // },
+        // "hover-text": {
+        //   DEFAULT: "#505050", // both modes
+        // },
 
         // Duotone (legacy)
         "loader-border": "#EFEFFA",
