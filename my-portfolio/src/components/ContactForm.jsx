@@ -40,7 +40,7 @@ export default function ContactForm() {
         className="
     bg-dark-bg/30
           backdrop-blur-md
-          max-w-lg w-[36rem] mb-4
+          max-w-xl w-[36rem] mb-4
           flex flex-col gap-4
           border border-[#505050]/20 rounded-lg p-6
           shadow-lg
@@ -62,14 +62,15 @@ export default function ContactForm() {
               value={form.name}
               onChange={handleChange}
               className="
-            bg-[#f8fafc] dark:bg-[#181a1b]
-            text-[#181a1b] dark:text-[#F8FAFC]
-            placeholder:text-[#181a1b]/70 dark:placeholder:text-[#F8FAFC]/70
-            border border-[#E2E8F0] dark:border-[transparent] hover:border-[#3AA0EA]/30
-            rounded py-3 px-4
-            focus:outline-none focus:ring-2 focus:ring-[#3AA0EA]
-            transition
-          "
+    bg-[#f8fafc] dark:bg-[#181a1b]
+    text-[#181a1b] dark:text-[#f8fafc]
+    placeholder:text-[#181a1b]/70 dark:placeholder:text-[#f8fafc]/70
+    border border-[#E2E8F0] dark:border-[#505050]
+    hover:border-[#3AA0EA]/30
+    rounded py-3 px-4
+    focus:outline-none focus:ring-2 focus:ring-[#3AA0EA]
+    transition
+  "
               autoComplete="off"
               required
             />
@@ -80,31 +81,34 @@ export default function ContactForm() {
               value={form.email}
               onChange={handleChange}
               className="
-            bg-white dark:bg-[#181a1b]
-            text-[#181a1b] dark:text-[#F8FAFC]
-            placeholder:text-[#181a1b]/70 dark:placeholder:text-[#F8FAFC]/70
-            border border-[#E2E8F0] dark:border-[transparent] hover:border-[#3AA0EA]/30
-            rounded py-3 px-4
-            focus:outline-none focus:ring-2 focus:ring-[#3AA0EA]
-            transition
-          "
+    bg-[#f8fafc] dark:bg-[#181a1b]
+    text-[#181a1b] dark:text-[#f8fafc]
+    placeholder:text-[#181a1b]/70 dark:placeholder:text-[#f8fafc]/70
+    border border-[#E2E8F0] dark:border-[#505050]
+    hover:border-[#3AA0EA]/30
+    rounded py-3 px-4
+    focus:outline-none focus:ring-2 focus:ring-[#3AA0EA]
+    transition
+  "
               autoComplete="off"
               required
             />
+
             <textarea
               name="message"
               placeholder="Your Message"
               value={form.message}
               onChange={handleChange}
               className="
-            bg-white dark:bg-[#181a1b]
-            text-[#181a1b] dark:text-[#F8FAFC]
-            placeholder:text-[#181a1b]/70 dark:placeholder:text-[#F8FAFC]/70
-            border border-[#E2E8F0] dark:border-[transparent] hover:border-[#3AA0EA]/30
-            rounded py-3 px-4 min-h-[120px]
-            focus:outline-none focus:ring-2 focus:ring-[#3AA0EA]
-            transition resize-none
-          "
+    bg-[#f8fafc] dark:bg-[#181a1b]
+    text-[#181a1b] dark:text-[#f8fafc]
+    placeholder:text-[#181a1b]/70 dark:placeholder:text-[#f8fafc]/70
+    border border-[#E2E8F0] dark:border-[#505050]
+    hover:border-[#3AA0EA]/30
+    rounded py-3 px-4 min-h-[120px]
+    focus:outline-none focus:ring-2 focus:ring-[#3AA0EA]
+    transition resize-none
+  "
               required
             />
           </div>

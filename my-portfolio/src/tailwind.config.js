@@ -2,7 +2,6 @@
 module.exports = {
   content: ["./index.html", "./src/**/*.{js,jsx,ts,tsx}"],
   darkMode: "class",
-  lightMode: "class",
   theme: {
     extend: {
       animation: {
@@ -40,8 +39,7 @@ module.exports = {
         },
       },
       // ... (colors, width, height, perspective, fontFamily as you already have)
-      colors: { 
-        
+      colors: {
         // TODO: The commented out section may be unnecessary
 
         // // Brand/system colors

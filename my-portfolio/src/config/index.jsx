@@ -264,7 +264,7 @@ const CustomSectionsConfig = [
       <>
         {" "}
         <>
-          <div className="flex flex-row gap-[24rem]">
+          <div className="flex flex-row gap-[20rem]">
             <ContactForm /> <GlowingLogo />
           </div>
         </>
