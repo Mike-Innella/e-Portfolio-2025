@@ -2,6 +2,7 @@
 module.exports = {
   content: ["./index.html", "./src/**/*.{js,jsx,ts,tsx}"],
   darkMode: "class",
+  lightMode: "class",
   theme: {
     extend: {
       animation: {
@@ -32,26 +33,30 @@ module.exports = {
         },
 
         logoGlow: {
-          "0%, 100%": { filter: "drop-shadow(0 0 24px hsla(188, 100%, 61%, 0.6))" },
+          "0%, 100%": {
+            filter: "drop-shadow(0 0 24px hsla(188, 100%, 61%, 0.6))",
+          },
           "50%": { filter: "drop-shadow(0 0 48px hsla(188, 100%, 61%, 1))" },
         },
       },
       // ... (colors, width, height, perspective, fontFamily as you already have)
       colors: {
         // Brand/system colors
-        "background": {
+        background: {
           DEFAULT: "#f8fafc", // light mode
-          dark: "#111315",    // dark mode
+          dark: "#111315", // dark mode
+          "burger-dark": "#111315", // bar color for light mode
+          "burger-hover": "#f0f2e2",
         },
-        "accent": {
+        accent: {
           DEFAULT: "#2366a8", // light mode
-          dark: "#3aa0ea",    // dark mode
+          dark: "#3aa0ea", // dark mode
         },
-        "text": {
+        text: {
           DEFAULT: "#181a1b", // light mode
-          dark: "#f8fafc",    // dark mode
+          dark: "#f8fafc", // dark mode
         },
-        "hover": {
+        hover: {
           DEFAULT: "#3aa0ea", // both modes
         },
         "hover-text": {

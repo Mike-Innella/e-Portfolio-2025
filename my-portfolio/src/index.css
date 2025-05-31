@@ -9,14 +9,14 @@
   --text-hex: #181a1b;
   --hover-hex: #3aa0ea;
   --hover-text-hex: #f8fafc;
-  
+
   /* HSL values - for dynamic manipulation */
   --background-hsl: 210, 20%, 98%;
   --accent-hsl: 210, 66%, 40%;
   --text-hsl: 210, 7%, 10%;
   --hover-hsl: 207, 82%, 57%;
   --hover-text-hsl: 210, 20%, 98%;
-  
+
   /* Legacy variables - mapping to new structure */
   --background-color: var(--background-hex);
   --accent-color: var(--accent-hex);
@@ -81,32 +81,48 @@
 @keyframes pulse {
   0%,
   100% {
-    box-shadow: 0 0 30px 10px var(--accent-hex), 0 0 10px 5px var(--text-light-hex, #fff);
+    box-shadow: 0 0 30px 10px var(--accent-hex),
+      0 0 10px 5px var(--text-light-hex, #fff);
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
   }
   50% {
-    box-shadow: 0 0 40px 15px hsl(var(--accent-hsl)), 0 0 15px 7px var(--text-light-hex, #fff);
+    box-shadow: 0 0 40px 15px hsl(var(--accent-hsl)),
+      0 0 15px 7px var(--text-light-hex, #fff);
     opacity: 0.95;
     transform: translate(-50%, -50%) scale(1.03);
   }
 }
 
 .menu-burger-bar {
-  background-color: var(--text-hex);
+  background-color: #111315;
   transition: all 0.4s ease-in-out;
+}
+
+.menu-burger-bar:hover {
+  background-color: #f8fafc;
+}
+
+.dark .menu-burger-bar {
+  span {
+    background-color: #f8fafc;
+  }
+}
+
+.dark .menu-burger-bar:hover {
+  background-color: #6a6b6d;
 }
 
 .group:hover .menu-burger-bar,
 .menu-toggle:hover .menu-burger-bar {
-  background-color: var(--hover-text-hex);
+  background-color: #6a6b6d;
   transition: all 0.4s ease-in-out;
 }
 
 /* Add text-light-hex and text-dark-hex variables */
 :root {
-  --text-light-hex: #F8FAFC;
-  --text-dark-hex: #181A1B;
+  --text-light-hex: #f8fafc;
+  --text-dark-hex: #181a1b;
   --text-light-hsl: 210, 20%, 98%;
   --text-dark-hsl: 210, 7%, 10%;
 }

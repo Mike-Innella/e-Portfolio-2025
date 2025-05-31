@@ -26,7 +26,7 @@ export default function App() {
 
   return (
     <div
-      className="relative min-h-screen font-sans"
+      className="relative min-h-screen font-sans max-w-screen-[1920px] mx-auto"
       style={{
         backgroundColor: "var(--background-color)",
         color: "var(--text-color)",
