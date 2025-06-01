@@ -126,7 +126,8 @@ textarea,
 select {
   background-color: var(--background-color) !important;
   color: var(--text-color) !important;
-  border-color: var(--accent-color, #2366a8) !important;
+  border-color: 2px solid transparent !important;
+  transition: all 0.3s ease-in-out;
 }
 
 input::placeholder,
@@ -135,12 +136,20 @@ textarea::placeholder {
   opacity: 0.7;
 }
 
+input:hover,
+textarea:hover {
+  border-color: 2px solid #242323 !important;
+}
+.dark input:hover,
+.dark textarea:hover {
+  border-color: 2px solid #3c3c3c !important;
+}
+
 .dark input,
 .dark textarea,
 .dark select {
   background-color: #181a1b !important;
   color: #f8fafc !important;
-  border-color: #3aa0ea !important;
 }
 
 .dark input::placeholder,

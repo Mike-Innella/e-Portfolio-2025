@@ -42,7 +42,7 @@ export default function ContactForm() {
           backdrop-blur-md
           max-w-xl w-[36rem] mb-4
           flex flex-col gap-4
-          border border-[#3c3c3c]/20 rounded-lg p-6
+          border border-[#242323]/20 rounded-lg p-6
           shadow-lg
           shadow-[#111315]/50
           dark:shadow-lg dark:shadow-[#3AA0EA]/50
@@ -66,7 +66,7 @@ export default function ContactForm() {
     text-[#181a1b] dark:text-[#f8fafc]
     placeholder:text-[#181a1b]/70 dark:placeholder:text-[#f8fafc]/70
     border border-[#E2E8F0] dark:border-[#3c3c3c]
-    hover:border-[#3AA0EA]/30
+    hover:border-[#242323]/30
     rounded py-3 px-4
     focus:outline-none focus:ring-2 focus:ring-[#3AA0EA]
     transition
@@ -85,7 +85,7 @@ export default function ContactForm() {
     text-[#181a1b] dark:text-[#f8fafc]
     placeholder:text-[#181a1b]/70 dark:placeholder:text-[#f8fafc]/70
     border border-[#E2E8F0] dark:border-[#3c3c3c]
-    hover:border-[#3AA0EA]/30
+    hover:border-[#242323]/30
     rounded py-3 px-4
     focus:outline-none focus:ring-2 focus:ring-[#3AA0EA]
     transition
@@ -104,10 +104,12 @@ export default function ContactForm() {
     text-[#181a1b] dark:text-[#f8fafc]
     placeholder:text-[#181a1b]/70 dark:placeholder:text-[#f8fafc]/70
     border border-[#E2E8F0] dark:border-[#3c3c3c]
-    hover:border-[#3AA0EA]/30
-    rounded py-3 px-4 min-h-[120px]
+    hover:border-[#242323]/30
+    rounded py-3 px-4
     focus:outline-none focus:ring-2 focus:ring-[#3AA0EA]
-    transition resize-none
+    transition
+    resize-none
+    h-[8rem]
   "
               required
             />

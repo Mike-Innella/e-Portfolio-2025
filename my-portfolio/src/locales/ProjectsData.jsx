@@ -5,7 +5,7 @@ const ProjectsData = [
     name: "Skinstric.AI",
     icon: Icons["web"],
     description:
-      "Developed a core segment of the Skinstric.AI project, focusing on implementing seamless camera functionality, integrating multiple external APIs, and building a custom React component to enhance the user interface and overall user experience.",
+      "Internship project for Skinstric.AI, collaborating closely with the project lead but developing features primarily solo. Focused on a React and Three.js analysis portal with seamless camera capture and TensorFlow-powered image processing. Overcame dependency and configuration challenges between multiple libraries and APIs, using Axios and vanilla CSS for a highly interactive user experience. The camera feature (my assignment) passed review with positive feedback from the project leader. Stack: React, Three.js, TensorFlow, Axios, CSS.",
     links: [
       {
         tooltip: "See source",
@@ -23,7 +23,7 @@ const ProjectsData = [
     name: "Howard Motor Webapp",
     icon: Icons["gearblock"],
     description:
-      "A modern, mobile-friendly website for Howard Motor Corp, designed to streamline appointment bookings, display business info, and showcase customer reviews. Built with React and Firebase, the app features a dynamic admin dashboard, secure EmailJS-powered contact system, and a user-focused UI for both customers and staff.",
+      "Freelance web app for Howard Motor Corp—built solo as a way to give back to a business that supported me. Features a modern React frontend, Firebase backend, and Tailwind UI, with secure EmailJS contact forms and Google API integrations. The biggest challenge has been designing a dynamic admin portal for appointment and announcement management. API keys are protected via environment variables and Vercel serverless functions. Business owner is happy with progress; the site is positioned to enhance customer interactions and streamline staff workflow. Stack: React, Firebase, Tailwind, EmailJS, Google Places API.",
     links: [
       {
         tooltip: "See source",
@@ -41,7 +41,7 @@ const ProjectsData = [
     name: "NFT Marketplace",
     icon: Icons["market"],
     description:
-      "Redesigned the NFT Marketplace website as a single-page application (SPA), implementing a fully responsive layout, enhancing the user interface, and optimizing site performance to deliver a seamless and engaging user experience.",
+      "Virtual internship capstone: rebuilt an NFT Marketplace as a responsive React SPA. Worked solo but received high marks from a team of mentors. Implemented dynamic Swiper carousels, custom skeleton loaders, and client-side routing with HashRouter for a polished UX. Enjoyed architecting the Swiper-powered NFT collection grid. Stack: React, Swiper, HashRouter, CRA, CSS.",
     links: [
       {
         tooltip: "See source",
@@ -59,7 +59,7 @@ const ProjectsData = [
     name: "OMDB Movie Store",
     icon: Icons["store"],
     description:
-      "A feature-rich React web app for movie lovers, integrating the OMDB API to enable instant movie searches, browse top-rated picks, and discover recent releases. The platform offers a visually appealing, fully responsive UI built with styled components, intuitive navigation, and dynamic movie details to create a seamless browsing experience across devices.",
+      "Solo portfolio project designed from scratch to master web APIs and dynamic UI. Built a fully responsive React app for searching, viewing, and checking out movies with the OMDB API. Key challenge: optimizing dynamic search and handling async data. If revisited, I'd add advanced search features and animated skeleton loading states. Stack: React, OMDB API, Styled Components, CRA.",
     links: [
       {
         tooltip: "See source",
@@ -77,7 +77,7 @@ const ProjectsData = [
     name: "Fweather",
     icon: Icons["weather"],
     description:
-      "A playful React web app that fetches real-time weather and a fun fact for any location. Search by city or use auto-locate for instant info, powered by dual APIs and a clean, responsive UI.",
+      "Personal project for fun—a playful React weather dashboard using multiple APIs to show real-time weather, sunrise/sunset, and a random fun fact for any city. Tapped into creative UI by auto-matching backgrounds to current conditions. Major challenge: responsive design and smooth auto-locate functionality. Next version would use a richer weather API for multi-day forecasts. Stack: React, OpenWeatherMap API (or similar), Fun Facts API, CRA.",
     links: [
       {
         tooltip: "See source",

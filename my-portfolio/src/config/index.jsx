@@ -75,12 +75,14 @@ const CustomSectionsConfig = [
         {ProjectsConfig.projects.map((project, index) => (
           <div key={`project-${index}`}>
             {" "}
-            <h3 style={{ fontSize: "1.4rem" }}>
-              {" "}
-              {project.icon} {project.name}{" "}
-            </h3>{" "}
-            <p>{project.description}</p>{" "}
-            <div style={{ textAlign: "right" }}>
+            <div className="w-full m-w-7xl pr-[14rem]">
+              <h3 style={{ fontSize: "1.4rem" }}>
+                {" "}
+                {project.icon} {project.name}{" "}
+              </h3>{" "}
+              <p>{project.description}</p>{" "}
+            </div>
+            <div className="pr-[14rem]" style={{ textAlign: "right" }}>
               {" "}
               {project.links.map((link, linkIndex) => (
                 <CircleButton
@@ -113,14 +115,33 @@ const CustomSectionsConfig = [
             who am i ?
           </h4>
         </div>
-        <p className="flex justify-start align-start w-full">
-          I build web applications using modern JavaScript technologies and
-          enjoy creating clean, responsive designs. With a passion for
-          problem-solving and attention to detail, I develop solutions that are
-          both functional and user-friendly. My approach combines technical
-          expertise with creative thinking to deliver high-quality projects that
-          meet client needs and exceed expectations.
-        </p>
+        <div className="flex w-full pl-[12rem] justify-start align-start flex-col gap-4">
+          <p>
+            I’m a frontend developer passionate about building web experiences
+            that are not just functional, but genuinely enjoyable to use. I
+            thrive on combining modern JavaScript technologies with thoughtful,
+            clean design to craft interfaces that “just work”—and feel great in
+            the process. My approach blends technical problem-solving with a
+            creative eye, always aiming for those little details that make an
+            application <span className="italic"> flow</span> from start to
+            finish.
+          </p>
+          <p>
+            What excites me most about web development is how it brings together
+            creativity, curiosity, and real impact. My journey into this field
+            started with a desire to understand how things work, and it’s
+            evolved into a drive to make digital products people love. I’m
+            always looking to learn something new, help a teammate, and push my
+            skills further—because great products come from constant growth and
+            true collaboration.
+          </p>
+          <p>
+            Away from the screen, I love experimenting with audio engineering,
+            staying active at the gym, and making memories with my loved ones.
+            Whether I’m mixing tracks or catching up with somebody, I find that
+            life outside of code keeps me creative and grounded.
+          </p>
+        </div>
         <div className="flex mx-0 justify-end">
           <h4 className="text-[2rem] font-[600] text-right ml-auto py-4">
             tech stack
