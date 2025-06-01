@@ -89,7 +89,7 @@ export default function Menu({ sectionRefs }) {
   return (
     <>
       {/* The menu toggle button */}
-      <div className="fixed left-8 top-1/2 -translate-y-1/2 z-[500] max-md:left-4 max-md:top-4 max-md:-translate-y-0">
+      <div className="fixed left-8 top-1/2 -translate-y-1/2 z-[500] max-md:left-4 max-md:top-4 max-md:-translate-y-0 max-sm:left-2">
         <MenuToggle menuActive={menuActive} toggleMenu={handleToggle}>
           ME
           <br />
@@ -109,7 +109,10 @@ export default function Menu({ sectionRefs }) {
             menuActive ? "opacity-100" : "opacity-0"
           }`}
           onClick={() => setMenuActive(false)}
-          style={{ pointerEvents: menuActive ? "auto" : "none" }}
+          style={{ 
+            pointerEvents: menuActive ? "auto" : "none",
+            touchAction: menuActive ? "none" : "auto" // Prevent scrolling when menu is open on mobile
+          }}
         />
 
         {/* Menu items container */}

@@ -87,9 +87,9 @@ export default function SplashOverlay({ onHide }) {
           isHiding ? "-translate-y-40" : ""
         }`}
       >
-        <div className="flex-1 flex items-center justify-center w-full">
-          <div className="flex flex-col md:flex-row items-center justify-center w-full gap-4 md:gap-0">
-            <div className="w-full max-w-xs md:max-w-md text-center md:text-left">
+        <div className="flex-1 flex items-center justify-center w-full px-4 sm:px-6">
+          <div className="flex flex-col md:flex-row items-center justify-center w-full gap-6 md:gap-2">
+            <div className="w-full max-w-[85%] sm:max-w-sm md:max-w-md text-center md:text-left p-4">
               <span
                 className={`text-2xl sm:text-3xl md:text-5xl font-bold transition-opacity duration-1200 ease ${
                   showHello ? "opacity-100" : "opacity-0"
@@ -100,14 +100,14 @@ export default function SplashOverlay({ onHide }) {
             </div>
 
             <div
-              className={`transition-opacity duration-1000 my-4 md:my-0 ${
+              className={`transition-opacity duration-1000 my-4 md:my-0 scale-75 sm:scale-90 md:scale-100 ${
                 showLoader ? "opacity-100" : "opacity-0"
               }`}
             >
               <Loader />
             </div>
 
-            <div className="w-full max-w-xs md:max-w-md text-center md:text-right">
+            <div className="w-full max-w-[85%] sm:max-w-sm md:max-w-md text-center md:text-right p-4">
               <span
                 className={`text-lg sm:text-xl md:text-3xl transition-opacity duration-1200 ease ${
                   showInstructions ? "opacity-100" : "opacity-0"

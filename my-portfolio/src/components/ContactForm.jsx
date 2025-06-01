@@ -40,13 +40,13 @@ export default function ContactForm() {
         className="
     bg-dark-bg/30
           backdrop-blur-md
-          max-w-xl w-[36rem] mb-4
+          w-full max-w-[90vw] sm:max-w-[95%] md:max-w-xl mb-4
           flex flex-col gap-4
-          border border-[#242323]/20 rounded-lg p-6
+          border border-[#242323]/20 rounded-lg p-4 sm:p-6
           shadow-lg
           shadow-[#111315]/50
           dark:shadow-lg dark:shadow-[#3AA0EA]/50
-          h-[24rem]
+          min-h-[24rem]
           "
       >
         <h2 className="text-3xl font-bold mb-6 tracking-wide flex items-center gap-2">
@@ -54,7 +54,7 @@ export default function ContactForm() {
         </h2>
         <div className="flex flex-col md:flex-row md:items-start gap-4">
           {/* Left: Inputs */}
-          <div className="flex-1 flex flex-col gap-4">
+          <div className="flex-1 flex flex-col gap-3 sm:gap-4">
             <input
               type="text"
               name="name"
@@ -115,7 +115,7 @@ export default function ContactForm() {
             />
           </div>
           {/* Right: Circular Submit Button */}
-          <div className="flex md:flex-col justify-end items-center mt-[10rem] mr-[.5rem]">
+          <div className="flex md:flex-col justify-end items-center mt-4 md:mt-auto mr-0 sm:mr-[.5rem] pb-2">
             <button
               type="submit"
               className="send-btn
@@ -174,14 +174,14 @@ export default function ContactForm() {
 
       {/* Feedback messages - displayed below the form */}
       {status === "success" && (
-        <div className="w-[36rem] max-w-lg mb-8">
+        <div className="w-full max-w-[90vw] sm:max-w-lg mb-8">
           <div className="text-green-500 text-center py-2 px-4 rounded-md bg-primary-blue/10 backdrop-blur-sm">
             Message sent successfully!
           </div>
         </div>
       )}
       {status === "error" && (
-        <div className="w-[36rem] max-w-lg mb-8">
+        <div className="w-full max-w-[90vw] sm:max-w-lg mb-8">
           <div className="text-red-400 text-center py-2 px-4 rounded-md bg-red-400/10 backdrop-blur-sm">
             Please fill out all fields or try again.
           </div>

@@ -8,12 +8,16 @@ import { CustomSectionsConfig } from "./config";
 
 export default function App() {
   // Track if splash overlay is active
+  // eslint-disable-next-line no-unused-vars
   const [splashActive, setSplashActive] = useState(true);
 
   // Create individual refs for each section directly
   const topRef = useRef(null);
+  // eslint-disable-next-line no-unused-vars
   const aboutRef = useRef(null);
+  // eslint-disable-next-line no-unused-vars
   const projectsRef = useRef(null);
+  // eslint-disable-next-line no-unused-vars
   const contactRef = useRef(null);
 
   // Map the refs to section names
@@ -26,7 +30,7 @@ export default function App() {
 
   return (
     <div
-      className="relative min-h-screen font-sans max-w-screen-[1920px] mx-auto"
+      className="relative min-h-screen font-sans max-w-screen-[1920px] mx-auto overflow-x-hidden"
       style={{
         backgroundColor: "var(--background-color)",
         color: "var(--text-color)",

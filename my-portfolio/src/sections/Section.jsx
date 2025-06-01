@@ -20,12 +20,12 @@ export default function Section({
     isReverse ? "flex-row-reverse" : "flex-row",
     isCentered ? "items-center" : "items-start",
     extraClass,
-    "max-md:flex-col max-md:p-12",
+    "max-md:flex-col max-md:p-12 max-sm:p-8 max-sm:py-12",
   ].join(" ");
 
   // Section header layout
   const headerClasses = [
-    "flex items-start text-4xl pr-8 border-r border-primary",
+    "flex items-start text-3xl sm:text-4xl pr-8 border-r border-primary",
     "max-md:pr-0 max-md:pb-3 max-md:border-0 max-md:border-b max-md:justify-center max-md:text-center",
     isReverse && "border-r-0 pl-8 border-l border-primary max-md:pl-0",
   ]
@@ -36,7 +36,7 @@ export default function Section({
   const contentClasses = [
     "pl-8",
     isReverse && "pl-0 pr-8 text-right",
-    "max-md:pl-0 max-md:pr-0 max-md:text-center",
+    "max-md:pl-0 max-md:pr-0 max-md:text-center max-md:pt-6",
   ]
     .filter(Boolean)
     .join(" ");
@@ -45,7 +45,7 @@ export default function Section({
     <div className={wrapperClasses}>
       <div className={sectionClasses}>
         <h2 className={headerClasses}>
-          <span className="p-2 pl-0 text-4xl transition-all duration-500 section-header-icon pb-[1rem]">
+          <span className="p-2 pl-0 text-3xl sm:text-4xl transition-all duration-500 section-header-icon pb-[1rem]">
             {headerIcon}
           </span>
           {sectionHeader}

@@ -1,7 +1,7 @@
 export default function Loader() {
   return (
     <div
-      className="w-[280px] h-[280px] sm:w-[380px] sm:h-[380px] md:w-[480px] md:h-[480px]"
+      className="w-[220px] h-[220px] sm:w-[320px] sm:h-[320px] md:w-[420px] md:h-[420px]"
       style={{
         position: "relative",
         borderRadius: "50%",
@@ -11,7 +11,7 @@ export default function Loader() {
     >
       {/* Glowing Orb in the center */}
       <div
-        className="glow-orb w-[25px] h-[25px] sm:w-[30px] sm:h-[30px] md:w-[40px] md:h-[40px]"
+        className="glow-orb w-[20px] h-[20px] sm:w-[25px] sm:h-[25px] md:w-[35px] md:h-[35px]"
         style={{
           position: "absolute",
           left: "50%",
