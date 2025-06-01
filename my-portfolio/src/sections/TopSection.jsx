@@ -39,6 +39,7 @@ export default function TopSection() {
       <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex justify-center gap-2">
         {CommonConfig.social.map((socialDetails, index) => (
           <CircleButton
+          className="hover:scale-125"
             key={`top-section-social-${index}`}
             tooltip={socialDetails.name}
             tooltipPlacement="top"

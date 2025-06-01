@@ -9,6 +9,7 @@ export default function Footer() {
       <div className="flex justify-center gap-2 my-2">
         {CommonConfig.social.map((socialDetails, index) => (
           <CircleButton
+            className="hover:scale-125"
             key={`footer-social-${index}`}
             tooltip={socialDetails.name}
             tooltipPlacement="top"
