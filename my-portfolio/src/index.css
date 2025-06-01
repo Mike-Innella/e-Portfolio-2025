@@ -31,7 +31,7 @@
   --accent-color: #3aa0ea;
   --text-color: #f8fafc;
   --hover-color: #3aa0ea;
-  --hover-text: #505050;
+  --hover-text: #3c3c3c;
 }
 
 .light {
@@ -40,7 +40,7 @@
   --accent-color: #2366a8;
   --text-color: #181a1b;
   --hover-color: #3aa0ea;
-  --hover-text: #505050;
+  --hover-text: #3c3c3c;
 }
 
 @layer base {
@@ -118,13 +118,86 @@
 
 .dark .menu-toggle:hover .menu-burger-bar,
 .dark .group:hover .menu-burger-bar {
-  background-color: #505050;
+  background-color: #3c3c3c;
 }
 
-/* Add text-light-hex and text-dark-hex variables */
+input,
+textarea,
+select {
+  background-color: var(--background-color) !important;
+  color: var(--text-color) !important;
+  border-color: var(--accent-color, #2366a8) !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--text-color);
+  opacity: 0.7;
+}
+
+.dark input,
+.dark textarea,
+.dark select {
+  background-color: #181a1b !important;
+  color: #f8fafc !important;
+  border-color: #3aa0ea !important;
+}
+
+.dark input::placeholder,
+.dark textarea::placeholder {
+  color: #f8fafc !important;
+  opacity: 0.7;
+}
+
+input:-webkit-autofill,
+textarea:-webkit-autofill {
+  box-shadow: 0 0 0 1000px var(--background-color) inset !important;
+  -webkit-text-fill-color: var(--text-color) !important;
+}
+
+.dark input:-webkit-autofill,
+.dark textarea:-webkit-autofill {
+  box-shadow: 0 0 0 1000px #181a1b inset !important;
+  -webkit-text-fill-color: #f8fafc !important;
+}
+
 :root {
-  --text-light-hex: #f8fafc;
-  --text-dark-hex: #181a1b;
-  --text-light-hsl: 210, 20%, 98%;
-  --text-dark-hsl: 210, 7%, 10%;
+  color-scheme: light;
+}
+
+.dark {
+  color-scheme: dark;
+}
+
+.logo-img {
+  filter: brightness(0.1) drop-shadow(0 1px 8px #2366a8cc)
+    drop-shadow(0 0 4px hsla(188, 100%, 61%, 0.7));
+  transition: all 0.3s ease-in-out;
+}
+
+.dark .logo-img {
+  filter: brightness(1) drop-shadow(0 0 2px hsl(205, 81%, 57%));
+}
+
+.send-btn {
+  background-color: #f8fafc !important;
+  color: #181a1b !important;
+  border-color: #181a1b !important;
+  transition: background 0.3s, color 0.3s;
+}
+
+.send-btn:hover {
+  background-color: #3aa0ea !important;
+  color: #f8fafc !important;
+}
+
+.dark .send-btn {
+  background-color: #181a1b !important;
+  color: #f8fafc !important;
+  border-color: #f8fafc !important;
+}
+
+.dark .send-btn:hover {
+  background-color: #3aa0ea !important;
+  color: #3c3c3c !important;
 }

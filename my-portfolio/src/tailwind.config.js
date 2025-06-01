@@ -61,7 +61,7 @@ module.exports = {
         //   DEFAULT: "#3aa0ea", // both modes
         // },
         // "hover-text": {
-        //   DEFAULT: "#505050", // both modes
+        //   DEFAULT: "#3c3c3c", // both modes
         // },
 
         // Duotone (legacy)

@@ -42,7 +42,7 @@ export default function ContactForm() {
           backdrop-blur-md
           max-w-xl w-[36rem] mb-4
           flex flex-col gap-4
-          border border-[#505050]/20 rounded-lg p-6
+          border border-[#3c3c3c]/20 rounded-lg p-6
           shadow-lg
           shadow-[#111315]/50
           dark:shadow-lg dark:shadow-[#3AA0EA]/50
@@ -65,7 +65,7 @@ export default function ContactForm() {
     bg-[#f8fafc] dark:bg-[#181a1b]
     text-[#181a1b] dark:text-[#f8fafc]
     placeholder:text-[#181a1b]/70 dark:placeholder:text-[#f8fafc]/70
-    border border-[#E2E8F0] dark:border-[#505050]
+    border border-[#E2E8F0] dark:border-[#3c3c3c]
     hover:border-[#3AA0EA]/30
     rounded py-3 px-4
     focus:outline-none focus:ring-2 focus:ring-[#3AA0EA]
@@ -84,7 +84,7 @@ export default function ContactForm() {
     bg-[#f8fafc] dark:bg-[#181a1b]
     text-[#181a1b] dark:text-[#f8fafc]
     placeholder:text-[#181a1b]/70 dark:placeholder:text-[#f8fafc]/70
-    border border-[#E2E8F0] dark:border-[#505050]
+    border border-[#E2E8F0] dark:border-[#3c3c3c]
     hover:border-[#3AA0EA]/30
     rounded py-3 px-4
     focus:outline-none focus:ring-2 focus:ring-[#3AA0EA]
@@ -103,7 +103,7 @@ export default function ContactForm() {
     bg-[#f8fafc] dark:bg-[#181a1b]
     text-[#181a1b] dark:text-[#f8fafc]
     placeholder:text-[#181a1b]/70 dark:placeholder:text-[#f8fafc]/70
-    border border-[#E2E8F0] dark:border-[#505050]
+    border border-[#E2E8F0] dark:border-[#3c3c3c]
     hover:border-[#3AA0EA]/30
     rounded py-3 px-4 min-h-[120px]
     focus:outline-none focus:ring-2 focus:ring-[#3AA0EA]
@@ -116,21 +116,29 @@ export default function ContactForm() {
           <div className="flex md:flex-col justify-end items-center mt-[10rem] mr-[.5rem]">
             <button
               type="submit"
-              className="
-                flex items-center justify-center
-                w-16 h-16 rounded-full
-                bg-[#f8fafc] hover:bg-[#2366A8]
-                dark:bg-[#181A1B] dark:hover:bg-[#3AA0EA]
-                text-[#181a1b] dark:text-[#F8FAFC] dark:hover:text-[#505050] text-3xl
-                shadow-lg transition
-                disabled:opacity-70 disabled:cursor-not-allowed
-                md:ml-4 mt-4 md:mt-0
-                mx-auto hover:text-[#f8fafc]
-                border border-[#181A1B] dark:border-[#F8FAFC]/30
-                cursor-pointer
-              shadow-[#111315]/50
-          dark:shadow-md dark:shadow-[#3AA0EA]/50
-              "
+              className="send-btn
+    flex items-center justify-center
+    w-16 h-16 rounded-full
+    bg-[#f8fafc]
+    text-[#181a1b]
+    hover:bg-[#3AA0EA]
+    hover:text-[#f8fafc]
+    
+    dark:bg-[#181A1B]
+    dark:text-[#F8FAFC]
+    dark:hover:bg-[#3AA0EA]
+    dark:hover:text-[#3c3c3c]
+
+    text-3xl
+    shadow-lg transition
+    disabled:opacity-70 disabled:cursor-not-allowed
+    md:ml-4 mt-4 md:mt-0 mx-auto
+    border border-[#181A1B]/30
+    dark:border-[#F8FAFC]/30
+    cursor-pointer
+    shadow-[#111315]/50
+    dark:shadow-md dark:shadow-[#3AA0EA]/50
+  "
               disabled={status === "sending"}
               aria-label="Send Message"
             >
