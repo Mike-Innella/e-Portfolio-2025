@@ -14,6 +14,7 @@ import ContactForm from "../components/ContactForm";
 import GlassSwipe from "../ux/GlassSwipe";
 import GlowingLogo from "../ux/GlowingLogo";
 import ProjectsData from "../locales/ProjectsData";
+import ReviewsData from "../locales/ReviewsData";
 
 const techStack = [
   "html",
@@ -168,32 +169,49 @@ const CustomSectionsConfig = [
     ),
   },
 
-  // TODO: Add a reviews section when we have testimonials.
-  // {
-  //   name: "reviews",
-  //   headerIcon: <MdRateReview />,
-  //   content: (
-  //     <>
-  //       {" "}
-  //       <h4 style={{ fontSize: "2rem" }}>
-  //         {" "}
-  //         {Icons["helpoutline"]} what do others say?{" "}
-  //       </h4>{" "}
-  //       {/* Insert review content here */}{" "}
-  //     </>
-  //   ),
-  // },
+  {
+    name: "reviews",
+    headerIcon: <MdRateReview />,
+    extraClass: "reviews-section",
+    notInMenu: false,
+    content: (
+      <>
+        <h4 style={{ fontSize: "2rem" }}>
+          {Icons["helpoutline"]} what do others say?
+        </h4>
+        <div className="flex flex-col gap-8 pt-6">
+          {ReviewsData.map((review, idx) => (
+            <div
+              key={`review-${idx}`}
+              className="border-l-4 pl-6 border-accent"
+            >
+              <p className="italic text-lg leading-relaxed">
+                “{review.review.trim()}”
+              </p>
+              <div className="mt-2 flex flex-col">
+                <span className="font-semibold">{review.name}</span>
+                {review.title && (
+                  <span className="text-sm text-gray-400">{review.title}</span>
+                )}
+                <span className="text-xs text-gray-500">{review.date}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </>
+    ),
+  },
 
   {
     name: "contact",
     headerIcon: <MdDescription />,
-    extraClass: "contact-section",
+    extraClass: "contact-section section-reverse",
     content: (
       <>
         {" "}
         <>
-          <div className="flex flex-row gap-[20rem]">
-            <ContactForm /> <GlowingLogo />
+          <div className="flex flex-row-reverse gap-[16rem]">
+            <ContactForm className="w-full" /> <GlowingLogo />
           </div>
         </>
       </>

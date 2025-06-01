@@ -39,15 +39,15 @@ export default function ContactForm() {
         onSubmit={handleSubmit}
         className="
     bg-dark-bg/30
-          backdrop-blur-md
-          w-full max-w-[90vw] sm:max-w-[95%] md:max-w-xl mb-4
-          flex flex-col gap-4
-          border border-[#242323]/20 rounded-lg p-4 sm:p-6
-          shadow-lg
-          shadow-[#111315]/50
-          dark:shadow-lg dark:shadow-[#3AA0EA]/50
-          min-h-[24rem]
-          "
+    backdrop-blur-md
+    w-[36rem] mb-4
+    flex flex-col gap-4
+    border border-[#242323]/20 rounded-lg p-4 sm:p-6
+    shadow-lg
+    shadow-[#111315]/50
+    dark:shadow-lg dark:shadow-[#3AA0EA]/50
+    min-h-[24rem]
+  "
       >
         <h2 className="text-3xl font-bold mb-6 tracking-wide flex items-center gap-2">
           <span className="material-icons text-4xl">send me a message</span>
