@@ -120,19 +120,19 @@ export default function SplashOverlay({ onHide }) {
         </div>
 
         <div
-          className={`transition-all duration-300 ease-in-out ${
+          className={`transition-all duration-300 ease-in-out translate-y--20${
             showButton ? "opacity-100" : "opacity-0"
           }`}
         >
           <CircleButton
-            className={`to-website transition-all duration-300 ease-in-out ${
+            className={`to-website transition-all duration-300 ease-in-out mb-12 ${
               isHiding ? "translate-x-20" : ""
             }`}
             onClick={() => {
               setIsHiding(true);
               setTimeout(() => {
                 setHidden(true);
-                if (onHide) onHide();
+                if (onHide) onHide();F
               }, 1000);
             }}
             size={4}
