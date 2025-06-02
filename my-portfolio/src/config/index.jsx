@@ -212,13 +212,13 @@ const CustomSectionsConfig = [
     name: "contact",
     headerIcon: <MdDescription />,
     extraClass:
-      "contact-section w-full  max-lg:ml-40 max-md:ml-36 max-sm:ml-32 max-md:section-reverse max-md:mt-8 max-sm:ml-12 xs:ml-0",
+      "contact-section w-full  max-md:mx-auto max-sm:px-0 max-sm:ml-0 max-md:section-reverse max-md:mt-8 max-lg:justify-center max-lg:items-center max-sm:pr-14",
     content: (
       <>
         {" "}
         <>
           <div className="flex flex-row-reverse w-full gap-80 max-lg:flex-col max-lg:gap-0">
-            <ContactForm className="max-lg:w-full" /> <GlowingLogo />
+            <ContactForm className="" /> <GlowingLogo />
           </div>
         </>
       </>
