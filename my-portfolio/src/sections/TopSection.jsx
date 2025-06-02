@@ -13,10 +13,10 @@ export default function TopSection() {
   return (
     <div
       data-aos="fade-left"
-      className="relative flex flex-row justify-center items-center min-h-screen w-full max-lg:px-8 max-md:flex-col max-md:text-center max-sm:px-4"
+      className="relative flex flex-row justify-center items-center min-h-screen w-full max-lg:px-6 max-lg:py-12 max-lg:flex-col max-lg:text-center max-sm:px-4"
     >
       {/* Intro */}
-      <div className="intro w-1/2 pr-16 border-r border-primary text-right max-md:w-full max-md:pr-0 max-md:pb-8 max-md:border-b max-md:border-r-0 max-md:text-center">
+      <div className="intro w-1/2 pr-16 border-r border-primary text-right max-lg:w-full max-lg:pr-0 max-lg:pb-6 max-lg:border-b max-lg:border-r-0 max-lg:text-center">
         <h1 className="text-[7vw] max-sm:text-[10vw] font-bold leading-[0.9] m-0">
           {CommonConfig.name}
         </h1>
@@ -24,7 +24,7 @@ export default function TopSection() {
       </div>
 
       {/* Profile Picture */}
-      <div className="profile w-1/2 h-full pl-16 max-md:w-full max-md:pl-0 max-md:pt-8 flex items-center justify-center">
+      <div className="profile w-1/2 h-full max-lg:w-full pr-8 max-lg:pr-0 max-lg:w-full max-lg:pl-0 max-lg:pt-6 flex items-center justify-center">
         <div className="rounded-full overflow-hidden shadow-lg border-4 border-primary w-[28rem] h-[28rem] max-lg:w-[22rem] max-lg:h-[22rem] max-md:w-[220px] max-md:h-[220px] max-sm:w-[180px] max-sm:h-[180px] flex items-center justify-center bg-background transition-all duration-700">
           <img
             src={HeadShot}
@@ -39,7 +39,7 @@ export default function TopSection() {
       <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex justify-center gap-2 max-sm:bottom-6 flex-wrap max-w-[90vw]">
         {CommonConfig.social.map((socialDetails, index) => (
           <CircleButton
-          className="hover:scale-125"
+            className="hover:scale-125"
             key={`top-section-social-${index}`}
             tooltip={socialDetails.name}
             tooltipPlacement="top"

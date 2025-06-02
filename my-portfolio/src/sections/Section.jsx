@@ -20,14 +20,14 @@ export default function Section({
     isReverse ? "flex-row-reverse" : "flex-row",
     isCentered ? "items-center" : "items-start",
     extraClass,
-    "max-md:flex-col max-md:p-12 max-sm:p-8 max-sm:py-12",
+    "max-lg:flex-col max-lg:p-8 max-lg:py-10 max-sm:p-6 max-sm:py-10",
   ].join(" ");
 
   // Section header layout
   const headerClasses = [
     "flex items-start text-3xl sm:text-4xl pr-8 border-r border-primary",
-    "max-md:pr-0 max-md:pb-3 max-md:border-0 max-md:border-b max-md:justify-center max-md:text-center",
-    isReverse && "border-r-0 pl-8 border-l border-primary max-md:pl-0",
+    "max-lg:pr-0 max-lg:pb-4 max-lg:border-0 max-lg:border-b max-lg:justify-center max-lg:text-center",
+    isReverse && "border-r-0 pl-8 border-l border-primary max-lg:pl-0",
   ]
     .filter(Boolean)
     .join(" ");
@@ -36,7 +36,7 @@ export default function Section({
   const contentClasses = [
     "pl-8",
     isReverse && "pl-0 pr-8 text-right",
-    "max-md:pl-0 max-md:pr-0 max-md:text-center max-md:pt-6",
+    "max-lg:pl-0 max-lg:pr-0  max-lg:pt-5",
   ]
     .filter(Boolean)
     .join(" ");

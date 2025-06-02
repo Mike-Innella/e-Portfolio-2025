@@ -68,7 +68,7 @@ const CustomSectionsConfig = [
   {
     name: "projects",
     headerIcon: <MdComputer />,
-    extraClass: "",
+    extraClass: "ml-24",
     notInMenu: false,
     content: (
       <>
@@ -76,14 +76,14 @@ const CustomSectionsConfig = [
         {ProjectsConfig.projects.map((project, index) => (
           <div key={`project-${index}`}>
             {" "}
-            <div className="w-full m-w-7xl pr-[14rem]">
+            <div className="w-full m-w-7xl pr-[14rem] max-lg:pr-[4rem]">
               <h3 style={{ fontSize: "1.4rem" }}>
                 {" "}
                 {project.icon} {project.name}{" "}
               </h3>{" "}
               <p>{project.description}</p>{" "}
             </div>
-            <div className="pr-[14rem]" style={{ textAlign: "right" }}>
+            <div className="pr-[14rem] max-lg:pr-[4rem]" style={{ textAlign: "right" }}>
               {" "}
               {project.links.map((link, linkIndex) => (
                 <CircleButton
@@ -107,7 +107,7 @@ const CustomSectionsConfig = [
   {
     name: "about",
     headerIcon: <MdInfo />,
-    extraClass: "about-section section-reverse",
+    extraClass: "about-section ml-24 section-reverse",
     content: (
       <>
         <GlassSwipe />
@@ -176,27 +176,29 @@ const CustomSectionsConfig = [
     notInMenu: false,
     content: (
       <>
-        <h4 style={{ fontSize: "2rem" }}>
-          {Icons["helpoutline"]} what do others say?
-        </h4>
-        <div className="flex flex-col gap-8 pt-6">
-          {ReviewsData.map((review, idx) => (
-            <div
-              key={`review-${idx}`}
-              className="border-l-4 pl-6 border-accent"
-            >
-              <p className="italic text-lg leading-relaxed">
-                “{review.review.trim()}”
-              </p>
-              <div className="mt-2 flex flex-col">
-                <span className="font-semibold">{review.name}</span>
-                {review.title && (
-                  <span className="text-sm text-gray-400">{review.title}</span>
-                )}
-                <span className="text-xs text-gray-500">{review.date}</span>
+        <div className="pr-[12rem]">
+          <h4 style={{ fontSize: "2rem" }}>what do others say?</h4>
+          <div className="flex flex-col gap-8 pt-6">
+            {ReviewsData.map((review, idx) => (
+              <div
+                key={`review-${idx}`}
+                className="border-l-4 pl-6 border-accent"
+              >
+                <p className="italic text-lg leading-relaxed">
+                  “{review.review.trim()}”
+                </p>
+                <div className="mt-2 flex flex-col">
+                  <span className="font-semibold">{review.name}</span>
+                  {review.title && (
+                    <span className="text-sm text-gray-400">
+                      {review.title}
+                    </span>
+                  )}
+                  <span className="text-xs text-gray-500">{review.date}</span>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </>
     ),
