@@ -97,11 +97,12 @@ export default function Menu({ sectionRefs }) {
   return (
     <>
       {/* Menu toggle button */}
-      <div className="fixed left-8 top-1/2 -translate-y-1/2 z-[500] max-lg:left-4 max-lg:top-16 max-md:-translate-y-0 max-sm:left-2 max-sm:top-2 max-lg:bg-white-100 dark:max-lg:bg-slate-900 max-lg:rounded-full max-lg:p-0">
+      <div className="fixed left-8 top-1/2 -translate-y-1/2 z-[500] max-lg:left-4 max-lg:top-16 max-md:-translate-y-0 max-sm:left-2 max-sm:top-2 max-lg:bg-white dark:max-lg:bg-black max-lg:rounded-full max-lg:p-0 menu-button">
         <MenuToggle
           menuActive={menuActive}
           toggleMenu={handleToggle}
           isRowMenu={isRowMenu}
+          className={`z-[500]`}
         >
           ME
           <br />
@@ -136,11 +137,12 @@ export default function Menu({ sectionRefs }) {
             // ROW layout
             <div
               className={`
+                menu-container
                 absolute left-16 top-16
                 grid grid-flow-col gap-4 ml-32
                 max-lg:fixed max-lg:gap-8 max-lg:w-fit max-lg:top-8 max-lg:left-0
                 max-md:gap-2 max-md:top-16
-                max-sm:grid-flow-row max-sm:grid-cols-4 max-sm:gap-2 max-sm:top-4
+                max-sm:grid-flow-row max-sm:grid-cols-4 max-sm:gap-2 max-sm:top-32 max-sm:left-2 max-sm:ml-0
                 transition-all duration-500
                 ${
                   isRowMenu && menuActive

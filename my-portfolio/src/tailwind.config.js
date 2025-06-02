@@ -40,11 +40,10 @@ module.exports = {
       },
       // ... (colors, width, height, perspective, fontFamily as you already have)
       colors: {
-
         // Duotone (legacy)
         "loader-border": "#EFEFFA",
         "bg-loader": "#1C262B",
-        "dark-bg": "#111315",
+        "dark-bg": "#0f172a",
         "light-bg": "#F0F2E2",
         "text-light": "#F8FAFC",
         "text-dark": "#181A1B",

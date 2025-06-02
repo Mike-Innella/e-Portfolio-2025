@@ -76,7 +76,7 @@ const CustomSectionsConfig = [
         {ProjectsConfig.projects.map((project, index) => (
           <div key={`project-${index}`}>
             {" "}
-            <div className="w-full m-w-7xl pr-[14rem] max-lg:pr-[4rem] max-sm:pr-8">
+            <div className="w-full m-w-7xl pr-[14rem] max-lg:pr-[4rem] max-sm:pr-2">
               <h3 style={{ fontSize: "1.4rem" }}>
                 {" "}
                 {project.icon} {project.name}{" "}
@@ -152,9 +152,8 @@ const CustomSectionsConfig = [
           </h4>
         </div>
         <div
-          className="grid grid-cols-5 gap-8 m-0 p-0 ml-24 max-lg:ml-0 max-lg:pr-20"
+          className="grid grid-cols-5 gap-8 m-0 p-0 ml-24 max-lg:ml-0 max-lg:pr-20 max-sm:gap-2 max-sm:pr-2"
           style={{
-            fontSize: "2rem",
             display: "grid",
             flexWrap: "wrap",
             width: "100%",
@@ -162,7 +161,7 @@ const CustomSectionsConfig = [
         >
           {techStack.map((key) => (
             <span
-              className="tech-icon-glass aspect-square mx-auto"
+              className="tech-icon-glass aspect-square mx-auto text-[2rem]"
               key={key}
               title={key}
             >
@@ -181,7 +180,7 @@ const CustomSectionsConfig = [
     notInMenu: false,
     content: (
       <>
-        <div className="pr-[12rem] max-lg:pr-24">
+        <div className="pr-[12rem] max-lg:pr-24 max-sm:pr-2">
           <h4 style={{ fontSize: "2rem" }}>what do others say?</h4>
           <div className="flex flex-col gap-8 pt-6">
             {ReviewsData.map((review, idx) => (

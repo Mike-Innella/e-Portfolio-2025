@@ -4,7 +4,7 @@
 :root {
   /* Light mode variables (default for :root) */
   /* HEX values */
-  --background-hex: #f8fafc;
+  --background-hex: #f5f5f4;
   --accent-hex: #2366a8;
   --text-hex: #181a1b;
   --hover-hex: #3aa0ea;
@@ -27,7 +27,7 @@
 
 .dark {
   /* Dark mode variables (overrides when .dark class is applied) */
-  --background-color: #111315;
+  --background-color: #0f172a;
   --accent-color: #3aa0ea;
   --text-color: #f8fafc;
   --hover-color: #3aa0ea;
@@ -36,7 +36,7 @@
 
 .light {
   /* Light mode variables (overrides when .light class is applied) */
-  --background-color: #f8fafc;
+  --background-color: #f5f5f4;
   --accent-color: #2366a8;
   --text-color: #181a1b;
   --hover-color: #3aa0ea;
@@ -209,4 +209,36 @@ textarea:-webkit-autofill {
 .dark .send-btn:hover {
   background-color: #3aa0ea !important;
   color: #3c3c3c !important;
+}
+
+.menu-container {
+  background-color: white !important;
+  padding: 0;
+}
+
+.dark .menu-container {
+  background-color: black !important;
+}
+
+.menu-toggle {
+  padding: 0;
+  margin: 0;
+}
+
+@media (max-width: 1024px) {
+  .menu-button {
+    background-color: #fff !important;
+  }
+
+  .dark .menu-button {
+    background-color: #000 !important;
+  }
+}
+
+@media (max-width: 500px) {
+  .tech-icon-glass {
+    font-size: 16px;
+    padding: 0;
+    margin: 0;
+  }
 }
