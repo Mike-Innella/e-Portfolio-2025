@@ -89,7 +89,7 @@ export default function Menu({ sectionRefs }) {
   return (
     <>
       {/* The menu toggle button */}
-      <div className="fixed left-8 top-1/2 -translate-y-1/2 z-[500] max-md:left-4 max-md:top-4 max-md:-translate-y-0 max-sm:left-2">
+      <div className="fixed left-8 top-1/2 -translate-y-1/2 z-[500] max-lg:left-4 max-lg:top-16 max-md:-translate-y-0 max-sm:left-2">
         <MenuToggle menuActive={menuActive} toggleMenu={handleToggle}>
           ME
           <br />

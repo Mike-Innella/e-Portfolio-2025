@@ -83,7 +83,10 @@ const CustomSectionsConfig = [
               </h3>{" "}
               <p>{project.description}</p>{" "}
             </div>
-            <div className="pr-[14rem] max-lg:pr-[4rem]" style={{ textAlign: "right" }}>
+            <div
+              className="pr-[14rem] max-lg:pr-[4rem]"
+              style={{ textAlign: "right" }}
+            >
               {" "}
               {project.links.map((link, linkIndex) => (
                 <CircleButton
@@ -112,12 +115,12 @@ const CustomSectionsConfig = [
       <>
         <GlassSwipe />
         <div className="flex">
-          <h4 className="text-[2rem] font-[600] text-right ml-auto pb-4">
+          <h4 className="text-[2rem] font-[600] text-right max-lg:w-full max-lg:text-left ml-auto pb-4">
             who am i ?
           </h4>
         </div>
-        <div className="flex w-full pl-[12rem] justify-start align-start flex-col gap-4">
-          <p>
+        <div className="flex w-full pl-[12rem] justify-start align-start flex-col gap-4 max-lg:pl-0 max-lg:pr-12">
+          <p className="max-lg:text-left">
             I’m a frontend developer passionate about building web experiences
             that are not just functional, but genuinely enjoyable to use. I
             thrive on combining modern JavaScript technologies with thoughtful,
@@ -127,7 +130,7 @@ const CustomSectionsConfig = [
             application <span className="italic"> flow</span> from start to
             finish.
           </p>
-          <p>
+          <p className="max-lg:text-left">
             What excites me most about web development is how it brings together
             creativity, curiosity, and real impact. My journey into this field
             started with a desire to understand how things work, and it’s
@@ -136,7 +139,7 @@ const CustomSectionsConfig = [
             skills further—because great products come from constant growth and
             true collaboration.
           </p>
-          <p>
+          <p className="max-lg:text-left">
             Away from the screen, I love experimenting with audio engineering,
             staying active at the gym, and making memories with my loved ones.
             Whether I’m mixing tracks or catching up with somebody, I find that
@@ -144,23 +147,25 @@ const CustomSectionsConfig = [
           </p>
         </div>
         <div className="flex mx-0 justify-end">
-          <h4 className="text-[2rem] font-[600] text-right ml-auto py-4">
+          <h4 className="text-[2rem] font-[600] text-right ml-auto py-4 max-lg:w-full max-lg:text-left">
             tech stack
           </h4>
         </div>
         <div
+          className="grid grid-cols-5 gap-8 m-0 p-0 ml-24 max-lg:ml-0 max-lg:pr-20"
           style={{
             fontSize: "2rem",
-            display: "flex",
-            gap: "2rem",
-            alignItems: "right",
+            display: "grid",
             flexWrap: "wrap",
             width: "100%",
-            justifyContent: "flex-end",
           }}
         >
           {techStack.map((key) => (
-            <span className="tech-icon-glass" key={key} title={key}>
+            <span
+              className="tech-icon-glass aspect-square mx-auto"
+              key={key}
+              title={key}
+            >
               {Icons[key]}
             </span>
           ))}
@@ -172,11 +177,11 @@ const CustomSectionsConfig = [
   {
     name: "reviews",
     headerIcon: <MdRateReview />,
-    extraClass: "reviews-section",
+    extraClass: "reviews-section max-lg:ml-24",
     notInMenu: false,
     content: (
       <>
-        <div className="pr-[12rem]">
+        <div className="pr-[12rem] max-lg:pr-24">
           <h4 style={{ fontSize: "2rem" }}>what do others say?</h4>
           <div className="flex flex-col gap-8 pt-6">
             {ReviewsData.map((review, idx) => (
@@ -207,12 +212,12 @@ const CustomSectionsConfig = [
   {
     name: "contact",
     headerIcon: <MdDescription />,
-    extraClass: "contact-section section-reverse",
+    extraClass: "contact-section max-lg:ml-24 section-reverse",
     content: (
       <>
         {" "}
         <>
-          <div className="flex flex-row-reverse gap-[16rem]">
+          <div className="flex flex-row-reverse gap-[16rem] max-lg:flex-col max-lg:gap-0">
             <ContactForm className="w-full" /> <GlowingLogo />
           </div>
         </>
