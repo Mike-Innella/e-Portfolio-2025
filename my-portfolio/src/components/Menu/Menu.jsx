@@ -63,11 +63,11 @@ export default function Menu({ sectionRefs }) {
         },
       },
       {
-        icon: <ThemeToggle />, // Stateless icon, not a button, not clickable
+        icon: <ThemeToggle />,
         tooltip: "Toggle dark/light theme",
         action: () => {
           toggleTheme();
-        }, // MenuItem handles the click!
+        },
       },
     ],
     [scrollToSection]
@@ -103,7 +103,7 @@ export default function Menu({ sectionRefs }) {
   return (
     <>
       {/* The menu toggle button */}
-      <div className="fixed left-8 top-1/2 -translate-y-1/2 z-[500] max-lg:left-4 max-lg:top-16 max-md:-translate-y-0 max-sm:left-2 max-sm:top-2 max-lg:bg-slate-900 max-lg:rounded-full max-lg:p-0">
+      <div className="fixed left-8 top-1/2 -translate-y-1/2 z-[500] max-lg:left-4 max-lg:top-16 max-md:-translate-y-0 max-sm:left-2 max-sm:top-2 max-lg:bg-white-100 max-lg:dark:bg-slate-900 max-lg:rounded-full max-lg:p-0">
         <MenuToggle
           menuActive={menuActive}
           toggleMenu={handleToggle}
@@ -143,11 +143,11 @@ export default function Menu({ sectionRefs }) {
             <div
               className={`
         absolute left-16 top-16
-        grid grid-flow-col gap-4 max-lg:gap-8 max-lg:w-fit max-lg:top-8 max-lg:left-0 max-md:gap-2 max-md:top-16 max-sm:grid-flow-row max-sm:grid-cols-4 max-sm:gap-2 max-sm:top-4
+        grid grid-flow-col gap-4 ml-32 max-lg:gap-8 max-lg:w-fit max-lg:top-8 max-lg:left-0 max-md:gap-2 max-md:top-16 max-sm:grid-flow-row max-sm:grid-cols-4 max-sm:gap-2 max-sm:top-4
         transition-all duration-500
     ${
       isRowMenu && menuActive
-        ? "bg-slate-900 text-slate-100 shadow-lg rounded-xl px-4 py-2 mx-4"
+        ? "bg-blue-100 dark:bg-slate-900 text-slate-100 shadow-lg rounded-xl px-4 py-2 mx-auto"
         : ""
     }
     transition-all duration-500

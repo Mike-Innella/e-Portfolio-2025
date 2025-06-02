@@ -20,7 +20,7 @@ export default function MenuToggle({
         ${
           isRowMenu
             ? "bg-slate-900 text-slate-100 shadow-xl"
-            : "bg-slate-100 dark:bg-[#111315] text-slate-900 dark:text-slate-100"
+            : "bg-slate-100 dark:bg-[#111315]"
         }
         transition-colors duration-300
       `}
