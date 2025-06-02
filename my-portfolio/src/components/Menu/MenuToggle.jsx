@@ -1,7 +1,12 @@
 import React from "react";
 import CircleButton from "../CircleButton";
 
-export default function MenuToggle({ toggleMenu, menuActive, children }) {
+export default function MenuToggle({
+  toggleMenu,
+  menuActive,
+  children,
+  isRowMenu,
+}) {
   const handleClick = (e) => {
     e.stopPropagation();
     if (toggleMenu) toggleMenu();
@@ -11,7 +16,14 @@ export default function MenuToggle({ toggleMenu, menuActive, children }) {
     <CircleButton
       onClick={handleClick}
       size={4}
-      className="menu-toggle bg-slate-100 dark:bg-[#111315] text-slate-900 dark:text-slate-100 flex items-center group"
+      className={`menu-toggle flex items-center group
+        ${
+          isRowMenu
+            ? "bg-slate-900 text-slate-100 shadow-xl"
+            : "bg-slate-100 dark:bg-[#111315] text-slate-900 dark:text-slate-100"
+        }
+        transition-colors duration-300
+      `}
       style={{
         zIndex: 600,
         cursor: "pointer",

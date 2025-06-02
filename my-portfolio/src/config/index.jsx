@@ -76,7 +76,7 @@ const CustomSectionsConfig = [
         {ProjectsConfig.projects.map((project, index) => (
           <div key={`project-${index}`}>
             {" "}
-            <div className="w-full m-w-7xl pr-[14rem] max-lg:pr-[4rem]">
+            <div className="w-full m-w-7xl pr-[14rem] max-lg:pr-[4rem] max-sm:pr-8">
               <h3 style={{ fontSize: "1.4rem" }}>
                 {" "}
                 {project.icon} {project.name}{" "}
@@ -84,7 +84,7 @@ const CustomSectionsConfig = [
               <p>{project.description}</p>{" "}
             </div>
             <div
-              className="pr-[14rem] max-lg:pr-[4rem]"
+              className="pr-[14rem] max-lg:pr-[4rem] max-sm:pr-8"
               style={{ textAlign: "right" }}
             >
               {" "}
@@ -177,7 +177,7 @@ const CustomSectionsConfig = [
   {
     name: "reviews",
     headerIcon: <MdRateReview />,
-    extraClass: "reviews-section max-lg:ml-24",
+    extraClass: "reviews-section max-lg:ml-24 max-md:mt-8",
     notInMenu: false,
     content: (
       <>
@@ -212,7 +212,7 @@ const CustomSectionsConfig = [
   {
     name: "contact",
     headerIcon: <MdDescription />,
-    extraClass: "contact-section max-lg:ml-24 section-reverse",
+    extraClass: "contact-section max-lg:ml-24 section-reverse max-md:mt-8",
     content: (
       <>
         {" "}

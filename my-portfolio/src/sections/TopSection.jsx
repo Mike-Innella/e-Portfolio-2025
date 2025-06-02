@@ -25,7 +25,7 @@ export default function TopSection() {
 
       {/* Profile Picture */}
       <div className="profile w-1/2 h-full max-lg:w-full pr-8 max-lg:pr-0 max-lg:w-full max-lg:pl-0 max-lg:pt-6 flex items-center justify-center">
-        <div className="rounded-full overflow-hidden shadow-lg border-4 border-primary w-[28rem] h-[28rem] max-lg:w-[22rem] max-lg:h-[22rem] max-md:w-[220px] max-md:h-[220px] max-sm:w-[180px] max-sm:h-[180px] flex items-center justify-center bg-background transition-all duration-700">
+        <div className="rounded-full overflow-hidden shadow-lg border-4 border-primary w-[28rem] h-[28rem] max-lg:w-[22rem] max-lg:h-[22rem] max-md:w-[20rem] max-md:h-[20rem] max-sm:w-[18rem] max-sm:h-[18rem] flex items-center justify-center bg-background transition-all duration-700">
           <img
             src={HeadShot}
             alt="Profile"

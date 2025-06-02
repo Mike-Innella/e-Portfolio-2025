@@ -18,16 +18,19 @@ export default function MenuItem({
   menuActive,
   rotationAngle,
   isMobile,
+  isRowMenu,
   icon,
 }) {
   // For menu items, we want them to be clickable when the menu is active
   const pointerEvents = menuActive ? "auto" : "none";
-  
+
   return (
     <CircleButton
-      className={`menu-item fixed z-[450] left-8 top-1/2 transition-all duration-300 ${
-        menuActive ? "visible opacity-100" : "invisible opacity-0"
-      } max-md:left-4 max-md:top-4`}
+      className={`menu-item ${
+        isRowMenu
+          ? "relative transition-all duration-300"
+          : "fixed z-[450] left-8 top-1/2 max-lg:left-4 max-lg:top-16 transition-all duration-300"
+      } ${menuActive ? "visible opacity-100" : "invisible opacity-0"}`}
       tooltip={tooltip}
       onClick={action}
       tooltipPlacement={tooltipPlacement}
@@ -36,7 +39,7 @@ export default function MenuItem({
         transform: menuActive
           ? activeTransformStyle(rotationAngle, -rotationAngle, isMobile)
           : "",
-        pointerEvents: pointerEvents
+        pointerEvents: pointerEvents,
       }}
     >
       {icon}
