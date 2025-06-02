@@ -40,7 +40,7 @@ export default function ContactForm() {
         className="
     bg-dark-bg/30
     backdrop-blur-md
-    w-[36rem] max-lg:w-[40rem] max-md:w-full max-sm:full mb-4
+    w-[36rem] max-lg:w-[40rem] max-md:w-full mb-4
     flex flex-col gap-4
     border border-[#242323]/20 rounded-lg p-4 sm:p-6
     shadow-lg

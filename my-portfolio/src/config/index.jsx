@@ -76,7 +76,7 @@ const CustomSectionsConfig = [
         {ProjectsConfig.projects.map((project, index) => (
           <div key={`project-${index}`}>
             {" "}
-            <div className="w-full m-w-7xl pr-[14rem] max-lg:pr-[4rem] max-sm:pr-2">
+            <div className="w-full m-w-7xl pr-[14rem] max-lg:pr-[4rem] max-sm:pr-8">
               <h3 style={{ fontSize: "1.4rem" }}>
                 {" "}
                 {project.icon} {project.name}{" "}
@@ -152,7 +152,7 @@ const CustomSectionsConfig = [
           </h4>
         </div>
         <div
-          className="grid grid-cols-5 gap-8 m-0 p-0 ml-24 max-lg:ml-0 max-lg:pr-20 max-sm:gap-2 max-sm:pr-2"
+          className="grid grid-cols-5 gap-8 m-0 p-0 ml-24 max-lg:ml-0 max-lg:pr-20 max-sm:gap-2 max-sm:pr-8"
           style={{
             display: "grid",
             flexWrap: "wrap",
@@ -180,7 +180,7 @@ const CustomSectionsConfig = [
     notInMenu: false,
     content: (
       <>
-        <div className="pr-[12rem] max-lg:pr-24 max-sm:pr-2">
+        <div className="pr-[12rem] max-lg:pr-24 max-sm:pr-8">
           <h4 style={{ fontSize: "2rem" }}>what do others say?</h4>
           <div className="flex flex-col gap-8 pt-6">
             {ReviewsData.map((review, idx) => (
@@ -211,13 +211,14 @@ const CustomSectionsConfig = [
   {
     name: "contact",
     headerIcon: <MdDescription />,
-    extraClass: "contact-section max-lg:ml-24 section-reverse max-md:mt-8",
+    extraClass:
+      "contact-section w-full  max-lg:ml-40 max-md:ml-36 max-sm:ml-32 max-md:section-reverse max-md:mt-8 max-sm:ml-12 xs:ml-0",
     content: (
       <>
         {" "}
         <>
-          <div className="flex flex-row-reverse gap-[16rem] max-lg:flex-col max-lg:gap-0">
-            <ContactForm className="w-full" /> <GlowingLogo />
+          <div className="flex flex-row-reverse w-full gap-80 max-lg:flex-col max-lg:gap-0">
+            <ContactForm className="max-lg:w-full" /> <GlowingLogo />
           </div>
         </>
       </>

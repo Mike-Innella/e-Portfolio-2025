@@ -30,7 +30,7 @@ export default function App() {
 
   return (
     <div
-      className="relative min-h-screen font-sans max-w-screen-[1920px] max-sm:pr-8 mx-auto overflow-x-hidden"
+      className="relative min-h-screen font-sans max-w-screen-[1920px] mx-auto overflow-x-hidden"
       style={{
         backgroundColor: "var(--background-color)",
         
