@@ -1,15 +1,15 @@
-import React from 'react'
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.jsx'
-import { initializeTheme } from './utils/theme'
+import React from "react";
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import "./index.css";
+import App from "./App.jsx";
 
-// Initialize theme before rendering (sets dark mode as default)
-initializeTheme()
+const stored = localStorage.getItem("theme");
+if (stored === "dark") document.documentElement.classList.add("dark");
+else document.documentElement.classList.remove("dark");
 
-createRoot(document.getElementById('root')).render(
+createRoot(document.getElementById("root")).render(
   <StrictMode>
     <App />
-  </StrictMode>,
-)
+  </StrictMode>
+);

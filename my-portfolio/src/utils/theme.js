@@ -5,7 +5,10 @@
  * @returns {boolean} true if user prefers dark mode
  */
 export const prefersDarkMode = () => {
-  return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  return (
+    window.matchMedia &&
+    window.matchMedia("(prefers-color-scheme: dark)").matches
+  );
 };
 
 /**
@@ -13,16 +16,20 @@ export const prefersDarkMode = () => {
  * Sets dark mode as the default theme
  */
 export const initializeTheme = () => {
-  // Check if theme is stored in localStorage
-  const storedTheme = localStorage.getItem('theme');
-  
-  // If theme was explicitly set to light, use light mode
-  if (storedTheme === 'light') {
-    document.documentElement.classList.remove('dark');
+  const storedTheme = localStorage.getItem("theme");
+  if (storedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  } else if (storedTheme === "light") {
+    document.documentElement.classList.remove("dark");
   } else {
-    // Default to dark mode (either from localStorage or as default)
-    document.documentElement.classList.add('dark');
-    localStorage.setItem('theme', 'dark');
+    // No stored theme: use system/OS preference!
+    if (prefersDarkMode()) {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+    }
   }
 };
 
@@ -31,16 +38,16 @@ export const initializeTheme = () => {
  * @returns {string} the new theme ('dark' or 'light')
  */
 export const toggleTheme = () => {
-  const isDark = document.documentElement.classList.contains('dark');
-  
+  const isDark = document.documentElement.classList.contains("dark");
+
   if (isDark) {
-    document.documentElement.classList.remove('dark');
-    localStorage.setItem('theme', 'light');
-    return 'light';
+    document.documentElement.classList.remove("dark");
+    localStorage.setItem("theme", "light");
+    return "light";
   } else {
-    document.documentElement.classList.add('dark');
-    localStorage.setItem('theme', 'dark');
-    return 'dark';
+    document.documentElement.classList.add("dark");
+    localStorage.setItem("theme", "dark");
+    return "dark";
   }
 };
 
@@ -49,5 +56,5 @@ export const toggleTheme = () => {
  * @returns {string} 'dark' or 'light'
  */
 export const getCurrentTheme = () => {
-  return document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+  return document.documentElement.classList.contains("dark") ? "dark" : "light";
 };

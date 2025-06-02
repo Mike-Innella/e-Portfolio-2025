@@ -19,8 +19,8 @@ export default function MenuToggle({
       className={`menu-toggle flex items-center group
         ${
           isRowMenu
-            ? "bg-slate-900 text-slate-100 shadow-xl"
-            : "bg-slate-100 dark:bg-[#111315]"
+            ? "bg-black dark:bg-white text-white dark:text-black shadow-xl"
+            : "bg-slate-100 dark:bg-[#111315] text-slate-900 dark:text-slate-100"
         }
         transition-colors duration-300
       `}

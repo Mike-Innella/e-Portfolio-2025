@@ -1,5 +1,5 @@
-import React, { useMemo, useState, useCallback } from "react";
-import { MdComputer, MdArrowUpward } from "react-icons/md";
+import React, { useMemo, useState, useCallback, useEffect } from "react";
+import { MdArrowUpward } from "react-icons/md";
 import ThemeToggle from "../../ux/ThemeToggle";
 import { toggleTheme } from "../../utils/theme";
 import MenuToggle from "./MenuToggle";
@@ -11,21 +11,20 @@ export default function Menu({ sectionRefs }) {
   const [isMobile, setIsMobile] = useState(
     window.matchMedia("(max-width: 768px)").matches
   );
+  const [isRowMenu, setIsRowMenu] = useState(
+    window.matchMedia("(max-width: 1024px)").matches
+  );
 
   // Listen for screen resize to update isMobile
-  React.useEffect(() => {
+  useEffect(() => {
     const checkMobile = () =>
       setIsMobile(window.matchMedia("(max-width: 768px)").matches);
     window.addEventListener("resize", checkMobile);
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
-  const [isRowMenu, setIsRowMenu] = useState(
-    window.matchMedia("(max-width: 1024px)").matches
-  );
-
   // Listen for screen resize to update isRowMenu
-  React.useEffect(() => {
+  useEffect(() => {
     const checkRowMenu = () =>
       setIsRowMenu(window.matchMedia("(max-width: 1024px)").matches);
     window.addEventListener("resize", checkRowMenu);
@@ -48,17 +47,14 @@ export default function Menu({ sectionRefs }) {
     [sectionRefs]
   );
 
-  // Menu actions (can expand as needed)
+  // Static menu items
   const staticMenuItems = useMemo(
     () => [
       {
         icon: <MdArrowUpward size={28} />,
         tooltip: "Go to top",
         action: () => {
-          window.scrollTo({
-            top: 0,
-            behavior: "smooth",
-          });
+          window.scrollTo({ top: 0, behavior: "smooth" });
           setMenuActive(false);
         },
       },
@@ -70,7 +66,7 @@ export default function Menu({ sectionRefs }) {
         },
       },
     ],
-    [scrollToSection]
+    []
   );
 
   // Dynamic section-based menu items
@@ -92,18 +88,16 @@ export default function Menu({ sectionRefs }) {
     [staticMenuItems, sectionMenuItems]
   );
 
-  // For "arc" layout
+  // Arc layout math
   const startAngle = isMobile ? 0 : -90;
   const rotationAngle = isMobile ? 90 : 180;
 
-  const handleToggle = () => {
-    setMenuActive(!menuActive);
-  };
+  const handleToggle = () => setMenuActive((prev) => !prev);
 
   return (
     <>
-      {/* The menu toggle button */}
-      <div className="fixed left-8 top-1/2 -translate-y-1/2 z-[500] max-lg:left-4 max-lg:top-16 max-md:-translate-y-0 max-sm:left-2 max-sm:top-2 max-lg:bg-white-100 max-lg:dark:bg-slate-900 max-lg:rounded-full max-lg:p-0">
+      {/* Menu toggle button */}
+      <div className="fixed left-8 top-1/2 -translate-y-1/2 z-[500] max-lg:left-4 max-lg:top-16 max-md:-translate-y-0 max-sm:left-2 max-sm:top-2 max-lg:bg-white-100 dark:max-lg:bg-slate-900 max-lg:rounded-full max-lg:p-0">
         <MenuToggle
           menuActive={menuActive}
           toggleMenu={handleToggle}
@@ -115,7 +109,7 @@ export default function Menu({ sectionRefs }) {
         </MenuToggle>
       </div>
 
-      {/* The menu overlay and items */}
+      {/* Menu overlay and items */}
       <div
         className={`fixed inset-0 z-[400] ${
           menuActive ? "visible" : "invisible"
@@ -129,7 +123,7 @@ export default function Menu({ sectionRefs }) {
           onClick={() => setMenuActive(false)}
           style={{
             pointerEvents: menuActive ? "auto" : "none",
-            touchAction: menuActive ? "none" : "auto", // Prevent scrolling when menu is open on mobile
+            touchAction: menuActive ? "none" : "auto",
           }}
         />
 
@@ -142,17 +136,23 @@ export default function Menu({ sectionRefs }) {
             // ROW layout
             <div
               className={`
-        absolute left-16 top-16
-        grid grid-flow-col gap-4 ml-32 max-lg:gap-8 max-lg:w-fit max-lg:top-8 max-lg:left-0 max-md:gap-2 max-md:top-16 max-sm:grid-flow-row max-sm:grid-cols-4 max-sm:gap-2 max-sm:top-4
-        transition-all duration-500
-    ${
-      isRowMenu && menuActive
-        ? "bg-blue-100 dark:bg-slate-900 text-slate-100 shadow-lg rounded-xl px-4 py-2 mx-auto"
-        : ""
-    }
-    transition-all duration-500
-    ${menuActive ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"}
-  `}
+                absolute left-16 top-16
+                grid grid-flow-col gap-4 ml-32
+                max-lg:fixed max-lg:gap-8 max-lg:w-fit max-lg:top-8 max-lg:left-0
+                max-md:gap-2 max-md:top-16
+                max-sm:grid-flow-row max-sm:grid-cols-4 max-sm:gap-2 max-sm:top-4
+                transition-all duration-500
+                ${
+                  isRowMenu && menuActive
+                    ? "bg-white dark:bg-black max-lg:bg-white max-lg:dark:bg-black text-black dark:text-white shadow-lg rounded-xl px-4 py-2 mx-auto"
+                    : ""
+                }
+                ${
+                  menuActive
+                    ? "opacity-100 translate-x-0"
+                    : "opacity-0 -translate-x-8"
+                }
+              `}
               style={{
                 pointerEvents: menuActive ? "auto" : "none",
               }}
@@ -178,7 +178,6 @@ export default function Menu({ sectionRefs }) {
                 increment = Math.round(rotationAngle / (menuItems.length - 1));
               }
               angle += index * increment;
-
               return (
                 <MenuItem
                   key={`menu-item-${index}`}
