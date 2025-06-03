@@ -33,7 +33,7 @@ const techStack = [
 
 const CommonConfig = {
   name: "Michael Innella",
-  tagline: "frontend developer | ui designer",
+  tagline: "Frontend Developer | UI Designer",
   signature: {
     viewBox: "0 0 100 100",
   },
@@ -66,7 +66,7 @@ const ProjectsConfig = {
 
 const CustomSectionsConfig = [
   {
-    name: "projects",
+    name: "Projects",
     headerIcon: <MdComputer />,
     extraClass: "ml-24",
     notInMenu: false,
@@ -108,7 +108,7 @@ const CustomSectionsConfig = [
     ),
   },
   {
-    name: "about",
+    name: "About",
     headerIcon: <MdInfo />,
     extraClass: "about-section ml-24 section-reverse",
     content: (
@@ -116,7 +116,7 @@ const CustomSectionsConfig = [
         <GlassSwipe />
         <div className="flex">
           <h4 className="text-[2rem] font-[600] text-right max-lg:w-full max-lg:text-left ml-auto pb-4">
-            who am i ?
+            Who am I ?
           </h4>
         </div>
         <div className="flex w-full pl-[12rem] justify-start align-start flex-col gap-4 max-lg:pl-0 max-lg:pr-12">
@@ -148,7 +148,7 @@ const CustomSectionsConfig = [
         </div>
         <div className="flex mx-0 justify-end">
           <h4 className="text-[2rem] font-[600] text-right ml-auto py-4 max-lg:w-full max-lg:text-left">
-            tech stack
+            Tech-stack
           </h4>
         </div>
         <div
@@ -174,14 +174,14 @@ const CustomSectionsConfig = [
   },
 
   {
-    name: "reviews",
+    name: "Reviews",
     headerIcon: <MdRateReview />,
     extraClass: "reviews-section max-lg:ml-24 max-md:mt-8",
     notInMenu: false,
     content: (
       <>
         <div className="pr-[12rem] max-lg:pr-24 max-sm:pr-8">
-          <h4 style={{ fontSize: "2rem" }}>what do others say?</h4>
+          <h4 style={{ fontSize: "2rem" }}>What do others say?</h4>
           <div className="flex flex-col gap-8 pt-6">
             {ReviewsData.map((review, idx) => (
               <div
@@ -209,7 +209,7 @@ const CustomSectionsConfig = [
   },
 
   {
-    name: "contact",
+    name: "Contact",
     headerIcon: <MdDescription />,
     extraClass:
       "contact-section w-full  max-md:mx-auto max-sm:px-0 max-sm:ml-0 max-md:section-reverse max-md:mt-8 max-lg:justify-center max-lg:items-center max-sm:pr-14",
@@ -217,7 +217,7 @@ const CustomSectionsConfig = [
       <>
         {" "}
         <>
-          <div className="flex flex-row-reverse w-full gap-80 max-lg:flex-col max-lg:gap-0">
+          <div className="flex flex-row-reverse w-full gap-68 max-lg:flex-col max-lg:gap-0">
             <ContactForm className="" /> <GlowingLogo />
           </div>
         </>

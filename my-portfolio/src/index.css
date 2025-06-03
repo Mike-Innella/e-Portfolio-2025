@@ -242,3 +242,9 @@ textarea:-webkit-autofill {
     margin: 0;
   }
 }
+
+@media (max-width: 500px) {
+  .contact__header {
+    text-align: left !important;
+  }
+}

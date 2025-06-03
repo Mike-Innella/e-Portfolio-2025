@@ -50,7 +50,9 @@ export default function ContactForm() {
   "
       >
         <h2 className="text-3xl font-bold mb-6 tracking-wide flex items-center gap-2">
-          <span className="material-icons text-4xl">send me a message</span>
+          <span className="material-icons text-4xl contact__header">
+            Send me a message.
+          </span>
         </h2>
         <div className="flex flex-col md:flex-row md:items-start gap-4">
           {/* Left: Inputs */}

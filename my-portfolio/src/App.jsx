@@ -23,9 +23,10 @@ export default function App() {
   // Map the refs to section names
   const sectionRefs = {
     top: topRef,
-    about: useRef(null),
-    projects: useRef(null),
-    contact: useRef(null),
+    About: useRef(null),
+    Projects: useRef(null),
+    Reviews:useRef(null),
+    Contact: useRef(null),
   };
 
   return (

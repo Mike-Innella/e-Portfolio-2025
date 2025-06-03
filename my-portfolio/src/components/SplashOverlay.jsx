@@ -19,45 +19,24 @@ export default function SplashOverlay({ onHide }) {
     };
   }, [hidden]);
 
-  // Message sequence and element fade-in animation effect
   useEffect(() => {
-    // Initial loader fade-in
-    timersRef.current.push(
-      setTimeout(() => {
-        setShowLoader(true);
-      }, 1500)
-    );
-    timersRef.current.push(
-      setTimeout(() => {
-        setShowHello(true);
-      }, 500)
-    );
-    timersRef.current.push(
-      setTimeout(() => {
-        setShowHello(false);
-      }, 3000)
-    );
-    timersRef.current.push(
-      setTimeout(() => {
-        setShowInstructions(true);
-      }, 3000)
-    );
-    timersRef.current.push(
-      setTimeout(() => {
-        setShowInstructions(false);
-      }, 4500)
-    );
-    timersRef.current.push(
-      setTimeout(() => {
-        setShowButton(true);
-      }, 5000)
-    );
+    // Show "Hello!" at 500ms, hide at 3000ms
+    timersRef.current.push(setTimeout(() => setShowHello(true), 500));
+    timersRef.current.push(setTimeout(() => setShowHello(false), 3000));
 
-    // Cleanup timers
-    return () => {
-      timersRef.current.forEach(clearTimeout);
-    };
+    // Show Loader at 1500ms (fade in after Hello appears)
+    timersRef.current.push(setTimeout(() => setShowLoader(true), 1500));
+
+    // Show instructions after Hello hides
+    timersRef.current.push(setTimeout(() => setShowInstructions(true), 3000));
+    timersRef.current.push(setTimeout(() => setShowInstructions(false), 4500));
+
+    // Show button last
+    timersRef.current.push(setTimeout(() => setShowButton(true), 4500));
+
+    return () => timersRef.current.forEach(clearTimeout);
   }, []);
+
   const handleDoubleClick = () => {
     timersRef.current.forEach(clearTimeout);
     setShowHello(false);
@@ -65,24 +44,18 @@ export default function SplashOverlay({ onHide }) {
     setShowLoader(true);
     setShowButton(true);
   };
-  /*************  ✨ Windsurf Command 🌟  *************/
-  // Check if the `hidden` state is true, if so, return null to not render the component
 
   if (hidden) return null;
 
-  // Return the overlay component
   return (
-    <div onDoubleClick={handleDoubleClick}
-      // Set the overlay to cover the entire screen with fixed positioning and high z-index
+    <div
+      onDoubleClick={handleDoubleClick}
       className={`fixed inset-0 z-[999] flex items-center justify-center transition-opacity duration-1200 ease ${
-        // Apply opacity and pointer-events styles based on `isHiding` state
         isHiding ? "opacity-0 pointer-events-none" : "opacity-100"
       }`}
-      // Use the background color defined in CSS variables
       style={{ backgroundColor: "var(--background-color)" }}
     >
       <div
-        /*******  b39f041f-cae0-4b31-bb76-a5a00b79acd6  *******/
         className={`flex flex-col items-center justify-between w-screen min-h-screen py-10 transition-transform duration-1200 ease${
           isHiding ? "-translate-y-40" : ""
         }`}
@@ -120,7 +93,7 @@ export default function SplashOverlay({ onHide }) {
         </div>
 
         <div
-          className={`transition-all duration-300 ease-in-out translate-y--20${
+          className={`transition-all duration-300 ease-in-out -translate-y-20 ${
             showButton ? "opacity-100" : "opacity-0"
           }`}
         >
@@ -132,7 +105,7 @@ export default function SplashOverlay({ onHide }) {
               setIsHiding(true);
               setTimeout(() => {
                 setHidden(true);
-                if (onHide) onHide();F
+                if (onHide) onHide();
               }, 1000);
             }}
             size={4}
