@@ -1,0 +1,58 @@
+.proximity-grid-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: auto;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.proximity-dot {
+  position: absolute;
+  border-radius: 50%;
+  transition: width 0.14s, height 0.14s, opacity 0.14s, box-shadow 0.14s;
+  pointer-events: none;
+}
+
+/* Dark mode */
+.dot-dark {
+  background: #090f19;
+}
+
+/* Light mode */
+.dot-light {
+  background: #f5f5f4;
+}
+
+/* Mouse cursor light effect (dark mode) */
+.proximity-cursorEffect.effect-light {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  margin-left: -100px;
+  margin-top: -100px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #fff 0%, #fff8 50%, transparent 100%);
+  opacity: 0.25;
+  pointer-events: none;
+  filter: blur(12px);
+  transition: left 0.1s, top 0.1s;
+  z-index: 1;
+}
+
+/* Mouse cursor shadow effect (light mode) */
+.proximity-cursorEffect.effect-shadow {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  margin-left: -100px;
+  margin-top: -100px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #000 0%, #0002 60%, transparent 100%);
+  opacity: 0.11;
+  pointer-events: none;
+  filter: blur(14px);
+  transition: left 0.1s, top 0.1s;
+  z-index: 1;
+}

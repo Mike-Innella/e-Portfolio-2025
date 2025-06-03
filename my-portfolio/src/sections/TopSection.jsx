@@ -1,9 +1,10 @@
 import React from "react";
+import AOS from "aos";
 import { useEffect } from "react";
 import { CommonConfig, Icons } from "../config/index";
 import HeadShot from "../assets/headshot-enhanced.png"; // your profile picture
 import CircleButton from "../components/CircleButton";
-import AOS from "aos";
+import ProximityGrid from "../ux/ProximityGrid/ProximityGrid";
 import "aos/dist/aos.css";
 
 export default function TopSection() {
@@ -15,6 +16,7 @@ export default function TopSection() {
       data-aos="fade-left"
       className="relative flex flex-row justify-center items-center min-h-screen w-full max-lg:px-6 max-lg:py-12 max-lg:flex-col max-lg:text-center max-sm:px-4"
     >
+      <ProximityGrid />
       {/* Intro */}
       <div className="intro w-1/2 pr-16 border-r border-primary text-right max-lg:w-full max-lg:pr-0 max-lg:pb-6 max-lg:border-b max-lg:border-r-0 max-lg:text-center">
         <h1 className="text-[7vw] max-sm:text-[10vw] font-bold leading-[0.9] m-0">
