@@ -8,11 +8,12 @@ import {
   MdLink,
   MdWeb,
   MdMail,
+  MdLocalMovies,
 } from "react-icons/md";
+import { FaShoppingBasket } from "react-icons/fa";
 import { FaTwitter, FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa";
 import { BsBuildingFillGear } from "react-icons/bs";
 import { TiWeatherPartlySunny } from "react-icons/ti";
-
 
 const ICON_SIZE = 37;
 
@@ -32,6 +33,8 @@ const Icons = {
   web: <MdWeb size={ICON_SIZE} />,
   weather: <TiWeatherPartlySunny size={ICON_SIZE} />,
   gearblock: <BsBuildingFillGear size={ICON_SIZE} />,
+  market: <FaShoppingBasket size={ICON_SIZE} />,
+  store: <MdLocalMovies size={ICON_SIZE} />,
 
   // Tech Stack (ALL SVG CDN images)
   html: (

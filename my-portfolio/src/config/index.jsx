@@ -15,6 +15,7 @@ import GlassSwipe from "../ux/GlassSwipe";
 import GlowingLogo from "../ux/GlowingLogo";
 import ProjectsData from "../locales/ProjectsData";
 import ReviewsData from "../locales/ReviewsData";
+import FlipCard from "../ux/FlipCard/FlipCard";
 
 const techStack = [
   "html",
@@ -68,42 +69,21 @@ const CustomSectionsConfig = [
   {
     name: "Projects",
     headerIcon: <MdComputer />,
-    extraClass: "ml-24",
+    extraClass: " mr-48 max-lg:ml-24 max-sm:mb-2",
     notInMenu: false,
     content: (
       <>
-        {" "}
-        {ProjectsConfig.projects.map((project, index) => (
-          <div key={`project-${index}`}>
-            {" "}
-            <div className="w-full m-w-7xl pr-[14rem] max-lg:pr-[4rem] max-sm:pr-8">
-              <h3 style={{ fontSize: "1.4rem" }}>
-                {" "}
-                {project.icon} {project.name}{" "}
-              </h3>{" "}
-              <p>{project.description}</p>{" "}
-            </div>
-            <div
-              className="pr-[14rem] max-lg:pr-[4rem] max-sm:pr-8"
-              style={{ textAlign: "right" }}
-            >
-              {" "}
-              {project.links.map((link, linkIndex) => (
-                <CircleButton
-                  className="hover:scale-125"
-                  key={`project-link-${index}${linkIndex}`}
-                  link={link.link}
-                  target="_blank"
-                  tooltip={link.tooltip}
-                  size={2.5}
-                >
-                  {" "}
-                  {link.icon}{" "}
-                </CircleButton>
-              ))}{" "}
-            </div>{" "}
-          </div>
-        ))}{" "}
+        <div className="flex flex-wrap gap-8 max-sm:gap-1 justify-center items-stretch">
+          {ProjectsConfig.projects.map((project, index) => (
+            <FlipCard
+              key={`project-${index}`}
+              icon={project.icon}
+              name={project.name}
+              description={project.description}
+              links={project.links}
+            />
+          ))}
+        </div>
       </>
     ),
   },
