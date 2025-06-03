@@ -1,4 +1,5 @@
 import { Icons } from "../config/icons"; // adjust path if needed
+import ShamanImage from "../assets/shaman.png";
 
 const ProjectsData = [
   {
@@ -33,6 +34,25 @@ const ProjectsData = [
       {
         tooltip: "See app",
         link: "https://howard-motor-webapp.vercel.app/",
+        icon: Icons["link"],
+      },
+    ],
+  },
+
+  {
+    name: "The Shaman Asher",
+    icon: ShamanImage,
+    description:
+      "Joined the project after initial development to elevate the user experience for a mystical services website. Enhanced the interface with skeleton loading states, a custom animated message loader, and interactive menu underlines. Ongoing contributions include UI/UX improvements, increased accessibility, and responsive design refinements. Stack: Typescript, Tailwind, EmailJS.",
+    links: [
+      {
+        tooltip: "See source",
+        link: "https://github.com/theshamanasher/theshamanasher",
+        icon: Icons["code"],
+      },
+      {
+        tooltip: "See app",
+        link: "https://www.shamanasher.com/",
         icon: Icons["link"],
       },
     ],
