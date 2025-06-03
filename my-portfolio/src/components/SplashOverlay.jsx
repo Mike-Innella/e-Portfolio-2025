@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import CircleButton from "../components/CircleButton";
 import { MdArrowForward } from "react-icons/md";
-import Loader from "../ux/LoadingAnimation";
+import Loader, { LoaderBackground, LoaderAnimation } from "../ux/LoadingAnimation/LoadingAnimation";
 
 export default function SplashOverlay({ onHide }) {
   const [isHiding, setIsHiding] = useState(false);
@@ -55,8 +55,13 @@ export default function SplashOverlay({ onHide }) {
       }`}
       style={{ backgroundColor: "var(--background-color)" }}
     >
+      {/* Always present background with mouse tracking */}
+      <LoaderBackground />
+      
+      {/* Animated loader elements shown conditionally */}
+      {showLoader && <LoaderAnimation />}
       <div
-        className={`flex flex-col items-center justify-between w-screen min-h-screen py-10 transition-transform duration-1200 ease${
+        className={`relative z-[1001] flex flex-col items-center justify-between w-screen min-h-screen py-10 transition-transform duration-1200 ease${
           isHiding ? "-translate-y-40" : ""
         }`}
       >
@@ -72,13 +77,7 @@ export default function SplashOverlay({ onHide }) {
               </span>
             </div>
 
-            <div
-              className={`transition-opacity duration-1000 my-4 md:my-0 scale-75 sm:scale-90 md:scale-100 ${
-                showLoader ? "opacity-100" : "opacity-0"
-              }`}
-            >
-              <Loader />
-            </div>
+            {/* Loader placeholder - moved to overlay root */}
 
             <div className="w-full max-w-[85%] sm:max-w-sm md:max-w-md text-center md:text-right p-4">
               <span
