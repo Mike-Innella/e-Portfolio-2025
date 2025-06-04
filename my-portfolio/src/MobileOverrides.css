@@ -10,7 +10,7 @@
     top: 20px !important;
     z-index: 600 !important;
   }
-  
+
   /* Increase specificity for menu container */
   div.menu-container,
   div[class*="menu-container"],
@@ -44,50 +44,82 @@
   .section-content {
     margin-left: auto !important;
     margin-right: auto !important;
-    width: 90% !important;
+    width: 100% !important;
     max-width: 480px !important;
   }
-  
+
   /* Ensure form elements are full width and centered */
-  form input, 
+  form input,
   form textarea,
   form button {
     width: 100% !important;
   }
-  
+
   /* FlipCard adjustments */
   .flipcard {
-    width: 90% !important;
+    width: 100% !important;
     max-width: 320px !important;
     margin-left: auto !important;
     margin-right: auto !important;
   }
-  
+
   .flipcard__container {
     width: 100% !important;
     margin: 0 auto !important;
   }
-  
+
   .flipcard__badges-row {
     justify-content: center !important;
     flex-wrap: wrap !important;
   }
-  
+
   /* Ensure tech badges display evenly */
   .tech-badge-container {
     margin: 5px !important;
   }
-  
-  .hex-badge {
-    width: 3.5rem !important;
-    height: 3.5rem !important;
-  }
-  
+
   /* Center icons in sections */
   .intro,
   .profile {
     text-align: center !important;
     margin-left: auto !important;
     margin-right: auto !important;
+  }
+
+  /* Left align Contact section header */
+  h2:has(+ div:has(.flex.flex-col.items-center)) {
+    justify-content: flex-start !important;
+    text-align: left !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .technologies__wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    width: 100%;
+  }
+
+  .flipcard__wrapper {
+    margin-left: 20px !important;
+    padding-left: 0 !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+@media (max-width: 400px) {
+  .flipcard__wrapper {
+    margin-left: 12px !important;
+  }
+}
+
+@media (max-width: 360px || max-width: 320px) {
+  .flipcard__wrapper {
+    margin-left: 0 !important;
   }
 }

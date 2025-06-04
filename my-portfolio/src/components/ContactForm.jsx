@@ -50,8 +50,8 @@ export default function ContactForm() {
     max:sm:ml-2 max:sm:mr-2 max:max-sm:mx-auto
   "
       >
-        <h2 className="text-3xl font-bold mb-6 tracking-wide flex items-center gap-2">
-          <span className="material-icons text-4xl contact__header">
+        <h2 className="text-3xl font-bold mb-6 tracking-wide flex items-center max-sm:justify-center max-sm:w-full  max-sm:mx-auto gap-2">
+          <span className="material-icons text-4xl contact__header max-sm:w-full">
             Send me a message.
           </span>
         </h2>

@@ -159,13 +159,13 @@
 @media (max-width: 480px) {
   .flipcard__container {
     height: 444px;
-    width: fit-content;
-    max-width: 324px;
+    width: 100%;
+    max-width: 316px;
   }
 
   .flipcard {
-    width: fit-content;
-    max-width: 324px;
+    width: 100%;
+    max-width: 316px;
     perspective: 480px;
     height: 256px;
   }

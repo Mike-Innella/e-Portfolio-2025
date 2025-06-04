@@ -20,7 +20,7 @@ export default function Section({
     isReverse ? "flex-row-reverse" : "flex-row",
     isCentered ? "items-center" : "items-start",
     extraClass,
-    "max-lg:flex-col max-lg:p-8 max-lg:py-10 max-sm:p-0 max-sm:ml-4 max-sm:w-full",
+    "max-lg:flex-col max-lg:p-8 max-lg:py-10 max-sm:p-0 max-sm:ml-4 max-sm:mr-4 max-sm:w-fit max-sm:mx-auto",
   ].join(" ");
 
   // Section header layout

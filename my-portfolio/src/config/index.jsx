@@ -66,7 +66,7 @@ const CustomSectionsConfig = [
   {
     name: "Projects",
     headerIcon: <MdComputer />,
-    extraClass: " mr-48 max-lg:ml-24 max-sm:ml-4 max-sm:mr-8 max-sm:mb-4",
+    extraClass: " mr-48 max-lg:ml-24 max-sm:ml-0 max-sm:mr-8 max-sm:mb-4",
     notInMenu: false,
     content: (
       <>
@@ -99,8 +99,8 @@ const CustomSectionsConfig = [
             </h4>
           </div>
         </div>
-        <div className="flex w-full pl-[12rem] justify-start align-start flex-col gap-4 max-lg:pl-0 max-lg:pr-12">
-          <p className="max-lg:text-left">
+        <div className="flex w-full pl-[12rem] justify-start align-start flex-col gap-4 max-lg:pl-0 max-lg:pr-12 max-sm:pr-0">
+          <p className="max-lg:text-left w-full max-sm:mr-0 max-sm:ml-0 max-sm:pr-8">
             I’m a frontend developer passionate about building web experiences
             that are not just functional, but genuinely enjoyable to use. I
             thrive on combining modern JavaScript technologies with thoughtful,
@@ -110,7 +110,7 @@ const CustomSectionsConfig = [
             application <span className="italic"> flow</span> from start to
             finish.
           </p>
-          <p className="max-lg:text-left">
+          <p className="max-lg:text-left w-full max-sm:mr-0 max-sm:ml-0 max-sm:pr-8">
             What excites me most about web development is how it brings together
             creativity, curiosity, and real impact. My journey into this field
             started with a desire to understand how things work, and it’s
@@ -119,7 +119,7 @@ const CustomSectionsConfig = [
             skills further—because great products come from constant growth and
             true collaboration.
           </p>
-          <p className="max-lg:text-left">
+          <p className="max-lg:text-left w-full max-sm:mr-0 max-sm:ml-0 max-sm:pr-8">
             Away from the screen, I love experimenting with audio engineering,
             staying active at the gym, and making memories with my loved ones.
             Whether I’m mixing tracks or catching up with somebody, I find that
@@ -134,7 +134,7 @@ const CustomSectionsConfig = [
           </div>
         </div>
         <div
-          className="grid grid-cols-5 gap-8 m-0 p-0 ml-24 max-lg:ml-0 max-lg:pr-20 max-sm:grid-cols-3 max-sm:gap-12 max-sm:pr-8"
+          className="technologies__wrapper grid grid-cols-5 gap-8 w-full m-0 p-0 ml-24 max-lg:ml-0 max-lg:pr-20 max-sm:grid-cols-4 max-sm:gap-12 max-sm:pr-0 max-sm:ml-0 max-sm:mx-auto"
           style={{
             display: "grid",
             flexWrap: "wrap",
@@ -145,7 +145,7 @@ const CustomSectionsConfig = [
             {techStack.map((key) => (
               <div
                 className="tech__container aspect-square w-fit p-2 m-0 flex justify-center align-center"
-                key={key} // ← Move key here!
+                key={key}
               >
                 <span
                   className="tech-icon-glass aspect-square mx-auto text-[2rem]"
@@ -164,11 +164,11 @@ const CustomSectionsConfig = [
   {
     name: "Reviews",
     headerIcon: <MdRateReview />,
-    extraClass: "reviews-section max-lg:ml-24 max-md:mt-8",
+    extraClass: "reviews-section max-lg:ml-24 max-md:mt-8 max-sm:ml-2",
     notInMenu: false,
     content: (
       <>
-        <div className="pr-[12rem] pl-8 max-lg:pr-24 max-sm:pr-8 ">
+        <div className="pr-[12rem] pl-8 max-lg:pr-24 max-sm:pr-8 max-sm:pl-0 ">
           <div className="glass-card">
             <h4 style={{ fontSize: "2rem" }}>What do others say?</h4>
           </div>
@@ -202,7 +202,7 @@ const CustomSectionsConfig = [
     name: "Contact",
     headerIcon: <MdDescription />,
     extraClass:
-      "contact-section w-full  max-md:mx-auto max-sm:px-0 max-sm:ml-0 max-md:section-reverse max-md:mt-8 max-lg:justify-center max-lg:items-center max-sm:pr-14",
+      "contact-section w-full  max-md:mx-auto max-sm:px-0 max-sm:ml-0 max-md:section-reverse max-md:mt-8 max-lg:justify-center max-lg:items-center",
     content: (
       <>
         <div className="flex flex-row-reverse w-full gap-68 max-lg:flex-col max-lg:gap-0">
