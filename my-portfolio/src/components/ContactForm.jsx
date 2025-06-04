@@ -43,9 +43,8 @@ export default function ContactForm() {
     w-[36rem] max-lg:w-[40rem] max-md:w-full max-sm:w-full mb-4
     flex flex-col gap-4
     border border-[#242323]/20 rounded-lg p-4 sm:p-6
-    shadow-lg
-    shadow-[#111315]/50
-    dark:shadow-lg dark:shadow-[#3AA0EA]/50
+    shadow-[0_0_32px_0_rgba(58,160,234,0.15)]
+dark:shadow-[0_0_48px_0_rgba(58,160,234,0.18)]
     min-h-[24rem]
     max-sm:ml-8 max-sm:mr-0 max:max-sm:mx-auto
   "
