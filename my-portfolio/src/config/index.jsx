@@ -172,11 +172,11 @@ const CustomSectionsConfig = [
           <div className="glass-card">
             <h4 style={{ fontSize: "2rem" }}>What do others say?</h4>
           </div>
-          <div className="flex flex-col gap-8 pt-6 hover:scale-101 hover:shadow-2xl rounded-md transition duration-300 ease-in-out p-4 review__card">
+          <div className="flex flex-col gap-8 pt-6">
             {ReviewsData.map((review, idx) => (
               <div
                 key={`review-${idx}`}
-                className="border-l-4 pl-8 border-accent"
+                className="review__card border-l-4 pl-8 border-accent p-4 rounded-md transition duration-300 ease-in-out hover:scale-105 hover:shadow-2xl"
               >
                 <p className="italic text-lg leading-relaxed">
                   "{review.review.trim()}"

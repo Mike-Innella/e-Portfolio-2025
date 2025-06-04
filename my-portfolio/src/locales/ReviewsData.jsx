@@ -2,6 +2,15 @@
 
 const ReviewsData = [
   {
+    name: "Charles Buckley",
+    title: "Lead Developer",
+    review: `
+      I had the opportunity to work closely with Mike while leading a recent web project. He played a key role in helping build out the site and consistently delivered quality work. He was dependable, quick to pick up new tasks, and asked the right questions to keep things moving smoothly. His attention to detail and willingness to iterate on feedback made him a valuable part of the team.
+    `,
+    date: "June 2025",
+  },
+
+  {
     name: "David Bowen",
     title: "Web Developer",
     review: `
@@ -9,7 +18,7 @@ const ReviewsData = [
 
       I’m looking forward to working with him again in the very near future. Thanks, Mike!
     `,
-    date: "June 2025",
+    date: "April 2025",
   },
   // Add more reviews as needed
 ];
