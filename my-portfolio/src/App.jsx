@@ -1,10 +1,22 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, lazy, Suspense } from "react";
+import { CustomSectionsConfig } from "./config";
+
+// Lazy load components for code splitting
+// Keep SplashOverlay and Menu eager loaded for fast initial interaction
 import SplashOverlay from "./components/SplashOverlay";
 import Menu from "./components/Menu/Menu";
-import TopSection from "./sections/TopSection";
-import CustomSections from "./sections/CustomSections";
-import Footer from "./sections/Footer";
-import { CustomSectionsConfig } from "./config";
+
+// Lazy load content sections that might not be immediately visible
+const TopSection = lazy(() => import("./sections/TopSection"));
+const CustomSections = lazy(() => import("./sections/CustomSections"));
+const Footer = lazy(() => import("./sections/Footer"));
+
+// Simple loading fallback for lazy-loaded components
+const LoadingFallback = () => (
+  <div className="flex items-center justify-center min-h-[200px]">
+    <div className="animate-pulse w-full h-32 bg-gray-200 dark:bg-gray-800 rounded"></div>
+  </div>
+);
 
 export default function App() {
   // Track if splash overlay is active
@@ -48,15 +60,21 @@ export default function App() {
       <main className="w-full flex flex-col items-stretch">
         {/* Top */}
         <div ref={sectionRefs["top"] || null}>
-          <TopSection />
+          <Suspense fallback={<LoadingFallback />}>
+            <TopSection />
+          </Suspense>
         </div>
 
         {/* All custom sections */}
-        <CustomSections sectionRefs={sectionRefs} />
+        <Suspense fallback={<LoadingFallback />}>
+          <CustomSections sectionRefs={sectionRefs} />
+        </Suspense>
       </main>
 
       {/* Footer */}
-      <Footer />
+      <Suspense fallback={<LoadingFallback />}>
+        <Footer />
+      </Suspense>
     </div>
   );
 }

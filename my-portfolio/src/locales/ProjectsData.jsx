@@ -1,4 +1,5 @@
 import { Icons } from "../config/icons"; // adjust path if needed
+// Use proper ES module import for static files with exact case sensitivity
 import ShamanImage from "../assets/shaman.png";
 
 const ProjectsData = [
@@ -41,7 +42,7 @@ const ProjectsData = [
 
   {
     name: "The Shaman Asher",
-    icon: ShamanImage,
+    icon: ShamanImage, // Using properly imported ShamanImage variable
     description:
       "Brought in post-launch to elevate the UI/UX of a mystical services site. Enhanced the interface with skeleton loading states, a custom animated message loader, and interactive menu underlines. My ongoing contributions include accessibility improvements, refined responsive design, and additional UI/UX polish. Stack: TypeScript, Tailwind, EmailJS.",
     links: [

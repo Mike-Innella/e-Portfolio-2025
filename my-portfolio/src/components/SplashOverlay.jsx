@@ -23,21 +23,28 @@ export default function SplashOverlay({ onHide }) {
   }, [hidden]);
 
   useEffect(() => {
+    // Store timers locally to ensure cleanup uses the correct values
+    const timers = [];
+    
     // Show "Hello!" at 500ms, hide at 3000ms
-    timersRef.current.push(setTimeout(() => setShowHello(true), 500));
-    timersRef.current.push(setTimeout(() => setShowHello(false), 3000));
+    timers.push(setTimeout(() => setShowHello(true), 500));
+    timers.push(setTimeout(() => setShowHello(false), 3000));
 
     // Show Loader at 1500ms (fade in after Hello appears)
-    timersRef.current.push(setTimeout(() => setShowLoader(true), 1500));
+    timers.push(setTimeout(() => setShowLoader(true), 1500));
 
     // Show instructions after Hello hides
-    timersRef.current.push(setTimeout(() => setShowInstructions(true), 3000));
-    timersRef.current.push(setTimeout(() => setShowInstructions(false), 4500));
+    timers.push(setTimeout(() => setShowInstructions(true), 3000));
+    timers.push(setTimeout(() => setShowInstructions(false), 4500));
 
     // Show button last
-    timersRef.current.push(setTimeout(() => setShowButton(true), 4500));
+    timers.push(setTimeout(() => setShowButton(true), 4500));
+    
+    // Save the timers to the ref for access outside this effect
+    timersRef.current = timers;
 
-    return () => timersRef.current.forEach(clearTimeout);
+    // Use the local variable for cleanup to avoid the stale ref warning
+    return () => timers.forEach(clearTimeout);
   }, []);
 
   const handleDoubleClick = () => {

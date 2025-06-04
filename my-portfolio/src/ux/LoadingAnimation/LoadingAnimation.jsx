@@ -30,14 +30,6 @@ export function LoaderAnimation() {
   const animationRef = useRef(null);
   const startTimeRef = useRef(Date.now());
 
-  // Define ring rotation speeds (in milliseconds for a full 360° rotation)
-  const rotationSpeeds = {
-    1: 3100, // 3.1s per rotation
-    2: 3800, // 3.8s per rotation
-    3: 4500, // 4.5s per rotation
-    4: 5200, // 5.2s per rotation
-  };
-
   // Define base angles for each ring
   const baseAngles = {
     1: { x: 30, y: 0 },
@@ -72,6 +64,15 @@ export function LoaderAnimation() {
 
   // Animation loop for continuous ring rotation
   useEffect(() => {
+    // Define ring rotation speeds (in milliseconds for a full 360° rotation)
+    // Moved inside useEffect to avoid recreation on each render
+    const rotationSpeeds = {
+      1: 3100, // 3.1s per rotation
+      2: 3800, // 3.8s per rotation
+      3: 4500, // 4.5s per rotation
+      4: 5200, // 5.2s per rotation
+    };
+    
     const animate = () => {
       const elapsed = Date.now() - startTimeRef.current;
 
@@ -100,7 +101,7 @@ export function LoaderAnimation() {
         cancelAnimationFrame(animationRef.current);
       }
     };
-  }, []);
+  }, []); // No external dependencies now that rotationSpeeds is internal
 
   // Calculate spin style for each ring - no mouse input
   const getRingStyle = (ringNumber) => {

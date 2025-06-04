@@ -4,7 +4,7 @@
   width: 100%;
   height: 100%;
   pointer-events: auto;
-  z-index: 0;
+  z-index: -1; /* Ensure grid stays behind content */
   overflow: hidden;
   -webkit-mask-image: linear-gradient(to bottom, #000 90%, transparent 100%);
   mask-image: linear-gradient(to bottom, #000 72%, transparent 100%);
@@ -16,14 +16,49 @@
   position: absolute;
   pointer-events: none;
   transform-style: preserve-3d;
+  width: 0;
+  height: 0;
 }
 
 .proximity-dot {
   position: absolute;
   border-radius: 50%;
-  transition: width 0.14s, height 0.14s, opacity 0.14s, transform 0.15s ease-out;
+  transform: translate(-50%, -50%);
+  transition: transform 0.15s ease-out;
   pointer-events: none;
   transform-style: preserve-3d;
+  opacity: 0.3;
+  width: 8px;
+  height: 8px;
+  left: 0;
+  top: 0;
+  will-change: transform;
+}
+
+/* Proximity level classes for dots */
+.proximity-level-0 {
+  transform: none;
+}
+
+.proximity-level-1 {
+  transform: translateZ(1px) rotate3d(0, 0, 0, 4deg);
+  opacity: 0.45;
+  width: 10px;
+  height: 10px;
+}
+
+.proximity-level-2 {
+  transform: translateZ(3px) rotate3d(0, 0, 0, 8deg);
+  opacity: 0.65;
+  width: 12px;
+  height: 12px;
+}
+
+.proximity-level-3 {
+  transform: translateZ(5px) rotate3d(0, 0, 0, 15deg);
+  opacity: 0.8;
+  width: 14px;
+  height: 14px;
 }
 
 /* Dark mode */
@@ -36,15 +71,57 @@
   background: #a59573;
 }
 
-/* Shadow element for dots */
+/* Shadow element for dots - pre-defined sizes to avoid dynamic calculations */
 .proximity-shadow {
   position: absolute;
   height: 50%;
+  left: -10px;  /* Default, will be overridden by classes */
+  width: 20px;  /* Default, will be overridden by classes */
   border-radius: 50% 50% 0 0;
   transform-origin: center bottom;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.14s, transform 0.15s ease-out;
+  top: 0;
+  transition: transform 0.15s ease-out;
+  will-change: transform, opacity;
+}
+
+/* Shadow size classes */
+.shadow-size-1 {
+  left: -10px;
+  width: 20px;
+}
+
+.shadow-size-2 {
+  left: -12.5px;
+  width: 25px;
+}
+
+.shadow-size-3 {
+  left: -15px;
+  width: 30px;
+}
+
+.shadow-size-4 {
+  left: -17.5px;
+  width: 35px;
+}
+
+/* Shadow opacity classes */
+.shadow-opacity-0 {
+  opacity: 0;
+}
+
+.shadow-opacity-1 {
+  opacity: 0.2;
+}
+
+.shadow-opacity-2 {
+  opacity: 0.4;
+}
+
+.shadow-opacity-3 {
+  opacity: 0.6;
 }
 
 /* Shadow for light mode */
@@ -78,46 +155,4 @@
   background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.5), transparent 70%);
 }
 
-/* Mouse cursor shadow effect (used in light mode) */
-.proximity-cursorEffect.effect-light {
-  position: absolute;
-  width: 320px;
-  height: 320px;
-  margin-left: -160px;
-  margin-top: -160px;
-  border-radius: 40%;
-  background: 
-    radial-gradient(ellipse at 50% 50%, #000 0%, #0007 20%, #0003 50%, transparent 85%),
-    radial-gradient(ellipse at 45% 45%, transparent 30%, #0005 60%, transparent 90%);
-  opacity: 0.25;
-  pointer-events: none;
-  filter: blur(6px);
-  transform-origin: center;
-  transform: perspective(500px) rotateX(15deg) translateZ(-12px);
-  transition: left 0.08s ease-out, top 0.08s ease-out, transform 0.15s ease-out;
-  z-index: 1;
-  will-change: left, top, transform, background;
-}
-
-/* Mouse cursor light effect (used in dark mode) */
-.proximity-cursorEffect.effect-shadow {
-  position: absolute;
-  width: 340px;
-  height: 300px;
-  margin-left: -170px;
-  margin-top: -150px;
-  border-radius: 40%;
-  background: 
-    radial-gradient(ellipse at 50% 40%, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.8) 10%, rgba(255,255,255,0.4) 30%, transparent 80%),
-    radial-gradient(ellipse at 45% 45%, rgba(255,255,255,0.5) 10%, transparent 70%),
-    radial-gradient(ellipse at 40% 40%, rgba(220,220,255,0.4) 0%, transparent 65%);
-  opacity: 0.42;
-  pointer-events: none;
-  filter: blur(3px);
-  transform-origin: center;
-  transform: perspective(500px) rotateX(10deg) translateZ(8px);
-  box-shadow: 0 0 60px 10px rgba(255, 255, 255, 0.2);
-  transition: left 0.08s ease-out, top 0.08s ease-out, transform 0.15s ease-out;
-  z-index: 1;
-  will-change: left, top, transform, background;
-}
+/* Cursor effect classes removed to improve performance */
