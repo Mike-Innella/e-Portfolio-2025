@@ -92,10 +92,12 @@ const CustomSectionsConfig = [
     content: (
       <>
         <GlassSwipe />
-        <div className="flex">
-          <h4 className="text-[2rem] font-[600] text-right mb-[2rem] max-lg:w-full max-lg:text-left ml-auto pb-4">
-            Who am I ?
-          </h4>
+        <div className="flex flex-end justify-end align-end max-lg:align-start max-lg:justify-start">
+          <div className="glass-card ">
+            <h4 className="text-[2rem] font-[600] text-right max-lg:w-full max-lg:text-left ml-auto">
+              Who am I ?
+            </h4>
+          </div>
         </div>
         <div className="flex w-full pl-[12rem] justify-start align-start flex-col gap-4 max-lg:pl-0 max-lg:pr-12">
           <p className="max-lg:text-left">
@@ -124,13 +126,15 @@ const CustomSectionsConfig = [
             life outside of code keeps me creative and grounded.
           </p>
         </div>
-        <div className="flex mx-0 justify-end">
-          <h4 className="text-[2rem] font-[600] text-right ml-auto py-4 mb-[2rem] max-lg:w-full max-lg:text-left">
-            Tech-stack
-          </h4>
+        <div className="flex mx-0 justify-end max-lg:justify-start mt-8">
+          <div className="glass-card">
+            <h4 className="text-[2rem] font-[600] text-right ml-auto max-lg:w-full max-lg:text-left">
+              Technologies
+            </h4>
+          </div>
         </div>
         <div
-          className="grid grid-cols-5 gap-8 m-0 p-0 ml-24 max-lg:ml-0 max-lg:pr-20 max-sm:gap-2 max-sm:pr-8"
+          className="grid grid-cols-5 gap-8 m-0 p-0 ml-24 max-lg:ml-0 max-lg:pr-20 max-sm:grid-cols-3 max-sm:gap-12 max-sm:pr-8"
           style={{
             display: "grid",
             flexWrap: "wrap",
@@ -140,7 +144,7 @@ const CustomSectionsConfig = [
           <>
             {techStack.map((key) => (
               <div
-                className="tech__container aspect-square w-fit p-2 m-0 flex justify-center align-center rounded-xl"
+                className="tech__container aspect-square w-fit p-2 m-0 flex justify-center align-center"
                 key={key} // ← Move key here!
               >
                 <span
@@ -165,9 +169,9 @@ const CustomSectionsConfig = [
     content: (
       <>
         <div className="pr-[12rem] pl-8 max-lg:pr-24 max-sm:pr-8 ">
-          <h4 style={{ fontSize: "2rem", marginBottom: "2rem" }}>
-            What do others say?
-          </h4>
+          <div className="glass-card">
+            <h4 style={{ fontSize: "2rem" }}>What do others say?</h4>
+          </div>
           <div className="flex flex-col gap-8 pt-6 hover:scale-101 hover:shadow-2xl rounded-md transition duration-300 ease-in-out p-4 review__card">
             {ReviewsData.map((review, idx) => (
               <div

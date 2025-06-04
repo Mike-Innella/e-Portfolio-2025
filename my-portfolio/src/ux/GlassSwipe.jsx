@@ -6,8 +6,12 @@ const GlassSwipe = () => {
 
   useEffect(() => {
     // Only inject the styles once across all component instances
-    if (document.getElementById("glass-swipe-keyframes") || styleInjected.current) return;
-    
+    if (
+      document.getElementById("glass-swipe-keyframes") ||
+      styleInjected.current
+    )
+      return;
+
     styleInjected.current = true;
 
     // Create and inject styles only once
@@ -16,12 +20,31 @@ const GlassSwipe = () => {
     style.innerHTML = `
       .tech-icon-glass {
         position: relative;
-        display: inline-block;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
         overflow: hidden;
         transition: transform 0.3s cubic-bezier(0.4,0.2,0.2,1);
-        border-radius: 4px;
-        padding: 4px 12px;
+        padding: 8px;
+        width: 4rem;
+        height: 4rem;
+        background: transparent;
+        clip-path: polygon(
+          25% 6%,
+          75% 6%,
+          100% 50%,
+          75% 94%,
+          25% 94%,
+          0% 50%
+        );
+        box-shadow: 0 2px 8px 0 rgba(30, 64, 175, 0.12);
       }
+      .tech-icon-glass img {
+        width: 28px;
+        height: 28px;
+        object-fit: contain;
+      }
+      
       .tech-icon-glass:hover {
         transform: scale(1.2)
       }
@@ -83,45 +106,47 @@ const GlassSwipe = () => {
       }
     `;
     document.head.appendChild(style);
-    
+
     // Use event delegation for better performance
     // This handles all tech icons with a single event listener on the document
     const handleMouseEvents = (event) => {
       if (!event.target.closest) return;
-      
-      const icon = event.target.closest('.tech-icon-glass');
+
+      const icon = event.target.closest(".tech-icon-glass");
       if (!icon) return;
-      
-      if (event.type === 'mouseout') {
+
+      if (event.type === "mouseout") {
         icon.classList.add("no-anim");
         // Force reflow
         void icon.offsetWidth;
         icon.classList.remove("no-anim");
       }
     };
-    
+
     // Add a single event listener to the document instead of multiple ones
-    document.addEventListener('mouseout', handleMouseEvents, { passive: true });
-    
+    document.addEventListener("mouseout", handleMouseEvents, { passive: true });
+
     // Monitor only containers that might contain tech icons
-    const relevantContainers = document.querySelectorAll('.tech__container, [class*="tech"]');
+    const relevantContainers = document.querySelectorAll(
+      '.tech__container, [class*="tech"]'
+    );
     let observer;
-    
+
     if (relevantContainers.length > 0) {
       observer = new MutationObserver((mutations) => {
-        if (mutations.some(mutation => mutation.addedNodes.length > 0)) {
+        if (mutations.some((mutation) => mutation.addedNodes.length > 0)) {
           // No need to re-add event listeners since we're using event delegation
         }
       });
-      
+
       // Observe only specific containers, not the entire document
-      relevantContainers.forEach(container => {
+      relevantContainers.forEach((container) => {
         observer.observe(container, { childList: true, subtree: true });
       });
     }
-    
+
     return () => {
-      document.removeEventListener('mouseout', handleMouseEvents);
+      document.removeEventListener("mouseout", handleMouseEvents);
       if (observer) {
         observer.disconnect();
       }

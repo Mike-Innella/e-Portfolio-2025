@@ -13,8 +13,8 @@ export default function FlipCard({
   techStack = [], // <-- Project-specific stack (array of keys)
 }) {
   return (
-    <div className="flipcard flex flex-row justify-center items-center w-96 h-48 p-0 mt-32 mb-32 max-sm:w-80 max-sm:ml-0 max-sm:pl-0 max-sm:h-40">
-      <div className="flipcard__container w-full aspect-[6/6] max-sm:ml-0 max-sm:pl-0">
+    <div className="flipcard flex flex-row justify-center items-center w-96 h-48 p-0 mt-32 mb-32 max-lg:mx-auto max-lg:w-128 max-md:w-114 max-lg:h-24  max-md:h-28 max-lg:h-40 max-sm:w-80 max-sm:ml-0 max-sm:pl-0 max-sm:h-40 max-sm:w-full">
+      <div className="flipcard__container w-full aspect-[6/6] max-lg:mx-auto max-lg:w-full max-lg:h-80 max-md:h-96 max-sm:w-full max-sm:ml-0 max-sm:pl-0">
         <div
           className="flipcard__front absolute w-full h-full rounded-[14px] shadow-xl overflow-hidden flex flex-col items-center justify-center bg-[#fff] text-[#222] dark:bg-[#22222294] dark:text-white bg-center bg-cover"
           style={{ backgroundImage: `url(${image})` }}
@@ -53,10 +53,12 @@ export default function FlipCard({
                 const tech = TechStack.find((t) => t.key === techKey);
                 if (!tech) return null;
                 return (
-                  <div key={tech.key} className="tech-badge-container" title={tech.label}>
-                    <span className="hex-badge">
-                      {tech.icon}
-                    </span>
+                  <div
+                    key={tech.key}
+                    className="tech-badge-container"
+                    title={tech.label}
+                  >
+                    <span className="hex-badge">{tech.icon}</span>
                     <span className="hex-badge-ribbon">{tech.label}</span>
                   </div>
                 );
