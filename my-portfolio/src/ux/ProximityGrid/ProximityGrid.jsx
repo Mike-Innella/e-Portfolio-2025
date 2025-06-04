@@ -3,7 +3,7 @@ import "./PGStyles.css";
 
 const DOT_SIZE = 8;
 const DOT_SPACING = 80; // sparse, for perf
-const IMPACT_RADIUS = 120;
+const IMPACT_RADIUS = 160;
 
 export default function ProximityGrid({ dark }) {
   const gridRef = useRef(null);
@@ -73,12 +73,20 @@ export default function ProximityGrid({ dark }) {
             opacity: 0.27 + 0.54 * proximity,
             boxShadow: proximity
               ? dark
-                ? `0 0 24px 12px #fff7`
-                : `0 0 28px 16px #0003`
+                ? `0 0 25px 15px #fff9, 0 0 8px 2px #fffc`
+                : `0 0 30px 15px #0005, 0 0 10px 3px #0007`
+              : "none",
+            transform: proximity 
+              ? `translateZ(${proximity * 5}px) 
+                 rotate3d(
+                  ${(py - mouse.y) * 0.01}, 
+                  ${-(px - mouse.x) * 0.01}, 
+                  0, 
+                  ${proximity * 20}deg)`
               : "none",
             background: dark ? "#1A1E26" : "#a59573",
             transition:
-              "width 0.13s, height 0.13s, opacity 0.13s, box-shadow 0.13s",
+              "width 0.13s, height 0.13s, opacity 0.13s, box-shadow 0.13s, transform 0.2s ease-out",
           }}
         />
       );
@@ -89,7 +97,7 @@ export default function ProximityGrid({ dark }) {
   const cursorEffect = mouse ? (
     <div
       className={`proximity-cursorEffect ${
-        dark ? "effect-light" : "effect-shadow"
+        dark ? "effect-shadow" : "effect-light"
       }`}
       style={{
         left: mouse.x,
