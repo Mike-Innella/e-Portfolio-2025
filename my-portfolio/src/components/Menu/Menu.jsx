@@ -142,7 +142,7 @@ export default function Menu({ sectionRefs }) {
                 grid grid-flow-col gap-4 ml-32
                 max-lg:fixed max-lg:gap-8 max-lg:w-fit max-lg:top-8 max-lg:left-0
                 max-md:gap-2 max-md:top-16
-                max-sm:grid-flow-row max-sm:grid-cols-4 max-sm:gap-2 max-sm:top-32 max-sm:left-2 max-sm:ml-0
+                max-sm:grid-flow-row max-sm:grid-cols-4 max-sm:gap-2 max-sm:top-32 max-sm:left-4 max-sm:ml-0
                 transition-all duration-500
                 ${
                   isRowMenu && menuActive

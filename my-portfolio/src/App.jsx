@@ -46,7 +46,7 @@ export default function App() {
 
       {/* Main content sections */}
       <main className="w-full flex flex-col items-stretch">
-        {/* Top (intro/signature/social) */}
+        {/* Top */}
         <div ref={sectionRefs["top"] || null}>
           <TopSection />
         </div>

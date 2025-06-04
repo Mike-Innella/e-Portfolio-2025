@@ -69,7 +69,7 @@ const CustomSectionsConfig = [
   {
     name: "Projects",
     headerIcon: <MdComputer />,
-    extraClass: " mr-48 max-lg:ml-24 max-sm:mb-2",
+    extraClass: " mr-48 max-lg:ml-24 max-sm:ml-8 max-sm:mr-8 max-sm:mb-4",
     notInMenu: false,
     content: (
       <>
@@ -160,13 +160,13 @@ const CustomSectionsConfig = [
     notInMenu: false,
     content: (
       <>
-        <div className="pr-[12rem] max-lg:pr-24 max-sm:pr-8">
+        <div className="pr-[12rem] pl-8 max-lg:pr-24 max-sm:pr-8">
           <h4 style={{ fontSize: "2rem" }}>What do others say?</h4>
           <div className="flex flex-col gap-8 pt-6">
             {ReviewsData.map((review, idx) => (
               <div
                 key={`review-${idx}`}
-                className="border-l-4 pl-6 border-accent"
+                className="border-l-4 pl-8 border-accent"
               >
                 <p className="italic text-lg leading-relaxed">
                   “{review.review.trim()}”

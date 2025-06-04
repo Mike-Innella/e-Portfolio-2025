@@ -1,4 +1,11 @@
 /* FCStyles.css — Tailwind-focused, minimal version */
+.flipcard__png {
+  filter: invert(1);
+}
+
+.dark .flipcard__png {
+  filter: invert(0);
+}
 
 .flipcard {
   perspective: 1200px;
@@ -31,6 +38,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 0 auto;
 }
 
 .flipcard__front {
@@ -99,10 +107,7 @@
   .flipcard {
     perspective: 1024px;
   }
-  .flipcard:hover .flipcard__container,
-  .flipcard:focus-within .flipcard__container {
-    transform: rotateY(0deg) rotateX(180deg);
-  }
+
   .flipcard__back {
     writing-mode: horizontal-tb;
     text-orientation: mixed;
@@ -126,14 +131,63 @@
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 640px) {
+  .flipcard__container {
+    height: 480px;
+  }
+
   .flipcard {
-    /* Responsive handled by Tailwind */
+    height: 256px;
+  }
+}
+
+@media (max-width: 600px) {
+  .flipcard__container {
+    margin: 0 auto;
+    height: 440px;
+    width: 100%;
+    max-width: 480px;
+  }
+
+  .flipcard {
+    width: 100%;
+    height: 256px;
+    perspective: 600px;
+    display: flex;
+    justify-content: center;
   }
 }
 
 @media (max-width: 480px) {
+  .flipcard__container {
+    margin: 0 auto;
+    height: 444px;
+    width: 100%;
+    max-width: 372px;
+  }
+
   .flipcard {
-    /* Responsive handled by Tailwind */
+    width: 100%;
+    perspective: 480px;
+    height: 256px;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 400px) {
+  .flipcard__container {
+    margin: 0 auto;
+    height: 480px;
+    width: 100%;
+    max-width: 336px;
+  }
+
+  .flipcard {
+    width: 100%;
+    perspective: 400px;
+    height: 256px;
+    display: flex;
+    justify-content: center;
   }
 }

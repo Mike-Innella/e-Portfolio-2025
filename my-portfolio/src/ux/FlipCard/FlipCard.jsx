@@ -10,16 +10,20 @@ export default function FlipCard({
   links,
 }) {
   return (
-    <div className="flipcard flex flex-row justify-center items-center w-96 h-48 p-0 mt-32 mb-32 max-sm:w-80 max-sm:h-40">
-      <div className="flipcard__container w-full aspect-[6/6]">
+    <div className="flipcard flex flex-row justify-center items-center w-96 h-48 p-0 mt-32 mb-32 max-sm:w-80 max-sm:ml-0 max-sm:pl-0 max-sm:h-40">
+      <div className="flipcard__container w-full aspect-[6/6] max-sm:ml-0 max-sm:pl-0">
         <div
           className="flipcard__front absolute w-full h-full rounded-[14px] shadow-xl overflow-hidden flex items-center justify-center bg-[#fff] text-[#222] dark:bg-[#22222294] dark:text-white bg-center bg-cover"
           style={{ backgroundImage: `url(${image})` }}
         >
-          <div className="flipcard__inner relative z-10 text-center p-6">
+          <div className="flipcard__inner relative z-10 text-center p-6 max-sm:p-4">
             <span className="flipcard__icon block text-[2.3rem] mb-2 text-[#222] dark:text-[#fff]">
               {typeof icon === "string" && icon.match(/\.(png|jpe?g|gif)$/i) ? (
-                <img src={icon} alt={name + " icon"} className="w-10 h-10 " />
+                <img
+                  src={icon}
+                  alt={name + " icon"}
+                  className="w-10 h-10 flipcard__png "
+                />
               ) : (
                 icon
               )}

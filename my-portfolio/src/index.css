@@ -55,6 +55,20 @@
     padding: 0;
     box-sizing: border-box;
   }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  span,
+  label,
+  a,
+  li {
+    @apply transition-colors duration-300 ease-in-out;
+  }
 }
 
 @keyframes rotateOne {
@@ -127,7 +141,7 @@
 input,
 textarea,
 select {
-  background-color: var(--background-color) !important;
+  background-color: #f5e3e3 !important;
   color: var(--text-color) !important;
   border-color: 2px solid transparent !important;
   transition: all 0.3s ease-in-out;
@@ -151,7 +165,7 @@ textarea:hover {
 .dark input,
 .dark textarea,
 .dark select {
-  background-color: #181a1b !important;
+  background-color: #1a1e26 !important;
   color: #f8fafc !important;
 }
 
@@ -204,7 +218,7 @@ textarea:-webkit-autofill {
 }
 
 .dark .send-btn {
-  background-color: #181a1b !important;
+  background-color: #1a1e26 !important;
   color: #f8fafc !important;
   border-color: #f8fafc !important;
 }
@@ -215,12 +229,12 @@ textarea:-webkit-autofill {
 }
 
 .menu-container {
-  background-color: white !important;
+  background-color: #f5e3e3 !important;
   padding: 0;
 }
 
 .dark .menu-container {
-  background-color: black !important;
+  background-color: #1a1e26 !important;
 }
 
 .menu-toggle {
@@ -230,11 +244,18 @@ textarea:-webkit-autofill {
 
 @media (max-width: 1024px) {
   .menu-button {
-    background-color: #fff !important;
+    background-color: #f5e3e3 !important;
   }
 
   .dark .menu-button {
-    background-color: #000 !important;
+    background-color: #1a1e26 !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .to-website {
+    left: 50%;
+    transform: translate(-50%, 0);
   }
 }
 
@@ -247,6 +268,10 @@ textarea:-webkit-autofill {
 }
 
 @media (max-width: 500px) {
+  .section {
+    margin-top: 24px;
+  }
+
   .contact__header {
     text-align: left !important;
   }

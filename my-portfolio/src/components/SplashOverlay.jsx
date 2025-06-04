@@ -1,7 +1,10 @@
 import { useState, useEffect, useRef } from "react";
 import CircleButton from "../components/CircleButton";
 import { MdArrowForward } from "react-icons/md";
-import Loader, { LoaderBackground, LoaderAnimation } from "../ux/LoadingAnimation/LoadingAnimation";
+import Loader, {
+  LoaderBackground,
+  LoaderAnimation,
+} from "../ux/LoadingAnimation/LoadingAnimation";
 
 export default function SplashOverlay({ onHide }) {
   const [isHiding, setIsHiding] = useState(false);
@@ -57,15 +60,19 @@ export default function SplashOverlay({ onHide }) {
     >
       {/* Always present background with mouse tracking */}
       <LoaderBackground />
-      
-      {/* Animated loader elements shown conditionally */}
-      {showLoader && <LoaderAnimation />}
+
+      {/* Always render loader but control visibility with opacity for smooth transitions */}
+      {showLoader && (
+        <div className="absolute inset-0 flex items-center justify-center">
+          <LoaderAnimation />
+        </div>
+      )}
       <div
         className={`relative z-[1001] flex flex-col items-center justify-between w-screen min-h-screen py-10 transition-transform duration-1200 ease${
           isHiding ? "-translate-y-40" : ""
         }`}
       >
-        <div className="flex-1 flex items-center justify-center w-full px-4 sm:px-6">
+        <div className="flex-1 flex items-center justify-center w-full px-4 sm:px-6 max-sm:fixed max-sm:top-12">
           <div className="flex flex-col md:flex-row items-center justify-center w-full gap-6 md:gap-2">
             <div className="w-full max-w-[85%] sm:max-w-sm md:max-w-md text-center md:text-left p-4">
               <span
@@ -79,7 +86,7 @@ export default function SplashOverlay({ onHide }) {
 
             {/* Loader placeholder - moved to overlay root */}
 
-            <div className="w-full max-w-[85%] sm:max-w-sm md:max-w-md text-center md:text-right p-4">
+            <div className="w-full sm:max-w-sm md:max-w-md text-center md:text-right p-4">
               <span
                 className={`text-lg sm:text-xl md:text-3xl transition-opacity duration-1200 ease ${
                   showInstructions ? "opacity-100" : "opacity-0"
@@ -97,7 +104,7 @@ export default function SplashOverlay({ onHide }) {
           }`}
         >
           <CircleButton
-            className={`to-website transition-all duration-300 ease-in-out mb-12 ${
+            className={`to-website transition-all duration-300 ease-in-out mb-12 max-sm:fixed max-sm:top-172 Fmax-sm:left-1/2 ${
               isHiding ? "translate-x-20" : ""
             }`}
             onClick={() => {

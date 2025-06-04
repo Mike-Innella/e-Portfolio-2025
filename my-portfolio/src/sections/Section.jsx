@@ -34,8 +34,7 @@ export default function Section({
 
   // Section content layout
   const contentClasses = [
-    "pl-8",
-    isReverse && "pl-0 pr-8 text-right",
+    isReverse && "pl-0 pr-8 text-right max-sm:mr-8",
     "max-lg:pl-0 max-lg:pr-0  max-lg:pt-5",
   ]
     .filter(Boolean)
