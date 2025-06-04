@@ -66,11 +66,11 @@ const CustomSectionsConfig = [
   {
     name: "Projects",
     headerIcon: <MdComputer />,
-    extraClass: " mr-48 max-lg:ml-24 max-sm:ml-8 max-sm:mr-8 max-sm:mb-4",
+    extraClass: " mr-48 max-lg:ml-24 max-sm:ml-4 max-sm:mr-8 max-sm:mb-4",
     notInMenu: false,
     content: (
       <>
-        <div className="flex flex-wrap gap-8 max-sm:gap-1 justify-center items-stretch">
+        <div className="flex flex-wrap gap-8 max-sm:gap-1 justify-center items-center ml-0 pl-0 mx-auto">
           {ProjectsConfig.projects.map((project, index) => (
             <FlipCard
               key={`project-${index}`}

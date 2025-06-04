@@ -25,7 +25,7 @@ export default function SplashOverlay({ onHide }) {
   useEffect(() => {
     // Store timers locally to ensure cleanup uses the correct values
     const timers = [];
-    
+
     // Show "Hello!" at 500ms, hide at 3000ms
     timers.push(setTimeout(() => setShowHello(true), 500));
     timers.push(setTimeout(() => setShowHello(false), 3000));
@@ -39,7 +39,7 @@ export default function SplashOverlay({ onHide }) {
 
     // Show button last
     timers.push(setTimeout(() => setShowButton(true), 4500));
-    
+
     // Save the timers to the ref for access outside this effect
     timersRef.current = timers;
 
@@ -106,12 +106,12 @@ export default function SplashOverlay({ onHide }) {
         </div>
 
         <div
-          className={`transition-all duration-300 ease-in-out -translate-y-20 ${
+          className={`transition-all duration-300 ease-in-out ${
             showButton ? "opacity-100" : "opacity-0"
-          }`}
+          } -translate-y-20 max-sm:fixed max-sm:bottom-20 max-sm:left-1/2 max-sm:-translate-x-1/2 max-sm:transform max-sm:-translate-y-0`}
         >
           <CircleButton
-            className={`to-website transition-all duration-300 ease-in-out mb-12 max-sm:fixed max-sm:top-172 Fmax-sm:left-1/2 ${
+            className={`to-website transition-all duration-300 ease-in-out mb-12 cursor-pointer ${
               isHiding ? "translate-x-20" : ""
             }`}
             onClick={() => {

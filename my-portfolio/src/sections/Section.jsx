@@ -20,14 +20,15 @@ export default function Section({
     isReverse ? "flex-row-reverse" : "flex-row",
     isCentered ? "items-center" : "items-start",
     extraClass,
-    "max-lg:flex-col max-lg:p-8 max-lg:py-10 max-sm:p-0 max-sm:ml-8",
+    "max-lg:flex-col max-lg:p-8 max-lg:py-10 max-sm:p-0 max-sm:ml-4 max-sm:w-full",
   ].join(" ");
 
   // Section header layout
   const headerClasses = [
     "flex items-start text-3xl sm:text-4xl pr-8 border-r border-primary",
     "max-lg:pr-0 max-lg:pb-4 max-lg:border-0 max-lg:border-b max-lg:justify-center max-lg:text-center",
-    isReverse && "border-r-0 pl-8 border-l border-primary max-lg:pl-0",
+    isReverse &&
+      "border-r-0 pl-8 border-l border-primary max-lg:pl-0 max-sm:pl-0",
   ]
     .filter(Boolean)
     .join(" ");

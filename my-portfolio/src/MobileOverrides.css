@@ -1,0 +1,93 @@
+/* Mobile Overrides */
+
+/* Specific overrides for screens <= 640px */
+@media screen and (max-width: 640px) {
+  /* Menu positioning fixes */
+  .menu-button {
+    position: fixed !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    top: 20px !important;
+    z-index: 600 !important;
+  }
+  
+  /* Increase specificity for menu container */
+  div.menu-container,
+  div[class*="menu-container"],
+  div[class^="menu-container"] {
+    position: fixed !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 90% !important;
+    max-width: 320px !important;
+    margin-left: 0 !important;
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr)) !important;
+    gap: 10px !important;
+    justify-items: center !important;
+  }
+
+  /* SplashOverlay "to-website" button fix - position only, preserve fade-in animation */
+  .to-website,
+  .to-website.transition-all,
+  .CircleButton.to-website,
+  div .to-website {
+    position: fixed !important;
+    bottom: 40px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    margin-bottom: 0 !important;
+    z-index: 1001 !important;
+  }
+
+  /* Center align section content */
+  .section-content {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 90% !important;
+    max-width: 480px !important;
+  }
+  
+  /* Ensure form elements are full width and centered */
+  form input, 
+  form textarea,
+  form button {
+    width: 100% !important;
+  }
+  
+  /* FlipCard adjustments */
+  .flipcard {
+    width: 90% !important;
+    max-width: 320px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  
+  .flipcard__container {
+    width: 100% !important;
+    margin: 0 auto !important;
+  }
+  
+  .flipcard__badges-row {
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+  }
+  
+  /* Ensure tech badges display evenly */
+  .tech-badge-container {
+    margin: 5px !important;
+  }
+  
+  .hex-badge {
+    width: 3.5rem !important;
+    height: 3.5rem !important;
+  }
+  
+  /* Center icons in sections */
+  .intro,
+  .profile {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}

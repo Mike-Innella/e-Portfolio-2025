@@ -304,6 +304,14 @@ textarea:-webkit-autofill {
   z-index: 1;
 }
 
+.to-website {
+  margin: 0 auto;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  top: ;
+}
+
 @media (max-width: 1024px) {
   .menu-button {
     background-color: #f5e3e3 !important;
@@ -318,6 +326,12 @@ textarea:-webkit-autofill {
   .to-website {
     left: 50%;
     transform: translate(-50%, 0);
+  }
+
+  .menu-container {
+    gap: 0;
+    padding: 0;
+    margin: 0;
   }
 }
 
