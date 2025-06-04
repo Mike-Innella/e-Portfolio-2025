@@ -47,7 +47,7 @@ export default function ContactForm() {
     shadow-[#111315]/50
     dark:shadow-lg dark:shadow-[#3AA0EA]/50
     min-h-[24rem]
-    max:sm:ml-2 max:sm:mr-2 max:max-sm:mx-auto
+    max-sm:ml-8 max-sm:mr-0 max:max-sm:mx-auto
   "
       >
         <h2 className="text-3xl font-bold mb-6 tracking-wide flex items-center max-sm:justify-center max-sm:w-full  max-sm:mx-auto gap-2">

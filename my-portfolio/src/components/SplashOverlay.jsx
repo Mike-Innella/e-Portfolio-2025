@@ -31,11 +31,11 @@ export default function SplashOverlay({ onHide }) {
     timers.push(setTimeout(() => setShowHello(false), 3000));
 
     // Show Loader at 1500ms (fade in after Hello appears)
-    timers.push(setTimeout(() => setShowLoader(true), 1500));
+    timers.push(setTimeout(() => setShowLoader(true), 3000));
 
     // Show instructions after Hello hides
-    timers.push(setTimeout(() => setShowInstructions(true), 3000));
-    timers.push(setTimeout(() => setShowInstructions(false), 4500));
+    timers.push(setTimeout(() => setShowInstructions(true), 1500));
+    timers.push(setTimeout(() => setShowInstructions(false), 3000));
 
     // Show button last
     timers.push(setTimeout(() => setShowButton(true), 4500));
@@ -75,12 +75,12 @@ export default function SplashOverlay({ onHide }) {
         </div>
       )}
       <div
-        className={`relative z-[1001] flex flex-col items-center justify-between w-screen min-h-screen py-10 transition-transform duration-1200 ease${
+        className={`relative z-[1001] flex flex-col items-center justify-between w-screen min-h-screen h-full py-10 transition-transform duration-1200 ease${
           isHiding ? "-translate-y-40" : ""
         }`}
       >
         <div className="flex-1 flex items-center justify-center w-full px-4 sm:px-6 max-sm:fixed max-sm:top-12">
-          <div className="flex flex-col md:flex-row items-center justify-center w-full gap-6 md:gap-2">
+          <div className="flex flex-col h-full items-center justify-center w-full gap-8 h-full gap-y-12 md:gap-2">
             <div className="w-full max-w-[85%] sm:max-w-sm md:max-w-md text-center md:text-left p-4">
               <span
                 className={`text-2xl sm:text-3xl md:text-5xl font-bold transition-opacity duration-1200 ease ${
@@ -93,9 +93,9 @@ export default function SplashOverlay({ onHide }) {
 
             {/* Loader placeholder - moved to overlay root */}
 
-            <div className="w-full sm:max-w-sm md:max-w-md text-center md:text-right p-4">
+            <div className="w-full whitespace-nowrap sm:max-w-sm md:max-w-md text-center md:text-right p-4">
               <span
-                className={`text-lg sm:text-xl md:text-3xl transition-opacity duration-1200 ease ${
+                className={`text-lg sm:text-xl md:text-3xl md:whitespace-nowrap transition-opacity duration-1200 ease ${
                   showInstructions ? "opacity-100" : "opacity-0"
                 }`}
               >

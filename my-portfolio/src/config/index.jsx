@@ -168,7 +168,7 @@ const CustomSectionsConfig = [
     notInMenu: false,
     content: (
       <>
-        <div className="pr-[12rem] pl-8 max-lg:pr-24 max-sm:pr-8 max-sm:pl-0 ">
+        <div className="pr-[12rem] pl-8 max-lg:pr-24 max-sm:pr-4 max-sm:pl-0 ">
           <div className="glass-card">
             <h4 style={{ fontSize: "2rem" }}>What do others say?</h4>
           </div>
@@ -202,7 +202,7 @@ const CustomSectionsConfig = [
     name: "Contact",
     headerIcon: <MdDescription />,
     extraClass:
-      "contact-section w-full  max-md:mx-auto max-sm:px-0 max-sm:ml-0 max-md:section-reverse max-md:mt-8 max-lg:justify-center max-lg:items-center",
+      "contact-section w-full  max-md:mx-auto max-sm:px-0 max-sm:ml-0 max-sm:mr-0 max-md:section-reverse max-md:mt-8 max-lg:justify-center max-lg:items-center",
     content: (
       <>
         <div className="flex flex-row-reverse w-full gap-68 max-lg:flex-col max-lg:gap-0">
