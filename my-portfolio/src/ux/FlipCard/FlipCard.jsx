@@ -1,19 +1,5 @@
-import React, { lazy, Suspense } from "react";
+import React from "react";
 import "./FCStyles.css";
-
-// LazyImage component for heavy images (>20KB)
-const LazyImage = lazy(() => import('./LazyImage'));
-
-// Helper to safely handle different types of icons (string paths, imported assets, or React components)
-const isImagePath = (icon) => {
-  return typeof icon === 'string' && icon.match(/\.(png|jpe?g|gif|svg)$/i);
-};
-
-// Helper to check if an icon is an imported asset (object with default or src property)
-const isImportedAsset = (icon) => {
-  // Check if it's an object but not a React element
-  return icon && typeof icon === 'object' && !React.isValidElement(icon);
-};
 
 export default function FlipCard({
   image,
@@ -32,24 +18,20 @@ export default function FlipCard({
         >
           <div className="flipcard__inner relative z-10 text-center p-6 max-sm:p-4">
             <span className="flipcard__icon block text-[2.3rem] mb-2 text-[#222] dark:text-[#fff]">
-              {typeof icon === "string" && isImagePath(icon) ? (
+              {typeof icon === "string" && typeof icon === 'string' && icon.match(/\.(png|jpe?g|gif|svg)$/i) ? (
                 // Handle string URL paths to images
-                <Suspense fallback={<div className="w-10 h-10 animate-pulse bg-gray-200 dark:bg-gray-700 rounded-full"></div>}>
-                  <LazyImage 
-                    src={icon} 
-                    alt={name + " icon"} 
-                    className="w-10 h-10 flipcard__png" 
-                  />
-                </Suspense>
-              ) : isImportedAsset(icon) ? (
-                // Handle imported assets (like ShamanImage)
-                <Suspense fallback={<div className="w-10 h-10 animate-pulse bg-gray-200 dark:bg-gray-700 rounded-full"></div>}>
-                  <LazyImage 
-                    src={icon} 
-                    alt={name + " icon"} 
-                    className="w-10 h-10 flipcard__png" 
-                  />
-                </Suspense>
+                <img 
+                  src={icon} 
+                  alt={name + " icon"} 
+                  className="w-10 h-10 flipcard__png" 
+                />
+              ) : typeof icon === 'object' && !React.isValidElement(icon) ? (
+                // Handle imported assets
+                <img 
+                  src={icon.default || icon.src || icon} 
+                  alt={name + " icon"} 
+                  className="w-10 h-10 flipcard__png" 
+                />
               ) : (
                 // React components (inline SVGs) or string content pass through
                 icon
