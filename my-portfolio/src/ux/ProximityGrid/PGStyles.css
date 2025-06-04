@@ -12,11 +12,18 @@
   transform-style: preserve-3d;
 }
 
+.proximity-dot-container {
+  position: absolute;
+  pointer-events: none;
+  transform-style: preserve-3d;
+}
+
 .proximity-dot {
   position: absolute;
   border-radius: 50%;
-  transition: width 0.14s, height 0.14s, opacity 0.14s, box-shadow 0.14s;
+  transition: width 0.14s, height 0.14s, opacity 0.14s, transform 0.15s ease-out;
   pointer-events: none;
+  transform-style: preserve-3d;
 }
 
 /* Dark mode */
@@ -29,41 +36,88 @@
   background: #a59573;
 }
 
+/* Shadow element for dots */
+.proximity-shadow {
+  position: absolute;
+  height: 50%;
+  border-radius: 50% 50% 0 0;
+  transform-origin: center bottom;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.14s, transform 0.15s ease-out;
+}
+
+/* Shadow for light mode */
+.shadow-light {
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.6), transparent);
+}
+
+/* Light highlight for dark mode */
+.shadow-dark {
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.7), transparent);
+}
+
+/* Highlight effect for dots */
+.proximity-highlight {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.14s;
+}
+
+/* Dark mode highlight */
+.highlight-dark {
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.8), transparent 70%);
+}
+
+/* Light mode highlight */
+.highlight-light {
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.5), transparent 70%);
+}
+
 /* Mouse cursor shadow effect (used in light mode) */
 .proximity-cursorEffect.effect-light {
   position: absolute;
-  width: 280px;
-  height: 280px;
-  margin-left: -140px;
-  margin-top: -140px;
-  border-radius: 50%;
+  width: 320px;
+  height: 320px;
+  margin-left: -160px;
+  margin-top: -160px;
+  border-radius: 40%;
   background: 
-    radial-gradient(circle, #000 0%, #0006 30%, #0002 60%, transparent 100%),
-    radial-gradient(circle at 40% 40%, transparent 40%, #0004 70%, transparent 100%);
+    radial-gradient(ellipse at 50% 50%, #000 0%, #0007 20%, #0003 50%, transparent 85%),
+    radial-gradient(ellipse at 45% 45%, transparent 30%, #0005 60%, transparent 90%);
   opacity: 0.25;
   pointer-events: none;
-  filter: blur(4px);
-  transform: perspective(500px) rotateX(10deg) translateZ(-10px);
-  transition: left 0.1s, top 0.1s, background 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  filter: blur(6px);
+  transform-origin: center;
+  transform: perspective(500px) rotateX(15deg) translateZ(-12px);
+  transition: left 0.08s ease-out, top 0.08s ease-out, transform 0.15s ease-out;
   z-index: 1;
+  will-change: left, top, transform, background;
 }
 
 /* Mouse cursor light effect (used in dark mode) */
 .proximity-cursorEffect.effect-shadow {
   position: absolute;
-  width: 280px;
-  height: 280px;
-  margin-left: -140px;
-  margin-top: -140px;
-  border-radius: 50%;
+  width: 340px;
+  height: 300px;
+  margin-left: -170px;
+  margin-top: -150px;
+  border-radius: 40%;
   background: 
-    radial-gradient(ellipse, #fff 0%, #fffc 15%, #fff4 40%, transparent 100%),
-    radial-gradient(circle at 45% 45%, #fffa 0%, transparent 60%);
-  opacity: 0.45;
+    radial-gradient(ellipse at 50% 40%, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.8) 10%, rgba(255,255,255,0.4) 30%, transparent 80%),
+    radial-gradient(ellipse at 45% 45%, rgba(255,255,255,0.5) 10%, transparent 70%),
+    radial-gradient(ellipse at 40% 40%, rgba(220,220,255,0.4) 0%, transparent 65%);
+  opacity: 0.42;
   pointer-events: none;
-  filter: blur(2px);
-  transform: perspective(500px) rotateX(5deg) translateZ(5px);
-  box-shadow: 0 0 50px 5px rgba(255, 255, 255, 0.3);
-  transition: left 0.1s, top 0.1s, background 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  filter: blur(3px);
+  transform-origin: center;
+  transform: perspective(500px) rotateX(10deg) translateZ(8px);
+  box-shadow: 0 0 60px 10px rgba(255, 255, 255, 0.2);
+  transition: left 0.08s ease-out, top 0.08s ease-out, transform 0.15s ease-out;
   z-index: 1;
+  will-change: left, top, transform, background;
 }

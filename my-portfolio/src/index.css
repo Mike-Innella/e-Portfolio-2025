@@ -242,8 +242,20 @@ textarea:-webkit-autofill {
   margin: 0;
 }
 
+.review__card {
+  background-color: #f5e3e3;
+}
+
 .dark .review__card {
-  background-color: #0f172a !important;
+  background-color:  #1a1e26;
+}
+
+.tech__container {
+  background-color: #f5e3e3;
+}
+
+.dark .tech__container {
+  background-color: #1a1e26;
 }
 
 @media (max-width: 1024px) {

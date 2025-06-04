@@ -1,36 +1,16 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 const GlassSwipe = () => {
+  // Use a ref to track if the style was already injected
+  const styleInjected = useRef(false);
+
   useEffect(() => {
-    if (document.getElementById("glass-swipe-keyframes")) return;
+    // Only inject the styles once across all component instances
+    if (document.getElementById("glass-swipe-keyframes") || styleInjected.current) return;
+    
+    styleInjected.current = true;
 
-    // Handler for mouseout event
-    const handleMouseOut = (event) => {
-      const icon = event.currentTarget;
-      icon.classList.add("no-anim");
-      void icon.offsetWidth;
-      icon.classList.remove("no-anim");
-    };
-
-    // Add event listeners to reset animation state on mouseout
-    const addResetListeners = () => {
-      const techIcons = document.querySelectorAll(".tech-icon-glass");
-      techIcons.forEach((icon) => {
-        icon.removeEventListener("mouseout", handleMouseOut);
-        icon.addEventListener("mouseout", handleMouseOut);
-      });
-    };
-
-    // Observe dynamically added icons
-    const observer = new MutationObserver((mutations) => {
-      if (mutations.some((mutation) => mutation.addedNodes.length > 0)) {
-        addResetListeners();
-      }
-    });
-    observer.observe(document.body, { childList: true, subtree: true });
-
-    setTimeout(addResetListeners, 500);
-
+    // Create and inject styles only once
     const style = document.createElement("style");
     style.id = "glass-swipe-keyframes";
     style.innerHTML = `
@@ -43,8 +23,7 @@ const GlassSwipe = () => {
         padding: 4px 12px;
       }
       .tech-icon-glass:hover {
-        transform: scale(1.2);
-        background-color: hsla(0, 0%, 100%, 0.0);
+        transform: scale(1.2)
       }
       .tech-icon-glass::before {
         content: "";
@@ -62,6 +41,7 @@ const GlassSwipe = () => {
         pointer-events: none;
         opacity: 0;
         filter: blur(10px);
+        will-change: opacity, transform;
       }
       /* --- DARK MODE: BRIGHT GLARE --- */
       .dark .tech-icon-glass::before {
@@ -103,12 +83,49 @@ const GlassSwipe = () => {
       }
     `;
     document.head.appendChild(style);
-
-    return () => {
-      observer.disconnect();
-      if (style.parentNode) {
-        style.parentNode.removeChild(style);
+    
+    // Use event delegation for better performance
+    // This handles all tech icons with a single event listener on the document
+    const handleMouseEvents = (event) => {
+      if (!event.target.closest) return;
+      
+      const icon = event.target.closest('.tech-icon-glass');
+      if (!icon) return;
+      
+      if (event.type === 'mouseout') {
+        icon.classList.add("no-anim");
+        // Force reflow
+        void icon.offsetWidth;
+        icon.classList.remove("no-anim");
       }
+    };
+    
+    // Add a single event listener to the document instead of multiple ones
+    document.addEventListener('mouseout', handleMouseEvents, { passive: true });
+    
+    // Monitor only containers that might contain tech icons
+    const relevantContainers = document.querySelectorAll('.tech__container, [class*="tech"]');
+    let observer;
+    
+    if (relevantContainers.length > 0) {
+      observer = new MutationObserver((mutations) => {
+        if (mutations.some(mutation => mutation.addedNodes.length > 0)) {
+          // No need to re-add event listeners since we're using event delegation
+        }
+      });
+      
+      // Observe only specific containers, not the entire document
+      relevantContainers.forEach(container => {
+        observer.observe(container, { childList: true, subtree: true });
+      });
+    }
+    
+    return () => {
+      document.removeEventListener('mouseout', handleMouseEvents);
+      if (observer) {
+        observer.disconnect();
+      }
+      // Don't remove the style element as other instances might need it
     };
   }, []);
 

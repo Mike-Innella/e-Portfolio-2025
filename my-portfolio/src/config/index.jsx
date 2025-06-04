@@ -1,9 +1,6 @@
 import React from "react";
 import { Icons } from "./icons";
 import {
-  MdSettingsInputAntenna,
-  MdWbIridescent,
-  MdBusinessCenter,
   MdComputer,
   MdInfo,
   MdRateReview,
@@ -95,7 +92,7 @@ const CustomSectionsConfig = [
       <>
         <GlassSwipe />
         <div className="flex">
-          <h4 className="text-[2rem] font-[600] text-right max-lg:w-full max-lg:text-left ml-auto pb-4">
+          <h4 className="text-[2rem] font-[600] text-right mb-[2rem] max-lg:w-full max-lg:text-left ml-auto pb-4">
             Who am I ?
           </h4>
         </div>
@@ -127,7 +124,7 @@ const CustomSectionsConfig = [
           </p>
         </div>
         <div className="flex mx-0 justify-end">
-          <h4 className="text-[2rem] font-[600] text-right ml-auto py-4 max-lg:w-full max-lg:text-left">
+          <h4 className="text-[2rem] font-[600] text-right ml-auto py-4 mb-[2rem] max-lg:w-full max-lg:text-left">
             Tech-stack
           </h4>
         </div>
@@ -139,15 +136,19 @@ const CustomSectionsConfig = [
             width: "100%",
           }}
         >
-          {techStack.map((key) => (
-            <span
-              className="tech-icon-glass aspect-square mx-auto text-[2rem]"
-              key={key}
-              title={key}
-            >
-              {Icons[key]}
-            </span>
-          ))}
+          <>
+            {techStack.map((key) => (
+              <div className="tech__container aspect-square w-fit p-2 m-0 flex justify-center align-center rounded-xl">
+                <span
+                  className="tech-icon-glass aspect-square mx-auto text-[2rem]"
+                  key={key}
+                  title={key}
+                >
+                  {Icons[key]}
+                </span>
+              </div>
+            ))}
+          </>
         </div>
       </>
     ),
@@ -161,15 +162,17 @@ const CustomSectionsConfig = [
     content: (
       <>
         <div className="pr-[12rem] pl-8 max-lg:pr-24 max-sm:pr-8 ">
-          <h4 style={{ fontSize: "2rem" }}>What do others say?</h4>
-          <div className="flex flex-col gap-8 pt-6 hover:scale-101 hover:shadow-2xl rounded-lg transition duration-300 ease-in-out p-4 review__card">
+          <h4 style={{ fontSize: "2rem",
+            marginBottom: "2rem"
+           }}>What do others say?</h4>
+          <div className="flex flex-col gap-8 pt-6 hover:scale-101 hover:shadow-2xl rounded-md transition duration-300 ease-in-out p-4 review__card">
             {ReviewsData.map((review, idx) => (
               <div
                 key={`review-${idx}`}
                 className="border-l-4 pl-8 border-accent"
               >
                 <p className="italic text-lg leading-relaxed">
-                  “{review.review.trim()}”
+                  "{review.review.trim()}"
                 </p>
                 <div className="mt-2 flex flex-col">
                   <span className="font-semibold">{review.name}</span>
@@ -195,12 +198,9 @@ const CustomSectionsConfig = [
       "contact-section w-full  max-md:mx-auto max-sm:px-0 max-sm:ml-0 max-md:section-reverse max-md:mt-8 max-lg:justify-center max-lg:items-center max-sm:pr-14",
     content: (
       <>
-        {" "}
-        <>
-          <div className="flex flex-row-reverse w-full gap-68 max-lg:flex-col max-lg:gap-0">
-            <ContactForm className="" /> <GlowingLogo />
-          </div>
-        </>
+        <div className="flex flex-row-reverse w-full gap-68 max-lg:flex-col max-lg:gap-0">
+          <ContactForm className="" /> <GlowingLogo />
+        </div>
       </>
     ),
   },
