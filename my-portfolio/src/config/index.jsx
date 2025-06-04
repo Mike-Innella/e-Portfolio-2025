@@ -219,7 +219,7 @@ const CustomSectionsConfig = [
     content: (
       <>
         <div className="flex flex-row-reverse w-full gap-68 max-lg:flex-col max-lg:gap-0">
-          <ContactForm className="" /> <GlowingLogo />
+          <ContactForm /> <GlowingLogo />
         </div>
       </>
     ),
