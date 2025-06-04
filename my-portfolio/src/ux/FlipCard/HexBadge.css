@@ -1,0 +1,56 @@
+/* Tech badge container */
+.tech-badge-container {
+  position: relative;
+  display: inline-block;
+  margin: 0 5px;
+  margin-top: 10px; /* Add space for the ribbon */
+}
+
+/* Hex badge styling */
+.hex-badge {
+  width: 6rem;
+  height: 6rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #818cf8, #22222294);
+  clip-path: polygon(25% 6%, 75% 6%, 100% 50%, 75% 94%, 25% 94%, 0% 50%);
+  box-shadow: 0 2px 8px 0 rgba(30, 64, 175, 0.12);
+}
+
+.dark .hex-badge {
+  background: linear-gradient(135deg, #22222294, #818cf8);
+}
+
+.hex-badge img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  display: block;
+  pointer-events: none;
+  margin-bottom: 28px;
+}
+
+/* Ribbon styling */
+.hex-badge-ribbon {
+  position: absolute;
+  top: 60px; /* Position above the badge */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.85);
+  color: white;
+  font-size: 10px;
+  padding: 2px 4px;
+  border-radius: 4px;
+  white-space: nowrap;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  z-index: 20; /* Higher z-index to ensure it's on top */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  width: 110%;
+}
+
+.dark .hex-badge-ribbon {
+  background-color: white;
+  color: black;
+}

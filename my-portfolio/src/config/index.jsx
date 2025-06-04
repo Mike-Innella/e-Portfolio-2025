@@ -78,6 +78,7 @@ const CustomSectionsConfig = [
               name={project.name}
               description={project.description}
               links={project.links}
+              techStack={project.techStack}
             />
           ))}
         </div>
@@ -138,10 +139,12 @@ const CustomSectionsConfig = [
         >
           <>
             {techStack.map((key) => (
-              <div className="tech__container aspect-square w-fit p-2 m-0 flex justify-center align-center rounded-xl">
+              <div
+                className="tech__container aspect-square w-fit p-2 m-0 flex justify-center align-center rounded-xl"
+                key={key} // ← Move key here!
+              >
                 <span
                   className="tech-icon-glass aspect-square mx-auto text-[2rem]"
-                  key={key}
                   title={key}
                 >
                   {Icons[key]}
@@ -162,9 +165,9 @@ const CustomSectionsConfig = [
     content: (
       <>
         <div className="pr-[12rem] pl-8 max-lg:pr-24 max-sm:pr-8 ">
-          <h4 style={{ fontSize: "2rem",
-            marginBottom: "2rem"
-           }}>What do others say?</h4>
+          <h4 style={{ fontSize: "2rem", marginBottom: "2rem" }}>
+            What do others say?
+          </h4>
           <div className="flex flex-col gap-8 pt-6 hover:scale-101 hover:shadow-2xl rounded-md transition duration-300 ease-in-out p-4 review__card">
             {ReviewsData.map((review, idx) => (
               <div

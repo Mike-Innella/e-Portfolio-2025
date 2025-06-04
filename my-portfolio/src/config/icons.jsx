@@ -169,6 +169,80 @@ const Icons = {
       }}
     />
   ),
+
+  typescript: (
+    <img
+      src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg"
+      alt="TypeScript"
+      title="TypeScript"
+      style={{
+        width: ICON_SIZE,
+        height: ICON_SIZE,
+        verticalAlign: "middle",
+        display: "inline-block",
+      }}
+    />
+  ),
+
+  api: (
+    <img
+      src="https://icons.getbootstrap.com/assets/icons/cloud-arrow-down.svg"
+      alt="API Integration"
+      title="API Integration"
+      style={{
+        width: ICON_SIZE,
+        height: ICON_SIZE,
+        verticalAlign: "middle",
+        display: "inline-block",
+        filter: "invert(80%) sepia(90%) saturate(1000%) hue-rotate(160deg)",
+        textShadow: "0 0 1px #000", // subtle blue
+      }}
+    />
+  ),
+
+  emailjs: (
+    <img
+      src="https://icons.getbootstrap.com/assets/icons/envelope.svg"
+      alt="EmailJS"
+      title="EmailJS"
+      style={{
+        width: ICON_SIZE,
+        height: ICON_SIZE,
+        verticalAlign: "middle",
+        display: "inline-block",
+        textShadow: "0 0 1px #000",
+      }}
+    />
+  ),
+
+  routing: (
+    <img
+      src="https://icons.getbootstrap.com/assets/icons/signpost-split.svg"
+      alt="Dynamic Routing"
+      title="Dynamic Routing"
+      style={{
+        width: ICON_SIZE,
+        height: ICON_SIZE,
+        verticalAlign: "middle",
+        display: "inline-block",
+      }}
+    />
+  ),
+
+  threejs: (
+    <img
+      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/threejs/threejs-original.svg"
+      alt="Three.js"
+      title="Three.js"
+      style={{
+        width: ICON_SIZE,
+        height: ICON_SIZE,
+        verticalAlign: "middle",
+        display: "inline-block",
+        filter: "invert(100%) sepia(100%) saturate(0%) hue-rotate(180deg) brightness(2) contrast(2)",
+      }}
+    />
+  ),
 };
 
 export { Icons };

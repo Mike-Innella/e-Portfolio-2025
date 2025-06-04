@@ -1,12 +1,4 @@
 /* FCStyles.css — Tailwind-focused, minimal version */
-.flipcard__png {
-  filter: invert(1);
-}
-
-.dark .flipcard__png {
-  filter: invert(0);
-}
-
 .flipcard {
   perspective: 1200px;
 }
