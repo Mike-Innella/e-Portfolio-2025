@@ -17,7 +17,7 @@ export default function ProximityGrid({ dark }) {
       const rect = gridRef.current.getBoundingClientRect();
       setGridSize({
         cols: Math.ceil(rect.width / DOT_SPACING),
-        rows: Math.ceil(rect.height / DOT_SPACING)
+        rows: Math.ceil(rect.height / DOT_SPACING),
       });
     };
     updateGrid();
@@ -76,7 +76,7 @@ export default function ProximityGrid({ dark }) {
                 ? `0 0 24px 12px #fff7`
                 : `0 0 28px 16px #0003`
               : "none",
-            background: dark ? "#090f19" : "#f5f5f4",
+            background: dark ? "#1A1E26" : "#a59573",
             transition:
               "width 0.13s, height 0.13s, opacity 0.13s, box-shadow 0.13s",
           }}
@@ -88,7 +88,9 @@ export default function ProximityGrid({ dark }) {
   // Cursor light/shadow
   const cursorEffect = mouse ? (
     <div
-      className={`proximity-cursorEffect ${dark ? "effect-light" : "effect-shadow"}`}
+      className={`proximity-cursorEffect ${
+        dark ? "effect-light" : "effect-shadow"
+      }`}
       style={{
         left: mouse.x,
         top: mouse.y,

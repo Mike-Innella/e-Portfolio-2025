@@ -242,6 +242,10 @@ textarea:-webkit-autofill {
   margin: 0;
 }
 
+.dark .review__card {
+  background-color: #0f172a !important;
+}
+
 @media (max-width: 1024px) {
   .menu-button {
     background-color: #f5e3e3 !important;

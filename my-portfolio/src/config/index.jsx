@@ -160,9 +160,9 @@ const CustomSectionsConfig = [
     notInMenu: false,
     content: (
       <>
-        <div className="pr-[12rem] pl-8 max-lg:pr-24 max-sm:pr-8">
+        <div className="pr-[12rem] pl-8 max-lg:pr-24 max-sm:pr-8 ">
           <h4 style={{ fontSize: "2rem" }}>What do others say?</h4>
-          <div className="flex flex-col gap-8 pt-6">
+          <div className="flex flex-col gap-8 pt-6 hover:scale-101 hover:shadow-2xl rounded-lg transition duration-300 ease-in-out p-4 review__card">
             {ReviewsData.map((review, idx) => (
               <div
                 key={`review-${idx}`}
