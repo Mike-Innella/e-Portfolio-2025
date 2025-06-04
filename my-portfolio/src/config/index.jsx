@@ -6,6 +6,7 @@ import {
   MdRateReview,
   MdDescription,
 } from "react-icons/md";
+import { FaLinkedin } from "react-icons/fa";
 import CircleButton from "../components/CircleButton";
 import ContactForm from "../components/ContactForm";
 import GlassSwipe from "../ux/GlassSwipe";
@@ -181,7 +182,7 @@ const CustomSectionsConfig = [
                 <p className="italic text-lg leading-relaxed">
                   "{review.review.trim()}"
                 </p>
-                <div className="mt-2 flex flex-col">
+                <div className="mt-2 flex flex-col gap-1">
                   <span className="font-semibold">{review.name}</span>
                   {review.title && (
                     <span className="text-sm text-gray-400">
@@ -189,6 +190,18 @@ const CustomSectionsConfig = [
                     </span>
                   )}
                   <span className="text-xs text-gray-500">{review.date}</span>
+
+                  {review.linkedin && (
+                    <a
+                      href={review.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="review__link transition duration-300 ease-in-out hover:underline text-sm mt-1 inline-flex items-center gap-1"
+                    >
+                      <FaLinkedin />
+                      View LinkedIn
+                    </a>
+                  )}
                 </div>
               </div>
             ))}
