@@ -42,6 +42,7 @@ const ProjectsData = [
 
   {
     name: "The Shaman Asher",
+    subtitle: "Freelance",
     icon: Icons["sun"],
     description:
       "Hired on a freelance basis to elevate the UI/UX of a mystical services site. Enhanced the interface with skeleton loading states, a custom animated message loader, and interactive menu underlines. My ongoing contributions include accessibility improvements, refined responsive design, and additional UI/UX polish.",

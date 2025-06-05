@@ -8,8 +8,8 @@
 
 /* Hex badge styling */
 .hex-badge {
-  width: 6rem;
-  height: 6rem;
+  width: 5rem;
+  height: 5rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -23,24 +23,24 @@
 }
 
 .hex-badge img {
-  width: 22px;
-  height: 22px;
+  width: 16px;
+  height: 16px;
   object-fit: contain;
   display: block;
   pointer-events: none;
-  margin-bottom: 28px;
+  margin-bottom: 16px;
 }
 
 /* Ribbon styling */
 .hex-badge-ribbon {
   position: absolute;
-  top: 60px; /* Position above the badge */
+  top: 52px; /* Position above the badge */
   left: 50%;
   transform: translateX(-50%);
   background-color: rgba(0, 0, 0, 0.85);
   color: white;
   font-size: 10px;
-  padding: 2px 4px;
+  padding: 1px 4px;
   border-radius: 4px;
   white-space: nowrap;
   font-weight: 600;
@@ -54,4 +54,3 @@
   background-color: white;
   color: black;
 }
-

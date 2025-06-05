@@ -60,7 +60,7 @@ export const TechStack = [
   },
   {
     key: "api",
-    label: "API Integration",
+    label: "API Connect",
     icon: Icons.api,
   },
   {
@@ -71,7 +71,7 @@ export const TechStack = [
 
   {
     key: "routing",
-    label: "Dynamic Routes",
+    label: "SPA Routing",
     icon: Icons.routing,
   },
 

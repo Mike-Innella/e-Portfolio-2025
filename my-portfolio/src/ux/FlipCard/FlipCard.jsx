@@ -41,9 +41,15 @@ export default function FlipCard({
                     icon
                   )}
                 </span>
-                <p className="flipcard__title text-[1.35rem] font-bold mb-1 text-[#222] dark:text-[#fff] text-left">
-                  {name}
-                </p>
+                <div className="flex flex-row items-center justify-between">
+                  <p className="flipcard__title text-[1.35rem] font-bold mb-1 text-[#222] dark:text-[#fff] text-left">
+                    {name}
+                  </p>
+                  <div className="flipcard__hint text-sm text-[#3a3a3a] dark:text-[#ccc] flex items-center justify-center gap-1 opacity-80 hover:opacity-100 transition-opacity">
+                    <span>Details</span>
+                    <span className="animate-bounce-x mb-1">→</span>
+                  </div>
+                </div>
                 {subtitle && (
                   <span className="flipcard__subtitle text-[1rem] opacity-80 text-[#c0d0e0] dark:text-[#c0d0e0]">
                     {subtitle}
