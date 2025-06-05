@@ -16,16 +16,16 @@ import ReviewsData from "../locales/ReviewsData";
 import FlipCard from "../ux/FlipCard/FlipCard";
 
 const techStack = [
-  "html",
-  "css",
-  "tailwind",
-  "nodejs",
-  "git",
-  "javascript",
-  "react",
-  "vite",
-  "firebase",
-  "figma",
+  { key: "html", label: "HTML5" },
+  { key: "css", label: "CSS3" },
+  { key: "tailwind", label: "Tailwind CSS" },
+  { key: "nodejs", label: "Node.js" },
+  { key: "git", label: "Git" },
+  { key: "javascript", label: "JavaScript" },
+  { key: "react", label: "React" },
+  { key: "vite", label: "Vite" },
+  { key: "firebase", label: "Firebase" },
+  { key: "figma", label: "Figma" },
 ];
 
 // --- CONFIGURABLE TEXT BEGINS HERE ---
@@ -100,31 +100,43 @@ const CustomSectionsConfig = [
             </h4>
           </div>
         </div>
-        <div className="flex w-full pl-[12rem] justify-start align-start flex-col gap-4 max-lg:pl-0 max-lg:pr-12 max-sm:pr-0">
+        <div className="flex w-full pl-[12rem] justify-start align-start flex-col gap-4 mt-4 max-lg:pl-0 max-lg:pr-12 max-sm:pr-0">
           <p className="max-lg:text-left w-full max-sm:mr-0 max-sm:ml-0 max-sm:pr-8">
-            I’m a frontend developer passionate about building web experiences
-            that are not just functional, but genuinely enjoyable to use. I
-            thrive on combining modern JavaScript technologies with thoughtful,
-            clean design to craft interfaces that “just work”—and feel great in
-            the process. My approach blends technical problem-solving with a
-            creative eye, always aiming for those little details that make an
-            application <span className="italic"> flow</span> from start to
-            finish.
+            I’m a frontend developer who’s passionate about creating web
+            experiences that go beyond function—they should feel good to use.
+            <br />
+            <br />
+            I thrive on blending modern JavaScript with clean, thoughtful design
+            to build interfaces that “just work.”
+            <br />
+            <br />
+            My approach combines technical problem-solving with a creative eye,
+            always focusing on the small details that help an application{" "}
+            <span className="italic">flow</span> smoothly from start to finish.
           </p>
+
           <p className="max-lg:text-left w-full max-sm:mr-0 max-sm:ml-0 max-sm:pr-8">
-            What excites me most about web development is how it brings together
-            creativity, curiosity, and real impact. My journey into this field
-            started with a desire to understand how things work, and it’s
-            evolved into a drive to make digital products people love. I’m
-            always looking to learn something new, help a teammate, and push my
-            skills further—because great products come from constant growth and
-            true collaboration.
+            What draws me to web development is how it fuses creativity,
+            curiosity, and real-world impact.
+            <br />
+            <br />
+            I started with a desire to understand how things work, but it’s
+            grown into a passion for building digital products that people
+            genuinely enjoy.
+            <br />
+            <br />
+            I’m always eager to learn, help teammates, and level up—because
+            great products come from collaboration and continuous growth.
           </p>
+
           <p className="max-lg:text-left w-full max-sm:mr-0 max-sm:ml-0 max-sm:pr-8">
-            Away from the screen, I love experimenting with audio engineering,
-            staying active at the gym, and making memories with my loved ones.
-            Whether I’m mixing tracks or catching up with somebody, I find that
-            life outside of code keeps me creative and grounded.
+            Outside the screen, I spend time experimenting with audio
+            engineering, staying active at the gym, and making memories with my
+            loved ones.
+            <br />
+            <br />
+            Whether I’m mixing tracks or catching up with someone, the world
+            beyond code keeps me grounded—and fuels my creativity.
           </p>
         </div>
         <div className="flex mx-0 justify-end max-lg:justify-start mt-8">
@@ -135,7 +147,7 @@ const CustomSectionsConfig = [
           </div>
         </div>
         <div
-          className="technologies__wrapper grid grid-cols-5 gap-8 w-full m-0 p-0 ml-24 max-lg:ml-0 max-lg:pr-20 max-sm:grid-cols-4 max-sm:gap-12 max-sm:pr-0 max-sm:ml-0 max-sm:mx-auto"
+          className="technologies__wrapper mt-4 grid grid-cols-5 gap-8 w-full m-0 p-0 ml-24 max-lg:ml-0 max-lg:pr-20 max-sm:grid-cols-4 max-sm:gap-12 max-sm:pr-0 max-sm:ml-0 max-sm:mx-auto"
           style={{
             display: "grid",
             flexWrap: "wrap",
@@ -143,16 +155,18 @@ const CustomSectionsConfig = [
           }}
         >
           <>
-            {techStack.map((key) => (
+            {techStack.map(({ key, label }) => (
               <div
-                className="tech__container aspect-square w-fit p-2 m-0 flex justify-center align-center"
+                className="tech-label-wrapper relative flex flex-col items-center w-fit p-2 m-0"
                 key={key}
               >
-                <span
-                  className="tech-icon-glass aspect-square mx-auto text-[2rem]"
-                  title={key}
-                >
-                  {Icons[key]}
+                <div className="tech__container aspect-square flex items-center justify-center">
+                  <div className="tech-icon-glass aspect-square text-[2rem] flex items-center justify-center">
+                    {Icons[key]}
+                  </div>
+                </div>
+                <span className="tech-label absolutebottom-24 justify-center items-center w-full text-center text-sm font-medium opacity-0 pointer-events-none transition-opacity duration-300 ease-in-out">
+                  {label}
                 </span>
               </div>
             ))}

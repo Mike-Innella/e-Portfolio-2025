@@ -28,6 +28,7 @@ const GlassSwipe = () => {
         padding: 8px;
         width: 4rem;
         height: 4rem;
+        cursor: default;
         background: transparent;
         clip-path: polygon(
           25% 6%,
@@ -61,7 +62,7 @@ const GlassSwipe = () => {
           hsla(0, 0%, 100%, 0.0) 100%
         );
         transform: rotate(45deg);
-        pointer-events: none;
+        pointer-events: auto;
         opacity: 0;
         filter: blur(10px);
         will-change: opacity, transform;

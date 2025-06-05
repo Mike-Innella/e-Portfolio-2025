@@ -351,6 +351,17 @@ textarea:-webkit-autofill {
   background-color: #e2e8f0;
 }
 
+.tech-label-wrapper:hover .tech-label {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Optional: increase bottom offset if label still clipped */
+.tech-label {
+  white-space: nowrap;
+  z-index: 10;
+}
+
 @media (max-width: 1024px) {
   .menu-button {
     background-color: #f5e3e3 !important;
@@ -400,5 +411,12 @@ textarea:-webkit-autofill {
 
   .logo-img {
     margin-left: 2rem !important;
+  }
+
+  .tech-label {
+    white-space: nowrap;
+    z-index: 10;
+    margin-left: 0;
+    margin-right: 2rem;
   }
 }
