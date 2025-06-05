@@ -94,6 +94,14 @@
   color: #222;
 }
 
+.flipcard__hint {
+  color: #222;
+}
+
+.dark .flipcard__hint {
+  color: #fff;
+}
+
 @keyframes bounce-x {
   0%,
   100% {
