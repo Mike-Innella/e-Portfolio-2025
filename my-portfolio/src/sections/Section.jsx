@@ -44,12 +44,14 @@ export default function Section({
   return (
     <div className={wrapperClasses}>
       <div className={sectionClasses}>
-        <h2 className={headerClasses}>
-          <span className="p-2 pl-0 text-3xl sm:text-4xl transition-all duration-500 section-header-icon pb-[1rem]">
-            {headerIcon}
-          </span>
-          {sectionHeader}
-        </h2>
+        {sectionHeader && (
+          <h2 className={headerClasses}>
+            <span className="p-2 pl-0 text-3xl sm:text-4xl transition-all duration-500 section-header-icon pb-[1rem]">
+              {headerIcon}
+            </span>
+            {sectionHeader}
+          </h2>
+        )}
         <div className={contentClasses}>{children}</div>
       </div>
     </div>

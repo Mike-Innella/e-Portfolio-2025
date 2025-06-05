@@ -362,6 +362,24 @@ textarea:-webkit-autofill {
   z-index: 10;
 }
 
+.resume-section {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: 100%;
+}
+
+.resume__download--button {
+  background-color: #f5e3e3 !important;
+  color: #222;
+}
+
+.dark .resume__download--button {
+  background-color: #1a1e26 !important;
+  color: #e2e8f0;
+}
+
 @media (max-width: 1024px) {
   .menu-button {
     background-color: #f5e3e3 !important;
@@ -369,6 +387,12 @@ textarea:-webkit-autofill {
 
   .dark .menu-button {
     background-color: #1a1e26 !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .logo-img {
+    margin-left: 2rem;
   }
 }
 

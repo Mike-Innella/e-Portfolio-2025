@@ -15,7 +15,7 @@ export default function MenuItem({
   tooltip,
   action,
   tooltipPlacement,
-  size = 3.5,
+  size = 2.7,
   menuActive,
   rotationAngle,
   isMobile,

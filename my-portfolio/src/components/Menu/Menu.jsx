@@ -15,7 +15,6 @@ export default function Menu({ sectionRefs }) {
     window.matchMedia("(max-width: 1024px)").matches
   );
 
-  // Listen for screen resize to update isMobile
   useEffect(() => {
     const checkMobile = () =>
       setIsMobile(window.matchMedia("(max-width: 768px)").matches);
@@ -23,7 +22,6 @@ export default function Menu({ sectionRefs }) {
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
-  // Listen for screen resize to update isRowMenu
   useEffect(() => {
     const checkRowMenu = () =>
       setIsRowMenu(window.matchMedia("(max-width: 1024px)").matches);
@@ -31,7 +29,6 @@ export default function Menu({ sectionRefs }) {
     return () => window.removeEventListener("resize", checkRowMenu);
   }, []);
 
-  // Scroll to a section by name
   const scrollToSection = useCallback(
     (sectionName) => {
       const ref = sectionRefs?.[sectionName];
@@ -42,12 +39,11 @@ export default function Menu({ sectionRefs }) {
           behavior: "smooth",
         });
       }
-      setMenuActive(false); // Close menu on navigation
+      setMenuActive(false);
     },
     [sectionRefs]
   );
 
-  // Static menu items
   const staticMenuItems = useMemo(
     () => [
       {
@@ -69,7 +65,6 @@ export default function Menu({ sectionRefs }) {
     []
   );
 
-  // Dynamic section-based menu items
   const sectionMenuItems = useMemo(
     () =>
       CustomSectionsConfig.filter((section) => !section.notInMenu).map(
@@ -82,13 +77,11 @@ export default function Menu({ sectionRefs }) {
     [scrollToSection]
   );
 
-  // Combine all menu items
   const menuItems = useMemo(
     () => [...staticMenuItems, ...sectionMenuItems],
     [staticMenuItems, sectionMenuItems]
   );
 
-  // Arc layout math
   const startAngle = isMobile ? 0 : -90;
   const rotationAngle = isMobile ? 90 : 180;
 
@@ -102,7 +95,7 @@ export default function Menu({ sectionRefs }) {
           menuActive={menuActive}
           toggleMenu={handleToggle}
           isRowMenu={isRowMenu}
-          className={`z-[500]`}
+          className="z-[500]"
         >
           ME
           <br />
@@ -167,19 +160,19 @@ export default function Menu({ sectionRefs }) {
                   menuActive={menuActive}
                   isMobile={true}
                   isRowMenu={true}
-                  rotationAngle={0} // not used for row
+                  rotationAngle={0}
                 />
               ))}
             </div>
           ) : (
             // ARC layout
             menuItems.map((menuItem, index) => {
-              let angle = startAngle;
-              let increment = 0;
-              if (menuItems.length > 1) {
-                increment = Math.round(rotationAngle / (menuItems.length - 1));
-              }
-              angle += index * increment;
+              const increment =
+                menuItems.length > 1
+                  ? rotationAngle / Math.max(menuItems.length - 1, 1)
+                  : 0;
+              const angle = startAngle + index * increment;
+
               return (
                 <MenuItem
                   key={`menu-item-${index}`}

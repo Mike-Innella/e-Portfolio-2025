@@ -20,8 +20,8 @@ export default function CustomSections({ sectionRefs }) {
           id={section.name}
         >
           <Section
-            sectionHeader={section.name}
-            headerIcon={section.headerIcon}
+            sectionHeader={!section.hideHeader ? section.name : null}
+            headerIcon={!section.hideHeader ? section.headerIcon : null}
             extraClass={section.extraClass || ""}
           >
             {section.content}

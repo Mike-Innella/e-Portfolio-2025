@@ -5,6 +5,7 @@ import {
   MdInfo,
   MdRateReview,
   MdDescription,
+  MdEmail,
 } from "react-icons/md";
 import { FaLinkedin } from "react-icons/fa";
 import CircleButton from "../components/CircleButton";
@@ -227,7 +228,7 @@ const CustomSectionsConfig = [
 
   {
     name: "Contact",
-    headerIcon: <MdDescription />,
+    headerIcon: <MdEmail />,
     extraClass:
       "contact-section w-full  max-md:mx-auto max-sm:px-0 max-sm:ml-0 max-sm:mr-0 max-md:section-reverse max-md:mt-8 max-lg:justify-center max-lg:items-center",
     content: (
@@ -236,6 +237,26 @@ const CustomSectionsConfig = [
           <ContactForm /> <GlowingLogo />
         </div>
       </>
+    ),
+  },
+
+  {
+    name: "Resume",
+    headerIcon: <MdDescription />,
+    hideHeader: true,
+    extraClass:
+      "resume-section flex w-full justify-center items-center mx-auto flex-col gap-4",
+    content: (
+      <div className="flex justify-center items-center">
+        <a
+          href="/Michael-Innella-Resume-2025.pdf"
+          download
+          className="flex items-center gap-2 bg-[#fff] text-[#222] dark:bg-[#222] dark:text-[#fff] px-6 py-4 rounded-md shadow hover:scale-105 transition duration-300 ease-in-out text-lg font-medium max-sm:mr-8 resume__download--button"
+        >
+          <MdDescription className="text-xl" />
+          Download Resume
+        </a>
+      </div>
     ),
   },
 ];

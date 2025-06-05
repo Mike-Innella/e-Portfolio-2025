@@ -39,6 +39,7 @@ export default function App() {
     Projects: useRef(null),
     Reviews:useRef(null),
     Contact: useRef(null),
+    Resume: useRef(null),
   };
 
   return (
