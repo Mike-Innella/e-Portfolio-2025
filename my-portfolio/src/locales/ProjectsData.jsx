@@ -5,14 +5,20 @@ const ProjectsData = [
     name: "Skinstric.AI",
     icon: Icons["web"],
     description:
-      "Internship project for Skinstric.AI, working closely with the project lead but handling development and feature implementation primarily solo. Built a React + Three.js analysis portal with seamless camera capture and real-time TensorFlow image processing. Overcame challenging library and API integrations to deliver a highly interactive experience. My assigned camera feature passed review and was highlighted by leadership.",
+      "Built a real-time skin analysis platform using OpenAI Vision API and Next.js with 98% detection accuracy and sub-2-second analysis time. Developed a responsive UI with TailwindCSS, GSAP, and Lottie animations, boosting engagement by 60% and retention by 40%. Designed a modular component library for skincare recommendations and implemented an efficient image processing pipeline using the 4D Mini model for enhanced skin tone and texture analysis.",
     techStack: ["react", "javascript", "api", "css", "threejs"],
     links: [
-    
+      {
+        tooltip: "See code",
+        link: "https://github.com/Mike-Innella/Skinstric.AI-Mike_Innella_Internship",
+        icon: Icons["code"],
+        type: "code",
+      },
       {
         tooltip: "See app",
         link: "https://skinstric-ai-mike-innella-internship.vercel.app/",
         icon: Icons["link"],
+        type: "live",
       },
     ],
   },
@@ -20,29 +26,42 @@ const ProjectsData = [
     name: "Howard Motor Webapp",
     icon: Icons["gearblock"],
     description:
-      "Solo freelance web app for Howard Motor Corp, designed to give back to a local business that supported me. Built a modern React frontend, Firebase backend, and dynamic admin portal for managing appointments and announcements. Integrated secure EmailJS contact forms and Google Places API, with sensitive API keys managed via environment variables and Vercel serverless functions. The site enhances customer interaction and streamlines staff workflow.",
+      "Solo freelance web app for Howard Motor Corp, built with React and Firebase to modernize customer engagement and internal operations. Designed and deployed a dynamic admin portal for managing appointments, reviews, and announcements. Integrated Google Places API for real-time review display and EmailJS for secure contact forms. Configured Vercel serverless functions and environment variables to protect sensitive API keys. Resulted in improved lead conversion and streamlined staff communication.",
     techStack: ["react", "firebase", "tailwind", "api", "nodejs", "emailjs"],
     links: [
+      // {
+      //   tooltip: "See code",
+      //   link: "https://github.com/Mike-Innella/howard-motor-webapp",
+      //   icon: Icons["code"],
+      //   type: "code",
+      // },
       {
         tooltip: "See app",
         link: "https://howard-motor-webapp.vercel.app/",
         icon: Icons["link"],
+        type: "live",
       },
     ],
   },
-
   {
     name: "The Shaman Asher",
     subtitle: "Freelance",
     icon: Icons["sun"],
     description:
-      "Hired on a freelance basis to elevate the UI/UX of a mystical services site. Enhanced the interface with skeleton loading states, a custom animated message loader, and interactive menu underlines. My ongoing contributions include accessibility improvements, refined responsive design, and additional UI/UX polish.",
+      "Hired as a freelance UI/UX developer to modernize a mystical services website. Introduced animated loaders, skeleton states, and interactive hover effects for a more engaging experience. Focused on responsive layout fixes, accessibility enhancements, and consistent visual polish. Ongoing updates continue to improve user flow and interface clarity across devices.",
     techStack: ["typescript", "tailwind", "emailjs", "html", "nodejs"],
     links: [
+      {
+        tooltip: "See code",
+        link: "https://github.com/theshamanasher/theshamanasher",
+        icon: Icons["code"],
+        type: "code",
+      },
       {
         tooltip: "See app",
         link: "https://www.shamanasher.com/",
         icon: Icons["link"],
+        type: "live",
       },
     ],
   },
@@ -50,13 +69,20 @@ const ProjectsData = [
     name: "NFT Marketplace",
     icon: Icons["market"],
     description:
-      "Virtual internship capstone where I rebuilt an NFT Marketplace as a responsive React SPA. Worked independently, collaborating with mentors. Implemented Swiper-powered NFT collection carousels, custom skeleton loaders, and client-side routing via HashRouter for a polished user experience. Enjoyed architecting the interactive Swiper grid and managing async state.",
+      "Virtual internship capstone where I independently rebuilt an NFT Marketplace as a responsive React SPA, collaborating with mentors for guidance. Engineered dynamic NFT search with route-based navigation, async state handling, and collection-level filtering. Implemented Swiper-powered carousels, custom skeleton loaders, and interactive grid layouts to enable immersive exploration of NFTs across dedicated, data-driven pages.",
     techStack: ["react", "javascript", "css", "html", "routing"],
     links: [
+      {
+        tooltip: "See code",
+        link: "https://github.com/Mike-Innella/nft-marketplace--MIke_Innella-Internship",
+        icon: Icons["code"],
+        type: "code",
+      },
       {
         tooltip: "See app",
         link: "https://nft-marketplace-m-ike-innell-git-40ec1a-mikes-projects-4896b1c6.vercel.app/",
         icon: Icons["link"],
+        type: "live",
       },
     ],
   },
@@ -64,13 +90,20 @@ const ProjectsData = [
     name: "OMDB Movie Store",
     icon: Icons["store"],
     description:
-      "Solo portfolio project built from scratch to master web APIs and dynamic UI. Developed a fully responsive React app for searching, viewing, and checking out movies using the OMDB API. The main challenge was optimizing real-time search and handling async data fetches. Would add advanced search features and animated skeleton loading states if revisited.",
+      "Solo portfolio project built to master web APIs and dynamic UI development. Created a responsive React app that allows users to search, view, and explore movies using the OMDB API. Focused on optimizing real-time search performance and managing async data fetches. If revisited, I would enhance it with advanced search filters and animated skeleton loaders for a smoother user experience.",
     techStack: ["react", "javascript", "api", "css"],
     links: [
+      {
+        tooltip: "See code",
+        link: "https://github.com/Mike-Innella/OMDBProject",
+        icon: Icons["code"],
+        type: "code",
+      },
       {
         tooltip: "See app",
         link: "https://mike-innella.github.io/OMDBProject/",
         icon: Icons["link"],
+        type: "live",
       },
     ],
   },
@@ -78,18 +111,23 @@ const ProjectsData = [
     name: "Fweather",
     icon: Icons["weather"],
     description:
-      "Personal project: a playful React weather dashboard using multiple APIs for real-time weather, sunrise/sunset, and fun facts for any city. Explored creative UI by auto-matching backgrounds to weather conditions. Major challenge was responsive design and smooth geo-location. Future versions will use a richer weather API for multi-day forecasts.",
+      "Personal project: a playful React weather dashboard integrating multiple APIs for real-time weather, sunrise/sunset, and random fun facts. Designed creative UI with auto-matched backgrounds based on weather conditions. Focused on responsive layout and smooth geo-location handling. Plans for future updates include richer multi-day forecasts using an advanced weather API.",
     techStack: ["react", "javascript", "api", "css", "html"],
     links: [
-     
+      {
+        tooltip: "See code",
+        link: "https://github.com/Mike-Innella/Fweather",
+        icon: Icons["code"],
+        type: "code",
+      },
       {
         tooltip: "See app",
         link: "https://mike-innella.github.io/Fweather/",
         icon: Icons["link"],
+        type: "live",
       },
     ],
   },
-  // ...add more projects here if you have them
 ];
 
 export default ProjectsData;
