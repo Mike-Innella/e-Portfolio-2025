@@ -42,6 +42,12 @@ const ProjectsData = [
         type: "code",
       },
       {
+        tooltip: "See code",
+        link: "https://github.com/Mike-Innella/howard-motor-webapp",
+        icon: Icons["code"],
+        type: "code",
+      },
+      {
         tooltip: "See app",
         link: "https://howard-motor-webapp.vercel.app/",
         icon: Icons["link"],
