@@ -29,6 +29,12 @@ const ProjectsData = [
       "Solo freelance web app for Howard Motor Corp, built with React and Firebase to modernize customer engagement and internal operations. Designed and deployed a dynamic admin portal for managing appointments, reviews, and announcements. Integrated Google Places API for real-time review display and EmailJS for secure contact forms. Configured Vercel serverless functions and environment variables to protect sensitive API keys. Resulted in improved lead conversion and streamlined staff communication.",
     techStack: ["react", "firebase", "tailwind", "api", "nodejs", "emailjs"],
     links: [
+      // {
+      //   tooltip: "See code",
+      //   link: "https://github.com/Mike-Innella/howard-motor-webapp",
+      //   icon: Icons["code"],
+      //   type: "code",
+      // },
       {
         tooltip: "See code",
         link: "https://github.com/Mike-Innella/howard-motor-webapp",
