@@ -1,0 +1,7 @@
+.root {
+  border-top: 1px solid var(--border);
+  margin-top: 6rem;
+  padding-block: 3rem;
+  font-size: 1.6rem;
+  opacity: 0.8;
+}

@@ -1,0 +1,37 @@
+"use client";
+
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import s from "./Nav.module.css";
+
+const links = [
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
+  { href: "/projects", label: "Projects" },
+  { href: "/contact", label: "Contact" },
+];
+
+export default function Nav() {
+  const pathname = usePathname() || "/";
+  return (
+    <header className={s.root}>
+      <nav className={`container ${s.inner}`}>
+        <div className={s.logo}>MI</div>
+        <div className={s.links}>
+          {links.map((l) => {
+            const active = pathname === l.href;
+            return (
+              <Link
+                key={l.href}
+                href={l.href}
+                className={`${s.link} ${active ? s.active : ""}`}
+              >
+                {l.label}
+              </Link>
+            );
+          })}
+        </div>
+      </nav>
+    </header>
+  );
+}

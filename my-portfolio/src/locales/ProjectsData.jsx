@@ -37,7 +37,7 @@ const ProjectsData = [
       // },
       {
         tooltip: "See app",
-        link: "https://howard-motor-webapp.vercel.app/",
+        link: "https://www.howardmotorco.net/",
         icon: Icons["link"],
         type: "live",
       },

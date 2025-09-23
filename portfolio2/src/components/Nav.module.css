@@ -1,0 +1,33 @@
+.root {
+  border-bottom: 1px solid var(--border);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  gap: var(--gap);
+  height: 7rem;
+}
+
+.logo {
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+.links {
+  margin-left: auto;
+  display: flex;
+  gap: 2rem;
+}
+
+.link {
+  font-size: 1.8rem;
+  padding: 0.8rem 1.2rem;
+  border-radius: 0.8rem;
+  border: 1px solid transparent;
+}
+
+.active {
+  background: var(--card);
+  border-color: var(--border);
+}

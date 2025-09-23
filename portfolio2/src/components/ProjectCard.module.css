@@ -1,0 +1,42 @@
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 1.2rem;
+  padding: 2rem;
+}
+
+.title {
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
+}
+
+.text {
+  font-size: 1.8rem;
+  opacity: 0.9;
+  margin-bottom: 1.2rem;
+}
+
+.tags {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.2rem;
+}
+
+.tag {
+  font-size: 1.4rem;
+  opacity: 0.8;
+  border: 1px solid var(--border);
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.6rem;
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.link {
+  font-size: 1.6rem;
+  text-decoration: underline;
+}

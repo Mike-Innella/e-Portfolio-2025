@@ -1,0 +1,28 @@
+.root {
+  text-align: center;
+  padding: 4rem 0;
+}
+
+.title {
+  font-size: 3.2rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.text {
+  font-size: 1.8rem;
+  opacity: 0.8;
+  margin-bottom: 2rem;
+}
+
+.link {
+  font-size: 1.6rem;
+  text-decoration: underline;
+  color: var(--foreground);
+}
+
+@media (prefers-color-scheme: dark) {
+  .link {
+    color: var(--foreground);
+  }
+}
