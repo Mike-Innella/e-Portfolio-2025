@@ -32,7 +32,7 @@
   border-radius: 2rem;     /* extra-rounded */
   background: var(--app-gradient);
   border: 1px solid var(--card-border);
-  box-shadow: 0 1rem 3rem rgba(0,0,0,0.25);
+  box-shadow: 0 1rem 3rem #00000040;
   color: var(--text-strong);
 
   display: grid;
@@ -46,8 +46,8 @@
 .card:hover,
 .card:focus-visible {
   transform: translateY(-0.25rem);
-  box-shadow: 0 1.5rem 3.5rem rgba(0,0,0,0.35);
-  border-color: rgba(99, 102, 241, 0.45);
+  box-shadow: 0 1.5rem 3.5rem #00000059;
+  border-color: #6366f173;
   outline: none;
 }
 
@@ -63,7 +63,7 @@
 .card:hover .icon,
 .card:focus-visible .icon {
   transform: scale(1.08);
-  filter: drop-shadow(0 0.25rem 0.75rem rgba(0,0,0,0.35));
+  filter: drop-shadow(0 0.25rem 0.75rem #00000059);
 }
 
 /* Under label: sits BELOW the card, hidden by default */
@@ -77,7 +77,7 @@
 
   font-size: 1.75rem;
   color: var(--text-strong);
-  background: rgba(16, 24, 40, 0.65);
+  background: #102828a6;
   backdrop-filter: blur(0.75rem);
   white-space: nowrap;
 
