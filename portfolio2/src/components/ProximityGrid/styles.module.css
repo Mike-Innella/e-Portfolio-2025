@@ -16,8 +16,12 @@
   height: var(--cell-size);
   border-radius: 50%;
   background: var(--cell-base);
-  transition: background 120ms linear;
-  will-change: transform, background;
+  will-change: transform, box-shadow, background-color;
+  transition:
+    transform .25s ease,
+    box-shadow .45s cubic-bezier(.22, .61, .36, 1),
+    background-color .25s ease;
+  box-shadow: 0 0 0rem #3f8cff00; /* transparent start */
 }
 
 .gridFade {

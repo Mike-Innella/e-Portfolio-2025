@@ -78,13 +78,13 @@ export default function ProximityGrid({
   }, [cellSizePx, gapPx]);
 
   // Build style (grid template) from computed rows/cols
-  const style = useMemo<React.CSSProperties>(
+  const style = useMemo<React.CSSProperties & Record<string, string>>(
     () => ({
       gridTemplateColumns: `repeat(${dims.cols}, ${cellSizePx}px)`,
       gridTemplateRows: `repeat(${dims.rows}, ${cellSizePx}px)`,
       gap: `${gapPx}px`,
-      ["--cell-size" as any]: `${cellSizePx}px`,
-      ["--cell-base" as any]: baseColorHex,
+      "--cell-size": `${cellSizePx}px`,
+      "--cell-base": baseColorHex,
     }),
     [dims, cellSizePx, gapPx, baseColorHex]
   );
@@ -167,6 +167,16 @@ export default function ProximityGrid({
     });
   };
 
+  // Map [0..1] proximity intensity -> subtle glow
+  const glowShadow = (t: number) => {
+    if (t <= 0) return "0 0 0rem #3f8cff00";
+    const blurRem = 0.5 + 0.5 * t; // 0.5rem → 1rem
+    const alpha = Math.round(0x59 * t) // 0x59 ≈ 0.35*255
+      .toString(16)
+      .padStart(2, "0");
+    return `0 0 ${blurRem}rem #3f8cff${alpha}`;
+  };
+
   const mixHex = (a: `#${string}`, b: `#${string}`, t: number) => {
     const p = (h: string) => parseInt(h, 16);
     const f = (n: number) => clamp(n, 0, 255).toString(16).padStart(2, "0");
@@ -180,10 +190,17 @@ export default function ProximityGrid({
     const cells = cellsRef.current;
     const p = pointerRef.current;
 
+    // Convert radius from px to rem for consistent scaling
+    const rootFontSize = parseFloat(
+      getComputedStyle(document.documentElement).fontSize
+    );
+    const radiusRem = radiusPx / rootFontSize;
+
     if (prefersReduced || !p) {
       for (const c of cells) {
         c.el.style.transform = "translate3d(0px,0px,0px) scale(1)";
         c.el.style.background = baseColorHex;
+        c.el.style.boxShadow = "0 0 0rem #3f8cff00";
       }
       return;
     }
@@ -203,6 +220,7 @@ export default function ProximityGrid({
         2
       )}px, 0) scale(${sc.toFixed(3)})`;
       c.el.style.background = mixHex(baseColorHex, hotColorHex, t);
+      c.el.style.boxShadow = glowShadow(t);
     }
   };
 
