@@ -1,0 +1,52 @@
+.title {
+  font-size: 3.2rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+}
+
+.subtitle {
+  font-size: 1.6rem;
+  opacity: 0.8;
+  margin-bottom: 2.4rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.6rem;
+}
+
+.card {
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  padding: 1.6rem;
+  background: rgba(255,255,255,0.02);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.2rem;
+  margin-bottom: 1.2rem;
+}
+
+.person { display: flex; flex-direction: column; gap: 0.2rem; }
+.name { font-size: 1.6rem; font-weight: 600; }
+.role { font-size: 1.4rem; opacity: 0.8; }
+
+.link {
+  font-size: 1.4rem;
+  text-decoration: underline;
+  opacity: 0.9;
+}
+
+.text {
+  white-space: pre-line; /* keeps your multi-line template strings readable */
+  font-size: 1.5rem;
+  line-height: 1.6;
+  margin-bottom: 1.2rem;
+}
+
+.footer { display: flex; justify-content: flex-end; }
+.date { font-size: 1.3rem; opacity: 0.7; }

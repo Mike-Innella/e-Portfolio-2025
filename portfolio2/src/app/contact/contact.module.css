@@ -1,0 +1,53 @@
+.title {
+  font-size: 3.2rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+}
+
+.lead {
+  font-size: 1.6rem;
+  opacity: 0.9;
+  margin-bottom: 1.6rem;
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.primary,
+.secondary,
+.resumeBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 1.2rem;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  border: 1px solid var(--border);
+}
+
+.primary {
+  background: #fff;
+  color: #222;
+}
+
+@media (prefers-color-scheme: dark) {
+  .primary {
+    background: #222;
+    color: #fff;
+  }
+}
+
+.secondary {
+  background: var(--card);
+}
+
+.resumeWrap {
+  margin-top: 1.6rem;
+}
+
+.resumeBtn {
+  background: var(--card);
+}

@@ -1,0 +1,15 @@
+export const techStack = [
+  { key: "html",       label: "HTML5" },
+  { key: "css",        label: "CSS3" },
+  { key: "tailwind",   label: "Tailwind CSS" },
+  { key: "nodejs",     label: "Node.js" },
+  { key: "git",        label: "Git" },
+  { key: "javascript", label: "JavaScript" },
+  { key: "typescript", label: "TypeScript" },
+  { key: "react",      label: "React" },
+  { key: "nextjs",     label: "Next.js" },   
+  { key: "vite",       label: "Vite" },
+  { key: "firebase",   label: "Firebase" },
+  { key: "supabase",   label: "Supabase" },  
+  { key: "figma",      label: "Figma" },
+];
