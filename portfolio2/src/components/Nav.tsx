@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 import s from "./Nav.module.css";
 
 const links = [
@@ -17,7 +18,17 @@ export default function Nav() {
   return (
     <header className={s.root}>
       <nav className={`container ${s.inner}`}>
-        <div className={s.logo}>MI</div>
+        <div className={s.logo}>
+          {" "}
+        
+            <Image
+              src="/MILogo.png" 
+              alt="Mike Innella Logo"
+              width={40} 
+              height={40}
+              priority
+            />
+        </div>
         <div className={s.links}>
           {links.map((l) => {
             const active = pathname === l.href;

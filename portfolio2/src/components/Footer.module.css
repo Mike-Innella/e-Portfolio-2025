@@ -3,5 +3,13 @@
   margin-top: 6rem;
   padding-block: 3rem;
   font-size: 1.6rem;
-  opacity: 0.8;
+  opacity: 1; /* full opacity to completely block proximity grid */
+  position: relative;
+  z-index: 10; /* sits above proximity grid */
+  background: linear-gradient(
+    0deg,
+    #1a1d23 0%,
+    #161920 50%,
+    #0f1114 100%
+  );
 }

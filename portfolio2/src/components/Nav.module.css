@@ -1,5 +1,13 @@
 .root {
   border-bottom: 1px solid var(--border);
+  position: relative;
+  z-index: 10; /* sits above proximity grid */
+  background: linear-gradient(
+    180deg,
+    #1a1d23 0%,
+    #161920 50%,
+    #0f1114 100%
+  );
 }
 
 .inner {
@@ -7,11 +15,6 @@
   align-items: center;
   gap: var(--gap);
   height: 7rem;
-}
-
-.logo {
-  font-size: 2.2rem;
-  font-weight: 700;
 }
 
 .links {
