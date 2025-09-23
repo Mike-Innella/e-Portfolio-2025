@@ -44,8 +44,7 @@ export default function AboutPage() {
             the world beyond code keeps me grounded—and fuels my creativity.
           </p>
         </div>
-
-        <h2 className={s.h2}>Technologies</h2>
+        
         <TechGrid />
       </div>
     </section>

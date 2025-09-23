@@ -6,7 +6,8 @@
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "icons:export": "tsx scripts/export-icons.ts"
   },
   "dependencies": {
     "next": "15.5.3",
@@ -20,6 +21,8 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.5.3",
-    "typescript": "^5"
+    "simple-icons": "^15.16.0",
+    "tsx": "^4.20.5",
+    "typescript": "^5.9.2"
   }
 }

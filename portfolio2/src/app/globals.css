@@ -71,8 +71,8 @@ a {
 
 /* a11y: obvious keyboard focus */
 :where(a, button, [role="button"], input, select, textarea):focus-visible {
-  outline: 2px solid #60a5fa;
-  outline-offset: 2px;
+  outline: 0.25rem solid #60a5fa;
+  outline-offset: 0.25rem;
 }
 
 @media (prefers-color-scheme: dark) {
