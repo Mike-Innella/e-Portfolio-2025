@@ -15,36 +15,35 @@ export default function AboutPage() {
 
         <div className={s.block}>
           <p>
-            I’m a frontend developer who’s passionate about creating web
-            experiences that go beyond function—they should feel good to use. I
-            thrive on blending modern JavaScript with clean, thoughtful design
-            to build interfaces that “just work.” My approach combines technical
-            problem-solving with a creative eye, always focusing on the small
-            details that help an application <em>flow</em> smoothly from start
-            to finish.
+            I’m a full-stack developer with a strong focus on frontend
+            engineering and user experience. I believe the best web applications
+            aren’t just functional— they feel intuitive, responsive, and
+            enjoyable to use. My strength lies in combining modern JavaScript
+            frameworks with clean, thoughtful design to create interfaces that
+            not only work well but <em>flow</em> seamlessly.
           </p>
         </div>
 
         <div className={s.block}>
           <p>
-            What draws me to web development is how it fuses creativity,
-            curiosity, and real-world impact. I started with a desire to
-            understand how things work, but it’s grown into a passion for
-            building digital products that people genuinely enjoy. I’m always
-            eager to learn, help teammates, and level up—because great products
-            come from collaboration and continuous growth.
+            What excites me most about development is the balance of
+            problem-solving and creativity. I love taking an idea from concept
+            to deployment, refining both the logic under the hood and the polish
+            on the surface. Whether I’m architecting backend features or
+            perfecting UI details, I approach projects with curiosity,
+            collaboration, and a drive to continuously grow my skills.
           </p>
         </div>
 
         <div className={s.block}>
           <p>
-            Outside the screen, I spend time experimenting with audio
-            engineering, staying active at the gym, and making memories with my
-            loved ones. Whether I’m mixing tracks or catching up with someone,
-            the world beyond code keeps me grounded—and fuels my creativity.
+            Beyond the keyboard, I explore audio engineering, stay active at the
+            gym, and spend time with my loved ones. These experiences outside of
+            tech keep me grounded, inspire creativity, and often bring fresh
+            perspective to the work I build on screen.
           </p>
         </div>
-        
+
         <TechGrid />
       </div>
     </section>

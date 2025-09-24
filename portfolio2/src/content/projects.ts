@@ -18,8 +18,67 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: "tunein",
+    title: "TuneIn",
+    subtitle: "Independent Project",
+    description:
+      "Focus-music web app with mood-based YouTube playlists and a session timer for distraction-free study/work, built with React and deployed on Vercel.",
+    tags: ["react", "javascript", "api", "css", "html", "routing", "supabase"],
+    links: [
+      {
+        tooltip: "See code",
+        link: "https://github.com/Mike-Innella/TuneIn",
+        type: "code",
+      },
+      {
+        tooltip: "See app",
+        link: "https://tune-in-theta.vercel.app/",
+        type: "live",
+      },
+    ],
+  },
+
+  {
+    slug: "howard-motor",
+    title: "Howard Motor Webapp",
+    subtitle: "Freelance",
+    description:
+      "Solo freelance web app for Howard Motor Corp, built with React and Firebase to modernize customer engagement...",
+    tags: ["react", "firebase", "tailwind", "api", "nodejs", "emailjs"],
+    links: [
+      {
+        tooltip: "See code",
+        link: "https://github.com/Mike-Innella/howard-motor-webapp",
+        type: "code",
+      },
+      {
+        tooltip: "See app",
+        link: "https://www.howardmotorco.net/",
+        type: "live",
+      },
+    ],
+  },
+
+  {
+    slug: "spoiler-shield",
+    title: "Spoiler Shield",
+    subtitle: "Mobile/Web Developer",
+    description:
+      "Details coming soon — project link: https://www.spoilershield.xyz/",
+    tags: ["nextjs", "typescript", "api"],
+    links: [
+      {
+        tooltip: "See app",
+        link: "https://www.spoilershield.xyz/",
+        type: "live",
+      },
+    ],
+  },
+
+  {
     slug: "skinstric-ai",
     title: "Skinstric.AI",
+    subtitle: "Frontend Engineer",
     description:
       "Built a real-time skin analysis platform using OpenAI Vision API and Next.js with 98% detection accuracy...",
     tags: ["react", "javascript", "api", "css", "threejs"],
@@ -38,20 +97,21 @@ export const projects: Project[] = [
   },
 
   {
-    slug: "howard-motor",
-    title: "Howard Motor Webapp",
+    slug: "summarist",
+    title: "Summarist",
+    subtitle: "Independent Project",
     description:
-      "Solo freelance web app for Howard Motor Corp, built with React and Firebase to modernize customer engagement...",
-    tags: ["react", "firebase", "tailwind", "api", "nodejs", "emailjs"],
+      "Rebuilt a book-summary app clone using Next.js, TypeScript, Tailwind CSS, and Supabase. Features authentication, dynamic pages, and responsive UI.",
+    tags: ["nextjs", "typescript", "supabase", "tailwind", "css"],
     links: [
       {
         tooltip: "See code",
-        link: "https://github.com/Mike-Innella/howard-motor-webapp",
+        link: "https://github.com/Mike-Innella/summarist-home-page",
         type: "code",
       },
       {
         tooltip: "See app",
-        link: "https://www.howardmotorco.net/",
+        link: "https://summarist-home-page-pied.vercel.app/",
         type: "live",
       },
     ],
@@ -81,6 +141,7 @@ export const projects: Project[] = [
   {
     slug: "nft-marketplace",
     title: "NFT Marketplace",
+    subtitle: "Frontend Developer (Internship)",
     description:
       "Virtual internship capstone where I independently rebuilt an NFT Marketplace as a responsive React SPA...",
     tags: ["react", "javascript", "css", "html", "routing"],
@@ -101,6 +162,7 @@ export const projects: Project[] = [
   {
     slug: "omdb-store",
     title: "OMDB Movie Store",
+    subtitle: "Independent Project",
     description:
       "Solo portfolio project built to master web APIs and dynamic UI development. Created a responsive React app...",
     tags: ["react", "javascript", "api", "css"],
@@ -121,6 +183,7 @@ export const projects: Project[] = [
   {
     slug: "fweather",
     title: "Fweather",
+    subtitle: "Independent Project",
     description:
       "Personal project: a playful React weather dashboard integrating multiple APIs for real-time weather...",
     tags: ["react", "javascript", "api", "css", "html"],
