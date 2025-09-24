@@ -13,7 +13,7 @@ export type ProximityGridProps = {
   maxTranslatePx?: number; // default 6
   /** colors */
   baseColorHex?: `#${string}`; // default '#0e0e0e'
-  hotColorHex?: `#${string}`; // default '#3f8cff'
+  hotColorHex?: `#${string}`; // default '#1f9ec1'
   /** accessibility */
   ariaLabel?: string;
   className?: string;
@@ -38,7 +38,7 @@ export default function ProximityGrid({
   maxScale = 1.5,
   maxTranslatePx = 6,
   baseColorHex = "#0e0e0e",
-  hotColorHex = "#3f8cff",
+  hotColorHex = "#1f9ec1",
   ariaLabel = "Interactive proximity grid",
   className,
 }: ProximityGridProps) {
@@ -169,12 +169,12 @@ export default function ProximityGrid({
 
   // Map [0..1] proximity intensity -> subtle glow
   const glowShadow = (t: number) => {
-    if (t <= 0) return "0 0 0rem #3f8cff00";
+    if (t <= 0) return "0 0 0rem rgba(31, 158, 193, 0)";
     const blurRem = 0.5 + 0.5 * t; // 0.5rem → 1rem
     const alpha = Math.round(0x59 * t) // 0x59 ≈ 0.35*255
       .toString(16)
       .padStart(2, "0");
-    return `0 0 ${blurRem}rem #3f8cff${alpha}`;
+    return `0 0 ${blurRem}rem #1f9ec1${alpha}`;
   };
 
   const mixHex = (a: `#${string}`, b: `#${string}`, t: number) => {
@@ -200,7 +200,7 @@ export default function ProximityGrid({
       for (const c of cells) {
         c.el.style.transform = "translate3d(0px,0px,0px) scale(1)";
         c.el.style.background = baseColorHex;
-        c.el.style.boxShadow = "0 0 0rem #3f8cff00";
+        c.el.style.boxShadow = "0 0 0rem rgba(31, 158, 193, 0)";
       }
       return;
     }

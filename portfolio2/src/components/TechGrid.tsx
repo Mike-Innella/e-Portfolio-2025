@@ -8,7 +8,7 @@ import { iconPaths } from "@/content/iconPaths";
 export default function TechGrid() {
   return (
     <section className={s.wrap} aria-labelledby="tech-heading">
-      <h2 id="tech-heading" className={s.heading}>Tech</h2>
+      <h2 id="tech-heading" className={s.heading}>Technologies</h2>
       <ul className={s.grid} role="list">
         {techStack.map((t) => {
           const src = iconPaths[t.key];

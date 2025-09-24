@@ -34,7 +34,7 @@
 }
 
 .link:hover {
-  color: #3f8cff;
+  color: #1f9ec1;
   transform: translateY(-0.1rem);
   background: #0e0e0e;
   border-radius: 0.75rem 0.75rem 0 0;
@@ -42,11 +42,11 @@
 
 .active {
   position: relative;
-  color: #3f8cff;
+  color: #1f9ec1;
   font-weight: 600;
   background: #0e0e0e;
   border-radius: 0.75rem 0.75rem 0 0;
-  box-shadow: 0 0 1rem rgba(63, 140, 255, 0.35);
+  box-shadow: 0 0 1rem rgba(31, 158, 193, 0.35);
   animation: gentle-float 3s ease-in-out infinite;
   transition:
     color .25s ease,
@@ -60,7 +60,7 @@
   inset: 0;
   border-radius: inherit;
   padding: 0.125rem;
-  background: linear-gradient(90deg, #3f8cff, #d2e1f7);
+  background: linear-gradient(90deg, #1f9ec1, #b8f2ff);
   -webkit-mask:
     linear-gradient(#fff 0 0) content-box,
     linear-gradient(#fff 0 0);

@@ -1,15 +1,17 @@
-import type { Metadata } from "next";
+"use client";
+
+import { useState } from "react";
 import s from "./home.module.css";
+import btn from "@/styles/buttons.module.css";
 import { site } from "@/content/site";
 import Link from "next/link";
 import ProximityGrid from "@/components/ProximityGrid/ProximityGrid";
-
-export const metadata: Metadata = {
-  title: "Home",
-  description: `${site.name} · ${site.tagline}`,
-};
+import ContactModal from "@/components/ContactModal";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { HiMail } from "react-icons/hi";
 
 export default function HomePage() {
+  const [contactOpen, setContactOpen] = useState(false);
   return (
     <>
       {/* Fullscreen background grid - positioned outside container constraints */}
@@ -43,31 +45,58 @@ export default function HomePage() {
             </p>
 
             <div className={s.ctaRow}>
-              <Link href="/projects" className={`${s.btn} ${s.primary}`}>
+              <Link href="/projects" className={`${btn.btn} ${btn.primary}`}>
                 View Projects
               </Link>
-              <Link href="/contact" className={`${s.btn} ${s.secondary}`}>
+              <Link href="/contact" className={`${btn.btn} ${btn.secondary}`}>
                 Contact Me
               </Link>
             </div>
 
             <ul className={s.socials} aria-label="Social links">
-              {site.socials.map((soc) => (
-                <li key={soc.name}>
-                  <a
-                    href={soc.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={s.socialLink}
-                  >
-                    {soc.name}
-                  </a>
-                </li>
-              ))}
+              {site.socials.map((soc) => {
+                const isEmail = soc.name.toLowerCase() === "email";
+                const isGithub = soc.name.toLowerCase() === "github";
+                const isLinkedin = soc.name.toLowerCase() === "linkedin";
+                
+                let IconComponent = null;
+                if (isGithub) IconComponent = FaGithub;
+                else if (isLinkedin) IconComponent = FaLinkedin;
+                else if (isEmail) IconComponent = HiMail;
+
+                return (
+                  <li key={soc.name}>
+                    {isEmail ? (
+                      <button
+                        type="button"
+                        onClick={() => setContactOpen(true)}
+                        className={s.socialIcon}
+                        aria-label={`${soc.name} - Open contact modal`}
+                        aria-haspopup="dialog"
+                        aria-controls="contactTitle"
+                      >
+                        {IconComponent && <IconComponent />}
+                      </button>
+                    ) : (
+                      <a
+                        href={soc.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={s.socialIcon}
+                        aria-label={`${soc.name} - Open in new tab`}
+                      >
+                        {IconComponent && <IconComponent />}
+                      </a>
+                    )}
+                  </li>
+                );
+              })}
             </ul>
           </div>
         </div>
       </section>
+
+      <ContactModal open={contactOpen} onClose={() => setContactOpen(false)} />
     </>
   );
 }

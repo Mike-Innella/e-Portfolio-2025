@@ -18,12 +18,12 @@
   font-size: 1.4rem;
   font-weight: 500;
   transition: all 200ms ease;
-  box-shadow: 0 0 1.2rem rgba(63, 140, 255, 0.2);
+  box-shadow: 0 0 1.2rem rgba(31, 158, 193, 0.2);
 }
 
 .backButton:hover {
   transform: translateY(-0.2rem);
-  box-shadow: 0 0 2rem rgba(63, 140, 255, 0.4);
+  box-shadow: 0 0 2rem rgba(31, 158, 193, 0.4);
   background: linear-gradient(135deg, #1f2330, #1a1d23);
 }
 
@@ -42,7 +42,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, transparent, rgba(63, 140, 255, 0.1), transparent);
+  background: linear-gradient(90deg, transparent, rgba(31, 158, 193, 0.1), transparent);
   border-radius: inherit;
 }
 
@@ -90,7 +90,7 @@
   content: '';
   width: 0.4rem;
   height: 2.4rem;
-  background: linear-gradient(90deg, #3f8cff, #d2e1f7);
+  background: linear-gradient(90deg, #1f9ec1, #b8f2ff);
   border-radius: 0.2rem;
 }
 
@@ -123,20 +123,20 @@
   align-items: center;
   gap: 0.8rem;
   padding: 1.6rem 3.2rem;
-  background: linear-gradient(135deg, #3f8cff, #2563eb);
+  background: linear-gradient(135deg, #1f9ec1, #1a8aa8);
   color: #ffffff;
   text-decoration: none;
   font-size: 1.6rem;
   font-weight: 600;
   border-radius: 1.2rem;
   transition: all 200ms ease;
-  box-shadow: 0 0 1.6rem rgba(63, 140, 255, 0.4);
+  box-shadow: 0 0 1.6rem rgba(31, 158, 193, 0.4);
 }
 
 .link:hover {
   transform: translateY(-0.3rem) scale(1.02);
-  box-shadow: 0 0 2.4rem rgba(63, 140, 255, 0.6);
-  background: linear-gradient(135deg, #4f9cff, #3673eb);
+  box-shadow: 0 0 2.4rem rgba(31, 158, 193, 0.6);
+  background: linear-gradient(135deg, #2fb3d4, #1a8aa8);
 }
 
 .link.secondary {

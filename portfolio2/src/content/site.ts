@@ -11,4 +11,9 @@ export const site = {
     { name: "Email", href: "mailto:mainnella@gmail.com" },
   ],
   resumeHref: "/resume.pdf",
-};
+  
+  get linkedinHref(): string {
+    const li = this.socials.find(x => x.name.toLowerCase() === "linkedin");
+    return li?.href ?? "https://www.linkedin.com";
+  },
+} as const;

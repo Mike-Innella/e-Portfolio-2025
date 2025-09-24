@@ -1,53 +1,148 @@
+/* Contact Hero Container */
+.contactHero {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+/* Typography */
 .title {
   font-size: 3.2rem;
-  font-weight: 700;
-  margin-bottom: 1.2rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.8rem;
+  color: #ffffff;
+  text-align: center;
 }
 
 .lead {
   font-size: 1.6rem;
   opacity: 0.9;
+  margin-bottom: 3rem;
+  color: #d0d0d0;
+  text-align: center;
+  line-height: 1.6;
+}
+
+/* Primary Contact Card */
+.primaryCard {
+  background: linear-gradient(135deg, #0f172a10, #12121210);
+  border: 0.1rem solid #2a2a2a;
+  border-radius: 1.6rem;
+  padding: 3rem 2.4rem;
+  text-align: center;
+  margin-bottom: 2.4rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.primaryCard:hover {
+  transform: translateY(-0.2rem);
+  box-shadow: 0 0.8rem 2.4rem #3f8cff20;
+  border-color: #3f8cff40;
+}
+
+/* Secondary Actions Grid */
+.secondaryGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+  gap: 2rem;
+  margin-top: 2.4rem;
+}
+
+/* Action Cards */
+.actionCard {
+  background: linear-gradient(135deg, #12121208, #1a1a1a08);
+  border: 0.1rem solid #2a2a2a;
+  border-radius: 1.2rem;
+  padding: 2.4rem 2rem;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.actionCard:hover {
+  transform: translateY(-0.15rem);
+  box-shadow: 0 0.6rem 1.8rem #3f8cff15;
+  border-color: #3f8cff30;
+}
+
+/* Card Content */
+.cardTitle {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #ffffff;
+  line-height: 1.3;
+}
+
+.primaryCard .cardTitle {
+  font-size: 2.2rem;
+  margin-bottom: 1.2rem;
+}
+
+.cardDescription {
+  font-size: 1.4rem;
+  color: #d0d0d0;
+  opacity: 0.9;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  max-width: 32rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Card Icons */
+.cardIcon {
+  font-size: 2.4rem;
+  color: #3f8cff;
   margin-bottom: 1.6rem;
+  opacity: 0.9;
 }
 
-.actions {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-.primary,
-.secondary,
-.resumeBtn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.8rem 1.2rem;
-  border-radius: 1.25rem;
-  font-size: 1.5rem;
-  border: 1px solid var(--border);
-}
-
-.primary {
-  background: #fff;
-  color: #222;
-}
-
-@media (prefers-color-scheme: dark) {
-  .primary {
-    background: #222;
-    color: #fff;
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contactHero {
+    padding: 1.6rem 0;
+  }
+  
+  .title {
+    font-size: 2.8rem;
+  }
+  
+  .primaryCard {
+    padding: 2.4rem 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .secondaryGrid {
+    grid-template-columns: 1fr;
+    gap: 1.6rem;
+    margin-top: 2rem;
+  }
+  
+  .actionCard {
+    padding: 2rem 1.6rem;
+  }
+  
+  .cardDescription {
+    max-width: none;
   }
 }
 
-.secondary {
-  background: var(--card);
-}
-
-.resumeWrap {
-  margin-top: 1.6rem;
-}
-
-.resumeBtn {
-  background: var(--card);
+@media (max-width: 480px) {
+  .primaryCard {
+    padding: 2rem 1.6rem;
+  }
+  
+  .cardTitle {
+    font-size: 1.6rem;
+  }
+  
+  .primaryCard .cardTitle {
+    font-size: 2rem;
+  }
+  
+  .cardIcon {
+    font-size: 2rem;
+    margin-bottom: 1.2rem;
+  }
 }

@@ -7,7 +7,7 @@ export type ProximityGridProps = {
   maxScale?: number; // default 1.6
   maxTranslatePx?: number; // default 6
   baseColorHex?: `#${string}`; // default '#1a1a1a'
-  hotColorHex?: `#${string}`; // default '#3f8cff'
+  hotColorHex?: `#${string}`; // default '#1f9ec1
   className?: string; // optional wrapper className
   ariaLabel?: string; // accessibility
 };

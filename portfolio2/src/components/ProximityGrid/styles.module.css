@@ -21,7 +21,7 @@
     transform .25s ease,
     box-shadow .45s cubic-bezier(.22, .61, .36, 1),
     background-color .25s ease;
-  box-shadow: 0 0 0rem #3f8cff00; /* transparent start */
+  box-shadow: 0 0 0rem #1f9ec100; /* transparent start */
 }
 
 .gridFade {
