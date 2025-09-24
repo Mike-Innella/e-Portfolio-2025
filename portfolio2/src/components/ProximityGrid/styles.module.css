@@ -1,0 +1,49 @@
+.root {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: none;
+  display: grid;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.cell {
+  width: var(--cell-size);
+  height: var(--cell-size);
+  border-radius: 50%;
+  background: var(--cell-base);
+  will-change: transform, box-shadow, background-color;
+  transition:
+    transform .25s ease,
+    box-shadow .45s cubic-bezier(.22, .61, .36, 1),
+    background-color .25s ease;
+  box-shadow: 0 0 0rem #1f9ec100; /* transparent start */
+}
+
+.gridFade {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 30vh; /* tweak: 24–40vh works well */
+  z-index: 0;   /* same layer as gridBackground, still below .inner (z:1) */
+  pointer-events: none;
+  /* Fade from transparent (shows grid) to the page background at the very bottom */
+  background: linear-gradient(
+    to bottom,
+    #00000000 0%,
+    #0000004d 40%,
+    var(--background, #000000) 100%
+  );
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .cell {
+    transition: none;
+  }
+}

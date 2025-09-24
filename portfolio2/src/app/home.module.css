@@ -1,0 +1,164 @@
+.hero {
+  display: grid;
+  place-items: center;
+  min-height: calc(100dvh - 15rem); /* header+footer buffer */
+  position: relative;
+  z-index: 1; /* sits above background grid */
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: calc(100dvh - 15rem);
+}
+
+.gridBackground {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1; /* sits behind all content */
+  display: block; /* ensures child can stretch full height/width */
+  pointer-events: none; /* background won't block clicks */
+  opacity: 0.9; /* optional: tweak/remove for brightness */
+  width: 100vw;
+  height: 100vh;
+}
+
+/* gradient overlay to fade grid toward footer */
+.gridFade {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 30vh; /* tweak between 24–40vh */
+  z-index: 0; /* stays below .inner */
+  pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    #00000000 0%,
+    #00000059 50%,
+    var(--background, #000000) 100%
+  );
+}
+
+.inner {
+  max-width: 105rem;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 1; /* ensures text/buttons above grid and fade */
+}
+
+.badge {
+  display: inline-block;
+  font-size: 1.2rem;
+  padding: 0.4rem 0.8rem;
+  border: 1px solid var(--border);
+  border-radius: 124.875rem;
+  background: var(--card);
+  margin-bottom: 1.2rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+
+.title {
+  font-size: clamp(3.2rem, 4.5vw, 5.6rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.8rem;
+}
+
+.tagline {
+  font-size: clamp(1.6rem, 2.2vw, 2rem);
+  opacity: 0.9;
+  margin-bottom: 1.2rem;
+}
+
+.lead {
+  font-size: 1.6rem;
+  line-height: 1.7;
+  opacity: 0.9;
+  margin: 0 auto 2rem;
+}
+
+.ctaRow {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.6rem;
+}
+
+.socials {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 0.8rem;
+  list-style: none;
+  padding: 0;
+}
+
+.socialLink {
+  font-size: 1.4rem;
+  text-decoration: underline;
+  opacity: 0.9;
+}
+
+.socialIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background: var(--card);
+  border: 0.1rem solid var(--border);
+  color: #e5e7eb;
+  font-size: 1.8rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.socialIcon::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #1f9ec120, #1f9ec120);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  border-radius: inherit;
+}
+
+.socialIcon:hover {
+  transform: translateY(-0.125rem) scale(1.05);
+  border-color: #1f9ec160;
+  box-shadow: 0 0 1.2rem #1f9ec140, 0 0.4rem 0.8rem #1F9EC133;
+  color: #1f9ec1;
+}
+
+.socialIcon:hover::before {
+  opacity: 1;
+}
+
+.socialIcon:active {
+  transform: translateY(-0.05rem) scale(1.02);
+  box-shadow: 0 0 0.8rem #1f9ec130;
+}
+
+.socialIcon:focus-visible {
+  outline: none;
+  border-color: #1f9ec1;
+  box-shadow: 0 0 0 0.2rem #1f9ec130, 0 0 1.2rem #1f9ec140;
+  color: #1f9ec1;
+}
+
+/* Ensure button reset for the email button */
+.socialIcon[type="button"] {
+  background: var(--card);
+  font-family: inherit;
+  font-size: 1.8rem;
+}

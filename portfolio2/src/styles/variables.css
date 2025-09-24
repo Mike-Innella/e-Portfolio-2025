@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+:root {
+  /* Design tokens */
+  --max-w: 120rem; /* 960px */
+  --pad: 2rem; /* 16px */
+  --gap: 2rem;
+  --radius: 1rem; /* 8px */
+  --card: #111216;
+  --border: #1f2330;
+
+  /* Shared app gradient used in header/footer */
+  --app-gradient: linear-gradient(180deg, #1a1d23 0%, #161920 50%, #0f1114 100%);
+  --card-border: #1f2a44;
+  --card-glass: #ffffff47;
+  --card-glass-2: #ffffff14;
+  --text-dim: #c7d2fe;
+  --text-strong: #ffffff;
+
+  /* Color scheme - LIGHT defaults */
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
