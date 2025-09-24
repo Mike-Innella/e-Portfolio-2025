@@ -3,6 +3,11 @@
   gap: 2.4rem;
   grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
   align-items: stretch;
+  margin-top: 4rem;
+}
+
+.section {
+  padding: 4rem 0;
 }
 
 @media (min-width: 80rem) {

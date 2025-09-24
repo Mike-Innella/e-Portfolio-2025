@@ -100,7 +100,7 @@
 
 .btn:hover {
   transform: translateY(-0.125rem);
-  box-shadow: 0 0 1.2rem #1f9ec160, 0 0.4rem 0.8rem rgba(31, 158, 193, 0.3);
+  box-shadow: 0 0 1.2rem #1f9ec160, 0 0.4rem 0.8rem #1F9EC14D;
   color: #ffffff;
   background: linear-gradient(135deg, #1a8fb8, #1a8fb8);
 }

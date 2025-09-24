@@ -5,7 +5,7 @@ import s from "./ProjectCard.module.css";
 type Props = {
   title: string;
   subtitle?: string;
-  description: string;
+  summary: string;
   tags?: string[];
   image?: string;
   href: string;
@@ -30,20 +30,26 @@ const getTechColor = (tech: string): string => {
 };
 
 export default function ProjectCard({
-  title, subtitle, description, tags = [], image, href,
+  title, subtitle, summary, tags = [], image, href,
 }: Props) {
   const Card = (
     <article className={s.card} aria-label={title}>
-      <div className={s.media}>
-        {image ? <img src={image} alt="" className={s.img} /> : <div className={s.placeholder} />}
-        <span className={s.glass} />
-        <span className={s.scan} />
+      {/* Image area = full card width, glass anchored here */}
+      <div className={s.thumb}>
+        <figure className={`${s.thumbFigure} ${s.glass}`}>
+          <img
+            src={image || "/images/placeholders/project-fallback.png"}
+            alt={`${title} preview`}
+            className={s.thumbImg}
+            loading="lazy"
+          />
+        </figure>
       </div>
 
       <div className={s.body}>
         <h3 className={s.title}>{title}</h3>
         {subtitle ? <p className={s.subtitle}>{subtitle}</p> : null}
-        <p className={s.desc}>{description}</p>
+        <p className={s.desc}>{summary}</p>
         {tags.length ? (
           <div className={s.tags}>
             {tags.map(t => (

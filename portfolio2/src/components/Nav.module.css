@@ -46,7 +46,7 @@
   font-weight: 600;
   background: #0e0e0e;
   border-radius: 0.75rem 0.75rem 0 0;
-  box-shadow: 0 0 1rem rgba(31, 158, 193, 0.35);
+  box-shadow: 0 0 1rem #1F9EC159;
   animation: gentle-float 3s ease-in-out infinite;
   transition:
     color .25s ease,

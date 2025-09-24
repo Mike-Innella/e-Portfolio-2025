@@ -169,7 +169,7 @@ export default function ProximityGrid({
 
   // Map [0..1] proximity intensity -> subtle glow
   const glowShadow = (t: number) => {
-    if (t <= 0) return "0 0 0rem rgba(31, 158, 193, 0)";
+    if (t <= 0) return "0 0 0rem #1F9EC100";
     const blurRem = 0.5 + 0.5 * t; // 0.5rem → 1rem
     const alpha = Math.round(0x59 * t) // 0x59 ≈ 0.35*255
       .toString(16)
@@ -200,7 +200,7 @@ export default function ProximityGrid({
       for (const c of cells) {
         c.el.style.transform = "translate3d(0px,0px,0px) scale(1)";
         c.el.style.background = baseColorHex;
-        c.el.style.boxShadow = "0 0 0rem rgba(31, 158, 193, 0)";
+        c.el.style.boxShadow = "0 0 0rem #1F9EC100";
       }
       return;
     }

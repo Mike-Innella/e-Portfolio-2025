@@ -136,7 +136,7 @@
 .socialIcon:hover {
   transform: translateY(-0.125rem) scale(1.05);
   border-color: #1f9ec160;
-  box-shadow: 0 0 1.2rem #1f9ec140, 0 0.4rem 0.8rem rgba(31, 158, 193, 0.2);
+  box-shadow: 0 0 1.2rem #1f9ec140, 0 0.4rem 0.8rem #1F9EC133;
   color: #1f9ec1;
 }
 

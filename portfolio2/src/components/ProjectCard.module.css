@@ -1,4 +1,6 @@
 :root {
+  --card-h: 36rem;      /* total card height */
+  /* --thumb-h removed in favor of aspect-ratio for consistent sizing */
   --card-radius: 1.2rem;
   --border-w: 0.2rem;
   --space-2: 0.8rem;
@@ -9,8 +11,8 @@
   --dark-2: #121212;
   --text: #e8e8e8;
   --muted: #bfc7d6;
-  --glow-rest: 0 0 1.2rem rgba(31, 158, 193, 0.27);
-  --glow-hover: 0 0 2.4rem rgba(31, 158, 193, 0.53);
+  --glow-rest: 0 0 1.2rem #1F9EC145;
+  --glow-hover: 0 0 2.4rem #1F9EC187;
 }
 
 .linkWrap {
@@ -20,19 +22,15 @@
 }
 
 .card {
-  position: relative;
-  display: grid;
-  grid-template-rows: auto 1fr;
-  border-radius: var(--card-radius);
-  padding: var(--border-w);
-  background:
-    linear-gradient(var(--dark), var(--dark)) padding-box,
-    var(--grad) border-box;
-  border: var(--border-w) solid transparent;
-  box-shadow: var(--glow-rest);
-  transition: transform 200ms ease, box-shadow 200ms ease;
+  height: var(--card-h);
+  display: flex;
+  flex-direction: column;
+  border: 0.125rem solid #3f8cff;
+  background: linear-gradient(180deg, #0a0a0a, #0e0e0e);
+  border-radius: 1rem;
   overflow: hidden;
-  min-height: 42rem;
+  box-shadow: 0 0 0.5rem #3f8cff40;
+  transition: transform 200ms ease, box-shadow 200ms ease;
 }
 
 .linkWrap:hover .card,
@@ -43,96 +41,103 @@
   -webkit-font-smoothing: antialiased;
 }
 
-.media {
+/* Card's image row */
+.thumb {
+  width: 100%;
+}
+
+/* The image box: spans the full card width */
+.thumbFigure {
   position: relative;
-  border-radius: calc(var(--card-radius) - 0.4rem);
+  display: block;
+  width: 100%;
   overflow: hidden;
-  min-height: 14rem;
-  background: linear-gradient(180deg, #151515, #0f0f0f);
+  border-radius: 0.8rem 0.8rem 0 0;
+  background: #0e0e0e; /* dark base while loading */
 }
 
-.img {
+/* Image: full width, natural height */
+.thumbImg {
+  display: block;
   width: 100%;
-  height: 100%;
+  height: auto;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Optional: cap super-tall images without stretching (uncomment if needed) */
+/*
+.thumbImg {
+  height: clamp(10rem, 22vw, 14rem);
+  width: 100%;
   object-fit: cover;
-  transform: scale(1);
-  transition: transform 400ms ease;
 }
+*/
 
-.linkWrap:hover .img {
-  transform: scale(1.08);
-}
-
-.placeholder {
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(180deg, #1a1a1a, #0e0e0e);
-}
-
-.glass {
+/* Glass swipe overlay ON the image box */
+.glass::before {
+  content: "";
   position: absolute;
   inset: 0;
+  pointer-events: none;
+  z-index: 1;
+
+  /* subtle diagonal beam using 8-digit hex (no rgba) */
   background: linear-gradient(
     110deg,
-    transparent 0%,
-    #ffffff22 40%,
+    #ffffff00 0%,
+    #ffffff14 45%,
     #ffffff33 50%,
-    #ffffff22 60%,
-    transparent 100%
+    #ffffff14 55%,
+    #ffffff00 100%
   );
+
+  /* start off-canvas to the left */
   transform: translateX(-120%);
-  transition: transform 800ms ease;
+  transition: transform 600ms ease;
 }
 
-.linkWrap:hover .glass {
-  transform: translateX(120%);
-}
-
-.scan {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(0deg, transparent 0%, rgba(31, 158, 193, 0.13) 50%, transparent 100%);
-  transform: translateY(-100%);
-  transition: transform 1200ms ease;
-}
-
-.linkWrap:hover .scan {
-  transform: translateY(100%);
+.linkWrap:hover .glass::before {
+  transform: translateX(0%);
 }
 
 .body {
-  padding: var(--space-4);
-  background: linear-gradient(180deg, var(--dark), var(--dark-2));
-  border-radius: calc(var(--card-radius) - 0.4rem);
+  flex: 1;
+  padding: 1.6rem;
   display: flex;
   flex-direction: column;
-  gap: var(--space-3);
-  min-height: 0;
 }
 
-.title {
-  font-size: 2.2rem;
+/* Optional: clamp title/description so every card stays even */
+.title { 
+  font-size: 1.8rem; 
+  font-weight: 600; 
+  margin: 0 0 0.4rem 0;
   color: var(--text);
-  font-weight: 600;
 }
 
-.subtitle {
-  font-size: 1.6rem;
+.subtitle { 
+  font-size: 1.4rem; 
+  opacity: 0.8; 
+  margin: 0 0 0.6rem 0;
   color: var(--muted);
 }
 
 .desc {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
+  opacity: 0.9;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;   /* 2–3 lines looks good */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-bottom: 1rem;
   color: var(--text);
-  opacity: 0.92;
 }
 
 .tags {
+  margin-top: auto;        /* push tags to bottom so card heights match */
   display: flex;
+  gap: 0.6rem;
   flex-wrap: wrap;
-  gap: var(--space-2);
-  margin-top: auto;
-  padding-top: var(--space-2);
 }
 
 .tag {
@@ -142,6 +147,6 @@
   border: none;
   padding: 0.6rem 1rem;
   border-radius: 1.2rem;
-  box-shadow: 0 0 0.8rem rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 0.8rem #0000004D;
   font-weight: 500;
 }

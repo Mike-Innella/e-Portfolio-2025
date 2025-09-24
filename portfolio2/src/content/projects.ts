@@ -8,7 +8,8 @@ export type Project = {
   slug: string;
   title: string;
   subtitle?: string;
-  description: string;
+  summary: string;     // short: card
+  details: string;     // long: project page
   tags: string[];
   links: ProjectLink[];
   year?: number;
@@ -21,8 +22,11 @@ export const projects: Project[] = [
     slug: "tunein",
     title: "TuneIn",
     subtitle: "Independent Project",
-    description:
+    image: "/images/TuneIn.png",
+    summary:
       "Focus-music web app with mood-based YouTube playlists and a session timer for distraction-free study/work, built with React and deployed on Vercel.",
+      details: "Tech: React, JavaScript, CSS, YouTube Data API, Vercel. Key challenges were syncing session timers with variable video lengths, autoplay restrictions, and quota limits. I built a playlist stitcher that queues multiple tracks to match the timer and added debounced, cached searches. Result: timer-to-track sync is within ±10s for ~95% of sessions with cold loads ≈1–1.5s on desktop.",
+      details: "Tech: React, JavaScript, CSS, YouTube Data API, Vercel. Key challenges were syncing session timers with variable video lengths, autoplay restrictions, and quota limits. I built a playlist stitcher that queues multiple tracks to match the timer and added debounced, cached searches. Result: timer-to-track sync is within ±10s for ~95% of sessions with cold loads ≈1–1.5s on desktop.",
     tags: ["react", "javascript", "api", "css", "html", "routing", "supabase"],
     links: [
       {
@@ -42,8 +46,11 @@ export const projects: Project[] = [
     slug: "howard-motor",
     title: "Howard Motor Webapp",
     subtitle: "Freelance",
-    description:
-      "Solo freelance web app for Howard Motor Corp, built with React and Firebase to modernize customer engagement...",
+    image: "/images/HowardMotor.png",
+    summary:
+      "Solo freelance web app for Howard Motor Corp, built with React and Firebase to modernize customer engagement.",
+      details: "Tech: React, Firebase (Auth/Firestore/Hosting), Tailwind, EmailJS. Focus was secure form flows and a mobile-first UI for non-technical users. I used least-privilege Firestore rules, serverless email hand-off, and simplified step forms. Result: mobile FCP ≈1.3s and fewer abandoned requests after validation + progress cues.",
+      details: "Tech: React, Firebase (Auth/Firestore/Hosting), Tailwind, EmailJS. Focus was secure form flows and a mobile-first UI for non-technical users. I used least-privilege Firestore rules, serverless email hand-off, and simplified step forms. Result: mobile FCP ≈1.3s and fewer abandoned requests after validation + progress cues.",
     tags: ["react", "firebase", "tailwind", "api", "nodejs", "emailjs"],
     links: [
       {
@@ -63,10 +70,18 @@ export const projects: Project[] = [
     slug: "spoiler-shield",
     title: "Spoiler Shield",
     subtitle: "Mobile/Web Developer",
-    description:
+    image: "/images/SpoilerShield.png",
+    summary:
       "Details coming soon — project link: https://www.spoilershield.xyz/",
+      details: "Tech: Next.js, TypeScript, API integrations. The core problem was filtering spoilers consistently without over-blocking. I implemented a normalized rule system with a preview/test mode and cached lookups. Result: sub-200ms rule application on typical feeds and a low false-positive rate targeted via unit tests. (Public beta still evolving.)",
+      details: "Tech: Next.js, TypeScript, API integrations. The core problem was filtering spoilers consistently without over-blocking. I implemented a normalized rule system with a preview/test mode and cached lookups. Result: sub-200ms rule application on typical feeds and a low false-positive rate targeted via unit tests. (Public beta still evolving.)",
     tags: ["nextjs", "typescript", "api"],
     links: [
+      {
+        tooltip: "See code",
+        link: "https://github.com/0xagf0x/spoiler-shield-web",
+        type: "code",
+      },
       {
         tooltip: "See app",
         link: "https://www.spoilershield.xyz/",
@@ -79,8 +94,11 @@ export const projects: Project[] = [
     slug: "skinstric-ai",
     title: "Skinstric.AI",
     subtitle: "Frontend Engineer",
-    description:
-      "Built a real-time skin analysis platform using OpenAI Vision API and Next.js with 98% detection accuracy...",
+    image: "/images/Skinstric.png",
+    summary:
+      "Built a real-time skin analysis platform using OpenAI Vision API and Next.js with 98% detection accuracy.",
+      details: "Tech: Next.js, React, OpenAI Vision API, CSS, Three.js (UI flourishes), Vercel. Main issues were inference latency and robust error states for user images. I added progressive UI states, client-side checks, and smaller payloads. Result: prototype measured ~98% detection on an internal set with typical round-trip ≈1–2s on desktop.",
+      details: "Tech: Next.js, React, OpenAI Vision API, CSS, Three.js (UI flourishes), Vercel. Main issues were inference latency and robust error states for user images. I added progressive UI states, client-side checks, and smaller payloads. Result: prototype measured ~98% detection on an internal set with typical round-trip ≈1–2s on desktop.",
     tags: ["react", "javascript", "api", "css", "threejs"],
     links: [
       {
@@ -100,8 +118,11 @@ export const projects: Project[] = [
     slug: "summarist",
     title: "Summarist",
     subtitle: "Independent Project",
-    description:
+    image: "/images/Summarist.png",
+    summary:
       "Rebuilt a book-summary app clone using Next.js, TypeScript, Tailwind CSS, and Supabase. Features authentication, dynamic pages, and responsive UI.",
+      details: "Tech: Next.js, TypeScript, Supabase, Tailwind. I built auth, dynamic routes, and a responsive layout while keeping search snappy. Debounced queries and route-level code-splitting improved perceived speed. Result: LCP under ~2s on desktop and sub-150ms search feedback for common queries.",
+      details: "Tech: Next.js, TypeScript, Supabase, Tailwind. I built auth, dynamic routes, and a responsive layout while keeping search snappy. Debounced queries and route-level code-splitting improved perceived speed. Result: LCP under ~2s on desktop and sub-150ms search feedback for common queries.",
     tags: ["nextjs", "typescript", "supabase", "tailwind", "css"],
     links: [
       {
@@ -121,8 +142,11 @@ export const projects: Project[] = [
     slug: "shaman-asher",
     title: "The Shaman Asher",
     subtitle: "Freelance",
-    description:
-      "Hired as a freelance UI/UX developer to modernize a mystical services website. Introduced animated loaders...",
+    image: "/images/ShamanAsher.png",
+    summary:
+      "Hired as a freelance UI/UX developer to modernize a mystical services website. Introduced animated loaders.",
+      details: "Tech: TypeScript, Tailwind, EmailJS. Hired to modernize UX: added loaders, accessible forms, and consistent motion. The challenge was creating a polished feel without heavy bundles. Result: reduced layout shift (stable CLS), lean CSS, and clearer conversion paths via simplified CTAs.",
+      details: "Tech: TypeScript, Tailwind, EmailJS. Hired to modernize UX: added loaders, accessible forms, and consistent motion. The challenge was creating a polished feel without heavy bundles. Result: reduced layout shift (stable CLS), lean CSS, and clearer conversion paths via simplified CTAs.",
     tags: ["typescript", "tailwind", "emailjs", "html", "nodejs"],
     links: [
       {
@@ -142,8 +166,11 @@ export const projects: Project[] = [
     slug: "nft-marketplace",
     title: "NFT Marketplace",
     subtitle: "Frontend Developer (Internship)",
-    description:
-      "Virtual internship capstone where I independently rebuilt an NFT Marketplace as a responsive React SPA...",
+    image: "/images/NFTMarket.png",
+    summary:
+      "Virtual internship capstone where I independently rebuilt an NFT Marketplace as a responsive React SPA.",
+      details: "Tech: React, JavaScript, CSS. Internship capstone focused on grid performance, pagination, and wallet-like interactions. I virtualized long lists and split code by route to keep the app responsive. Result: 60fps scroll on commodity laptops and Lighthouse scores in the 90s for performance/accessibility.",
+      details: "Tech: React, JavaScript, CSS. Internship capstone focused on grid performance, pagination, and wallet-like interactions. I virtualized long lists and split code by route to keep the app responsive. Result: 60fps scroll on commodity laptops and Lighthouse scores in the 90s for performance/accessibility.",
     tags: ["react", "javascript", "css", "html", "routing"],
     links: [
       {
@@ -163,8 +190,11 @@ export const projects: Project[] = [
     slug: "omdb-store",
     title: "OMDB Movie Store",
     subtitle: "Independent Project",
-    description:
-      "Solo portfolio project built to master web APIs and dynamic UI development. Created a responsive React app...",
+    image: "/images/MovieStore.png",
+    summary:
+      "Solo portfolio project built to master web APIs and dynamic UI development. Created a responsive React app.",
+      details: "Tech: React, OMDB API, CSS. The tricky parts were API edge cases, error states, and making search feel instant. I added debounce + cancelation and defensive UI around empty/invalid responses. Result: perceived search latency ≈150–200ms after debounce with clear skeleton and empty states.",
+      details: "Tech: React, OMDB API, CSS. The tricky parts were API edge cases, error states, and making search feel instant. I added debounce + cancelation and defensive UI around empty/invalid responses. Result: perceived search latency ≈150–200ms after debounce with clear skeleton and empty states.",
     tags: ["react", "javascript", "api", "css"],
     links: [
       {
@@ -184,8 +214,11 @@ export const projects: Project[] = [
     slug: "fweather",
     title: "Fweather",
     subtitle: "Independent Project",
-    description:
-      "Personal project: a playful React weather dashboard integrating multiple APIs for real-time weather...",
+    image: "/images/Fweather.png",
+    summary:
+      "Personal project: a playful React weather dashboard integrating multiple APIs for real-time weather.",
+      details: "Tech: React, multiple weather APIs, CSS/HTML. Combined geolocation, current conditions, and forecasts into a cohesive UI. Caching and minimal re-renders keep it light. Result: typical initial load ≈1.2s on desktop with smooth updates on location change.",
+      details: "Tech: React, multiple weather APIs, CSS/HTML. Combined geolocation, current conditions, and forecasts into a cohesive UI. Caching and minimal re-renders keep it light. Result: typical initial load ≈1.2s on desktop with smooth updates on location change.",
     tags: ["react", "javascript", "api", "css", "html"],
     links: [
       {

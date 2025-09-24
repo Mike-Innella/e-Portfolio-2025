@@ -40,7 +40,7 @@ export default function ProjectDetail({ params }: Params) {
           {project.subtitle && (
             <p className={s.subtitle}>{project.subtitle}</p>
           )}
-          <p className={s.description}>{project.description}</p>
+          <p className={s.description} style={{ lineHeight: 1.6 }}>{project.details}</p>
         </div>
 
         {project.tags?.length ? (
