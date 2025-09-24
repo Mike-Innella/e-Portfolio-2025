@@ -1,7 +1,27 @@
 import { notFound } from "next/navigation";
+import Link from "next/link";
 import { projects } from "@/content/projects";
+import s from "./ProjectDetail.module.css";
 
 type Params = { params: { slug: string } };
+
+const getTechColor = (tech: string): string => {
+  const colors: Record<string, string> = {
+    'html': '#e34c26',
+    'css': '#1572b6', 
+    'javascript': '#f1e05a',
+    'typescript': '#3178c6',
+    'react': '#61dafb',
+    'nodejs': '#68a063',
+    'firebase': '#ffca28',
+    'tailwind': '#06b6d4',
+    'api': '#9333ea',
+    'threejs': '#ffffff',
+    'emailjs': '#ff6b6b',
+    'routing': '#64748b'
+  };
+  return colors[tech.toLowerCase()] || '#64748b';
+};
 
 export default function ProjectDetail({ params }: Params) {
   const project = projects.find((p) => p.slug === params.slug);
@@ -9,68 +29,58 @@ export default function ProjectDetail({ params }: Params) {
   if (!project) return notFound();
 
   return (
-    <article className="section">
-      <h1
-        style={{ fontSize: "3rem", fontWeight: "bold", marginBottom: "1rem" }}
-      >
-        {project.title}
-      </h1>
+    <div className={s.container}>
+      <Link href="/projects" className={s.backButton}>
+        ← Back to Projects
+      </Link>
 
-      {project.subtitle ? (
-        <p style={{ fontSize: "1.6rem", opacity: 0.8, marginBottom: "1rem" }}>
-          {project.subtitle}
-        </p>
-      ) : null}
-
-      <p style={{ fontSize: "1.8rem", marginBottom: "1.6rem" }}>
-        {project.description}
-      </p>
-
-      {project.tags?.length ? (
-        <ul
-          style={{
-            display: "flex",
-            gap: "1rem",
-            flexWrap: "wrap",
-            marginBottom: "1.6rem",
-          }}
-        >
-          {project.tags.map((tag) => (
-            <li
-              key={tag}
-              style={{
-                border: "1px solid var(--border)",
-                borderRadius: "0.6rem",
-                padding: "0.4rem 0.8rem",
-                fontSize: "1.4rem",
-                opacity: 0.8,
-              }}
-            >
-              {tag}
-            </li>
-          ))}
-        </ul>
-      ) : null}
-
-      {project.links?.length ? (
-        <div style={{ display: "flex", gap: "1.2rem" }}>
-          {project.links.map((link) => (
-            <a
-              key={link.link}
-              href={link.link}
-              target="_blank"
-              rel="noreferrer"
-              style={{
-                fontSize: "1.6rem",
-                textDecoration: "underline",
-              }}
-              title={link.tooltip}
-            >
-              {link.type === "code" ? "Code ↗" : "Live ↗"}
-            </a>
-          ))}
+      <article>
+        <div className={s.hero}>
+          <h1 className={s.title}>{project.title}</h1>
+          {project.subtitle && (
+            <p className={s.subtitle}>{project.subtitle}</p>
+          )}
+          <p className={s.description}>{project.description}</p>
         </div>
-      ) : null}
-    </article>
+
+        {project.tags?.length ? (
+          <section className={s.section}>
+            <h2 className={s.sectionTitle}>Tech Stack</h2>
+            <div className={s.tags}>
+              {project.tags.map((tag) => (
+                <span
+                  key={tag}
+                  className={s.tag}
+                  style={{ '--tag-color': getTechColor(tag) } as React.CSSProperties}
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </section>
+        ) : null}
+
+        {project.links?.length ? (
+          <section className={s.section}>
+            <h2 className={s.sectionTitle}>Project Links</h2>
+            <div className={s.links}>
+              {project.links.map((link) => (
+                <a
+                  key={link.link}
+                  href={link.link}
+                  target="_blank"
+                  rel="noreferrer"
+                  className={`${s.link} ${link.type === 'code' ? s.secondary : ''}`}
+                  title={link.tooltip}
+                >
+                  {link.type === "code" ? "View Code" : "Live Demo"}
+                  <span>↗</span>
+                </a>
+              ))}
+            </div>
+          </section>
+        ) : null}
+      </article>
+    </div>
   );
 }
