@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/Documents/GitHub/e-Portfolio-2025/portfolio2/src/styles/variables.css"],"sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');\n\n:root {\n  /* Design tokens */\n  --max-w: 120rem; /* 960px */\n  --pad: 2rem; /* 16px */\n  --gap: 2rem;\n  --radius: 1rem; /* 8px */\n  --card: #111216;\n  --border: #1f2330;\n\n  /* Shared app gradient used in header/footer */\n  --app-gradient: linear-gradient(180deg, #1a1d23 0%, #161920 50%, #0f1114 100%);\n  --card-border: #1f2a44;\n  --card-glass: #ffffff47;\n  --card-glass-2: #ffffff14;\n  --text-dim: #c7d2fe;\n  --text-strong: #ffffff;\n\n  /* Color scheme - LIGHT defaults */\n  --background: #ffffff;\n  --foreground: #171717;\n}\n\n@media (prefers-color-scheme: dark) {\n  :root {\n    --background: #0a0a0a;\n    --foreground: #ededed;\n  }\n}\n"],"names":[],"mappings":"AAEA;;;;;;;;;;;;;;;;;AAsBA;EACE"}}]
+}

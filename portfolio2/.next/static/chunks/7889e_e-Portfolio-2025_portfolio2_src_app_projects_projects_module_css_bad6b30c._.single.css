@@ -1,0 +1,21 @@
+/* [project]/Documents/GitHub/e-Portfolio-2025/portfolio2/src/app/projects/projects.module.css [app-client] (css) */
+.projects-module__f4oa2a__grid {
+  grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+  align-items: stretch;
+  gap: 2.4rem;
+  margin-top: 4rem;
+  display: grid;
+}
+
+.projects-module__f4oa2a__section {
+  padding: 4rem 0;
+}
+
+@media (min-width: 80rem) {
+  .projects-module__f4oa2a__grid {
+    grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
+    gap: 3.2rem;
+  }
+}
+
+/*# sourceMappingURL=7889e_e-Portfolio-2025_portfolio2_src_app_projects_projects_module_css_bad6b30c._.single.css.map*/

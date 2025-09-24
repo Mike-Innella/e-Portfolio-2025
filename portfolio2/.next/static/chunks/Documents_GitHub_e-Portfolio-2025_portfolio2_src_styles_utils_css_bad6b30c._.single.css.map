@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/Documents/GitHub/e-Portfolio-2025/portfolio2/src/styles/utils.css"],"sourcesContent":[".container {\n  width: 100%;\n  max-width: var(--max-w);\n  margin-inline: auto;\n  padding-inline: var(--pad);\n}\n\n.section {\n  margin-block: 6rem;\n}\n\n/* Accessibility: obvious keyboard focus */\n:where(a, button, [role=\"button\"], input, select, textarea):focus-visible {\n  outline: 0.25rem solid #1f9ec1;\n  outline-offset: 0.25rem;\n}\n"],"names":[],"mappings":"AAAA;;;;;;;;AAOA;;;;;AAKA"}}]
+}

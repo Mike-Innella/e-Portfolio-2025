@@ -1,0 +1,61 @@
+/* [project]/Documents/GitHub/e-Portfolio-2025/portfolio2/src/components/Modal.module.css [app-client] (css) */
+.Modal-module__8LRkIW__backdrop {
+  -webkit-backdrop-filter: blur(.4rem);
+  z-index: 999;
+  background: rgba(0, 0, 0, .8);
+  place-items: center;
+  animation: .2s Modal-module__8LRkIW__backdropFadeIn;
+  display: grid;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.Modal-module__8LRkIW__dialog {
+  background: linear-gradient(135deg, var(--card), #1a1a1a);
+  border: .1rem solid rgba(31, 158, 193, .25);
+  border-radius: 1.2rem;
+  width: min(56rem, 100vw - 4rem);
+  padding: 2rem;
+  animation: .3s cubic-bezier(.34, 1.56, .64, 1) Modal-module__8LRkIW__dialogSlideIn;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 2rem 4rem rgba(0, 0, 0, .6), 0 0 0 .1rem rgba(63, 140, 255, .2), 0 0 2rem rgba(63, 140, 255, .3);
+}
+
+.Modal-module__8LRkIW__dialog:before {
+  content: "";
+  opacity: .6;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0), #1f9ec1, rgba(0, 0, 0, 0));
+  height: .1rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+@keyframes Modal-module__8LRkIW__backdropFadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes Modal-module__8LRkIW__dialogSlideIn {
+  from {
+    opacity: 0;
+    transform: scale(.9)translateY(-2rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1)translateY(0);
+  }
+}
+
+/*# sourceMappingURL=80b94_GitHub_e-Portfolio-2025_portfolio2_src_components_Modal_module_css_bad6b30c._.single.css.map*/

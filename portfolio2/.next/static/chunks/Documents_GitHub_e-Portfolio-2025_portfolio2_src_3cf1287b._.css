@@ -1,0 +1,197 @@
+/* [project]/Documents/GitHub/e-Portfolio-2025/portfolio2/src/components/TechGrid.module.css [app-client] (css) */
+.TechGrid-module__QZBIKq__wrap {
+  margin: 2rem 0;
+}
+
+.TechGrid-module__QZBIKq__heading {
+  color: var(--text-dim);
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+}
+
+.TechGrid-module__QZBIKq__grid {
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  gap: 5.5rem 2.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+}
+
+.TechGrid-module__QZBIKq__cardWrap {
+  display: inline-grid;
+  position: relative;
+}
+
+.TechGrid-module__QZBIKq__card {
+  background: var(--app-gradient);
+  border: 1px solid var(--card-border);
+  width: 10rem;
+  height: 10rem;
+  color: var(--text-strong);
+  cursor: default;
+  border-radius: 2rem;
+  place-items: center;
+  padding: 1.25rem;
+  transition: transform .16s, box-shadow .16s, border-color .16s;
+  display: grid;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, .25);
+}
+
+.TechGrid-module__QZBIKq__card:hover {
+  border-color: rgba(99, 102, 241, .45);
+  outline: none;
+  transform: translateY(-.25rem);
+  box-shadow: 0 1.5rem 3.5rem rgba(0, 0, 0, .35);
+}
+
+.TechGrid-module__QZBIKq__card:focus-visible {
+  border-color: rgba(99, 102, 241, .45);
+  outline: none;
+  transform: translateY(-.25rem);
+  box-shadow: 0 1.5rem 3.5rem rgba(0, 0, 0, .35);
+}
+
+.TechGrid-module__QZBIKq__icon {
+  place-items: center;
+  width: 5rem;
+  height: 5rem;
+  transition: transform .16s, filter .16s;
+  display: grid;
+}
+
+.TechGrid-module__QZBIKq__card:hover .TechGrid-module__QZBIKq__icon {
+  filter: drop-shadow(0 .25rem .75rem rgba(0, 0, 0, .35));
+  transform: scale(1.08);
+}
+
+.TechGrid-module__QZBIKq__card:focus-visible .TechGrid-module__QZBIKq__icon {
+  filter: drop-shadow(0 .25rem .75rem rgba(0, 0, 0, .35));
+  transform: scale(1.08);
+}
+
+.TechGrid-module__QZBIKq__outLabel {
+  color: var(--text-strong);
+  -webkit-backdrop-filter: blur(.75rem);
+  backdrop-filter: blur(.75rem);
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  background: rgba(16, 40, 40, .65);
+  border-radius: 1rem;
+  padding: .75rem 1rem;
+  font-size: 1.75rem;
+  transition: opacity .22s, transform .22s;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, .5rem);
+}
+
+.TechGrid-module__QZBIKq__card:hover + .TechGrid-module__QZBIKq__outLabel {
+  opacity: .95;
+  transform: translate(-50%, 1rem);
+}
+
+.TechGrid-module__QZBIKq__card:focus-visible + .TechGrid-module__QZBIKq__outLabel {
+  opacity: .95;
+  transform: translate(-50%, 1rem);
+}
+
+.TechGrid-module__QZBIKq__swipe {
+  background: linear-gradient(100deg, transparent 0%, transparent 20%, var(--card-glass) 45%, var(--card-glass-2) 60%, transparent 80%, transparent 100%);
+  filter: blur(.1875rem);
+  pointer-events: none;
+  opacity: 0;
+  width: 42%;
+  height: 124%;
+  position: absolute;
+  top: -12%;
+  left: -30%;
+  transform: rotate(20deg);
+}
+
+.TechGrid-module__QZBIKq__card:hover .TechGrid-module__QZBIKq__swipe {
+  opacity: 1;
+  animation: .9s forwards TechGrid-module__QZBIKq__swipeAcross;
+}
+
+.TechGrid-module__QZBIKq__card:focus-visible .TechGrid-module__QZBIKq__swipe {
+  opacity: 1;
+  animation: .9s forwards TechGrid-module__QZBIKq__swipeAcross;
+}
+
+@keyframes TechGrid-module__QZBIKq__swipeAcross {
+  0% {
+    opacity: 0;
+    transform: translateX(-60%)rotate(20deg);
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(220%)rotate(20deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .TechGrid-module__QZBIKq__card {
+    transition: border-color .16s;
+  }
+
+  .TechGrid-module__QZBIKq__icon {
+    transition: none;
+    transform: none;
+  }
+
+  .TechGrid-module__QZBIKq__outLabel {
+    opacity: .95;
+    transition: none;
+  }
+
+  .TechGrid-module__QZBIKq__swipe {
+    display: none;
+  }
+}
+
+@media (max-width: 70rem) {
+  .TechGrid-module__QZBIKq__grid {
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    gap: 4.5rem 2.25rem;
+  }
+
+  .TechGrid-module__QZBIKq__outLabel {
+    padding: .5rem .75rem;
+    font-size: 1.5rem;
+  }
+}
+
+/* [project]/Documents/GitHub/e-Portfolio-2025/portfolio2/src/app/about/about.module.css [app-client] (css) */
+.about-module__u34hFG__title {
+  margin-bottom: 1.6rem;
+  font-size: 3.2rem;
+  font-weight: 700;
+}
+
+.about-module__u34hFG__h2 {
+  margin: 2.4rem 0 1.2rem;
+  font-size: 2.2rem;
+  font-weight: 600;
+}
+
+.about-module__u34hFG__block {
+  margin-bottom: 1.6rem;
+}
+
+.about-module__u34hFG__block p {
+  opacity: .95;
+  font-size: 1.6rem;
+  line-height: 1.7;
+}
+
+/*# sourceMappingURL=Documents_GitHub_e-Portfolio-2025_portfolio2_src_3cf1287b._.css.map*/

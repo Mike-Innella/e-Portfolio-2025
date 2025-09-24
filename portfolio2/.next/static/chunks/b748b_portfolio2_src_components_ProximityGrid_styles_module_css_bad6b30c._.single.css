@@ -1,0 +1,43 @@
+/* [project]/Documents/GitHub/e-Portfolio-2025/portfolio2/src/components/ProximityGrid/styles.module.css [app-client] (css) */
+.styles-module__wJjT0W__root {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  touch-action: none;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  position: relative;
+}
+
+.styles-module__wJjT0W__cell {
+  width: var(--cell-size);
+  height: var(--cell-size);
+  background: var(--cell-base);
+  will-change: transform, box-shadow, background-color;
+  border-radius: 50%;
+  transition: transform .25s, box-shadow .45s cubic-bezier(.22, .61, .36, 1), background-color .25s;
+  box-shadow: 0 0 0 rgba(31, 158, 193, 0);
+}
+
+.styles-module__wJjT0W__gridFade {
+  z-index: 0;
+  pointer-events: none;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, .3) 40%, var(--background, #000) 100%);
+  height: 30vh;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .styles-module__wJjT0W__cell {
+    transition: none;
+  }
+}
+
+/*# sourceMappingURL=b748b_portfolio2_src_components_ProximityGrid_styles_module_css_bad6b30c._.single.css.map*/

@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/Documents/GitHub/e-Portfolio-2025/portfolio2/src/components/Footer.module.css"],"sourcesContent":[".root {\n  border-top: 1px solid var(--border);\n  margin-top: 6rem;\n  padding-block: 3rem;\n  font-size: 1.6rem;\n  opacity: 1; /* full opacity to completely block proximity grid */\n  position: relative;\n  z-index: 10; /* sits above proximity grid */\n  background: linear-gradient(\n    0deg,\n    #1a1d23 0%,\n    #161920 50%,\n    #0f1114 100%\n  );\n}\n"],"names":[],"mappings":"AAAA"}}]
+}

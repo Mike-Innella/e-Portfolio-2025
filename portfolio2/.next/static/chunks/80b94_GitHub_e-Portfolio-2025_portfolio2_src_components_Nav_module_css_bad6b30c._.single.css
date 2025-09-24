@@ -1,0 +1,103 @@
+/* [project]/Documents/GitHub/e-Portfolio-2025/portfolio2/src/components/Nav.module.css [app-client] (css) */
+.Nav-module__JcaOIq__root {
+  border-bottom: 1px solid var(--border);
+  z-index: 10;
+  background: linear-gradient(#1a1d23 0%, #161920 50%, #0f1114 100%);
+  position: relative;
+}
+
+.Nav-module__JcaOIq__inner {
+  align-items: center;
+  gap: var(--gap);
+  height: 7rem;
+  display: flex;
+}
+
+.Nav-module__JcaOIq__links {
+  gap: 2rem;
+  margin-left: auto;
+  display: flex;
+}
+
+.Nav-module__JcaOIq__link {
+  color: #fff;
+  will-change: color, transform, box-shadow;
+  padding: 1rem 1.5rem;
+  font-size: 2rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color .25s, transform .25s, box-shadow .35s cubic-bezier(.22, .61, .36, 1);
+  display: inline-block;
+  position: relative;
+}
+
+.Nav-module__JcaOIq__link:hover {
+  color: #1f9ec1;
+  background: #0e0e0e;
+  border-radius: .75rem .75rem 0 0;
+  transform: translateY(-.1rem);
+}
+
+.Nav-module__JcaOIq__active {
+  color: #1f9ec1;
+  background: #0e0e0e;
+  border-radius: .75rem .75rem 0 0;
+  font-weight: 600;
+  transition: color .25s, box-shadow .45s cubic-bezier(.22, .61, .36, 1);
+  animation: 3s ease-in-out infinite Nav-module__JcaOIq__gentle-float;
+  position: relative;
+  box-shadow: 0 0 1rem rgba(31, 158, 193, .35);
+}
+
+.Nav-module__JcaOIq__active:before, .Nav-module__JcaOIq__link:hover:before {
+  content: "";
+  border-radius: inherit;
+  -webkit-mask-composite: xor;
+  pointer-events: none;
+  opacity: 0;
+  will-change: opacity, transform;
+  background: linear-gradient(90deg, #1f9ec1, #b8f2ff);
+  padding: .125rem;
+  transition: opacity .35s, transform .45s cubic-bezier(.22, .61, .36, 1);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transform: scale(.995);
+  -webkit-mask-image: linear-gradient(#fff 0, #fff 0), linear-gradient(#fff 0, #fff 0);
+  -webkit-mask-position: 0 0, 0 0;
+  -webkit-mask-size: auto, auto;
+  -webkit-mask-repeat: repeat, repeat;
+  -webkit-mask-clip: content-box, border-box;
+  -webkit-mask-origin: content-box, border-box;
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  -webkit-mask-source-type: auto, auto;
+  mask-mode: match-source, match-source;
+}
+
+.Nav-module__JcaOIq__link:hover:before, .Nav-module__JcaOIq__active:before {
+  opacity: 1;
+  transform: scale(1);
+}
+
+@keyframes Nav-module__JcaOIq__gentle-float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-.15rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .Nav-module__JcaOIq__link, .Nav-module__JcaOIq__active, .Nav-module__JcaOIq__link:before, .Nav-module__JcaOIq__active:before {
+    transition: none;
+    animation: none;
+    transform: none;
+  }
+}
+
+/*# sourceMappingURL=80b94_GitHub_e-Portfolio-2025_portfolio2_src_components_Nav_module_css_bad6b30c._.single.css.map*/

@@ -1,0 +1,31 @@
+/* [project]/Documents/GitHub/e-Portfolio-2025/portfolio2/src/app/NotFound.module.css [app-client] (css) */
+.NotFound-module__BheimG__root {
+  text-align: center;
+  padding: 4rem 0;
+}
+
+.NotFound-module__BheimG__title {
+  margin-bottom: 1rem;
+  font-size: 3.2rem;
+  font-weight: 800;
+}
+
+.NotFound-module__BheimG__text {
+  opacity: .8;
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+}
+
+.NotFound-module__BheimG__link {
+  color: var(--foreground);
+  font-size: 1.6rem;
+  text-decoration: underline;
+}
+
+@media (prefers-color-scheme: dark) {
+  .NotFound-module__BheimG__link {
+    color: var(--foreground);
+  }
+}
+
+/*# sourceMappingURL=Documents_GitHub_e-Portfolio-2025_portfolio2_src_app_NotFound_module_4fdf643f.css.map*/
