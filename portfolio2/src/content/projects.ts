@@ -13,6 +13,7 @@ export type Project = {
   links: ProjectLink[];
   year?: number;
   iconKey?: string; // keep placeholder for later if you want to render icons
+  image?: string; // optional project image for enhanced cards
 };
 
 export const projects: Project[] = [
@@ -35,7 +36,7 @@ export const projects: Project[] = [
       },
     ],
   },
-  
+
   {
     slug: "howard-motor",
     title: "Howard Motor Webapp",
@@ -43,6 +44,11 @@ export const projects: Project[] = [
       "Solo freelance web app for Howard Motor Corp, built with React and Firebase to modernize customer engagement...",
     tags: ["react", "firebase", "tailwind", "api", "nodejs", "emailjs"],
     links: [
+      {
+        tooltip: "See code",
+        link: "https://github.com/Mike-Innella/howard-motor-webapp",
+        type: "code",
+      },
       {
         tooltip: "See app",
         link: "https://www.howardmotorco.net/",
