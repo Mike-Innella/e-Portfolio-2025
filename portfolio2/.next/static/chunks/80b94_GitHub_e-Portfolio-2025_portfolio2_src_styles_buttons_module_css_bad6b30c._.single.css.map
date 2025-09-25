@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/Documents/GitHub/e-Portfolio-2025/portfolio2/src/styles/buttons.module.css"],"sourcesContent":["/* Hex-only colors. Rem-only sizes. */\n\n.btn {\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  gap: 0.6rem;\n  font-size: 1.4rem;\n  padding: 1rem 1.6rem;\n  border: 0.1rem solid #2a2a2a;\n  border-radius: 999rem;\n  background: #121212;\n  color: #ffffff;\n  text-decoration: none;\n  cursor: pointer;\n  transition:\n    transform 0.16s ease,\n    box-shadow 0.16s ease,\n    background 0.16s ease,\n    border-color 0.16s ease,\n    opacity 0.16s ease;\n  will-change: transform;\n}\n\n.btn:hover {\n  transform: translateY(-0.1rem);\n  box-shadow: 0 0 0.5rem #3f8cff80; /* 8-digit hex with alpha */\n  border-color: #3f8cff;\n}\n\n.btn:active {\n  transform: translateY(0);\n  box-shadow: none;\n}\n\n.primary {\n  background: linear-gradient(135deg, #0f172a, #121212);\n  border-color: #3f8cff80;\n}\n\n.primary:hover {\n  background: linear-gradient(135deg, #121826, #161616);\n  border-color: #3f8cff;\n}\n\n.secondary {\n  background: #121212;\n  color: #ffffff;\n}\n"],"names":[],"mappings":"AAEA;;;;;;;;;;;;;;;;;AAsBA;;;;;;AAMA;;;;;AAKA;;;;;AAKA;;;;;AAKA"}}]
-}

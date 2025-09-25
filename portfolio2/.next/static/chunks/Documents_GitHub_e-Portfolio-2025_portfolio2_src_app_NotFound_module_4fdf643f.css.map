@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["file:///home/mike__2099/Documents/GitHub/e-Portfolio-2025/portfolio2/src/app/NotFound.module.css"],"sourcesContent":[".root {\n  text-align: center;\n  padding: 4rem 0;\n}\n\n.title {\n  font-size: 3.2rem;\n  font-weight: 800;\n  margin-bottom: 1rem;\n}\n\n.text {\n  font-size: 1.8rem;\n  opacity: 0.8;\n  margin-bottom: 2rem;\n}\n\n.link {\n  font-size: 1.6rem;\n  text-decoration: underline;\n  color: var(--foreground);\n}\n\n@media (prefers-color-scheme: dark) {\n  .link {\n    color: var(--foreground);\n  }\n}\n"],"names":[],"mappings":"AAAA;;;;;AAKA;;;;;;AAMA;;;;;;AAMA;;;;;;AAMA;EACE","debugId":null}}]
-}

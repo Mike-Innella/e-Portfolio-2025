@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/Documents/GitHub/e-Portfolio-2025/portfolio2/src/app/about/about.module.css"],"sourcesContent":[".title {\n  font-size: 3.2rem;\n  font-weight: 700;\n  margin-bottom: 1.6rem;\n}\n\n.h2 {\n  font-size: 2.2rem;\n  font-weight: 600;\n  margin: 2.4rem 0 1.2rem;\n}\n\n.block {\n  margin-bottom: 1.6rem;\n}\n\n.block p {\n  font-size: 1.6rem;\n  line-height: 1.7;\n  opacity: 0.95;\n}\n"],"names":[],"mappings":"AAAA;;;;;;AAMA;;;;;;AAMA;;;;AAIA"}}]
-}

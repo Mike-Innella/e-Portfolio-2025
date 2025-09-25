@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/Documents/GitHub/e-Portfolio-2025/portfolio2/src/app/projects/projects.module.css"],"sourcesContent":[".grid {\n  display: grid;\n  gap: 2.4rem;\n  grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));\n  align-items: stretch;\n  margin-top: 4rem;\n}\n\n.section {\n  padding: 4rem 0;\n}\n\n@media (min-width: 80rem) {\n  .grid {\n    gap: 3.2rem;\n    grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));\n  }\n}\n"],"names":[],"mappings":"AAAA;;;;;;;;AAQA;;;;AAIA;EACE"}}]
-}
