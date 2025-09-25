@@ -3,7 +3,7 @@ import Link from "next/link";
 import { projects } from "@/content/projects";
 import s from "./ProjectDetail.module.css";
 
-type Params = { params: { slug: string } };
+type Params = { params: Promise<{ slug: string }> };
 
 const getTechColor = (tech: string): string => {
   const colors: Record<string, string> = {
@@ -23,8 +23,9 @@ const getTechColor = (tech: string): string => {
   return colors[tech.toLowerCase()] || '#64748b';
 };
 
-export default function ProjectDetail({ params }: Params) {
-  const project = projects.find((p) => p.slug === params.slug);
+export default async function ProjectDetail({ params }: Params) {
+  const { slug } = await params;
+  const project = projects.find((p) => p.slug === slug);
 
   if (!project) return notFound();
 
