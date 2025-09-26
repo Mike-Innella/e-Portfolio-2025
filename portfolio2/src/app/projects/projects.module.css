@@ -1,7 +1,7 @@
 .grid {
   display: grid;
   gap: 2.4rem;
-  grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr)); /* Increased by ~7% from 28rem */
   align-items: stretch;
   margin-top: 4rem;
 }
@@ -13,6 +13,6 @@
 @media (min-width: 80rem) {
   .grid {
     gap: 3.2rem;
-    grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(34rem, 1fr)); /* Increased by ~6% from 32rem */
   }
 }

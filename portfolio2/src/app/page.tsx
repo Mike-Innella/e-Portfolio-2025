@@ -11,6 +11,7 @@ import ContactModal from "@/components/ContactModal";
 import ProjectCard from "@/components/ProjectCard";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { HiMail } from "react-icons/hi";
+import TerminalTypewriter from "@/components/TerminalTypewriter/TerminalTypewriter";
 
 export default function HomePage() {
   const [contactOpen, setContactOpen] = useState(false);
@@ -39,14 +40,7 @@ export default function HomePage() {
           <div className={s.inner}>
             <div className={s.badge}>Portfolio</div>
 
-            <h1 className={s.title}>{site.name}</h1>
-
-            <p className={s.tagline}>{site.tagline}</p>
-
-            <p className={s.lead}>
-              I design and build fast, accessible web apps with a clean UI and a
-              pragmatic, ship-first mindset.
-            </p>
+            <TerminalTypewriter />
 
             <div className={s.ctaRow}>
               <Link href="/projects" className={`${btn.btn} ${btn.primary}`}>
