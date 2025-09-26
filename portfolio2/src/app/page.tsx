@@ -4,14 +4,18 @@ import { useState } from "react";
 import s from "./home.module.css";
 import btn from "@/styles/buttons.module.css";
 import { site } from "@/content/site";
+import { projects } from "@/content/projects";
 import Link from "next/link";
 import ProximityGrid from "@/components/ProximityGrid/ProximityGrid";
 import ContactModal from "@/components/ContactModal";
+import ProjectCard from "@/components/ProjectCard";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { HiMail } from "react-icons/hi";
 
 export default function HomePage() {
   const [contactOpen, setContactOpen] = useState(false);
+  const recentProjects = projects.slice(0, 4); // Get first 4 projects
+  
   return (
     <>
       {/* Fullscreen background grid - positioned outside container constraints */}
@@ -94,9 +98,50 @@ export default function HomePage() {
             </ul>
           </div>
         </div>
+
+        {/* Subtle scroll indicator */}
+        <button
+          className={s.scrollHint}
+          onClick={() => document.getElementById('recent-projects')?.scrollIntoView({ behavior: 'smooth' })}
+          aria-label="Scroll to projects"
+          type="button"
+        >
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+            <path d="M12 5v14M19 12l-7 7-7-7" />
+          </svg>
+        </button>
       </section>
 
       <ContactModal open={contactOpen} onClose={() => setContactOpen(false)} />
+
+      {/* Recent projects section */}
+      <section id="recent-projects" className={s.recentSection} aria-labelledby="recent-projects-title">
+        <div className="container">
+          <h2 id="recent-projects-title" className={s.recentTitle}>Recent projects.</h2>
+          
+          <div className={s.recentGrid} role="list">
+            {recentProjects.map((project) => (
+              <div role="listitem" key={project.slug} className={s.recentItem}>
+                <ProjectCard
+                  title={project.title}
+                  subtitle={project.subtitle}
+                  summary={project.summary}
+                  tags={project.tags}
+                  image={project.image}
+                  href={`/projects/${project.slug}`}
+                />
+              </div>
+            ))}
+          </div>
+
+          {/* View all projects link */}
+          <p className={s.viewAllWrapper}>
+            <Link href="/projects" className={s.viewAllLink}>
+              View all projects →
+            </Link>
+          </p>
+        </div>
+      </section>
     </>
   );
 }

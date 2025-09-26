@@ -37,8 +37,8 @@
 
 .primaryCard:hover {
   transform: translateY(-0.2rem);
-  box-shadow: 0 0.8rem 2.4rem #3f8cff20;
-  border-color: #3f8cff40;
+  box-shadow: 0 0.8rem 2.4rem #1F9EC120;
+  border-color: #1F9EC140;
 }
 
 /* Secondary Actions Grid */
@@ -61,8 +61,8 @@
 
 .actionCard:hover {
   transform: translateY(-0.15rem);
-  box-shadow: 0 0.6rem 1.8rem #3f8cff15;
-  border-color: #3f8cff30;
+  box-shadow: 0 0.6rem 1.8rem #1F9EC115;
+  border-color: #1F9EC130;
 }
 
 /* Card Content */
@@ -93,7 +93,7 @@
 /* Card Icons */
 .cardIcon {
   font-size: 2.4rem;
-  color: #3f8cff;
+  color: #1F9EC1;
   margin-bottom: 1.6rem;
   opacity: 0.9;
 }

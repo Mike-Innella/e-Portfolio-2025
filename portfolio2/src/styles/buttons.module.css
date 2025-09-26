@@ -24,8 +24,8 @@
 
 .btn:hover {
   transform: translateY(-0.1rem);
-  box-shadow: 0 0 0.5rem #3f8cff80; /* 8-digit hex with alpha */
-  border-color: #3f8cff;
+  box-shadow: 0 0 0.5rem #1F9EC180; /* 8-digit hex with alpha */
+  border-color: #1F9EC1;
 }
 
 .btn:active {
@@ -35,12 +35,12 @@
 
 .primary {
   background: linear-gradient(135deg, #0f172a, #121212);
-  border-color: #3f8cff80;
+  border-color: #1F9EC180;
 }
 
 .primary:hover {
   background: linear-gradient(135deg, #121826, #161616);
-  border-color: #3f8cff;
+  border-color: #1F9EC1;
 }
 
 .secondary {
