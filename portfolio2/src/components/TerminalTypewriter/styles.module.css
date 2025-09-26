@@ -4,11 +4,9 @@
   background: #0a0a0a;
   border-radius: 0.8rem;
   overflow: hidden;
-  box-shadow: 
-    0 0 3rem rgba(31, 158, 193, 0.1),
-    0 1rem 4rem rgba(0, 0, 0, 0.5),
+  box-shadow: 0 0 3rem rgba(31, 158, 193, 0.1), 0 1rem 4rem rgba(0, 0, 0, 0.5),
     inset 0 0 0 1px rgba(31, 158, 193, 0.1);
-  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  font-family: "Consolas", "Monaco", "Courier New", monospace;
   position: relative;
 }
 
@@ -58,7 +56,7 @@
 
 /* CRT screen effect - subtle scanlines */
 .body::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   background: repeating-linear-gradient(
@@ -96,7 +94,7 @@
   padding-left: 0;
   text-shadow: 0 0 0.3rem rgba(0, 255, 65, 0.4);
   white-space: pre-wrap;
-  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  font-family: "Consolas", "Monaco", "Courier New", monospace;
 }
 
 .category {
@@ -124,10 +122,12 @@
 }
 
 @keyframes cursorBlink {
-  0%, 49% {
+  0%,
+  49% {
     opacity: 1;
   }
-  50%, 100% {
+  50%,
+  100% {
     opacity: 0;
   }
 }
@@ -161,20 +161,23 @@
 
 /* Subtle glow animation for active terminal */
 @keyframes terminalGlow {
-  0%, 100% {
-    box-shadow: 
-      0 0 3rem rgba(31, 158, 193, 0.1),
-      0 1rem 4rem rgba(0, 0, 0, 0.5),
+  0%,
+  100% {
+    box-shadow: 0 0 3rem rgba(31, 158, 193, 0.1), 0 1rem 4rem rgba(0, 0, 0, 0.5),
       inset 0 0 0 1px rgba(31, 158, 193, 0.1);
   }
   50% {
-    box-shadow: 
-      0 0 3.5rem rgba(31, 158, 193, 0.15),
-      0 1rem 4rem rgba(0, 0, 0, 0.5),
-      inset 0 0 0 1px rgba(31, 158, 193, 0.15);
+    box-shadow: 0 0 3.5rem rgba(31, 158, 193, 0.15),
+      0 1rem 4rem rgba(0, 0, 0, 0.5), inset 0 0 0 1px rgba(31, 158, 193, 0.15);
   }
 }
 
 .terminal {
   animation: terminalGlow 4s ease-in-out infinite;
+}
+
+@media (max-width: 30rem) {
+  .terminal {
+    margin-top: 12rem;
+  }
 }

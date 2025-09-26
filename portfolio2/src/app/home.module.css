@@ -124,7 +124,7 @@
 }
 
 .socialIcon::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   background: linear-gradient(135deg, #1f9ec120, #1f9ec120);
@@ -136,7 +136,7 @@
 .socialIcon:hover {
   transform: translateY(-0.125rem) scale(1.05);
   border-color: #1f9ec160;
-  box-shadow: 0 0 1.2rem #1f9ec140, 0 0.4rem 0.8rem #1F9EC133;
+  box-shadow: 0 0 1.2rem #1f9ec140, 0 0.4rem 0.8rem #1f9ec133;
   color: #1f9ec1;
 }
 
@@ -184,13 +184,14 @@
 }
 
 .scrollHint:focus-visible {
-  outline: 2px solid #1F9EC130;
+  outline: 2px solid #1f9ec130;
   outline-offset: 4px;
   border-radius: 4px;
 }
 
 @keyframes gentleBounce {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateX(-50%) translateY(0);
   }
   50% {
@@ -227,6 +228,10 @@
 
 /* ≥ 48rem => 2 columns */
 @media (min-width: 48rem) {
+  .recent-projects {
+    margin-top: 8rem;
+  }
+
   .recentGrid {
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
@@ -252,7 +257,7 @@
 .viewAllLink {
   font-size: 1.6rem;
   text-decoration: none;
-  color: #1F9EC1;
+  color: #1f9ec1;
   transition: all 0.2s ease;
   display: inline-block;
   position: relative;
@@ -265,7 +270,7 @@
 }
 
 .viewAllLink:focus-visible {
-  outline: 2px solid #1F9EC130;
+  outline: 2px solid #1f9ec130;
   outline-offset: 4px;
   border-radius: 4px;
   text-decoration: underline;

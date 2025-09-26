@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
 
 * {
   margin: 0;
@@ -27,8 +27,8 @@
   --dark-2: #121212;
   --text: #e8e8e8;
   --muted: #bfc7d6;
-  --glow-rest: 0 0 1.2rem #1F9EC145;
-  --glow-hover: 0 0 2.4rem #1F9EC187;
+  --glow-rest: 0 0 1.2rem #1f9ec145;
+  --glow-hover: 0 0 2.4rem #1f9ec187;
 
   /* LIGHT defaults (you were missing these) */
   --background: #ffffff;
@@ -59,7 +59,7 @@ body {
   flex-direction: column;
   color: var(--foreground);
   background: var(--background);
-  font-family: 'Outfit', Arial, Helvetica, sans-serif;
+  font-family: "Outfit", Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -88,6 +88,17 @@ a {
 :where(a, button, [role="button"], input, select, textarea):focus-visible {
   outline: 0.25rem solid #1f9ec1;
   outline-offset: 0.25rem;
+}
+
+/* Mobile adjustments for fixed nav */
+@media (max-width: 768px) {
+  main {
+    margin-top: 9rem; /* Push content below fixed nav with extra spacing */
+  }
+
+  .section {
+    margin-block: 4rem; /* Reduce section spacing on mobile */
+  }
 }
 
 @media (prefers-color-scheme: dark) {
