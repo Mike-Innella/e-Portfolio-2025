@@ -12,13 +12,7 @@ export default function Footer() {
         {/* Branding */}
         <div className={s.branding}>
           <div className={s.logoWrap}>
-            <Image
-              src="/MILogo.png"
-              alt="Mike Innella Logo"
-              width={40}
-              height={40}
-              priority
-            />
+        
             <div className={s.brandText}>
               <strong className={s.name}>{site.name}</strong>
               <span className={s.tagline}>{site.tagline}</span>

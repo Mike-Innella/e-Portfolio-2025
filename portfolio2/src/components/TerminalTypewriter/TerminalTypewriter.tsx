@@ -16,6 +16,7 @@ export default function TerminalTypewriter() {
   const [currentText, setCurrentText] = useState('');
   const [showCursor, setShowCursor] = useState(true);
   const [isComplete, setIsComplete] = useState(false);
+  const [skipAnimation, setSkipAnimation] = useState(false);
 
   // Categorize skills
   const frontend = ['React', 'Next.js', 'TypeScript', 'JavaScript', 'HTML5', 'CSS3', 'Tailwind', 'Three.js', 'Figma'];
@@ -55,9 +56,27 @@ export default function TerminalTypewriter() {
     }
   ];
 
+  // Check if animation has already played
   useEffect(() => {
+    const hasPlayed = sessionStorage.getItem('terminalAnimationPlayed');
+    if (hasPlayed === 'true') {
+      // Skip animation and show final state
+      setSkipAnimation(true);
+      setCurrentLineIndex(lines.length);
+      setIsComplete(true);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (skipAnimation) {
+      // Animation has already played, don't run it again
+      return;
+    }
+
     if (currentLineIndex >= lines.length) {
       setIsComplete(true);
+      // Mark animation as played in sessionStorage
+      sessionStorage.setItem('terminalAnimationPlayed', 'true');
       return;
     }
 
@@ -105,7 +124,7 @@ export default function TerminalTypewriter() {
     interval = setInterval(typeNextChar, 40);
     
     return () => clearInterval(interval);
-  }, [currentLineIndex]);
+  }, [currentLineIndex, skipAnimation, lines.length]);
 
   // Cursor blink effect
   useEffect(() => {
@@ -116,6 +135,18 @@ export default function TerminalTypewriter() {
   }, []);
 
   const renderLine = (line: TerminalLine, index: number) => {
+    // If animation was skipped, render all lines immediately
+    if (skipAnimation) {
+      return (
+        <div key={index} className={s.line}>
+          <span className={s.prompt}>{line.prompt}</span>
+          <span className={s.command}> {line.command}</span>
+          <br />
+          <span className={s.output}>{line.output}</span>
+        </div>
+      );
+    }
+
     const isCurrentLine = index === currentLineIndex;
     const isRendered = index < currentLineIndex;
     

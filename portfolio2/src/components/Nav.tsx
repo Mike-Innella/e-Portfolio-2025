@@ -68,18 +68,17 @@ export default function Nav() {
   return (
     <header className={s.root}>
       <nav className={`container ${s.inner}`}>
-        <div className={s.logo}>
-          {" "}
-        
-            <Image
-              src="/MILogo.png" 
-              alt="Mike Innella Logo"
-              width={40} 
-              height={40}
-              priority
-            />
+        <div className={s.logoHeaderWrapper}>
+          <Image
+            src="/MILogo.png"
+            alt="Mike Innella Logo"
+            width={40}
+            height={40}
+            priority
+          />
+          <h2 className={s.logoHeader}>Michael Innella</h2>
         </div>
-        
+
         {/* Desktop Navigation */}
         <div className={s.links}>
           {links.map((l) => {
@@ -99,7 +98,9 @@ export default function Nav() {
         {/* Mobile Menu Button */}
         <button
           ref={buttonRef}
-          className={s.mobileMenuButton}
+          className={`${s.mobileMenuButton} ${
+            isMobileMenuOpen ? s.mobileMenuButtonOpen : ""
+          }`}
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Menu"
           aria-expanded={isMobileMenuOpen}
@@ -121,7 +122,9 @@ export default function Nav() {
         <div
           ref={menuRef}
           id="mobile-menu"
-          className={`${s.mobileMenu} ${isMobileMenuOpen ? s.mobileMenuOpen : ""}`}
+          className={`${s.mobileMenu} ${
+            isMobileMenuOpen ? s.mobileMenuOpen : ""
+          }`}
           aria-hidden={!isMobileMenuOpen}
         >
           <nav className={s.mobileLinks}>
