@@ -56,7 +56,6 @@ export default function MatrixRain({ className }: MatrixRainProps) {
     // Track message display
     let messageColumn = Math.floor(Math.random() * (columns - 15));
     let currentMessageIndex = 0;
-    let messageCharIndex = 0;
     let messageTimer = 0;
     const messageInterval = 200; // Show message every 200 frames
 

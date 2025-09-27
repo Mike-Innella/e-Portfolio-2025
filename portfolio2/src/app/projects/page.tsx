@@ -2,50 +2,92 @@
 
 import { useState, useEffect, useMemo } from "react";
 import gridStyles from "./projects.module.css";
-import { projects } from "@/content/projects";
-import { techStack } from "@/content/tech";
+import { projects, type Project } from "@/content/projects";
 import ProjectCard from "@/components/ProjectCard";
 import MatrixRain from "@/components/MatrixRain/MatrixRain";
 
 export default function ProjectsPage() {
-  const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [isSearchFocused, setIsSearchFocused] = useState(false);
 
-  // Use tech stack for filter tags
-  const allTags = useMemo(() => {
-    return techStack.map(tech => tech.label);
+  // Create a map of technology variations for smart matching
+  const techVariations = useMemo(() => {
+    const variations = new Map<string, string[]>();
+    
+    // Add common variations and abbreviations
+    variations.set("nextjs", ["next.js", "next", "nextjs"]);
+    variations.set("react", ["react", "reactjs", "react.js"]);
+    variations.set("typescript", ["typescript", "ts"]);
+    variations.set("javascript", ["javascript", "js"]);
+    variations.set("nodejs", ["node", "nodejs", "node.js"]);
+    variations.set("express", ["express", "expressjs", "express.js"]);
+    variations.set("threejs", ["three", "threejs", "three.js"]);
+    variations.set("html", ["html", "html5"]);
+    variations.set("css", ["css", "css3"]);
+    variations.set("tailwind", ["tailwind", "tailwindcss", "tailwind css"]);
+    variations.set("firebase", ["firebase", "firestore"]);
+    variations.set("supabase", ["supabase", "supa"]);
+    variations.set("api", ["api", "apis", "rest", "restful"]);
+    
+    return variations;
   }, []);
 
-  // Filter projects based on selected tags and search query
-  const filteredProjects = useMemo(() => {
-    return projects.filter((project) => {
-      const matchesTags =
-        selectedTags.length === 0 ||
-        selectedTags.some((tag) => project.tags.includes(tag));
+  // Enhanced search function
+  const searchProjects = (project: Project, query: string) => {
+    const searchTerms = query.toLowerCase().trim().split(/\s+/);
+    
+    // If no search query, return true
+    if (searchTerms.length === 0 || searchTerms[0] === "") return true;
+    
+    // Check if ALL search terms match (AND logic)
+    return searchTerms.every(term => {
+      // Direct field matching
+      const inTitle = project.title.toLowerCase().includes(term);
+      const inSubtitle = project.subtitle?.toLowerCase().includes(term) || false;
+      const inSummary = project.summary.toLowerCase().includes(term);
+      const inDetails = project.details.toLowerCase().includes(term);
       
-      const matchesSearch =
-        searchQuery === "" ||
-        project.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        project.summary.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        project.tags.some((tag) => 
-          tag.toLowerCase().includes(searchQuery.toLowerCase())
-        );
-
-      return matchesTags && matchesSearch;
+      // Check year if term is a number
+      const yearMatch = project.year && term.match(/^\d{4}$/) && 
+                       project.year.toString() === term;
+      
+      // Smart technology matching
+      let inTags = false;
+      
+      // Check direct tag match
+      inTags = project.tags.some((tag: string) => 
+        tag.toLowerCase().includes(term)
+      );
+      
+      // If not found directly, check variations
+      if (!inTags) {
+        for (const [key, variations] of techVariations) {
+          if (variations.some(v => v.includes(term))) {
+            inTags = project.tags.some((tag: string) => 
+              tag.toLowerCase() === key.toLowerCase()
+            );
+            if (inTags) break;
+          }
+        }
+      }
+      
+      // Check project type keywords
+      const projectTypeMatch = 
+        (term === "freelance" && project.subtitle?.toLowerCase().includes("freelance")) ||
+        (term === "independent" && project.subtitle?.toLowerCase().includes("independent")) ||
+        (term === "internship" && project.subtitle?.toLowerCase().includes("internship"));
+      
+      return inTitle || inSubtitle || inSummary || inDetails || 
+             inTags || yearMatch || projectTypeMatch;
     });
-  }, [selectedTags, searchQuery]);
-
-  const toggleTag = (tag: string) => {
-    setSelectedTags((prev) =>
-      prev.includes(tag)
-        ? prev.filter((t) => t !== tag)
-        : [...prev, tag]
-    );
   };
 
-  const clearFilters = () => {
-    setSelectedTags([]);
+  // Filter projects based on enhanced search
+  const filteredProjects = useMemo(() => {
+    return projects.filter(project => searchProjects(project, searchQuery));
+  }, [searchQuery]);
+
+  const clearSearch = () => {
     setSearchQuery("");
   };
 
@@ -116,13 +158,13 @@ export default function ProjectsPage() {
               </svg>
               <input
                 type="text"
-                placeholder="Search projects..."
+                placeholder="Search by title, tech stack, or type (e.g. 'react firebase', 'freelance', 'typescript')"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 onFocus={() => setIsSearchFocused(true)}
                 onBlur={() => setIsSearchFocused(false)}
                 className={gridStyles.searchInput}
-                aria-label="Search projects"
+                aria-label="Search projects by title, technology, or type"
               />
               {searchQuery && (
                 <button
@@ -138,43 +180,14 @@ export default function ProjectsPage() {
                 </button>
               )}
             </div>
-          </div>
-
-          {/* Tag filters */}
-          <div className={gridStyles.filterSection}>
-            <div className={gridStyles.tagList}>
-              {allTags.map((tag) => (
-                <button
-                  key={tag}
-                  onClick={() => toggleTag(tag)}
-                  className={`${gridStyles.tagButton} ${
-                    selectedTags.includes(tag) ? gridStyles.tagActive : ""
-                  }`}
-                  aria-label={`Filter by ${tag}`}
-                  aria-pressed={selectedTags.includes(tag)}
-                  type="button"
-                >
-                  <span className={gridStyles.tagText}>{tag}</span>
-                  {selectedTags.includes(tag) && (
-                    <span className={gridStyles.tagDot} aria-hidden="true" />
-                  )}
-                </button>
-              ))}
-            </div>
             
-            {(selectedTags.length > 0 || searchQuery) && (
-              <button
-                onClick={clearFilters}
-                className={gridStyles.clearButton}
-                aria-label="Clear all filters"
-                type="button"
-              >
-                Clear filters
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <line x1="18" y1="6" x2="6" y2="18" />
-                  <line x1="6" y1="6" x2="18" y2="18" />
-                </svg>
-              </button>
+            {/* Search hints */}
+            {searchQuery === "" && (
+              <div className={gridStyles.searchHints}>
+                <p className={gridStyles.searchHintText}>
+                  Try: &ldquo;react&rdquo;, &ldquo;next.js&rdquo;, &ldquo;freelance&rdquo;, &ldquo;2024&rdquo;, or combine terms like &ldquo;typescript api&rdquo;
+                </p>
+              </div>
             )}
           </div>
         </div>
@@ -198,14 +211,14 @@ export default function ProjectsPage() {
         ) : (
           <div className={gridStyles.noResults}>
             <p className={gridStyles.noResultsText}>
-              No projects match your filters
+              No projects match your search
             </p>
             <button
-              onClick={clearFilters}
+              onClick={clearSearch}
               className={gridStyles.resetButton}
               type="button"
             >
-              Reset filters
+              Clear search
             </button>
           </div>
         )}

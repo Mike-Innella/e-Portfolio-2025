@@ -8,10 +8,10 @@
 
 :root {
   /* tokens */
-  --max-w: 120rem; /* 960px */
-  --pad: 2rem; /* 16px */
+  --max-w: 120rem;
+  --pad: 2rem;
   --gap: 2rem;
-  --radius: 1rem; /* 8px */
+  --radius: 1rem;
   --card: #111216;
   --border: #1f2330;
 
@@ -27,8 +27,8 @@
   --dark-2: #121212;
   --text: #e8e8e8;
   --muted: #bfc7d6;
-  --glow-rest: 0 0 1.2rem #1f9ec145;
-  --glow-hover: 0 0 2.4rem #1f9ec187;
+  --glow-rest: 0 0 1.2rem #1f9ec173;
+  --glow-hover: 0 0 2.4rem #1f9ec1de;
 
   /* LIGHT defaults (you were missing these) */
   --background: #ffffff;
@@ -91,7 +91,7 @@ a {
 }
 
 /* Mobile adjustments for fixed nav */
-@media (max-width: 768px) {
+@media (max-width: 96rem) {
   main {
     margin-top: 9rem; /* Push content below fixed nav with extra spacing */
   }

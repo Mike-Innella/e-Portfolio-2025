@@ -31,7 +31,7 @@
   padding: 1.25rem;
   border-radius: 2rem;     /* extra-rounded */
   background: var(--app-gradient);
-  border: 1px solid var(--card-border);
+  border: 0.125rem solid var(--card-border);
   box-shadow: 0 1rem 3rem #00000040;
   color: var(--text-strong);
 

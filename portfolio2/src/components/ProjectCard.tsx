@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import s from "./ProjectCard.module.css";
 
 type Props = {
@@ -37,11 +38,16 @@ export default function ProjectCard({
       {/* Image area = full card width, glass anchored here */}
       <div className={s.thumb}>
         <figure className={`${s.thumbFigure} ${s.glass}`}>
-          <img
+          <Image
             src={image || "/images/placeholders/project-fallback.png"}
             alt={`${title} preview`}
+            width={1920}
+            height={1080}
             className={s.thumbImg}
             loading="lazy"
+            quality={60}
+            sizes="(max-width: 48rem) 100vw, 50vw"
+            style={{ objectFit: "cover" }}
           />
         </figure>
       </div>

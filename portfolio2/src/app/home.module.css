@@ -53,7 +53,7 @@
   display: inline-block;
   font-size: 1.2rem;
   padding: 0.4rem 0.8rem;
-  border: 1px solid var(--border);
+  border: 0.125rem solid var(--border);
   border-radius: 124.875rem;
   background: var(--card);
   margin-bottom: 1.2rem;
@@ -127,7 +127,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, #1f9ec120, #1f9ec120);
+  background: linear-gradient(135deg, #1f9ec133, #1f9ec133);
   opacity: 0;
   transition: opacity 0.2s ease;
   border-radius: inherit;
@@ -135,8 +135,8 @@
 
 .socialIcon:hover {
   transform: translateY(-0.125rem) scale(1.05);
-  border-color: #1f9ec160;
-  box-shadow: 0 0 1.2rem #1f9ec140, 0 0.4rem 0.8rem #1f9ec133;
+  border-color: #1f9ec199;
+  box-shadow: 0 0 1.2rem #1f9ec166, 0 0.4rem 0.8rem #1f9ec154;
   color: #1f9ec1;
 }
 
@@ -146,13 +146,13 @@
 
 .socialIcon:active {
   transform: translateY(-0.05rem) scale(1.02);
-  box-shadow: 0 0 0.8rem #1f9ec130;
+  box-shadow: 0 0 0.8rem #1f9ec14d;
 }
 
 .socialIcon:focus-visible {
   outline: none;
   border-color: #1f9ec1;
-  box-shadow: 0 0 0 0.2rem #1f9ec130, 0 0 1.2rem #1f9ec140;
+  box-shadow: 0 0 0 0.2rem #1f9ec14d, 0 0 1.2rem #1f9ec166;
   color: #1f9ec1;
 }
 
@@ -184,9 +184,9 @@
 }
 
 .scrollHint:focus-visible {
-  outline: 2px solid #1f9ec130;
-  outline-offset: 4px;
-  border-radius: 4px;
+  outline: 0.25rem solid #1f9ec14d;
+  outline-offset: 0.5rem;
+  border-radius: 0.5rem;
 }
 
 @keyframes gentleBounce {
@@ -195,7 +195,7 @@
     transform: translateX(-50%) translateY(0);
   }
   50% {
-    transform: translateX(-50%) translateY(4px);
+    transform: translateX(-50%) translateY(0.5rem);
   }
 }
 
@@ -264,15 +264,15 @@
 }
 
 .viewAllLink:hover {
-  transform: translateX(2px);
+  transform: translateX(0.25rem);
   text-decoration: underline;
   text-underline-offset: 0.4rem;
 }
 
 .viewAllLink:focus-visible {
-  outline: 2px solid #1f9ec130;
-  outline-offset: 4px;
-  border-radius: 4px;
+  outline: 0.25rem solid #1f9ec14d;
+  outline-offset: 0.5rem;
+  border-radius: 0.5rem;
   text-decoration: underline;
   text-underline-offset: 0.4rem;
 }

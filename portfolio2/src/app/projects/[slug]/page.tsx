@@ -74,7 +74,7 @@ export default async function ProjectDetail({ params }: Params) {
                   className={`${s.link} ${link.type === 'code' ? s.secondary : ''}`}
                   title={link.tooltip}
                 >
-                  {link.type === "code" ? "View Code" : "Live Demo"}
+                  {link.type === "code" ? "View Code" : "Live Demo/Site"}
                   <span>↗</span>
                 </a>
               ))}

@@ -1,17 +1,28 @@
 "use client";
 
 import { useState } from "react";
+import dynamic from "next/dynamic";
 import s from "./home.module.css";
 import btn from "@/styles/buttons.module.css";
 import { site } from "@/content/site";
 import { projects } from "@/content/projects";
 import Link from "next/link";
-import ProximityGrid from "@/components/ProximityGrid/ProximityGrid";
 import ContactModal from "@/components/ContactModal";
 import ProjectCard from "@/components/ProjectCard";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { HiMail } from "react-icons/hi";
-import TerminalTypewriter from "@/components/TerminalTypewriter/TerminalTypewriter";
+import LoadingSpinner from "@/components/LoadingSpinner";
+
+// Lazy load heavy components with loading spinner
+const ProximityGrid = dynamic(() => import("@/components/ProximityGrid/ProximityGrid"), {
+  ssr: false,
+  loading: () => <LoadingSpinner size="small" message="" />,
+});
+
+const TerminalTypewriter = dynamic(() => import("@/components/TerminalTypewriter/TerminalTypewriter"), {
+  ssr: false,
+  loading: () => <LoadingSpinner size="small" message="Loading..." />,
+});
 
 export default function HomePage() {
   const [contactOpen, setContactOpen] = useState(false);

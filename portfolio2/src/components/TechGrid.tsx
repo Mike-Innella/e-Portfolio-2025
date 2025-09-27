@@ -24,7 +24,7 @@ export default function TechGrid() {
                       width={40}
                       height={40}
                       draggable={false}
-                      priority
+                      loading="lazy"
                     />
                   </span>
                   <span className={s.swipe} aria-hidden="true" />

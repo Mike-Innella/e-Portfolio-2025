@@ -1,5 +1,5 @@
 .root {
-  border-bottom: 1px solid var(--border);
+  border-bottom: 0.125rem solid var(--border);
   position: relative;
   z-index: 100; /* sits above overlay and proximity grid */
   background: linear-gradient(180deg, #1a1d23 0%, #161920 50%, #0f1114 100%);
@@ -113,7 +113,7 @@
   height: 4rem;
   border-radius: 50%;
   background: linear-gradient(135deg, #0f172a 0%, #121212 100%);
-  border: 0.1rem solid #1f9ec140;
+  border: 0.1rem solid #1f9ec166;
   cursor: pointer;
   transition: transform 0.25s ease,
     box-shadow 0.35s cubic-bezier(0.22, 0.61, 0.36, 1), border-color 0.25s ease;
@@ -124,7 +124,7 @@
 .mobileMenuButton:hover {
   transform: translateY(-0.1rem);
   box-shadow: 0 0 1rem #1f9ec159;
-  border-color: #1f9ec180;
+  border-color: #1f9ec1cc;
 }
 
 .mobileMenuButton:active {
@@ -175,7 +175,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: #00000080;
+  background: #000000cc;
   backdrop-filter: blur(1rem);
   -webkit-backdrop-filter: blur(1rem);
   z-index: 50;
@@ -204,7 +204,7 @@
   transform: translateY(-1rem);
   transition: opacity 0.3s ease, transform 0.3s ease;
   z-index: 101;
-  box-shadow: 0 0.5rem 2rem #00000080;
+  box-shadow: 0 0.5rem 2rem #000000cc;
 }
 
 .mobileMenu::before {
@@ -270,8 +270,8 @@
   border-radius: 0.15rem;
 }
 
-/* Responsive Styles - 768px Breakpoint */
-@media (max-width: 768px) {
+/* Responsive Styles - 96rem Breakpoint */
+@media (max-width: 96rem) {
   .root {
     position: fixed;
     top: 0;
