@@ -39,7 +39,7 @@ export default function ImageModal({ media, initialIndex, onClose }: Props) {
   };
 
   return (
-    <Modal open={true} onClose={onClose} dialogClassName="imageModal">
+    <Modal open={true} onClose={onClose} dialogClassName={s.imageModal}>
       <div className={s.modalContent}>
         {/* Close button */}
         <button
