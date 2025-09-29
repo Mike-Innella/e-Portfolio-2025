@@ -63,7 +63,9 @@ export default function Nav() {
   // Close menu when route changes and scroll to top
   useEffect(() => {
     setIsMobileMenuOpen(false);
-    window.scrollTo(0, 0);
+    if (typeof window !== 'undefined') {
+      window.scrollTo(0, 0);
+    }
   }, [pathname]);
 
   return (

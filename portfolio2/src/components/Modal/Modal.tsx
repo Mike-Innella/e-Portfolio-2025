@@ -95,6 +95,9 @@ export default function Modal({
 
   if (!open) return null;
 
+  // Check if we're in the browser environment
+  if (typeof window === 'undefined') return null;
+
   return createPortal(
     <div className={s.backdrop} aria-hidden="false" onClick={onClose}>
       <div

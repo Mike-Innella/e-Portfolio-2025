@@ -58,12 +58,14 @@ export default function TerminalTypewriter() {
 
   // Check if animation has already played
   useEffect(() => {
-    const hasPlayed = sessionStorage.getItem('terminalAnimationPlayed');
-    if (hasPlayed === 'true') {
-      // Skip animation and show final state
-      setSkipAnimation(true);
-      setCurrentLineIndex(lines.length);
-      setIsComplete(true);
+    if (typeof window !== 'undefined') {
+      const hasPlayed = sessionStorage.getItem('terminalAnimationPlayed');
+      if (hasPlayed === 'true') {
+        // Skip animation and show final state
+        setSkipAnimation(true);
+        setCurrentLineIndex(lines.length);
+        setIsComplete(true);
+      }
     }
   }, []);
 
@@ -76,7 +78,9 @@ export default function TerminalTypewriter() {
     if (currentLineIndex >= lines.length) {
       setIsComplete(true);
       // Mark animation as played in sessionStorage
-      sessionStorage.setItem('terminalAnimationPlayed', 'true');
+      if (typeof window !== 'undefined') {
+        sessionStorage.setItem('terminalAnimationPlayed', 'true');
+      }
       return;
     }
 
