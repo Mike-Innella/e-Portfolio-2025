@@ -1,0 +1,148 @@
+/* Gallery grid following existing project patterns */
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes kenBurns {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+.gallery {
+  display: grid;
+  gap: 2rem;
+  margin-top: 0.5rem;
+  animation: fadeInScale 0.8s ease-out;
+}
+
+@media (min-width: 48rem) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.item {
+  background: linear-gradient(135deg, #0b0d11, #151924);
+  border: 0.125rem solid #1b2030;
+  border-radius: 1.6rem;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  animation: fadeInScale 0.6s ease-out backwards;
+}
+
+/* Image wrapper for overlay */
+.imageWrapper {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* Expand overlay */
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #000000aa, #1a1d23aa);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.imageWrapper:hover .overlay {
+  opacity: 1;
+}
+
+.expandIcon {
+  font-size: 3.6rem;
+  color: #ffffff;
+  background: linear-gradient(135deg, #1f9ec1, #1a8aa8);
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 2rem #1f9ec166;
+  transform: scale(0.8);
+  transition: transform 0.3s ease;
+}
+
+.imageWrapper:hover .expandIcon {
+  transform: scale(1);
+}
+
+.item:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.item:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.item:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.item:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, transparent, #3f8cff20);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 1;
+}
+
+.item:hover::before {
+  opacity: 1;
+}
+
+.item:hover {
+  transform: translateY(-0.4rem) scale(1.02);
+  box-shadow: 0 1rem 2.4rem #3f8cff33;
+  border-color: #3f8cff40;
+}
+
+.item:hover .media {
+  animation: kenBurns 10s ease-out;
+}
+
+.media {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.caption {
+  padding: 1.2rem 1.6rem;
+  font-size: 1.4rem;
+  color: #c7d2fe;
+  background: linear-gradient(135deg, #0a0a0a, #111216);
+  border-top: 0.1rem solid #1b2030;
+  position: relative;
+  z-index: 2;
+  transition: all 0.4s ease;
+}
+
+.item:hover .caption {
+  background: linear-gradient(135deg, #0d0d10, #1a1d28);
+  color: #ffffff;
+  transform: translateY(-0.2rem);
+}

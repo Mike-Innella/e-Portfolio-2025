@@ -147,3 +147,11 @@
   box-shadow: 0 0 0.8rem #0000004d;
   font-weight: 500;
 }
+
+/* White text for dark background tech pills */
+.tag[style*="--tag-color: #000000"],
+.tag[style*="--tag-color: #000"],
+.tag[style*="--tag-color: rgb(0, 0, 0)"],
+.tag[style*="--tag-color: black"] {
+  color: #ffffff;
+}

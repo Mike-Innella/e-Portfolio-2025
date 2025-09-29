@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
+import { getTechColor } from "@/lib/getTechColor";
 import s from "./ProjectCard.module.css";
 
 type Props = {
@@ -10,24 +11,6 @@ type Props = {
   tags?: string[];
   image?: string;
   href: string;
-};
-
-const getTechColor = (tech: string): string => {
-  const colors: Record<string, string> = {
-    'html': '#e34c26',
-    'css': '#1572b6', 
-    'javascript': '#f1e05a',
-    'typescript': '#3178c6',
-    'react': '#61dafb',
-    'nodejs': '#68a063',
-    'firebase': '#ffca28',
-    'tailwind': '#06b6d4',
-    'api': '#9333ea',
-    'threejs': '#ffffff',
-    'emailjs': '#ff6b6b',
-    'routing': '#64748b'
-  };
-  return colors[tech.toLowerCase()] || '#64748b';
 };
 
 export default function ProjectCard({

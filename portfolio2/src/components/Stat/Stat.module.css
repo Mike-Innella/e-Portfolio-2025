@@ -1,0 +1,87 @@
+/* Minimal stat component following existing patterns */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(2rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.stat {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.4rem;
+  border-radius: 0.8rem;
+  background: #0f1218;
+  border: 0.1rem solid #1b2030;
+  margin-bottom: 0.8rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  animation: slideIn 0.6s ease-out backwards;
+  font-size: 1.35rem;
+}
+
+.stat:nth-child(1) { animation-delay: 0.1s; }
+.stat:nth-child(2) { animation-delay: 0.2s; }
+.stat:nth-child(3) { animation-delay: 0.3s; }
+.stat:nth-child(4) { animation-delay: 0.4s; }
+
+.stat::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0.3rem;
+  background: linear-gradient(180deg, #1f9ec1, #3f8cff);
+  transform: scaleY(0);
+  transition: transform 0.3s ease;
+  transform-origin: bottom;
+}
+
+.stat:hover::before {
+  transform: scaleY(1);
+}
+
+.stat:hover {
+  transform: translateX(0.4rem);
+  border-color: #1f9ec140;
+  background: linear-gradient(135deg, #0f1218, #141820);
+  box-shadow: 0 0.2rem 1rem #1f9ec126;
+}
+
+.label {
+  font-size: 1.35rem;
+  color: #c7d2fe;
+  opacity: 0.8;
+  transition: all 0.3s ease;
+}
+
+.stat:hover .label {
+  opacity: 1;
+  color: #e2e8ff;
+}
+
+.value {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #d2e1f7;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.stat:hover .value {
+  color: #ffffff;
+  transform: scale(1.05);
+  animation: pulse 2s ease-in-out infinite;
+}

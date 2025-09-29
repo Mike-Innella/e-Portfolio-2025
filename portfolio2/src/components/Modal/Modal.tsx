@@ -10,6 +10,7 @@ type ModalProps = {
   labelledBy?: string;
   describedBy?: string;
   children: React.ReactNode;
+  dialogClassName?: string;
 };
 
 export default function Modal({
@@ -18,6 +19,7 @@ export default function Modal({
   labelledBy,
   describedBy,
   children,
+  dialogClassName,
 }: ModalProps) {
   const dialogRef = useRef<HTMLDivElement | null>(null);
   const lastFocused = useRef<HTMLElement | null>(null);
@@ -94,9 +96,9 @@ export default function Modal({
   if (!open) return null;
 
   return createPortal(
-    <div className={s.backdrop} aria-hidden={false} onClick={onClose}>
+    <div className={s.backdrop} aria-hidden="false" onClick={onClose}>
       <div
-        className={s.dialog}
+        className={`${s.dialog} ${dialogClassName || ''}`}
         role="dialog"
         aria-modal="true"
         aria-labelledby={labelledBy}
