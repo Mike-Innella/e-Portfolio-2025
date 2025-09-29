@@ -9,6 +9,14 @@ import Footer from "@/components/Footer/Footer";
 export const metadata: Metadata = {
   title: "Portfolio",
   description: "My work and contact information",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/MILogo.png", type: "image/png", sizes: "512x512" }
+    ],
+    apple: "/MILogo.png",
+    shortcut: "/favicon.ico"
+  },
 };
 
 export default function RootLayout({
