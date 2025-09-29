@@ -60,9 +60,10 @@ export default function Nav() {
     };
   }, [isMobileMenuOpen]);
 
-  // Close menu when route changes
+  // Close menu when route changes and scroll to top
   useEffect(() => {
     setIsMobileMenuOpen(false);
+    window.scrollTo(0, 0);
   }, [pathname]);
 
   return (
