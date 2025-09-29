@@ -176,16 +176,21 @@ export default function HomePage() {
               My Expertise
             </h2>
             <p className={s.expertiseContent}>
-              Full-stack developer specializing in modern JavaScript frameworks
-              with extensive experience in React, Next.js, and TypeScript. I
-              architect scalable web applications from the ground up,
-              implementing responsive frontends with clean, performant code
-              while building robust backend systems. My expertise spans the
-              entire development lifecycle—from database design and API
-              development to UI/UX implementation and deployment. I focus on
-              writing maintainable, well-tested code that balances performance
-              optimization with user experience, leveraging modern tools and
-              best practices to deliver production-ready solutions.
+              Full-stack developer with a strong focus on frontend engineering
+              and user experience. I build modern web applications using React,
+              Next.js, and TypeScript, with hands-on experience taking projects
+              from concept to deployment. My strength is designing clean,
+              responsive interfaces that feel intuitive to use, while also
+              wiring up the backend logic needed to make them fast, reliable,
+              and scalable. I’m also a strong advocate for accessibility and
+              user-centered design, ensuring that my applications are inclusive
+              and usable by everyone. I’m comfortable working across the
+              stack—from database schemas and API integrations to crafting
+              polished UI components and thoughtful UX flows. I put emphasis on
+              maintainable code, practical performance optimizations, and
+              keeping projects production-ready with modern tools and best
+              practices. What drives me is creating applications that not only
+              work well but feel seamless to interact with.
             </p>
           </div>
         </div>
