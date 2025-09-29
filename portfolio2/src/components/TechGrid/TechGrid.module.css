@@ -1,0 +1,151 @@
+/* Uniform square gradient cards with outside labels and classy hover effects */
+
+.wrap { margin: 2rem 0; }
+.heading { font-size: 2rem; margin-bottom: 1.5rem; color: var(--text-dim); }
+
+/* Grid of uniform square tiles */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  column-gap: 2.5rem;
+  row-gap: 5.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.item { /* hook if needed later */ }
+
+/* Wrap positions the outside label properly */
+.cardWrap {
+  position: relative;
+  display: inline-grid;
+  /* 1 col, but extra space right for label placement */
+}
+
+/* Uniform card: square, dark gradient, extra-rounded corners */
+.card {
+  position: relative;
+  width: 10rem;       /* uniform size (multiples of 4) */
+  height: 10rem;
+  padding: 1.25rem;
+  border-radius: 2rem;     /* extra-rounded */
+  background: var(--app-gradient);
+  border: 0.125rem solid var(--card-border);
+  box-shadow: 0 1rem 3rem #00000040;
+  color: var(--text-strong);
+
+  display: grid;
+  place-items: center;
+
+  cursor: default;
+  overflow: hidden;
+  transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+}
+
+.card:hover,
+.card:focus-visible {
+  transform: translateY(-0.25rem);
+  box-shadow: 0 1.5rem 3.5rem #00000059;
+  border-color: #6366f173;
+  outline: none;
+}
+
+/* Icon scales up slightly on hover/focus */
+.icon {
+  width: 5rem;
+  height: 5rem;
+  display: grid;
+  place-items: center;
+  transition: transform 160ms ease, filter 160ms ease;
+}
+
+.card:hover .icon,
+.card:focus-visible .icon {
+  transform: scale(1.08);
+  filter: drop-shadow(0 0.25rem 0.75rem #00000059);
+}
+
+/* Under label: sits BELOW the card, hidden by default */
+.outLabel {
+  position: absolute;
+  top: 100%; /* start at bottom edge of the card */
+  left: 50%; /* center horizontally */
+  transform: translate(-50%, 0.5rem); /* center + small vertical gap */
+  padding: 0.75rem 1rem;
+  border-radius: 1rem;
+
+  font-size: 1.75rem;
+  color: var(--text-strong);
+  background: #102828a6;
+  backdrop-filter: blur(0.75rem);
+  white-space: nowrap;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 220ms ease, transform 220ms ease;
+}
+
+/* Reveal label on card hover/focus; slide further down */
+.card:hover + .outLabel,
+.card:focus-visible + .outLabel {
+  opacity: 0.95;
+  transform: translate(-50%, 1rem); /* slides downward */
+}
+
+/* Glass swipe: highlight passes across the card with soft blurred edges */
+.swipe {
+  position: absolute;
+  top: -12%;
+  left: -30%;
+  width: 42%;
+  height: 124%;
+  transform: rotate(20deg);
+  background:
+    linear-gradient(
+      100deg,
+      transparent 0%,
+      transparent 20%,
+      var(--card-glass) 45%,
+      var(--card-glass-2) 60%,
+      transparent 80%,
+      transparent 100%
+    );
+  filter: blur(0.1875rem);
+  pointer-events: none;
+  opacity: 0;
+}
+
+/* Trigger swipe animation on hover/focus */
+.card:hover .swipe,
+.card:focus-visible .swipe {
+  animation: swipeAcross 900ms ease forwards;
+  opacity: 1;
+}
+
+@keyframes swipeAcross {
+  0%   { transform: translateX(-60%) rotate(20deg); opacity: 0; }
+  20%  { opacity: 1; }
+  100% { transform: translateX(220%) rotate(20deg); opacity: 0; }
+}
+
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .card { transition: border-color 160ms ease; }
+  .icon { transition: none; transform: none; }
+  .outLabel { transition: none; opacity: 0.95; }
+  .swipe { display: none; }
+}
+
+/* Mobile layout: maintain grid with appropriate spacing for under-card labels */
+@media (max-width: 70rem) {
+  .grid { 
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    column-gap: 2.25rem;
+    row-gap: 4.5rem;
+  }
+  .outLabel {
+    font-size: 1.5rem;
+    padding: 0.5rem 0.75rem;
+  }
+}

@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { site } from "@/content/site";
 import s from "./contact.module.css";
 import btn from "@/styles/buttons.module.css";
-import ContactModal from "@/components/ContactModal";
+import ContactModal from "@/components/ContactModal/ContactModal";
 import { FaLinkedin, FaDownload, FaClock, FaCircle } from "react-icons/fa";
 
 export default function ContactPage() {

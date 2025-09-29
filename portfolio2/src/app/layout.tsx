@@ -3,8 +3,8 @@ import "../styles/variables.css";
 import "../styles/reset.css";
 import "../styles/typography.css";
 import "../styles/utils.css";
-import Nav from "@/components/Nav";
-import Footer from "@/components/Footer";
+import Nav from "@/components/Nav/Nav";
+import Footer from "@/components/Footer/Footer";
 
 export const metadata: Metadata = {
   title: "Portfolio",
@@ -18,6 +18,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <meta name="color-scheme" content="dark" />
+        <meta name="theme-color" content="#0a0a0a" />
+      </head>
       <body suppressHydrationWarning>
         <Nav />
         <main className="container page-content">{children}</main>

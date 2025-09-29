@@ -3,7 +3,7 @@
 import { useState, useEffect, useMemo } from "react";
 import gridStyles from "./projects.module.css";
 import { projects, type Project } from "@/content/projects";
-import ProjectCard from "@/components/ProjectCard";
+import ProjectCard from "@/components/ProjectCard/ProjectCard";
 import MatrixRain from "@/components/MatrixRain/MatrixRain";
 
 export default function ProjectsPage() {

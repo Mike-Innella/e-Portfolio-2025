@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import TechGrid from "@/components/TechGrid";
+import TechGrid from "@/components/TechGrid/TechGrid";
 import s from "./about.module.css";
 
 export default function AboutPage() {

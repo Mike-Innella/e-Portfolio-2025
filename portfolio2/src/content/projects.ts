@@ -86,6 +86,29 @@ export const projects: Project[] = [
       },
     ],
   },
+  
+    {
+      slug: "summarist",
+      title: "Summarist",
+      subtitle: "Independent Project",
+      image: "/images/Summarist.png",
+      summary:
+        "Rebuilt a book-summary app clone using Next.js, TypeScript, Tailwind CSS, and Supabase. Features authentication, dynamic pages, and responsive UI.",
+      details: "Tech: Next.js, TypeScript, Supabase, Tailwind. I built auth, dynamic routes, and a responsive layout while keeping search snappy. Debounced queries and route-level code-splitting improved perceived speed. Result: LCP under ~2s on desktop and sub-150ms search feedback for common queries.",
+      tags: ["nextjs", "typescript", "supabase", "tailwind", "css"],
+      links: [
+        {
+          tooltip: "See code",
+          link: "https://github.com/Mike-Innella/summarist-home-page",
+          type: "code",
+        },
+        {
+          tooltip: "See app",
+          link: "https://summarist-home-page-pied.vercel.app/",
+          type: "live",
+        },
+      ],
+    },
 
   {
     slug: "skinstric-ai",
@@ -93,8 +116,8 @@ export const projects: Project[] = [
     subtitle: "Frontend Engineer",
     image: "/images/Skinstric.png",
     summary:
-      "Built a real-time skin analysis platform using OpenAI Vision API and Next.js with 98% detection accuracy.",
-    details: "Tech: Next.js, React, OpenAI Vision API, CSS, Three.js (UI flourishes), Vercel. Main issues were inference latency and robust error states for user images. I added progressive UI states, client-side checks, and smaller payloads. Result: prototype measured ~98% detection on an internal set with typical round-trip ≈1–2s on desktop.",
+      "Built a real-time skin analysis platform using OpenAI Vision API and React with 98% detection accuracy.",
+    details: "Tech: React, OpenAI Vision API, CSS, Three.js (UI flourishes), Vercel. Main issues were inference latency and robust error states for user images. I added progressive UI states, client-side checks, and smaller payloads. Result: prototype measured ~98% detection on an internal set with typical round-trip ≈1–2s on desktop.",
     tags: ["react", "javascript", "api", "css", "threejs"],
     links: [
       {
@@ -105,29 +128,6 @@ export const projects: Project[] = [
       {
         tooltip: "See app",
         link: "https://skinstric-ai-mike-innella-internship.vercel.app/",
-        type: "live",
-      },
-    ],
-  },
-
-  {
-    slug: "summarist",
-    title: "Summarist",
-    subtitle: "Independent Project",
-    image: "/images/Summarist.png",
-    summary:
-      "Rebuilt a book-summary app clone using Next.js, TypeScript, Tailwind CSS, and Supabase. Features authentication, dynamic pages, and responsive UI.",
-    details: "Tech: Next.js, TypeScript, Supabase, Tailwind. I built auth, dynamic routes, and a responsive layout while keeping search snappy. Debounced queries and route-level code-splitting improved perceived speed. Result: LCP under ~2s on desktop and sub-150ms search feedback for common queries.",
-    tags: ["nextjs", "typescript", "supabase", "tailwind", "css"],
-    links: [
-      {
-        tooltip: "See code",
-        link: "https://github.com/Mike-Innella/summarist-home-page",
-        type: "code",
-      },
-      {
-        tooltip: "See app",
-        link: "https://summarist-home-page-pied.vercel.app/",
         type: "live",
       },
     ],

@@ -20,9 +20,3 @@
   text-decoration: underline;
   color: var(--foreground);
 }
-
-@media (prefers-color-scheme: dark) {
-  .link {
-    color: var(--foreground);
-  }
-}

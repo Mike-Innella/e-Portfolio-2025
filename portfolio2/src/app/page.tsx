@@ -7,11 +7,11 @@ import btn from "@/styles/buttons.module.css";
 import { site } from "@/content/site";
 import { projects } from "@/content/projects";
 import Link from "next/link";
-import ContactModal from "@/components/ContactModal";
-import ProjectCard from "@/components/ProjectCard";
+import ContactModal from "@/components/ContactModal/ContactModal";
+import ProjectCard from "@/components/ProjectCard/ProjectCard";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { HiMail } from "react-icons/hi";
-import LoadingSpinner from "@/components/LoadingSpinner";
+import LoadingSpinner from "@/components/LoadingSpinner/LoadingSpinner";
 
 // Lazy load heavy components with loading spinner
 const ProximityGrid = dynamic(() => import("@/components/ProximityGrid/ProximityGrid"), {
