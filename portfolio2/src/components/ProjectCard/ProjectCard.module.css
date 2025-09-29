@@ -139,7 +139,7 @@
 
 .tag {
   font-size: 1.38rem; /* 15% larger */
-  color: #000000;
+  color: #ffffff;
   background: var(--tag-color, #64748b);
   border: none;
   padding: 0.7rem 1.1rem; /* Proportionally increased padding */
