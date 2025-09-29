@@ -7,8 +7,25 @@ import Nav from "@/components/Nav/Nav";
 import Footer from "@/components/Footer/Footer";
 
 export const metadata: Metadata = {
-  title: "Portfolio",
-  description: "My work and contact information",
+  metadataBase: new URL("https://mikeinnella.dev"),
+  title: {
+    default: "Mike Innella | e-Portfolio",
+    template: "%s | Mike Innella"
+  },
+  description:
+    "Frontend-focused full-stack developer based in Richmond, VA. I build clean, performant apps with React, Next.js, and TypeScript—polished UX, robust APIs, and production-ready code.",
+  keywords: [
+    "Mike Innella",
+    "frontend developer",
+    "full-stack developer",
+    "React",
+    "Next.js",
+    "TypeScript",
+    "Richmond VA"
+  ],
+  authors: [{ name: "Mike Innella" }],
+  creator: "Mike Innella",
+  publisher: "Mike Innella",
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },
@@ -17,6 +34,36 @@ export const metadata: Metadata = {
     apple: "/MILogo.png",
     shortcut: "/favicon.ico"
   },
+  openGraph: {
+    type: "website",
+    url: "https://mikeinnella.dev",
+    siteName: "Mike Innella",
+    title: "Mike Innella | e-Portfolio",
+    description:
+      "Frontend-focused full-stack developer building fast, accessible web apps with React, Next.js, and TypeScript.",
+    images: [{ url: "/og" }]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Mike Innella | e-Portfolio",
+    description:
+      "Frontend-focused full-stack developer building fast, accessible web apps with React, Next.js, and TypeScript.",
+    images: ["/og"]
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-snippet": -1,
+      "max-image-preview": "large",
+      "max-video-preview": -1
+    }
+  },
+  alternates: {
+    canonical: "/"
+  }
 };
 
 export default function RootLayout({
