@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { projects } from "@/content/projects";
-import { getTechColor } from "@/lib/getTechColor";
+import { getTechColors } from "@/lib/getTechColor";
 import ProjectGallery from "@/components/ProjectGallery/ProjectGallery";
 import Stat from "@/components/Stat/Stat";
 import s from "./ProjectDetail.module.css";
@@ -145,15 +145,21 @@ export default async function ProjectDetail({ params }: Params) {
               <section className={s.section}>
                 <h2 className={s.sectionTitle}>Tech Stack</h2>
                 <div className={s.tags}>
-                  {project.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className={s.tag}
-                      style={{ '--tag-color': getTechColor(tag) } as React.CSSProperties}
-                    >
-                      {tag}
-                    </span>
-                  ))}
+                  {project.tags.map((tag) => {
+                    const colors = getTechColors(tag);
+                    return (
+                      <span
+                        key={tag}
+                        className={s.tag}
+                        style={{ 
+                          '--tag-color': colors.background,
+                          '--tag-text': colors.text 
+                        } as React.CSSProperties}
+                      >
+                        {tag}
+                      </span>
+                    );
+                  })}
                 </div>
               </section>
             ) : null}

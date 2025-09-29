@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import { getTechColor } from "@/lib/getTechColor";
+import { getTechColors } from "@/lib/getTechColor";
 import s from "./ProjectCard.module.css";
 
 type Props = {
@@ -41,15 +41,21 @@ export default function ProjectCard({
         <p className={s.desc}>{summary}</p>
         {tags.length ? (
           <div className={s.tags}>
-            {tags.map(t => (
-              <span 
-                key={t} 
-                className={s.tag} 
-                style={{ '--tag-color': getTechColor(t) } as React.CSSProperties}
-              >
-                {t}
-              </span>
-            ))}
+            {tags.map(t => {
+              const colors = getTechColors(t);
+              return (
+                <span 
+                  key={t} 
+                  className={s.tag} 
+                  style={{ 
+                    '--tag-color': colors.background,
+                    '--tag-text': colors.text 
+                  } as React.CSSProperties}
+                >
+                  {t}
+                </span>
+              );
+            })}
           </div>
         ) : null}
       </div>

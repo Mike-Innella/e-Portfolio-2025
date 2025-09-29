@@ -256,7 +256,7 @@
 
 .tag {
   font-size: 1.4rem;
-  color: #000000;
+  color: var(--tag-text, #ffffff);
   background: var(--tag-color, #64748b);
   border: none;
   padding: 1rem 1.6rem;
@@ -266,14 +266,6 @@
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
-}
-
-/* White text for dark background tech pills */
-.tag[style*="--tag-color: #000000"],
-.tag[style*="--tag-color: #000"],
-.tag[style*="--tag-color: rgb(0, 0, 0)"],
-.tag[style*="--tag-color: black"] {
-  color: #ffffff;
 }
 
 .tag::before {
