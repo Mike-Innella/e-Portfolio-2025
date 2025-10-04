@@ -318,6 +318,84 @@ export const projects: Project[] = [
   },
 
   {
+    slug: "notekeeper",
+    title: "NoteKeeper",
+    subtitle: "Independent Project",
+    image: "/images/NoteKeeper/NoteKeeper.png",
+    cover: "/images/NoteKeeper/NoteKeeper.png",
+    summary:
+      "Built a full-stack note-taking app using Vite + React and an Express/Node.js backend. Features authentication, CRUD APIs, and a responsive UI deployed across Vercel and Render.",
+    details:
+      "Tech: Express/Node.js, PostgreSQL, React + Vite, JWT, REST APIs, Vercel, Render. Designed a secure authentication system with JWT, implemented REST endpoints for notes, and set up deployment pipelines. Optimized CORS/security headers and environment configs for production scalability.",
+
+    problem:
+      "Many note-taking apps either lack secure authentication and syncing or are tied to restrictive ecosystems. I wanted a lightweight, modern solution with a scalable backend and CI/CD workflows.",
+
+    solution:
+      "Developed a custom note-taking web app with secure authentication, real-time syncing, and a clean UI. Deployed using Vercel for frontend hosting and Render for backend services.",
+
+    challenge:
+      "Configuring JWT authentication and CORS between frontend (Vercel) and backend (Render) caused deployment mismatches. Database migrations also had to be managed without shell access on Render’s free tier.",
+
+    technicalSolution:
+      "Implemented JWT-based authentication middleware and REST APIs for CRUD operations. Used PostgreSQL as the data layer with migrations automated via scripts. Hardened backend with helmet and proper CORS rules. Deployed using environment variables configured in Vercel and Render.",
+
+    highlights: [
+      "Built full-stack app with React + Express",
+      "Implemented secure JWT authentication",
+      "Created REST APIs for CRUD operations",
+      "Configured CI/CD workflows on Vercel and Render",
+      "Responsive, mobile-friendly UI with real-time syncing",
+    ],
+
+    results: [
+      "Seamless login/logout and secure note storage",
+      "Full CRUD functionality with instant UI updates",
+      "Production-ready deployment with CORS/security optimizations",
+      "Scalable architecture for future feature expansion",
+    ],
+
+    stats: [
+      { label: "Auth", value: "JWT" },
+      { label: "DB", value: "PostgreSQL" },
+      { label: "Deploy", value: "Vercel + Render" },
+      { label: "Year", value: "2025" },
+    ],
+
+    media: [
+      {
+        src: "/images/NoteKeeper/NoteKeeper.png",
+        alt: "NoteKeeper app interface",
+        caption: "Clean, responsive UI for managing notes securely",
+      },
+    ],
+
+    tags: [
+      "react",
+      "vite",
+      "express",
+      "nodejs",
+      "postgresql",
+      "jwt",
+      "vercel",
+      "render",
+    ],
+    year: 2025,
+    links: [
+      {
+        tooltip: "See code",
+        link: "https://github.com/Mike-Innella/NoteKeeper",
+        type: "code",
+      },
+      {
+        tooltip: "See app",
+        link: "https://note-keeper-jade.vercel.app/",
+        type: "live",
+      },
+    ],
+  },
+
+  {
     slug: "summarist",
     title: "Summarist",
     subtitle: "Independent Project",
@@ -773,8 +851,8 @@ export const projects: Project[] = [
     slug: "fweather",
     title: "Fweather",
     subtitle: "Independent Project",
-    image: "/images//Fweather/Fweather.png",
-    cover: "/images//Fweather/Fweather.png",
+    image: "/images/Fweather/Fweather.png",
+    cover: "/images/Fweather/Fweather.png",
     summary:
       "Personal project: a playful React weather dashboard integrating multiple APIs for real-time weather.",
     details:
