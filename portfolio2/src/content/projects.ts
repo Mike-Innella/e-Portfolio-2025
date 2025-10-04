@@ -365,8 +365,30 @@ export const projects: Project[] = [
     media: [
       {
         src: "/images/NoteKeeper/NoteKeeper.png",
-        alt: "NoteKeeper app interface",
-        caption: "Clean, responsive UI for managing notes securely",
+        alt: "NoteKeeper authentication screen",
+        caption:
+          "Secure login flow powered by JWT authentication and fetches user data.",
+      },
+      {
+        src: "/images/NoteKeeper/NoteKeeper.Light.png",
+        alt: "NoteKeeper light and dark themes",
+        caption:
+          "Customizable UI supporting both light and dark modes for user preference.",
+      },
+      {
+        src: "/images/NoteKeeper/NoteKeeperMain.png",
+        alt: "NoteKeeper dashboard interface",
+        caption: "Modern, responsive dashboard for managing notes with real-time syncing.",
+      },
+      {
+        src: "/images/NoteKeeper/NoteKeeperNote.png",
+        alt: "NoteKeeper note editor view",
+        caption: "Mobile-friendly editor with auto-save, real-time updates, and markdown support.",
+      },
+      {
+        src: "/images/NoteKeeper/NoteKeeperSearch.png",
+        alt: "NoteKeeper search feature",
+        caption: "Lightning-fast note search with instant, accurate results.",
       },
     ],
 
