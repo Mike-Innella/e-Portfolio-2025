@@ -8,9 +8,10 @@ import s from "./Nav.module.css";
 
 const links = [
   { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
+  { href: "/services", label: "Services" },
   { href: "/projects", label: "Projects" },
   { href: "/reviews", label: "Reviews" },
+  { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -63,7 +64,7 @@ export default function Nav() {
   // Close menu when route changes and scroll to top
   useEffect(() => {
     setIsMobileMenuOpen(false);
-    if (typeof window !== 'undefined') {
+    if (typeof window !== "undefined") {
       window.scrollTo(0, 0);
     }
   }, [pathname]);
