@@ -68,7 +68,7 @@ export default function ClientAbout() {
           <div className={s.headshotContainer}>
             <div className={s.headshotGlow}></div>
             <Image
-              src="/images/headshot.png"
+              src="/headshot.png"
               alt="Profile"
               width={250}
               height={250}

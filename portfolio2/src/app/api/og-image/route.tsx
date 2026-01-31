@@ -49,6 +49,17 @@ const fetchImageResponse = async (url: string) => {
   });
 };
 
+const ensureImageResponse = async (url: string) => {
+  const response = await fetchImageResponse(url);
+  return (
+    response ??
+    new Response("Unable to generate image.", {
+      status: 502,
+      headers: { "content-type": "text/plain; charset=utf-8" },
+    })
+  );
+};
+
 const buildCandidateUrls = (liveLink: string) => {
   const candidates = new Set<string>();
   candidates.add(liveLink);
@@ -80,7 +91,7 @@ export async function GET(req: Request) {
 
   if (!liveLink || !accessKey) {
     const fallbackUrl = buildFallbackOgUrl(req, slug);
-    return fetchImageResponse(fallbackUrl);
+    return ensureImageResponse(fallbackUrl);
   }
 
   try {
@@ -91,9 +102,9 @@ export async function GET(req: Request) {
       if (screenshotResponse) return screenshotResponse;
     }
     const fallbackUrl = buildFallbackOgUrl(req, slug);
-    return fetchImageResponse(fallbackUrl);
+    return ensureImageResponse(fallbackUrl);
   } catch {
     const fallbackUrl = buildFallbackOgUrl(req, slug);
-    return fetchImageResponse(fallbackUrl);
+    return ensureImageResponse(fallbackUrl);
   }
 }
