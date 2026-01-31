@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react';
 import s from './styles.module.css';
-import { techStack } from '@/content/tech';
 
 interface TerminalLine {
   prompt?: string;
@@ -19,9 +18,32 @@ export default function TerminalTypewriter() {
   const [skipAnimation, setSkipAnimation] = useState(false);
 
   // Categorize skills
-  const frontend = ['React', 'Next.js', 'TypeScript', 'JavaScript', 'HTML5', 'CSS3', 'Tailwind', 'Three.js', 'Figma'];
-  const backend = ['Node.js', 'Express', 'PostgreSQL', 'Supabase', 'Firebase', 'Stripe'];
-  const devops = ['Docker', 'Linux', 'Git', 'GitHub', 'Vercel', 'Vite'];
+  const frontend = [
+    'Next.js',
+    'React',
+    'TypeScript',
+    'JavaScript',
+    'HTML5',
+    'CSS3',
+    'Tailwind CSS',
+    'Material UI',
+    'Redux Toolkit',
+    'Vite',
+    'Three.js',
+    'Figma'
+  ];
+  const backend = [
+    'Node.js',
+    'Express.js',
+  ];
+  const data = [
+    'PostgreSQL',
+    'MongoDB',
+    'MySQL',
+    'Supabase',
+    'Firebase'
+  ];
+  const devops = ['Vercel', 'Docker', 'Linux/Ubuntu', 'GitHub', 'Git'];
   
   const lines: TerminalLine[] = [
     {
@@ -48,6 +70,11 @@ export default function TerminalTypewriter() {
       prompt: 'mike@portfolio:~$',
       command: 'ls /usr/local/skills/backend/',
       output: backend.join('  ')
+    },
+    {
+      prompt: 'mike@portfolio:~$',
+      command: 'ls /usr/local/skills/data/',
+      output: data.join('  ')
     },
     {
       prompt: 'mike@portfolio:~$',
@@ -200,7 +227,7 @@ export default function TerminalTypewriter() {
           <span className={s.button} style={{ background: '#ffbd2e' }}></span>
           <span className={s.button} style={{ background: '#28ca42' }}></span>
         </div>
-        <div className={s.title}>mike@portfolio — bash — 80×24</div>
+        <div className={s.title}>mike@portfolio — bash</div>
       </div>
       <div className={s.body}>
         {lines.map((line, index) => renderLine(line, index))}

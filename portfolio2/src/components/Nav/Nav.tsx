@@ -4,11 +4,11 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
+import MuiLink from "@mui/material/Link";
 import s from "./Nav.module.css";
 
 const links = [
   { href: "/", label: "Home" },
-  { href: "/services", label: "Services" },
   { href: "/projects", label: "Projects" },
   { href: "/reviews", label: "Reviews" },
   { href: "/about", label: "About" },
@@ -88,13 +88,16 @@ export default function Nav() {
           {links.map((l) => {
             const active = pathname === l.href;
             return (
-              <Link
+              <MuiLink
                 key={l.href}
+                component={Link}
                 href={l.href}
                 className={`${s.link} ${active ? s.active : ""}`}
+                underline="none"
+                color="inherit"
               >
                 {l.label}
-              </Link>
+              </MuiLink>
             );
           })}
         </div>
@@ -134,14 +137,17 @@ export default function Nav() {
             {links.map((l) => {
               const active = pathname === l.href;
               return (
-                <Link
+                <MuiLink
                   key={l.href}
+                  component={Link}
                   href={l.href}
                   className={`${s.mobileLink} ${active ? s.mobileActive : ""}`}
                   tabIndex={isMobileMenuOpen ? 0 : -1}
+                  underline="none"
+                  color="inherit"
                 >
                   {l.label}
-                </Link>
+                </MuiLink>
               );
             })}
           </nav>

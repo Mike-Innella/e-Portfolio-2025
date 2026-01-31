@@ -1,5 +1,5 @@
 .title {
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 0.8rem;
   background: linear-gradient(135deg, #e5e7eb, #1f9ec1);
@@ -9,7 +9,7 @@
 }
 
 .lead {
-  font-size: 1.4rem;
+  font-size: 1.75rem;
   opacity: 0.9;
   margin-bottom: 1.6rem;
 }
@@ -22,7 +22,7 @@
 .label {
   display: grid;
   gap: 0.6rem;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: 500;
 }
 
@@ -55,13 +55,13 @@
 }
 
 .help {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   opacity: 0.8;
 }
 
 .error {
   color: #ff6b6b;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
 }
 
 .actions {
@@ -145,7 +145,7 @@
 }
 
 .success {
-  font-size: 1.4rem;
+  font-size: 1.75rem;
   color: #86efac;
   font-weight: 500;
   padding: 1rem;

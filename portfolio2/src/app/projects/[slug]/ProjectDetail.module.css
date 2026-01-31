@@ -36,7 +36,7 @@
 }
 
 .container {
-  max-width: var(--max-w);
+  max-width: 140rem;
   margin: 0 auto;
   padding: var(--pad);
   animation: fadeInUp 0.6s ease-out;
@@ -53,7 +53,7 @@
   border-radius: 1rem;
   color: var(--text-strong);
   text-decoration: none;
-  font-size: 1.4rem;
+  font-size: 1.75rem;
   font-weight: 500;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 0 1.2rem #1F9EC133;
@@ -98,6 +98,25 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.heroThumb {
+  width: 100%;
+  max-width: 96rem;
+  aspect-ratio: 16 / 9;
+  margin: 0 auto 3rem;
+  border-radius: 1.6rem;
+  overflow: hidden;
+  border: 0.12rem solid #1f2a3a;
+  box-shadow: 0 1.4rem 3rem #0000004d;
+  background: #0b0e14;
+}
+
+.heroThumbImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 .hero:hover {
   transform: translateY(-0.2rem);
   box-shadow: 0 1rem 3rem #1F9EC126;
@@ -113,7 +132,7 @@
 }
 
 .title {
-  font-size: 4.8rem;
+  font-size: 6rem;
   font-weight: 700;
   color: var(--text-strong);
   margin-bottom: 1.6rem;
@@ -127,7 +146,7 @@
 }
 
 .subtitle {
-  font-size: 2rem;
+  font-size: 2.5rem;
   color: var(--text-dim);
   margin-bottom: 2.4rem;
   opacity: 0.9;
@@ -136,11 +155,11 @@
 }
 
 .description {
-  font-size: 2rem;
+  font-size: 2.5rem;
   line-height: 1.6;
   color: var(--text-strong);
   opacity: 0.95;
-  max-width: 80rem;
+  max-width: 96rem;
   margin: 0 auto;
   position: relative;
   animation: fadeInUp 0.8s ease-out 0.4s both;
@@ -181,7 +200,7 @@
 }
 
 .compactTitle {
-  font-size: 2.2rem !important;
+  font-size: 2.75rem !important;
   margin-bottom: 2.5rem !important;
 }
 
@@ -219,7 +238,7 @@
   }
   
   .compactTitle {
-    font-size: 2.4rem !important;
+    font-size: 3rem !important;
     margin-bottom: 2rem !important;
   }
   
@@ -229,7 +248,7 @@
 }
 
 .sectionTitle {
-  font-size: 2.4rem;
+  font-size: 3rem;
   font-weight: 600;
   color: var(--text-strong);
   margin-bottom: 2rem;
@@ -255,7 +274,7 @@
 }
 
 .tag {
-  font-size: 1.4rem;
+  font-size: 1.75rem;
   color: var(--tag-text, #ffffff);
   background: var(--tag-color, #64748b);
   border: none;
@@ -295,6 +314,8 @@
   display: flex;
   gap: 2rem;
   flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 2.4rem;
 }
 
 .link {
@@ -305,7 +326,7 @@
   background: linear-gradient(135deg, #1f9ec1, #1a8aa8);
   color: #ffffff;
   text-decoration: none;
-  font-size: 1.6rem;
+  font-size: 2rem;
   font-weight: 600;
   border-radius: 1.2rem;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -377,6 +398,10 @@
   .grid {
     grid-template-columns: 1fr 32rem;
     align-items: start;  /* Override for desktop to allow sticky positioning */
+  }
+
+  .gridSingle {
+    grid-template-columns: 1fr;
   }
   
   .aside {
@@ -630,7 +655,7 @@
   position: relative;
   padding-left: 2.4rem;
   margin-bottom: 1.2rem;
-  font-size: 1.6rem;
+  font-size: 2rem;
   line-height: 1.6;
   color: #d2e1f7;
   transition: all 0.3s ease;
@@ -664,7 +689,7 @@
 
 /* Problem/Solution sections */
 .prose {
-  font-size: 1.6rem;
+  font-size: 2rem;
   line-height: 1.7;
   color: #d2e1f7;
   margin-bottom: 1.6rem;
@@ -672,7 +697,7 @@
 
 @media (max-width: 96rem) {
   .title {
-    font-size: 3.6rem;
+    font-size: 4.5rem;
   }
   
   .hero {

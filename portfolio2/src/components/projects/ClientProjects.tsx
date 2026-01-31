@@ -5,6 +5,7 @@ import gridStyles from "@/app/projects/projects.module.css";
 import { projects, type Project } from "@/content/projects";
 import ProjectCard from "@/components/ProjectCard/ProjectCard";
 import MatrixRain from "@/components/MatrixRain/MatrixRain";
+import { getProjectThumbnailUrl } from "@/lib/getProjectThumbnailUrl";
 
 export default function ClientProjects() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -158,7 +159,7 @@ export default function ClientProjects() {
               </svg>
               <input
                 type="text"
-                placeholder="Search by title, tech stack, or type (e.g. 'react firebase', 'freelance', 'typescript')"
+                placeholder="Search projects (e.g. react, freelance, 2024)"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 onFocus={() => setIsSearchFocused(true)}
@@ -202,9 +203,10 @@ export default function ClientProjects() {
                 title={p.title}
                 subtitle={p.subtitle}
                 summary={p.summary}
-                tags={p.tags}
-                image={p.image}
+                tags={p.tags.slice(0, 5)}
+                thumbnailUrl={getProjectThumbnailUrl(p.slug)}
                 href={`/projects/${p.slug}`}
+                links={p.links}
               />
             </div>
           ))

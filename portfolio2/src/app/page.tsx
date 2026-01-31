@@ -9,6 +9,7 @@ import { projects } from "@/content/projects";
 import Link from "next/link";
 import ContactModal from "@/components/ContactModal/ContactModal";
 import ProjectCard from "@/components/ProjectCard/ProjectCard";
+import { getProjectThumbnailUrl } from "@/lib/getProjectThumbnailUrl";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { HiMail } from "react-icons/hi";
 import LoadingSpinner from "@/components/LoadingSpinner/LoadingSpinner";
@@ -214,9 +215,10 @@ export default function HomePage() {
                   title={project.title}
                   subtitle={project.subtitle}
                   summary={project.summary}
-                  tags={project.tags}
-                  image={project.image}
+                  tags={project.tags.slice(0, 5)}
+                  thumbnailUrl={getProjectThumbnailUrl(project.slug)}
                   href={`/projects/${project.slug}`}
+                  links={project.links}
                 />
               </div>
             ))}

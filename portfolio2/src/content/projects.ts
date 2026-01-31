@@ -4,13 +4,6 @@ export type ProjectLink = {
   type: "code" | "live";
 };
 
-export type ProjectMedia = {
-  src: string;
-  alt: string;
-  caption?: string;
-  type?: "image" | "video";
-};
-
 export type ProjectStat = {
   label: string;
   value: string;
@@ -29,9 +22,7 @@ export type Project = {
   image?: string; // optional project image for enhanced cards
 
   // New optional fields for detail pages
-  cover?: string;
-  media?: ProjectMedia[];
-  stats?: ProjectStat[];
+  quickStats?: ProjectStat[];
   highlights?: string[];
   problem?: string;
   solution?: string;
@@ -43,11 +34,205 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: "howard-motor",
+    title: "Howard Motor v2 Web App",
+    subtitle: "Freelance / Client Project",
+    image: "/images/HowardMotor/hero.png",
+    summary:
+      "Full-stack React app for an auto repair business with Firebase Auth/Firestore and EmailJS-powered appointment requests.",
+    details:
+      "Full-stack React app for an auto repair business with Firebase Auth/Firestore and EmailJS-powered appointment requests. Built a mobile-first UX and production-ready data rules.",
+
+    problem:
+      "Customer inquiries relied on manual calls/messages and lacked a consistent intake flow, creating missed requests and slower response time.",
+
+    solution:
+      "Built a streamlined web intake experience with secure authentication, structured requests, and automated email notifications to reduce friction and improve follow-up speed.",
+
+    challenge:
+      "Securely restricting Firestore reads/writes while still supporting real user flows (public forms + admin visibility) without exposing sensitive data.",
+
+    technicalSolution:
+      "Implemented least-privilege security rules and a clean separation between public request creation and authenticated admin views; validated payloads client-side and enforced write constraints in Firestore rules.",
+
+    highlights: [
+      "Built end-to-end appointment request + contact flows with EmailJS notifications",
+      "Implemented Firebase Auth + role-based admin access patterns",
+      "Designed mobile-first UI for non-technical users with guided multi-step forms",
+      "Structured Firestore data models and security rules for least-privilege access",
+      "Shipped production deployment with environment variable configuration",
+    ],
+
+    results: [
+      "Delivered a mobile-first intake experience with clear validation and progress cues",
+      "Improved internal organization of inbound requests via structured data + admin views",
+    ],
+
+    tags: ["react", "firebase", "firestore", "emailjs", "tailwind"],
+    year: 2024,
+    links: [
+      {
+        tooltip: "See code",
+        link: "https://github.com/Mike-Innella/howard-motor-v2",
+        type: "code",
+      },
+      {
+        tooltip: "See app",
+        link: "https://www.howardmotorco.net",
+        type: "live",
+      },
+    ],
+  },
+
+  {
+    slug: "mi-website-rebuilds",
+    title: "MI Website Rebuilds",
+    subtitle: "Project",
+    summary:
+      "Reusable website rebuild framework focused on clean layout, performance fundamentals, and conversion-oriented structure.",
+    details:
+      "Reusable website rebuild framework focused on clean layout, performance fundamentals, and conversion-oriented structure. Built as a repeatable foundation for future client work.",
+
+    problem:
+      "Small businesses often have outdated sites with unclear messaging and weak conversion paths.",
+
+    solution:
+      "Created a repeatable rebuild framework with clear hierarchy, focused CTA placement, and clean section structure.",
+
+    challenge:
+      "Balancing reusability with enough flexibility for different client layouts and goals.",
+
+    technicalSolution:
+      "Built modular sections with consistent spacing and typographic scales, plus simple configuration points for swapping content and layout variants.",
+
+    highlights: [
+      "Designed reusable sections/components for rapid rebuild iterations",
+      "Built clear information hierarchy and CTA placement for conversion flow",
+      "Emphasized performance/accessibility basics with semantic markup",
+      "Structured codebase for easy customization and future client projects",
+    ],
+
+    results: [
+      "Repeatable system for shipping clean client-facing sites quickly",
+      "Improved clarity and scanability through structured section design",
+    ],
+
+    tags: ["react", "css", "vercel"],
+    year: 2024,
+    links: [
+      {
+        tooltip: "See code",
+        link: "https://github.com/Mike-Innella/MI_Website_Rebuild",
+        type: "code",
+      },
+      {
+        tooltip: "See app",
+        link: "https://mi-website-rebuild.vercel.app/",
+        type: "live",
+      },
+    ],
+  },
+
+  {
+    slug: "pantry-pilot",
+    title: "Pantry Pilot",
+    subtitle: "Project",
+    image: "/images/PantryPilot/hero.png",
+    summary:
+      "Ingredient-based recipe finder that helps users discover meals based on what they have.",
+    details:
+      "Ingredient-based recipe finder that helps users discover meals based on what they have. Built around API-driven search and clean UI state handling.",
+
+    problem: "Users want recipe ideas without planning full grocery runs.",
+
+    solution:
+      "Search recipes by available ingredients with fast, responsive UI.",
+
+    challenge: "Managing async requests and UI state without glitches.",
+
+    technicalSolution:
+      "Centralized fetch logic with predictable render states (loading/empty/error/success).",
+
+    highlights: [
+      "Implemented ingredient-based recipe search via external API",
+      "Built dynamic UI rendering and input-driven state updates",
+      "Handled async loading with clear empty/error states",
+      "Structured code for readability with clean separation of concerns",
+    ],
+
+    results: [
+      "Fast ingredient-to-recipe workflow with responsive layout",
+      "Clear UI states for search results and errors",
+    ],
+
+    tags: ["javascript", "api", "html", "css"],
+    year: 2024,
+    links: [
+      {
+        tooltip: "See code",
+        link: "https://github.com/Mike-Innella/Mini-Project-1",
+        type: "code",
+      },
+      {
+        tooltip: "See app",
+        link: "https://pantry-pilot-plum.vercel.app/",
+        type: "live",
+      },
+    ],
+  },
+
+  {
+    slug: "game-hub",
+    title: "Game Hub",
+    subtitle: "Project",
+    summary:
+      "Game discovery app that fetches and displays game data with search/filter UX and responsive layouts.",
+    details:
+      "Game discovery app that fetches and displays game data with search/filter UX and responsive layouts.",
+
+    problem: "Players want quick ways to browse games without digging through multiple sites.",
+
+    solution:
+      "Built a lightweight discovery UI with search and filter controls for fast browsing.",
+
+    challenge: "Keeping async fetches and UI state consistent under rapid filter changes.",
+
+    technicalSolution:
+      "Normalized API responses and managed loading/empty/error states to prevent flicker and stale data.",
+
+    highlights: [
+      "Integrated external game data API and rendered dynamic lists",
+      "Implemented search and filtering for quick browsing",
+      "Designed responsive layout with consistent card components",
+      "Managed async loading states and basic error handling",
+    ],
+
+    results: [
+      "Data-driven UI with search/filter workflows",
+      "Responsive browsing experience across screen sizes",
+    ],
+
+    tags: ["javascript", "api", "html", "css"],
+    year: 2024,
+    links: [
+      {
+        tooltip: "See code",
+        link: "https://github.com/Mike-Innella/Mini-Project-2",
+        type: "code",
+      },
+      {
+        tooltip: "See app",
+        link: "https://mini-project-2-five-omega.vercel.app/",
+        type: "live",
+      },
+    ],
+  },
+
+  {
     slug: "tunein",
     title: "TuneIn",
     subtitle: "Independent Project",
     image: "/images/TuneIn/TuneIn.png",
-    cover: "/images/TuneIn/TuneIn.png",
     summary:
       "Focus-music web app with mood-based YouTube playlists and a session timer for distraction-free study/work, built with React and deployed on Vercel.",
     details:
@@ -81,40 +266,11 @@ export const projects: Project[] = [
       "Mobile-responsive design working across all devices",
     ],
 
-    stats: [
+    quickStats: [
       { label: "Load Time", value: "1.5s" },
       { label: "Timer Accuracy", value: "±10s" },
       { label: "API Efficiency", value: "60% cached" },
       { label: "Year", value: "2025" },
-    ],
-
-    media: [
-      {
-        src: "/images/TuneIn/TuneIn.png",
-        alt: "TuneIn app interface showing mood selection and timer",
-        caption:
-          "Main interface with mood-based playlist selection and session timer",
-      },
-      {
-        src: "/images/TuneIn/TuneInLanding.png",
-        alt: "TuneIn landing page",
-        caption: "Clean landing page introducing the focus music experience",
-      },
-      {
-        src: "/images/TuneIn/TuneInAuth.png",
-        alt: "TuneIn authentication screen",
-        caption: "Secure authentication flow for personalized sessions",
-      },
-      {
-        src: "/images/TuneIn/TuneInPlayer.png",
-        alt: "TuneIn music player interface",
-        caption: "Integrated YouTube player with session timer synchronization",
-      },
-      {
-        src: "/images/TuneIn/TuneInTheme.png",
-        alt: "TuneIn theme selector",
-        caption: "Mood and theme selection for customized focus sessions",
-      },
     ],
 
     tags: ["react", "javascript", "api", "css", "html", "routing", "supabase"],
@@ -134,103 +290,10 @@ export const projects: Project[] = [
   },
 
   {
-    slug: "howard-motor",
-    title: "Howard Motor Webapp",
-    subtitle: "Freelance",
-    image: "/images/HowardMotor/HowardMotor.png",
-    cover: "/images/HowardMotor/HowardMotorCover.png",
-    summary:
-      "Solo freelance web app for Howard Motor Corp, built with React and Firebase to modernize customer engagement.",
-    details:
-      "Tech: React, Firebase (Auth/Firestore/Hosting), Tailwind, EmailJS. Focus was secure form flows and a mobile-first UI for non-technical users. I used least-privilege Firestore rules, serverless email hand-off, and simplified step forms. Result: mobile FCP ≈1.3s and fewer abandoned requests after validation + progress cues.",
-
-    problem:
-      "Howard Motor Corp needed to modernize their customer engagement process. Their existing system relied on phone calls and paper forms, leading to lost leads, slow response times, and difficulty tracking customer inquiries for their automotive services.",
-
-    solution:
-      "Developed a comprehensive web application with secure authentication, real-time database integration, and automated email notifications. Implemented a mobile-first design with step-by-step forms to guide non-technical users through the inquiry process smoothly.",
-
-    challenge:
-      "Firebase security rules needed to be extremely restrictive while still allowing legitimate operations. EmailJS had strict rate limits and no queuing mechanism. Non-technical users struggled with complex forms, leading to high abandonment rates.",
-
-    technicalSolution:
-      "Designed least-privilege Firestore rules using custom claims and granular permissions per collection. Implemented client-side email queuing with exponential backoff for EmailJS rate limits. Created a multi-step form wizard with progress indicators, auto-save functionality, and intelligent validation that reduced cognitive load.",
-
-    highlights: [
-      "Solo development of complete freelance project from requirements to deployment",
-      "Implemented secure Firebase authentication and Firestore database",
-      "Built responsive mobile-first UI with Tailwind CSS",
-      "Integrated EmailJS for automated customer notifications",
-      "Deployed production app with Firebase Hosting",
-    ],
-
-    results: [
-      "Mobile First Contentful Paint achieved in ~1.3 seconds",
-      "Reduced form abandonment through validation and progress indicators",
-      "Zero security incidents with least-privilege Firestore rules",
-      "Streamlined customer inquiry process from hours to minutes",
-      "100% mobile-responsive across all device sizes",
-    ],
-
-    stats: [
-      { label: "Mobile FCP", value: "1.3s" },
-      { label: "Form Completion", value: "↑ 40%" },
-      { label: "Response Time", value: "< 5min" },
-      { label: "Year", value: "2024" },
-    ],
-
-    media: [
-      {
-        src: "/images/HowardMotor/HowardMotor.png",
-        alt: "Howard Motor webapp showing customer inquiry form",
-        caption:
-          "Professional landing page with automotive imagery and clear CTAs",
-      },
-      {
-        src: "/images/HowardMotor/HowardMotorServices.png",
-        alt: "Howard Motor services page",
-        caption: "Comprehensive services showcase with detailed descriptions",
-      },
-      {
-        src: "/images/HowardMotor/HowardMotorContact.png",
-        alt: "Howard Motor contact form",
-        caption:
-          "Mobile-optimized contact form with validation and progress indicators",
-      },
-      {
-        src: "/images/HowardMotor/HowardMotorAdmin.png",
-        alt: "Howard Motor admin login",
-        caption: "Secure admin authentication with Firebase integration",
-      },
-      {
-        src: "/images/HowardMotor/HowardMotorAdminDash.png",
-        alt: "Howard Motor admin dashboard",
-        caption: "Real-time admin dashboard for managing customer inquiries",
-      },
-    ],
-
-    tags: ["react", "firebase", "tailwind", "api", "nodejs", "emailjs"],
-    year: 2024,
-    links: [
-      {
-        tooltip: "See code",
-        link: "https://github.com/Mike-Innella/howard-motor-webapp",
-        type: "code",
-      },
-      {
-        tooltip: "See app",
-        link: "https://www.howardmotorco.net/",
-        type: "live",
-      },
-    ],
-  },
-
-  {
     slug: "spoiler-shield",
     title: "Spoiler Shield",
     subtitle: "Mobile/Web Developer",
     image: "/images/SpoilerShield/SpoilerShield.png",
-    cover: "/images/SpoilerShield/SpoilerShield.png",
     summary:
       "Details coming soon — project link: https://www.spoilershield.xyz/",
     details:
@@ -264,41 +327,11 @@ export const projects: Project[] = [
       "Public beta actively evolving with user feedback",
     ],
 
-    stats: [
+    quickStats: [
       { label: "Response Time", value: "< 200ms" },
       { label: "Accuracy", value: "94%" },
       { label: "Cache Hit Rate", value: "70%" },
       { label: "Year", value: "2025" },
-    ],
-
-    media: [
-      {
-        src: "/images/SpoilerShield/SpoilerShield.png",
-        alt: "Spoiler Shield interface showing content filtering",
-        caption:
-          "Smart spoiler detection system protecting your entertainment experience",
-      },
-      {
-        src: "/images/SpoilerShield/SpoilerShieldFeatures.png",
-        alt: "Spoiler Shield features showcase",
-        caption:
-          "Comprehensive feature set with customizable filtering options",
-      },
-      {
-        src: "/images/SpoilerShield/SpoilerShieldHow.png",
-        alt: "How Spoiler Shield works",
-        caption: "Visual explanation of the intelligent detection algorithm",
-      },
-      {
-        src: "/images/SpoilerShield/SpoilerShieldReviews.png",
-        alt: "User reviews section",
-        caption: "Real user testimonials and feedback on spoiler prevention",
-      },
-      {
-        src: "/images/SpoilerShield/SpoilerShieldTeam.png",
-        alt: "Spoiler Shield team page",
-        caption: "Meet the team behind the spoiler-free browsing experience",
-      },
     ],
 
     tags: ["nextjs", "typescript", "api"],
@@ -317,12 +350,12 @@ export const projects: Project[] = [
     ],
   },
 
+
   {
     slug: "notekeeper",
     title: "NoteKeeper",
     subtitle: "Independent Project",
     image: "/images/NoteKeeper/NoteKeeper.png",
-    cover: "/images/NoteKeeper/NoteKeeper.png",
     summary:
       "Built a full-stack note-taking app using Vite + React and an Express/Node.js backend. Features authentication, CRUD APIs, and a responsive UI deployed across Vercel and Render.",
     details:
@@ -355,41 +388,11 @@ export const projects: Project[] = [
       "Scalable architecture for future feature expansion",
     ],
 
-    stats: [
+    quickStats: [
       { label: "Auth", value: "JWT" },
       { label: "DB", value: "PostgreSQL" },
       { label: "Deploy", value: "Vercel + Render" },
       { label: "Year", value: "2025" },
-    ],
-
-    media: [
-      {
-        src: "/images/NoteKeeper/NoteKeeper.png",
-        alt: "NoteKeeper authentication screen",
-        caption:
-          "Secure login flow powered by JWT authentication and fetches user data.",
-      },
-      {
-        src: "/images/NoteKeeper/NoteKeeper.Light.png",
-        alt: "NoteKeeper light and dark themes",
-        caption:
-          "Customizable UI supporting both light and dark modes for user preference.",
-      },
-      {
-        src: "/images/NoteKeeper/NoteKeeperMain.png",
-        alt: "NoteKeeper dashboard interface",
-        caption: "Modern, responsive dashboard for managing notes with real-time syncing.",
-      },
-      {
-        src: "/images/NoteKeeper/NoteKeeperNote.png",
-        alt: "NoteKeeper note editor view",
-        caption: "Mobile-friendly editor with auto-save, real-time updates, and markdown support.",
-      },
-      {
-        src: "/images/NoteKeeper/NoteKeeperSearch.png",
-        alt: "NoteKeeper search feature",
-        caption: "Lightning-fast note search with instant, accurate results.",
-      },
     ],
 
     tags: [
@@ -422,7 +425,6 @@ export const projects: Project[] = [
     title: "Summarist",
     subtitle: "Independent Project",
     image: "/images/Summarist/Summarist.png",
-    cover: "/images/Summarist/Summarist.png",
     summary:
       "Rebuilt a book-summary app clone using Next.js, TypeScript, Tailwind CSS, and Supabase. Features authentication, dynamic pages, and responsive UI.",
     details:
@@ -456,41 +458,11 @@ export const projects: Project[] = [
       "Improved user engagement through faster interactions",
     ],
 
-    stats: [
+    quickStats: [
       { label: "LCP", value: "< 2s" },
       { label: "Search Speed", value: "150ms" },
       { label: "Lighthouse Score", value: "95+" },
       { label: "Year", value: "2025" },
-    ],
-
-    media: [
-      {
-        src: "/images/Summarist/Summarist.png",
-        alt: "Summarist app showing book summaries interface",
-        caption:
-          "Clean, modern library interface for discovering book summaries",
-      },
-      {
-        src: "/images/Summarist/SummaristAuth.png",
-        alt: "Summarist authentication page",
-        caption: "Seamless authentication flow powered by Supabase",
-      },
-      {
-        src: "/images/Summarist/SummaristBook.png",
-        alt: "Individual book view",
-        caption: "Detailed book view with summary and reading options",
-      },
-      {
-        src: "/images/Summarist/SummaristSummary.png",
-        alt: "Book summary reader interface",
-        caption: "Optimized reading experience with progress tracking",
-      },
-      {
-        src: "/images/Summarist/SummaristSkeleton.png",
-        alt: "Loading skeleton states",
-        caption:
-          "Smooth skeleton loading states for better perceived performance",
-      },
     ],
 
     tags: ["nextjs", "typescript", "supabase", "tailwind", "css"],
@@ -514,7 +486,6 @@ export const projects: Project[] = [
     title: "Skinstric.AI",
     subtitle: "Frontend Engineer",
     image: "/images/Skinstric/Skinstric.png",
-    cover: "/images/Skinstric/Skinstric.png",
     summary:
       "Built a real-time skin analysis platform using OpenAI Vision API and React with 98% detection accuracy.",
     details:
@@ -548,41 +519,11 @@ export const projects: Project[] = [
       "Successfully deployed production-ready prototype",
     ],
 
-    stats: [
+    quickStats: [
       { label: "Accuracy", value: "98%" },
       { label: "Response Time", value: "1-2s" },
       { label: "Uptime", value: "99.9%" },
       { label: "Year", value: "2024" },
-    ],
-
-    media: [
-      {
-        src: "/images/Skinstric/Skinstric.png",
-        alt: "Skinstric.AI showing real-time skin analysis interface",
-        caption:
-          "AI-powered skin analysis interface with OpenAI Vision integration",
-      },
-      {
-        src: "/images/Skinstric/SkinstricCamera.png",
-        alt: "Camera upload interface",
-        caption:
-          "Intuitive camera and image upload interface for skin analysis",
-      },
-      {
-        src: "/images/Skinstric/SkinstricLoading.png",
-        alt: "Processing and loading states",
-        caption: "Progressive loading states with Three.js animations",
-      },
-      {
-        src: "/images/Skinstric/SkinstricSummary.png",
-        alt: "Analysis results summary",
-        caption: "Comprehensive skin analysis results with 98% accuracy",
-      },
-      {
-        src: "/images/Skinstric/SkinstricTest.png",
-        alt: "Test mode interface",
-        caption: "Demo mode for testing analysis.",
-      },
     ],
 
     tags: ["react", "javascript", "api", "css", "threejs"],
@@ -606,7 +547,6 @@ export const projects: Project[] = [
     title: "The Shaman Asher",
     subtitle: "Freelance",
     image: "/images/ShamanAsher/ShamanAsher.png",
-    cover: "/images/ShamanAsher/ShamanAsher.png",
     summary:
       "Hired as a freelance UI/UX developer to modernize a mystical services website. Introduced animated loaders.",
     details:
@@ -640,36 +580,11 @@ export const projects: Project[] = [
       "Delivered polished, professional mystical aesthetic",
     ],
 
-    stats: [
+    quickStats: [
       { label: "CLS Score", value: "< 0.1" },
       { label: "Bundle Reduction", value: "45%" },
       { label: "Load Time", value: "< 2s" },
       { label: "Year", value: "2024" },
-    ],
-
-    media: [
-      {
-        src: "/images/ShamanAsher/ShamanAsher.png",
-        alt: "The Shaman Asher website with mystical design elements",
-        caption:
-          "Mystical landing page with smooth animations and modern design",
-      },
-      {
-        src: "/images/ShamanAsher/ShamanAsherAbout.png",
-        alt: "About The Shaman Asher",
-        caption: "Engaging about section with accessible forms and content",
-      },
-      {
-        src: "/images/ShamanAsher/ShamanAsherAboutBlog.png",
-        alt: "Shaman Asher blog section",
-        caption: "Blog showcase featuring mystical insights and teachings",
-      },
-      {
-        src: "/images/ShamanAsher/ShamanAsherAboutServices.png",
-        alt: "Mystical services offerings",
-        caption:
-          "Comprehensive service offerings with clear descriptions and CTAs",
-      },
     ],
 
     tags: ["typescript", "tailwind", "emailjs", "html", "nodejs"],
@@ -693,7 +608,6 @@ export const projects: Project[] = [
     title: "NFT Marketplace",
     subtitle: "Frontend Developer (Internship)",
     image: "/images/NFTMarket/NFTMarket.png",
-    cover: "/images/NFTMarket/NFTMarket.png",
     summary:
       "Virtual internship capstone where I independently rebuilt an NFT Marketplace as a responsive React SPA.",
     details:
@@ -727,40 +641,11 @@ export const projects: Project[] = [
       "Successfully deployed responsive SPA handling large datasets",
     ],
 
-    stats: [
+    quickStats: [
       { label: "FPS", value: "60fps" },
       { label: "Performance", value: "90+" },
       { label: "Accessibility", value: "90+" },
       { label: "Year", value: "2023" },
-    ],
-
-    media: [
-      {
-        src: "/images/NFTMarket/NFTMarket.png",
-        alt: "NFT Marketplace interface showing digital asset grid",
-        caption: "High-performance marketplace grid with 60fps scrolling",
-      },
-      {
-        src: "/images/NFTMarket/NFTMarketArt.png",
-        alt: "NFT art collection showcase",
-        caption: "Featured NFT collections with virtualized rendering",
-      },
-      {
-        src: "/images/NFTMarket/NFTMarketExplore.png",
-        alt: "Explore and discovery page",
-        caption: "Discovery interface with optimized filtering and search",
-      },
-      {
-        src: "/images/NFTMarket/NFTMarketUser.png",
-        alt: "User profile and wallet interface",
-        caption: "User dashboard with wallet integration and portfolio view",
-      },
-      {
-        src: "/images/NFTMarket/NFTMarketSkeleton.png",
-        alt: "Loading skeleton states",
-        caption:
-          "Optimized skeleton loading for improved perceived performance",
-      },
     ],
 
     tags: ["react", "javascript", "css", "html", "routing"],
@@ -784,7 +669,6 @@ export const projects: Project[] = [
     title: "OMDB Movie Store",
     subtitle: "Independent Project",
     image: "/images/MovieStore/MovieStore.png",
-    cover: "/images/MovieStore/MovieStore.png",
     summary:
       "Solo portfolio project built to master web APIs and dynamic UI development. Created a responsive React app.",
     details:
@@ -818,39 +702,11 @@ export const projects: Project[] = [
       "Clean, intuitive interface for movie discovery",
     ],
 
-    stats: [
+    quickStats: [
       { label: "Search Latency", value: "150-200ms" },
       { label: "Error Handling", value: "100%" },
       { label: "Responsive", value: "All devices" },
       { label: "Year", value: "2023" },
-    ],
-
-    media: [
-      {
-        src: "/images/MovieStore/MovieStore.png",
-        alt: "OMDB Movie Store showing search results grid",
-        caption: "Fast, responsive movie search with debounced API calls",
-      },
-      {
-        src: "/images/MovieStore/MovieStoreMovies.png",
-        alt: "Movie results grid view",
-        caption: "Comprehensive movie grid with detailed information cards",
-      },
-      {
-        src: "/images/MovieStore/MovieStoreCart.png",
-        alt: "Shopping cart interface",
-        caption: "Interactive shopping cart with real-time updates",
-      },
-      {
-        src: "/images/MovieStore/MovieStoreCheckout.png",
-        alt: "Checkout process flow",
-        caption: "Streamlined checkout process with validation",
-      },
-      {
-        src: "/images/MovieStore/MovieStoreTheme.png",
-        alt: "Theme customization options",
-        caption: "Theme switcher for personalized viewing experience",
-      },
     ],
 
     tags: ["react", "javascript", "api", "css"],
@@ -874,7 +730,6 @@ export const projects: Project[] = [
     title: "Fweather",
     subtitle: "Independent Project",
     image: "/images/Fweather/Fweather.png",
-    cover: "/images/Fweather/Fweather.png",
     summary:
       "Personal project: a playful React weather dashboard integrating multiple APIs for real-time weather.",
     details:
@@ -908,41 +763,11 @@ export const projects: Project[] = [
       "Delightful user experience with weather animations",
     ],
 
-    stats: [
+    quickStats: [
       { label: "Load Time", value: "1.2s" },
       { label: "Cache Efficiency", value: "50%" },
       { label: "Updates", value: "Real-time" },
       { label: "Year", value: "2023" },
-    ],
-
-    media: [
-      {
-        src: "/images/Fweather/Fweather.png",
-        alt: "Fweather dashboard showing weather conditions",
-        caption:
-          "Main weather dashboard with current conditions and animations",
-      },
-      {
-        src: "/images/Fweather/FweatherWeather.png",
-        alt: "Detailed weather view",
-        caption:
-          "Comprehensive weather details with forecasts from multiple APIs",
-      },
-      {
-        src: "/images/Fweather/FweatherContact.png",
-        alt: "Location input interface",
-        caption: "User-friendly contact form utilizing EmailJS for inquiries.",
-      },
-      {
-        src: "/images/Fweather/FweatherFact.png",
-        alt: "Weather fun facts display",
-        caption: "Playful weather facts adding personality to the app",
-      },
-      {
-        src: "/images/Fweather/FweatherLoading.png",
-        alt: "Loading states and animations",
-        caption: "Smooth loading transitions with optimized animations",
-      },
     ],
 
     tags: ["react", "javascript", "api", "css", "html"],
@@ -956,6 +781,53 @@ export const projects: Project[] = [
       {
         tooltip: "See app",
         link: "https://mike-innella.github.io/Fweather/",
+        type: "live",
+      },
+    ],
+  },
+  {
+    slug: "movie-app",
+    title: "Movie-App",
+    subtitle: "Project",
+    summary:
+      "Movie discovery app with a clean UI for browsing titles and exploring details.",
+    details:
+      "Movie discovery app with a clean UI for browsing titles and exploring details. Focused on fast loading and simple navigation across content.",
+
+    problem:
+      "Users need a simple way to browse and preview movies without a cluttered interface.",
+
+    solution:
+      "Created a streamlined movie app that highlights key details and encourages quick exploration.",
+
+    challenge:
+      "Keeping the UI fast and responsive while handling dynamic content updates.",
+
+    technicalSolution:
+      "Optimized rendering patterns and organized UI states for predictable updates.",
+
+    highlights: [
+      "Clean movie browsing layout with focused detail views",
+      "Fast navigation across content sections",
+      "Responsive layout optimized for desktop and mobile",
+    ],
+
+    results: [
+      "Quick discovery flow for exploring titles",
+      "Consistent UX across screen sizes",
+    ],
+
+    tags: ["react", "javascript", "css", "api"],
+    year: 2024,
+    links: [
+      {
+        tooltip: "See code",
+        link: "https://github.com/Mike-Innella/M6-Session-2",
+        type: "code",
+      },
+      {
+        tooltip: "See app",
+        link: "https://m6-session-2.vercel.app/",
         type: "live",
       },
     ],

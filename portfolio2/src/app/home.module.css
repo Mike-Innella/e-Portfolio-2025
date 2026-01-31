@@ -51,7 +51,7 @@
 
 .badge {
   display: inline-block;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   padding: 0.4rem 0.8rem;
   border: 0.125rem solid var(--border);
   border-radius: 124.875rem;
@@ -63,20 +63,20 @@
 }
 
 .title {
-  font-size: clamp(3.2rem, 4.5vw, 5.6rem);
+  font-size: clamp(4rem, 4.5vw, 7rem);
   font-weight: 800;
   letter-spacing: -0.02em;
   margin-bottom: 0.8rem;
 }
 
 .tagline {
-  font-size: clamp(1.6rem, 2.2vw, 2rem);
+  font-size: clamp(2rem, 2.2vw, 2.5rem);
   opacity: 0.9;
   margin-bottom: 1.2rem;
 }
 
 .lead {
-  font-size: 1.6rem;
+  font-size: 2rem;
   line-height: 1.7;
   opacity: 0.9;
   margin: 0 auto 2rem;
@@ -100,7 +100,7 @@
 }
 
 .socialLink {
-  font-size: 1.4rem;
+  font-size: 1.75rem;
   text-decoration: underline;
   opacity: 0.9;
 }
@@ -115,7 +115,7 @@
   background: var(--card);
   border: 0.1rem solid var(--border);
   color: #e5e7eb;
-  font-size: 2.5rem;
+  font-size: 3.125rem;
   text-decoration: none;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -160,7 +160,7 @@
 .socialIcon[type="button"] {
   background: var(--card);
   font-family: inherit;
-  font-size: 2.5rem;
+  font-size: 3.125rem;
 }
 
 /* Subtle scroll indicator */
@@ -284,7 +284,7 @@
 }
 
 .expertiseTitle {
-  font-size: 2.8rem;
+  font-size: 3.5rem;
   line-height: 1.2;
   font-weight: 700;
   letter-spacing: -0.02em;
@@ -294,7 +294,7 @@
 }
 
 .expertiseContent {
-  font-size: 1.7rem;
+  font-size: 2.125rem;
   line-height: 1.8;
   color: #e6e6e6;
   opacity: 0.9;
@@ -323,7 +323,7 @@
 
 .techIcon {
   position: relative;
-  font-size: 2.8rem;
+  font-size: 3.5rem;
   cursor: pointer;
   transition: all 0.3s ease;
   animation: floatIcon 3s ease-in-out infinite;
@@ -362,7 +362,7 @@
   color: #e6e6e6;
   padding: 0.4rem 0.8rem;
   border-radius: 0.4rem;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   white-space: nowrap;
   transition: all 0.3s ease;
   opacity: 0;
@@ -385,11 +385,11 @@
   }
 
   .expertiseTitle {
-    font-size: 2.2rem;
+    font-size: 2.75rem;
   }
 
   .expertiseContent {
-    font-size: 1.5rem;
+    font-size: 1.875rem;
     max-width: 100%;
   }
 }
@@ -400,11 +400,11 @@
   }
 
   .expertiseTitle {
-    font-size: 3.2rem;
+    font-size: 4rem;
   }
 
   .expertiseContent {
-    font-size: 1.8rem;
+    font-size: 2.25rem;
   }
 }
 
@@ -417,7 +417,7 @@
 }
 
 .recentTitle {
-  font-size: 2.4rem;
+  font-size: 3rem;
   line-height: 1.2;
   font-weight: 700;
   letter-spacing: -0.02em;
@@ -453,7 +453,7 @@
     padding: 6rem 0 8rem 0;
   }
   .recentTitle {
-    font-size: 3rem;
+    font-size: 3.75rem;
   }
 }
 
@@ -464,7 +464,7 @@
 }
 
 .viewAllLink {
-  font-size: 1.6rem;
+  font-size: 2rem;
   text-decoration: none;
   color: #1f9ec1;
   transition: all 0.2s ease;

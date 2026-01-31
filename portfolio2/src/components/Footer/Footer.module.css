@@ -2,7 +2,7 @@
   border-top: 0.125rem solid var(--border);
   margin-top: 6rem;
   padding-block: 3rem;
-  font-size: 1.6rem;
+  font-size: 2.16rem;
   position: relative;
   z-index: 10;
   background: linear-gradient(0deg, #1a1d23 0%, #161920 50%, #0f1114 100%);
@@ -27,12 +27,12 @@
 }
 
 .name {
-  font-size: 1.8rem;
+  font-size: 2.43rem;
   color: var(--text);
 }
 
 .tagline {
-  font-size: 1.4rem;
+  font-size: 1.89rem;
   color: var(--muted);
 }
 
@@ -100,7 +100,7 @@
 }
 
 .socialText {
-  font-size: 1.6rem;
+  font-size: 2.16rem;
 }
 
 .bottomRow {
@@ -114,7 +114,7 @@
 }
 
 .credit {
-  font-size: 1.4rem;
+  font-size: 1.89rem;
   color: var(--muted);
   opacity: 0.9;
   justify-self: start;
@@ -122,14 +122,14 @@
 
 .copy {
   color: var(--muted);
-  font-size: 1.4rem;
+  font-size: 1.89rem;
   justify-self: center;
 }
 
 .subtleLink {
   color: var(--text);
   text-decoration: none;
-  font-size: 1.4rem;
+  font-size: 1.89rem;
   opacity: 0.9;
   transition: opacity 200ms ease, text-shadow 200ms ease;
   justify-self: end;

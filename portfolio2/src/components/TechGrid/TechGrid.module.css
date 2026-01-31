@@ -1,7 +1,7 @@
 /* Uniform square gradient cards with outside labels and classy hover effects */
 
 .wrap { margin: 2rem 0; }
-.heading { font-size: 2rem; margin-bottom: 1.5rem; color: var(--text-dim); }
+.heading { font-size: 2.5rem; margin-bottom: 1.5rem; color: var(--text-dim); }
 
 /* Grid of uniform square tiles */
 .grid {
@@ -75,7 +75,7 @@
   padding: 0.75rem 1rem;
   border-radius: 1rem;
 
-  font-size: 1.75rem;
+  font-size: 2.188rem;
   color: var(--text-strong);
   background: #102828a6;
   backdrop-filter: blur(0.75rem);
@@ -83,14 +83,16 @@
 
   opacity: 0;
   pointer-events: none;
-  transition: opacity 220ms ease, transform 220ms ease;
+  transition: opacity 220ms ease, transform 220ms ease, font-size 220ms ease, padding 220ms ease;
 }
 
 /* Reveal label on card hover/focus; slide further down */
 .card:hover + .outLabel,
 .card:focus-visible + .outLabel {
   opacity: 0.95;
-  transform: translate(-50%, 1rem); /* slides downward */
+  transform: translate(-50%, 0.8rem); /* slides downward */
+  font-size: 1.9rem;
+  padding: 0.6rem 0.85rem;
 }
 
 /* Glass swipe: highlight passes across the card with soft blurred edges */
@@ -145,7 +147,13 @@
     row-gap: 4.5rem;
   }
   .outLabel {
-    font-size: 1.5rem;
+    font-size: 1.875rem;
     padding: 0.5rem 0.75rem;
+  }
+  .card:hover + .outLabel,
+  .card:focus-visible + .outLabel {
+    font-size: 1.7rem;
+    padding: 0.45rem 0.7rem;
+    transform: translate(-50%, 0.7rem);
   }
 }
