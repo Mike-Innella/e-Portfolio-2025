@@ -29,6 +29,7 @@
   --muted: #bfc7d6;
   --glow-rest: 0 0 1.2rem #1f9ec173;
   --glow-hover: 0 0 2.4rem #1f9ec1de;
+  --screenshot-max-width: 36rem;
 
 }
 

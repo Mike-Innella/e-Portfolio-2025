@@ -5,6 +5,7 @@ import "../styles/typography.css";
 import "../styles/utils.css";
 import Nav from "@/components/Nav/Nav";
 import Footer from "@/components/Footer/Footer";
+import ThemeRegistry from "./ThemeRegistry";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://mikeinnella.dev"),
@@ -78,9 +79,11 @@ export default function RootLayout({
         <meta name="theme-color" content="#0a0a0a" />
       </head>
       <body suppressHydrationWarning>
-        <Nav />
-        <main className="container page-content">{children}</main>
-        <Footer />
+        <ThemeRegistry>
+          <Nav />
+          <main className="container page-content">{children}</main>
+          <Footer />
+        </ThemeRegistry>
       </body>
     </html>
   );

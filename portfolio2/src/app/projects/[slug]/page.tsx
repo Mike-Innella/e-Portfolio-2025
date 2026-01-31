@@ -1,9 +1,10 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 import { projects } from "@/content/projects";
 import { getTechColors } from "@/lib/getTechColor";
-import ProjectGallery from "@/components/ProjectGallery/ProjectGallery";
+import { getProjectThumbnailUrl } from "@/lib/getProjectThumbnailUrl";
 import Stat from "@/components/Stat/Stat";
 import s from "./ProjectDetail.module.css";
 
@@ -17,7 +18,8 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   
   const title = `${project.title} — Mike Innella Portfolio`;
   const description = project.summary || project.details?.slice(0, 140);
-  const images = project.cover ? [project.cover] : project.image ? [project.image] : [];
+  const ogThumbnailUrl = getProjectThumbnailUrl(project.slug);
+  const images = [ogThumbnailUrl];
   
   return {
     title,
@@ -42,6 +44,14 @@ export default async function ProjectDetail({ params }: Params) {
   const project = projects.find((p) => p.slug === slug);
 
   if (!project) return notFound();
+  const ogThumbnailUrl = getProjectThumbnailUrl(project.slug);
+
+  const orderedLinks = project.links
+    ? [...project.links].sort((a, b) => {
+        if (a.type === b.type) return 0;
+        return a.type === "code" ? -1 : 1;
+      })
+    : [];
 
   return (
     <div className={s.container}>
@@ -51,15 +61,43 @@ export default async function ProjectDetail({ params }: Params) {
 
       <article>
         <div className={s.hero}>
+          <div className={s.heroThumb}>
+            <Image
+              src={ogThumbnailUrl}
+              alt={`${project.title} thumbnail`}
+              width={1200}
+              height={630}
+              className={s.heroThumbImg}
+              priority
+              unoptimized
+            />
+          </div>
           <h1 className={s.title}>{project.title}</h1>
           {project.subtitle && (
             <p className={s.subtitle}>{project.subtitle}</p>
           )}
-          <p className={s.description} style={{ lineHeight: 1.6 }}>{project.details}</p>
+          <p className={s.description}>{project.summary}</p>
+          {orderedLinks.length ? (
+            <div className={s.links}>
+              {orderedLinks.map((link) => (
+                <a
+                  key={link.link}
+                  href={link.link}
+                  target="_blank"
+                  rel="noreferrer"
+                  className={`${s.link} ${link.type === 'code' ? s.secondary : ''}`}
+                  title={link.tooltip}
+                >
+                  {link.type === "code" ? "View Code" : "Live Demo/Site"}
+                  <span>↗</span>
+                </a>
+              ))}
+            </div>
+          ) : null}
         </div>
 
         {/* Two-column layout */}
-        <div className={s.grid}>
+        <div className={`${s.grid} ${project.quickStats?.length ? "" : s.gridSingle}`}>
           {/* Main content column */}
           <div className={s.main}>
             {/* Highlights Section */}
@@ -68,7 +106,7 @@ export default async function ProjectDetail({ params }: Params) {
                 <h2 className={s.sectionTitle}>Key Highlights</h2>
                 <div className={s.cardish}>
                   <ul className={s.list}>
-                    {project.highlights.map((item, idx) => (
+                    {project.highlights.slice(0, 5).map((item, idx) => (
                       <li key={idx} className={s.listItem}>{item}</li>
                     ))}
                   </ul>
@@ -132,7 +170,7 @@ export default async function ProjectDetail({ params }: Params) {
                 <h2 className={s.sectionTitle}>Results</h2>
                 <div className={s.cardish}>
                   <ul className={s.list}>
-                    {project.results.map((item, idx) => (
+                    {project.results.slice(0, 4).map((item, idx) => (
                       <li key={idx} className={s.listItem}>{item}</li>
                     ))}
                   </ul>
@@ -164,49 +202,20 @@ export default async function ProjectDetail({ params }: Params) {
               </section>
             ) : null}
 
-            {/* Links */}
-            {project.links?.length ? (
-              <section className={s.section}>
-                <h2 className={s.sectionTitle}>Project Links</h2>
-                <div className={s.links}>
-                  {project.links.map((link) => (
-                    <a
-                      key={link.link}
-                      href={link.link}
-                      target="_blank"
-                      rel="noreferrer"
-                      className={`${s.link} ${link.type === 'code' ? s.secondary : ''}`}
-                      title={link.tooltip}
-                    >
-                      {link.type === "code" ? "View Code" : "Live Demo/Site"}
-                      <span>↗</span>
-                    </a>
-                  ))}
-                </div>
-              </section>
-            ) : null}
           </div>
 
           {/* Sidebar */}
-          {(project.stats?.length || project.media?.length) ? (
+          {project.quickStats?.length ? (
             <aside className={s.aside}>
               {/* Quick Stats Section - Compact */}
-              {project.stats?.length ? (
+              {project.quickStats?.length ? (
                 <section className={`${s.section} ${s.compactStats}`}>
                   <h2 className={`${s.sectionTitle} ${s.compactTitle}`}>Quick Stats</h2>
                   <div className={`${s.cardish} ${s.statsCard}`}>
-                    {project.stats.map((stat, idx) => (
+                    {project.quickStats.map((stat, idx) => (
                       <Stat key={idx} label={stat.label} value={stat.value} />
                     ))}
                   </div>
-                </section>
-              ) : null}
-              
-              {/* Gallery Section */}
-              {project.media?.length ? (
-                <section className={s.section}>
-                  <h2 className={s.sectionTitle}>Gallery</h2>
-                  <ProjectGallery media={project.media} />
                 </section>
               ) : null}
             </aside>

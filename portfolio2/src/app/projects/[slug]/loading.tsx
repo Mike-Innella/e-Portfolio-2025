@@ -18,33 +18,67 @@ export default function Loading() {
 
       {/* Hero skeleton */}
       <div className={s.hero} style={{ opacity: 0.5 }}>
-        <div style={{ 
-          height: '4rem', 
-          background: 'linear-gradient(90deg, #1a1d23, #1f2330, #1a1d23)',
-          borderRadius: '0.8rem',
-          marginBottom: '2rem',
-          maxWidth: '40rem',
-          marginInline: 'auto'
-        }} />
-        <div style={{ 
-          height: '2rem', 
-          background: 'linear-gradient(90deg, #1a1d23, #1f2330, #1a1d23)',
-          borderRadius: '0.8rem',
-          marginBottom: '2rem',
-          maxWidth: '20rem',
-          marginInline: 'auto'
-        }} />
-        <div style={{ 
-          height: '8rem', 
-          background: 'linear-gradient(90deg, #1a1d23, #1f2330, #1a1d23)',
-          borderRadius: '0.8rem',
-          maxWidth: '80rem',
-          marginInline: 'auto'
-        }} />
+        <div className={s.heroThumb} style={{ background: "#151a22" }} />
+        <div
+          style={{
+            height: "4rem",
+            background: "linear-gradient(90deg, #1a1d23, #1f2330, #1a1d23)",
+            borderRadius: "0.8rem",
+            marginBottom: "2rem",
+            maxWidth: "40rem",
+            marginInline: "auto",
+          }}
+        />
+        <div
+          style={{
+            height: "2rem",
+            background: "linear-gradient(90deg, #1a1d23, #1f2330, #1a1d23)",
+            borderRadius: "0.8rem",
+            marginBottom: "2rem",
+            maxWidth: "20rem",
+            marginInline: "auto",
+          }}
+        />
+        <div
+          style={{
+            height: "8rem",
+            background: "linear-gradient(90deg, #1a1d23, #1f2330, #1a1d23)",
+            borderRadius: "0.8rem",
+            maxWidth: "80rem",
+            marginInline: "auto",
+          }}
+        />
+        <div
+          style={{
+            display: "flex",
+            gap: "1.6rem",
+            justifyContent: "center",
+            marginTop: "2.4rem",
+          }}
+        >
+          <div
+            style={{
+              height: "4.4rem",
+              width: "14rem",
+              borderRadius: "1.2rem",
+              background: "linear-gradient(135deg, #1f9ec1, #1a8aa8)",
+              opacity: 0.4,
+            }}
+          />
+          <div
+            style={{
+              height: "4.4rem",
+              width: "16rem",
+              borderRadius: "1.2rem",
+              background: "linear-gradient(135deg, #2a2f3a, #1e232c)",
+              opacity: 0.4,
+            }}
+          />
+        </div>
       </div>
 
       {/* Grid skeleton */}
-      <div className={s.grid}>
+      <div className={`${s.grid} ${s.gridSingle}`}>
         <div>
           {/* Main content skeletons */}
           <div className={s.section}>

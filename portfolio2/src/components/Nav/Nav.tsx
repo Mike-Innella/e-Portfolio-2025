@@ -4,13 +4,14 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
+import MuiLink from "@mui/material/Link";
 import s from "./Nav.module.css";
 
 const links = [
   { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
   { href: "/projects", label: "Projects" },
   { href: "/reviews", label: "Reviews" },
+  { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -63,7 +64,7 @@ export default function Nav() {
   // Close menu when route changes and scroll to top
   useEffect(() => {
     setIsMobileMenuOpen(false);
-    if (typeof window !== 'undefined') {
+    if (typeof window !== "undefined") {
       window.scrollTo(0, 0);
     }
   }, [pathname]);
@@ -87,13 +88,16 @@ export default function Nav() {
           {links.map((l) => {
             const active = pathname === l.href;
             return (
-              <Link
+              <MuiLink
                 key={l.href}
+                component={Link}
                 href={l.href}
                 className={`${s.link} ${active ? s.active : ""}`}
+                underline="none"
+                color="inherit"
               >
                 {l.label}
-              </Link>
+              </MuiLink>
             );
           })}
         </div>
@@ -133,14 +137,17 @@ export default function Nav() {
             {links.map((l) => {
               const active = pathname === l.href;
               return (
-                <Link
+                <MuiLink
                   key={l.href}
+                  component={Link}
                   href={l.href}
                   className={`${s.mobileLink} ${active ? s.mobileActive : ""}`}
                   tabIndex={isMobileMenuOpen ? 0 : -1}
+                  underline="none"
+                  color="inherit"
                 >
                   {l.label}
-                </Link>
+                </MuiLink>
               );
             })}
           </nav>
